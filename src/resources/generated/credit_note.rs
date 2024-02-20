@@ -434,7 +434,7 @@ pub struct CreateCreditNoteLinesTaxAmounts {
 }
 
 /// An enum representing the possible values of an `CreateCreditNoteLines`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateCreditNoteLinesType {
     CustomLineItem,
@@ -468,7 +468,7 @@ impl std::default::Default for CreateCreditNoteLinesType {
 }
 
 /// An enum representing the possible values of an `CreditNote`'s `reason` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreditNoteReason {
     Duplicate,
@@ -506,7 +506,7 @@ impl std::default::Default for CreditNoteReason {
 }
 
 /// An enum representing the possible values of an `CreditNote`'s `status` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreditNoteStatus {
     Issued,
@@ -540,7 +540,7 @@ impl std::default::Default for CreditNoteStatus {
 }
 
 /// An enum representing the possible values of an `CreditNoteTaxAmount`'s `taxability_reason` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreditNoteTaxAmountTaxabilityReason {
     CustomerExempt,
@@ -600,7 +600,7 @@ impl std::default::Default for CreditNoteTaxAmountTaxabilityReason {
 }
 
 /// An enum representing the possible values of an `CreditNote`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreditNoteType {
     PostPayment,

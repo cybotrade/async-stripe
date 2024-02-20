@@ -12,7 +12,7 @@ pub struct InvoicePaymentMethodOptionsBancontact {
 }
 
 /// An enum representing the possible values of an `InvoicePaymentMethodOptionsBancontact`'s `preferred_language` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum InvoicePaymentMethodOptionsBancontactPreferredLanguage {
     De,

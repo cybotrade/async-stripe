@@ -561,7 +561,7 @@ pub struct UpdateInvoiceItemDiscounts {
 }
 
 /// An enum representing the possible values of an `InvoiceItemPriceData`'s `tax_behavior` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum InvoiceItemPriceDataTaxBehavior {
     Exclusive,
@@ -597,7 +597,7 @@ impl std::default::Default for InvoiceItemPriceDataTaxBehavior {
 }
 
 /// An enum representing the possible values of an `CreateInvoiceItem`'s `tax_behavior` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum InvoiceItemTaxBehavior {
     Exclusive,

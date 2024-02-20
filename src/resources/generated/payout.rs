@@ -305,7 +305,7 @@ impl<'a> UpdatePayout<'a> {
 }
 
 /// An enum representing the possible values of an `CreatePayout`'s `method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PayoutMethod {
     Instant,
@@ -339,7 +339,7 @@ impl std::default::Default for PayoutMethod {
 }
 
 /// An enum representing the possible values of an `Payout`'s `reconciliation_status` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PayoutReconciliationStatus {
     Completed,
@@ -375,7 +375,7 @@ impl std::default::Default for PayoutReconciliationStatus {
 }
 
 /// An enum representing the possible values of an `CreatePayout`'s `source_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PayoutSourceType {
     BankAccount,
@@ -411,7 +411,7 @@ impl std::default::Default for PayoutSourceType {
 }
 
 /// An enum representing the possible values of an `Payout`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PayoutType {
     BankAccount,

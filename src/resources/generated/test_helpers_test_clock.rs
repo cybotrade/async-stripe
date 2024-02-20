@@ -55,7 +55,7 @@ impl Object for TestHelpersTestClock {
 }
 
 /// An enum representing the possible values of an `TestHelpersTestClock`'s `status` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TestHelpersTestClockStatus {
     Advancing,

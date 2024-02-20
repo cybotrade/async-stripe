@@ -444,7 +444,7 @@ impl Paginable for ListSetupAttempts<'_> {
     }
 }
 /// An enum representing the possible values of an `SetupAttempt`'s `flow_directions` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum SetupAttemptFlowDirections {
     Inbound,
@@ -478,7 +478,7 @@ impl std::default::Default for SetupAttemptFlowDirections {
 }
 
 /// An enum representing the possible values of an `SetupAttemptPaymentMethodDetailsBancontact`'s `preferred_language` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum SetupAttemptPaymentMethodDetailsBancontactPreferredLanguage {
     De,
@@ -516,7 +516,7 @@ impl std::default::Default for SetupAttemptPaymentMethodDetailsBancontactPreferr
 }
 
 /// An enum representing the possible values of an `SetupAttemptPaymentMethodDetailsCardWallet`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum SetupAttemptPaymentMethodDetailsCardWalletType {
     ApplePay,
@@ -552,7 +552,7 @@ impl std::default::Default for SetupAttemptPaymentMethodDetailsCardWalletType {
 }
 
 /// An enum representing the possible values of an `SetupAttemptPaymentMethodDetailsIdeal`'s `bank` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum SetupAttemptPaymentMethodDetailsIdealBank {
     AbnAmro,
@@ -614,7 +614,7 @@ impl std::default::Default for SetupAttemptPaymentMethodDetailsIdealBank {
 }
 
 /// An enum representing the possible values of an `SetupAttemptPaymentMethodDetailsIdeal`'s `bic` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum SetupAttemptPaymentMethodDetailsIdealBic {
     #[serde(rename = "ABNANL2A")]
@@ -695,7 +695,7 @@ impl std::default::Default for SetupAttemptPaymentMethodDetailsIdealBic {
 }
 
 /// An enum representing the possible values of an `SetupAttemptPaymentMethodDetailsSofort`'s `preferred_language` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum SetupAttemptPaymentMethodDetailsSofortPreferredLanguage {
     De,
@@ -733,7 +733,7 @@ impl std::default::Default for SetupAttemptPaymentMethodDetailsSofortPreferredLa
 }
 
 /// An enum representing the possible values of an `ThreeDSecureDetails`'s `authentication_flow` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum ThreeDSecureDetailsAuthenticationFlow {
     Challenge,
@@ -767,7 +767,7 @@ impl std::default::Default for ThreeDSecureDetailsAuthenticationFlow {
 }
 
 /// An enum representing the possible values of an `ThreeDSecureDetails`'s `electronic_commerce_indicator` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum ThreeDSecureDetailsElectronicCommerceIndicator {
     #[serde(rename = "01")]
@@ -812,7 +812,7 @@ impl std::default::Default for ThreeDSecureDetailsElectronicCommerceIndicator {
 }
 
 /// An enum representing the possible values of an `ThreeDSecureDetails`'s `result` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum ThreeDSecureDetailsResult {
     AttemptAcknowledged,
@@ -854,7 +854,7 @@ impl std::default::Default for ThreeDSecureDetailsResult {
 }
 
 /// An enum representing the possible values of an `ThreeDSecureDetails`'s `result_reason` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum ThreeDSecureDetailsResultReason {
     Abandoned,
@@ -898,7 +898,7 @@ impl std::default::Default for ThreeDSecureDetailsResultReason {
 }
 
 /// An enum representing the possible values of an `ThreeDSecureDetails`'s `version` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum ThreeDSecureDetailsVersion {
     #[serde(rename = "1.0.2")]

@@ -1414,7 +1414,7 @@ pub struct UpdateSourceSourceOrderShippingAddress {
 }
 
 /// An enum representing the possible values of an `CreateSourceSourceOrderItems`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateSourceSourceOrderItemsType {
     Discount,
@@ -1452,7 +1452,7 @@ impl std::default::Default for CreateSourceSourceOrderItemsType {
 }
 
 /// An enum representing the possible values of an `SourceAcceptanceParams`'s `status` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum SourceAcceptanceParamsStatus {
     Accepted,
@@ -1490,7 +1490,7 @@ impl std::default::Default for SourceAcceptanceParamsStatus {
 }
 
 /// An enum representing the possible values of an `SourceAcceptanceParams`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum SourceAcceptanceParamsType {
     Offline,
@@ -1524,7 +1524,7 @@ impl std::default::Default for SourceAcceptanceParamsType {
 }
 
 /// An enum representing the possible values of an `CreateSource`'s `flow` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum SourceFlow {
     CodeVerification,
@@ -1562,7 +1562,7 @@ impl std::default::Default for SourceFlow {
 }
 
 /// An enum representing the possible values of an `SourceMandateParams`'s `interval` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum SourceMandateInterval {
     OneTime,
@@ -1598,7 +1598,7 @@ impl std::default::Default for SourceMandateInterval {
 }
 
 /// An enum representing the possible values of an `SourceMandateParams`'s `notification_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum SourceMandateNotificationMethod {
     DeprecatedNone,
@@ -1638,7 +1638,7 @@ impl std::default::Default for SourceMandateNotificationMethod {
 }
 
 /// An enum representing the possible values of an `CreateSourceReceiver`'s `refund_attributes_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum SourceRefundNotificationMethod {
     Email,
@@ -1674,7 +1674,7 @@ impl std::default::Default for SourceRefundNotificationMethod {
 }
 
 /// An enum representing the possible values of an `Source`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum SourceType {
     AchCreditTransfer,
@@ -1742,7 +1742,7 @@ impl std::default::Default for SourceType {
 }
 
 /// An enum representing the possible values of an `UpdateSourceSourceOrderItems`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdateSourceSourceOrderItemsType {
     Discount,

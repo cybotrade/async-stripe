@@ -290,7 +290,7 @@ pub struct IssuingAuthorizationThreeDSecure {
 }
 
 /// An enum representing the possible values of an `IssuingAuthorizationAuthenticationExemption`'s `claimed_by` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum IssuingAuthorizationAuthenticationExemptionClaimedBy {
     Acquirer,
@@ -324,7 +324,7 @@ impl std::default::Default for IssuingAuthorizationAuthenticationExemptionClaime
 }
 
 /// An enum representing the possible values of an `IssuingAuthorizationAuthenticationExemption`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum IssuingAuthorizationAuthenticationExemptionType {
     LowValueTransaction,
@@ -364,7 +364,7 @@ impl std::default::Default for IssuingAuthorizationAuthenticationExemptionType {
 }
 
 /// An enum representing the possible values of an `IssuingAuthorization`'s `status` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum IssuingAuthorizationStatus {
     Closed,
@@ -400,7 +400,7 @@ impl std::default::Default for IssuingAuthorizationStatus {
 }
 
 /// An enum representing the possible values of an `IssuingAuthorizationThreeDSecure`'s `result` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum IssuingAuthorizationThreeDSecureResult {
     AttemptAcknowledged,

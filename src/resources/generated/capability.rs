@@ -154,7 +154,7 @@ pub struct AccountRequirementsError {
 }
 
 /// An enum representing the possible values of an `AccountRequirementsError`'s `code` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum AccountRequirementsErrorCode {
     InvalidAddressCityStatePostalCode,
@@ -359,7 +359,7 @@ impl std::default::Default for AccountRequirementsErrorCode {
 }
 
 /// An enum representing the possible values of an `Capability`'s `status` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CapabilityStatus {
     Active,

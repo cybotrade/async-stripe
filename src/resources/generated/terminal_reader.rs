@@ -358,7 +358,7 @@ impl Paginable for ListTerminalReaders<'_> {
     }
 }
 /// An enum representing the possible values of an `TerminalReader`'s `device_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TerminalReaderDeviceType {
     BbposChipper2x,
@@ -401,7 +401,7 @@ impl std::default::Default for TerminalReaderDeviceType {
 }
 
 /// An enum representing the possible values of an `TerminalReaderReaderResourceReaderAction`'s `status` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TerminalReaderReaderResourceReaderActionStatus {
     Failed,
@@ -437,7 +437,7 @@ impl std::default::Default for TerminalReaderReaderResourceReaderActionStatus {
 }
 
 /// An enum representing the possible values of an `TerminalReaderReaderResourceReaderAction`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TerminalReaderReaderResourceReaderActionType {
     ProcessPaymentIntent,
@@ -479,7 +479,7 @@ impl std::default::Default for TerminalReaderReaderResourceReaderActionType {
 }
 
 /// An enum representing the possible values of an `TerminalReaderReaderResourceRefundPaymentAction`'s `reason` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TerminalReaderReaderResourceRefundPaymentActionReason {
     Duplicate,
@@ -517,7 +517,7 @@ impl std::default::Default for TerminalReaderReaderResourceRefundPaymentActionRe
 }
 
 /// An enum representing the possible values of an `TerminalReaderReaderResourceSetReaderDisplayAction`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TerminalReaderReaderResourceSetReaderDisplayActionType {
     Cart,
@@ -549,7 +549,7 @@ impl std::default::Default for TerminalReaderReaderResourceSetReaderDisplayActio
 }
 
 /// An enum representing the possible values of an `TerminalReader`'s `status` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TerminalReaderStatus {
     Offline,

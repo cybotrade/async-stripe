@@ -28,7 +28,7 @@ pub struct BankConnectionsResourceAccountholder {
 }
 
 /// An enum representing the possible values of an `BankConnectionsResourceAccountholder`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum BankConnectionsResourceAccountholderType {
     Account,

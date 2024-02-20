@@ -14,7 +14,7 @@ pub struct PaymentMethodOptionsCustomerBalanceEuBankAccount {
 }
 
 /// An enum representing the possible values of an `PaymentMethodOptionsCustomerBalanceEuBankAccount`'s `country` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodOptionsCustomerBalanceEuBankAccountCountry {
     #[serde(rename = "BE")]

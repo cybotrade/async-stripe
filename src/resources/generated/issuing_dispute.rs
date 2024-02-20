@@ -241,7 +241,7 @@ pub struct IssuingDisputeTreasury {
 }
 
 /// An enum representing the possible values of an `IssuingDisputeCanceledEvidence`'s `product_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum IssuingDisputeCanceledEvidenceProductType {
     Merchandise,
@@ -275,7 +275,7 @@ impl std::default::Default for IssuingDisputeCanceledEvidenceProductType {
 }
 
 /// An enum representing the possible values of an `IssuingDisputeCanceledEvidence`'s `return_status` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum IssuingDisputeCanceledEvidenceReturnStatus {
     MerchantRejected,
@@ -309,7 +309,7 @@ impl std::default::Default for IssuingDisputeCanceledEvidenceReturnStatus {
 }
 
 /// An enum representing the possible values of an `IssuingDisputeEvidence`'s `reason` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum IssuingDisputeEvidenceReason {
     Canceled,
@@ -355,7 +355,7 @@ impl std::default::Default for IssuingDisputeEvidenceReason {
 }
 
 /// An enum representing the possible values of an `IssuingDisputeMerchandiseNotAsDescribedEvidence`'s `return_status` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum IssuingDisputeMerchandiseNotAsDescribedEvidenceReturnStatus {
     MerchantRejected,
@@ -391,7 +391,7 @@ impl std::default::Default for IssuingDisputeMerchandiseNotAsDescribedEvidenceRe
 }
 
 /// An enum representing the possible values of an `IssuingDisputeNotReceivedEvidence`'s `product_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum IssuingDisputeNotReceivedEvidenceProductType {
     Merchandise,
@@ -425,7 +425,7 @@ impl std::default::Default for IssuingDisputeNotReceivedEvidenceProductType {
 }
 
 /// An enum representing the possible values of an `IssuingDisputeOtherEvidence`'s `product_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum IssuingDisputeOtherEvidenceProductType {
     Merchandise,

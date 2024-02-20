@@ -175,7 +175,7 @@ pub struct SourceTransactionSepaCreditTransferData {
 }
 
 /// An enum representing the possible values of an `SourceTransaction`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum SourceTransactionType {
     AchCreditTransfer,

@@ -163,7 +163,7 @@ pub struct TreasuryInboundTransfersResourceInboundTransferResourceStatusTransiti
 }
 
 /// An enum representing the possible values of an `InboundTransfersPaymentMethodDetailsUsBankAccount`'s `account_holder_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType {
     Company,
@@ -197,7 +197,7 @@ impl std::default::Default for InboundTransfersPaymentMethodDetailsUsBankAccount
 }
 
 /// An enum representing the possible values of an `InboundTransfersPaymentMethodDetailsUsBankAccount`'s `account_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum InboundTransfersPaymentMethodDetailsUsBankAccountAccountType {
     Checking,
@@ -231,7 +231,7 @@ impl std::default::Default for InboundTransfersPaymentMethodDetailsUsBankAccount
 }
 
 /// An enum representing the possible values of an `InboundTransfersPaymentMethodDetailsUsBankAccount`'s `network` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum InboundTransfersPaymentMethodDetailsUsBankAccountNetwork {
     Ach,
@@ -263,7 +263,7 @@ impl std::default::Default for InboundTransfersPaymentMethodDetailsUsBankAccount
 }
 
 /// An enum representing the possible values of an `InboundTransfers`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum InboundTransfersType {
     UsBankAccount,
@@ -295,7 +295,7 @@ impl std::default::Default for InboundTransfersType {
 }
 
 /// An enum representing the possible values of an `TreasuryInboundTransfer`'s `status` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TreasuryInboundTransferStatus {
     Canceled,
@@ -333,7 +333,7 @@ impl std::default::Default for TreasuryInboundTransferStatus {
 }
 
 /// An enum representing the possible values of an `TreasuryInboundTransfersResourceFailureDetails`'s `code` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TreasuryInboundTransfersResourceFailureDetailsCode {
     AccountClosed,

@@ -2934,7 +2934,7 @@ pub struct TransferScheduleParams {
 }
 
 /// An enum representing the possible values of an `Account`'s `business_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum AccountBusinessType {
     Company,
@@ -2972,7 +2972,7 @@ impl std::default::Default for AccountBusinessType {
 }
 
 /// An enum representing the possible values of an `AccountCapabilities`'s `acss_debit_payments` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum AccountCapabilitiesAcssDebitPayments {
     Active,
@@ -3008,7 +3008,7 @@ impl std::default::Default for AccountCapabilitiesAcssDebitPayments {
 }
 
 /// An enum representing the possible values of an `AccountCapabilities`'s `affirm_payments` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum AccountCapabilitiesAffirmPayments {
     Active,
@@ -3044,7 +3044,7 @@ impl std::default::Default for AccountCapabilitiesAffirmPayments {
 }
 
 /// An enum representing the possible values of an `AccountCapabilities`'s `afterpay_clearpay_payments` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum AccountCapabilitiesAfterpayClearpayPayments {
     Active,
@@ -3080,7 +3080,7 @@ impl std::default::Default for AccountCapabilitiesAfterpayClearpayPayments {
 }
 
 /// An enum representing the possible values of an `AccountCapabilities`'s `bacs_debit_payments` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum AccountCapabilitiesBacsDebitPayments {
     Active,
@@ -3116,7 +3116,7 @@ impl std::default::Default for AccountCapabilitiesBacsDebitPayments {
 }
 
 /// An enum representing the possible values of an `AccountCapabilities`'s `bancontact_payments` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum AccountCapabilitiesBancontactPayments {
     Active,
@@ -3152,7 +3152,7 @@ impl std::default::Default for AccountCapabilitiesBancontactPayments {
 }
 
 /// An enum representing the possible values of an `AccountCapabilities`'s `bank_transfer_payments` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum AccountCapabilitiesBankTransferPayments {
     Active,
@@ -3188,7 +3188,7 @@ impl std::default::Default for AccountCapabilitiesBankTransferPayments {
 }
 
 /// An enum representing the possible values of an `AccountCapabilities`'s `blik_payments` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum AccountCapabilitiesBlikPayments {
     Active,
@@ -3224,7 +3224,7 @@ impl std::default::Default for AccountCapabilitiesBlikPayments {
 }
 
 /// An enum representing the possible values of an `AccountCapabilities`'s `boleto_payments` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum AccountCapabilitiesBoletoPayments {
     Active,
@@ -3260,7 +3260,7 @@ impl std::default::Default for AccountCapabilitiesBoletoPayments {
 }
 
 /// An enum representing the possible values of an `AccountCapabilities`'s `cartes_bancaires_payments` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum AccountCapabilitiesCartesBancairesPayments {
     Active,
@@ -3296,7 +3296,7 @@ impl std::default::Default for AccountCapabilitiesCartesBancairesPayments {
 }
 
 /// An enum representing the possible values of an `AccountCapabilities`'s `cashapp_payments` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum AccountCapabilitiesCashappPayments {
     Active,
@@ -3332,7 +3332,7 @@ impl std::default::Default for AccountCapabilitiesCashappPayments {
 }
 
 /// An enum representing the possible values of an `AccountCapabilities`'s `eps_payments` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum AccountCapabilitiesEpsPayments {
     Active,
@@ -3368,7 +3368,7 @@ impl std::default::Default for AccountCapabilitiesEpsPayments {
 }
 
 /// An enum representing the possible values of an `AccountCapabilities`'s `fpx_payments` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum AccountCapabilitiesFpxPayments {
     Active,
@@ -3404,7 +3404,7 @@ impl std::default::Default for AccountCapabilitiesFpxPayments {
 }
 
 /// An enum representing the possible values of an `AccountCapabilities`'s `giropay_payments` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum AccountCapabilitiesGiropayPayments {
     Active,
@@ -3440,7 +3440,7 @@ impl std::default::Default for AccountCapabilitiesGiropayPayments {
 }
 
 /// An enum representing the possible values of an `AccountCapabilities`'s `grabpay_payments` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum AccountCapabilitiesGrabpayPayments {
     Active,
@@ -3476,7 +3476,7 @@ impl std::default::Default for AccountCapabilitiesGrabpayPayments {
 }
 
 /// An enum representing the possible values of an `AccountCapabilities`'s `ideal_payments` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum AccountCapabilitiesIdealPayments {
     Active,
@@ -3512,7 +3512,7 @@ impl std::default::Default for AccountCapabilitiesIdealPayments {
 }
 
 /// An enum representing the possible values of an `AccountCapabilities`'s `india_international_payments` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum AccountCapabilitiesIndiaInternationalPayments {
     Active,
@@ -3548,7 +3548,7 @@ impl std::default::Default for AccountCapabilitiesIndiaInternationalPayments {
 }
 
 /// An enum representing the possible values of an `AccountCapabilities`'s `klarna_payments` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum AccountCapabilitiesKlarnaPayments {
     Active,
@@ -3584,7 +3584,7 @@ impl std::default::Default for AccountCapabilitiesKlarnaPayments {
 }
 
 /// An enum representing the possible values of an `AccountCapabilities`'s `konbini_payments` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum AccountCapabilitiesKonbiniPayments {
     Active,
@@ -3620,7 +3620,7 @@ impl std::default::Default for AccountCapabilitiesKonbiniPayments {
 }
 
 /// An enum representing the possible values of an `AccountCapabilities`'s `link_payments` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum AccountCapabilitiesLinkPayments {
     Active,
@@ -3656,7 +3656,7 @@ impl std::default::Default for AccountCapabilitiesLinkPayments {
 }
 
 /// An enum representing the possible values of an `AccountCapabilities`'s `oxxo_payments` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum AccountCapabilitiesOxxoPayments {
     Active,
@@ -3692,7 +3692,7 @@ impl std::default::Default for AccountCapabilitiesOxxoPayments {
 }
 
 /// An enum representing the possible values of an `AccountCapabilities`'s `p24_payments` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum AccountCapabilitiesP24Payments {
     Active,
@@ -3728,7 +3728,7 @@ impl std::default::Default for AccountCapabilitiesP24Payments {
 }
 
 /// An enum representing the possible values of an `AccountCapabilities`'s `paynow_payments` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum AccountCapabilitiesPaynowPayments {
     Active,
@@ -3764,7 +3764,7 @@ impl std::default::Default for AccountCapabilitiesPaynowPayments {
 }
 
 /// An enum representing the possible values of an `AccountCapabilities`'s `promptpay_payments` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum AccountCapabilitiesPromptpayPayments {
     Active,
@@ -3800,7 +3800,7 @@ impl std::default::Default for AccountCapabilitiesPromptpayPayments {
 }
 
 /// An enum representing the possible values of an `AccountCapabilities`'s `revolut_pay_payments` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum AccountCapabilitiesRevolutPayPayments {
     Active,
@@ -3836,7 +3836,7 @@ impl std::default::Default for AccountCapabilitiesRevolutPayPayments {
 }
 
 /// An enum representing the possible values of an `AccountCapabilities`'s `sepa_debit_payments` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum AccountCapabilitiesSepaDebitPayments {
     Active,
@@ -3872,7 +3872,7 @@ impl std::default::Default for AccountCapabilitiesSepaDebitPayments {
 }
 
 /// An enum representing the possible values of an `AccountCapabilities`'s `sofort_payments` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum AccountCapabilitiesSofortPayments {
     Active,
@@ -3908,7 +3908,7 @@ impl std::default::Default for AccountCapabilitiesSofortPayments {
 }
 
 /// An enum representing the possible values of an `AccountCapabilities`'s `swish_payments` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum AccountCapabilitiesSwishPayments {
     Active,
@@ -3944,7 +3944,7 @@ impl std::default::Default for AccountCapabilitiesSwishPayments {
 }
 
 /// An enum representing the possible values of an `AccountCapabilities`'s `treasury` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum AccountCapabilitiesTreasury {
     Active,
@@ -3980,7 +3980,7 @@ impl std::default::Default for AccountCapabilitiesTreasury {
 }
 
 /// An enum representing the possible values of an `AccountCapabilities`'s `us_bank_account_ach_payments` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum AccountCapabilitiesUsBankAccountAchPayments {
     Active,
@@ -4016,7 +4016,7 @@ impl std::default::Default for AccountCapabilitiesUsBankAccountAchPayments {
 }
 
 /// An enum representing the possible values of an `AccountCapabilities`'s `zip_payments` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum AccountCapabilitiesZipPayments {
     Active,
@@ -4052,7 +4052,7 @@ impl std::default::Default for AccountCapabilitiesZipPayments {
 }
 
 /// An enum representing the possible values of an `AccountRequirementsError`'s `code` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum AccountRequirementsErrorCode {
     InvalidAddressCityStatePostalCode,
@@ -4257,7 +4257,7 @@ impl std::default::Default for AccountRequirementsErrorCode {
 }
 
 /// An enum representing the possible values of an `CreateAccount`'s `type_` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum AccountType {
     Custom,
@@ -4293,7 +4293,7 @@ impl std::default::Default for AccountType {
 }
 
 /// An enum representing the possible values of an `AccountUnificationAccountController`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum AccountUnificationAccountControllerType {
     Account,
@@ -4327,7 +4327,7 @@ impl std::default::Default for AccountUnificationAccountControllerType {
 }
 
 /// An enum representing the possible values of an `AccountCapabilities`'s `au_becs_debit_payments` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CapabilityStatus {
     Active,
@@ -4363,7 +4363,7 @@ impl std::default::Default for CapabilityStatus {
 }
 
 /// An enum representing the possible values of an `CompanyParams`'s `structure` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CompanyParamsStructure {
     FreeZoneEstablishment,
@@ -4441,7 +4441,7 @@ impl std::default::Default for CompanyParamsStructure {
 }
 
 /// An enum representing the possible values of an `Company`'s `structure` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CompanyStructure {
     FreeZoneEstablishment,
@@ -4519,7 +4519,7 @@ impl std::default::Default for CompanyStructure {
 }
 
 /// An enum representing the possible values of an `PersonParams`'s `political_exposure` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PersonParamsPoliticalExposure {
     Existing,
@@ -4553,7 +4553,7 @@ impl std::default::Default for PersonParamsPoliticalExposure {
 }
 
 /// An enum representing the possible values of an `TransferScheduleParams`'s `interval` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TransferScheduleInterval {
     Daily,
@@ -4591,7 +4591,7 @@ impl std::default::Default for TransferScheduleInterval {
 }
 
 /// An enum representing the possible values of an `TransferScheduleParams`'s `weekly_anchor` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TransferScheduleParamsWeeklyAnchor {
     Friday,

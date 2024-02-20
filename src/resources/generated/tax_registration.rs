@@ -289,7 +289,7 @@ pub struct TaxProductRegistrationsResourceCountryOptionsUsLocalLeaseTax {
 }
 
 /// An enum representing the possible values of an `TaxProductRegistrationsResourceCountryOptionsCanada`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TaxProductRegistrationsResourceCountryOptionsCanadaType {
     ProvinceStandard,
@@ -325,7 +325,7 @@ impl std::default::Default for TaxProductRegistrationsResourceCountryOptionsCana
 }
 
 /// An enum representing the possible values of an `TaxProductRegistrationsResourceCountryOptionsDefault`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TaxProductRegistrationsResourceCountryOptionsDefaultType {
     Standard,
@@ -357,7 +357,7 @@ impl std::default::Default for TaxProductRegistrationsResourceCountryOptionsDefa
 }
 
 /// An enum representing the possible values of an `TaxProductRegistrationsResourceCountryOptionsEuStandard`'s `place_of_supply_scheme` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TaxProductRegistrationsResourceCountryOptionsEuStandardPlaceOfSupplyScheme {
     SmallSeller,
@@ -391,7 +391,7 @@ impl std::default::Default for TaxProductRegistrationsResourceCountryOptionsEuSt
 }
 
 /// An enum representing the possible values of an `TaxProductRegistrationsResourceCountryOptionsEurope`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TaxProductRegistrationsResourceCountryOptionsEuropeType {
     Ioss,
@@ -429,7 +429,7 @@ impl std::default::Default for TaxProductRegistrationsResourceCountryOptionsEuro
 }
 
 /// An enum representing the possible values of an `TaxProductRegistrationsResourceCountryOptionsSimplified`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TaxProductRegistrationsResourceCountryOptionsSimplifiedType {
     Simplified,
@@ -461,7 +461,7 @@ impl std::default::Default for TaxProductRegistrationsResourceCountryOptionsSimp
 }
 
 /// An enum representing the possible values of an `TaxProductRegistrationsResourceCountryOptionsUnitedStates`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TaxProductRegistrationsResourceCountryOptionsUnitedStatesType {
     LocalAmusementTax,
@@ -499,7 +499,7 @@ impl std::default::Default for TaxProductRegistrationsResourceCountryOptionsUnit
 }
 
 /// An enum representing the possible values of an `TaxRegistration`'s `status` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TaxRegistrationStatus {
     Active,

@@ -102,7 +102,7 @@ pub struct TreasuryFinancialAccountsResourceTogglesSettingStatusDetails {
 }
 
 /// An enum representing the possible values of an `TreasuryFinancialAccountsResourceAbaToggleSettings`'s `status` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TreasuryFinancialAccountsResourceAbaToggleSettingsStatus {
     Active,
@@ -138,7 +138,7 @@ impl std::default::Default for TreasuryFinancialAccountsResourceAbaToggleSetting
 }
 
 /// An enum representing the possible values of an `TreasuryFinancialAccountsResourceTogglesSettingStatusDetails`'s `code` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode {
     Activating,
@@ -186,7 +186,7 @@ impl std::default::Default for TreasuryFinancialAccountsResourceTogglesSettingSt
 }
 
 /// An enum representing the possible values of an `TreasuryFinancialAccountsResourceTogglesSettingStatusDetails`'s `resolution` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsResolution {
     ContactStripe,
@@ -222,7 +222,7 @@ impl std::default::Default for TreasuryFinancialAccountsResourceTogglesSettingSt
 }
 
 /// An enum representing the possible values of an `TreasuryFinancialAccountsResourceTogglesSettingStatusDetails`'s `restriction` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsRestriction {
     InboundFlows,

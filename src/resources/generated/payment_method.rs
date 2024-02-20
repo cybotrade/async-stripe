@@ -1370,7 +1370,7 @@ pub struct CreatePaymentMethodKlarnaDob {
 }
 
 /// An enum representing the possible values of an `CardPresent`'s `read_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CardPresentReadMethod {
     ContactEmv,
@@ -1410,7 +1410,7 @@ impl std::default::Default for CardPresentReadMethod {
 }
 
 /// An enum representing the possible values of an `CreatePaymentMethodEps`'s `bank` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentMethodEpsBank {
     ArzteUndApothekerBank,
@@ -1508,7 +1508,7 @@ impl std::default::Default for CreatePaymentMethodEpsBank {
 }
 
 /// An enum representing the possible values of an `CreatePaymentMethodFpx`'s `account_holder_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentMethodFpxAccountHolderType {
     Company,
@@ -1542,7 +1542,7 @@ impl std::default::Default for CreatePaymentMethodFpxAccountHolderType {
 }
 
 /// An enum representing the possible values of an `CreatePaymentMethodFpx`'s `bank` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentMethodFpxBank {
     AffinBank,
@@ -1616,7 +1616,7 @@ impl std::default::Default for CreatePaymentMethodFpxBank {
 }
 
 /// An enum representing the possible values of an `CreatePaymentMethodIdeal`'s `bank` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentMethodIdealBank {
     AbnAmro,
@@ -1678,7 +1678,7 @@ impl std::default::Default for CreatePaymentMethodIdealBank {
 }
 
 /// An enum representing the possible values of an `CreatePaymentMethodP24`'s `bank` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentMethodP24Bank {
     AliorBank,
@@ -1760,7 +1760,7 @@ impl std::default::Default for CreatePaymentMethodP24Bank {
 }
 
 /// An enum representing the possible values of an `CreatePaymentMethodSofort`'s `country` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentMethodSofortCountry {
     #[serde(rename = "AT")]
@@ -1808,7 +1808,7 @@ impl std::default::Default for CreatePaymentMethodSofortCountry {
 }
 
 /// An enum representing the possible values of an `CreatePaymentMethodUsBankAccount`'s `account_holder_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentMethodUsBankAccountAccountHolderType {
     Company,
@@ -1842,7 +1842,7 @@ impl std::default::Default for CreatePaymentMethodUsBankAccountAccountHolderType
 }
 
 /// An enum representing the possible values of an `CreatePaymentMethodUsBankAccount`'s `account_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentMethodUsBankAccountAccountType {
     Checking,
@@ -1876,7 +1876,7 @@ impl std::default::Default for CreatePaymentMethodUsBankAccountAccountType {
 }
 
 /// An enum representing the possible values of an `PaymentMethodEps`'s `bank` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodEpsBank {
     ArzteUndApothekerBank,
@@ -1974,7 +1974,7 @@ impl std::default::Default for PaymentMethodEpsBank {
 }
 
 /// An enum representing the possible values of an `PaymentMethodFpx`'s `account_holder_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodFpxAccountHolderType {
     Company,
@@ -2008,7 +2008,7 @@ impl std::default::Default for PaymentMethodFpxAccountHolderType {
 }
 
 /// An enum representing the possible values of an `PaymentMethodFpx`'s `bank` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodFpxBank {
     AffinBank,
@@ -2082,7 +2082,7 @@ impl std::default::Default for PaymentMethodFpxBank {
 }
 
 /// An enum representing the possible values of an `PaymentMethodIdeal`'s `bank` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodIdealBank {
     AbnAmro,
@@ -2144,7 +2144,7 @@ impl std::default::Default for PaymentMethodIdealBank {
 }
 
 /// An enum representing the possible values of an `PaymentMethodIdeal`'s `bic` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodIdealBic {
     #[serde(rename = "ABNANL2A")]
@@ -2225,7 +2225,7 @@ impl std::default::Default for PaymentMethodIdealBic {
 }
 
 /// An enum representing the possible values of an `PaymentMethodInteracPresent`'s `read_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodInteracPresentReadMethod {
     ContactEmv,
@@ -2269,7 +2269,7 @@ impl std::default::Default for PaymentMethodInteracPresentReadMethod {
 }
 
 /// An enum representing the possible values of an `PaymentMethodP24`'s `bank` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodP24Bank {
     AliorBank,
@@ -2351,7 +2351,7 @@ impl std::default::Default for PaymentMethodP24Bank {
 }
 
 /// An enum representing the possible values of an `PaymentMethod`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodType {
     AcssDebit,
@@ -2451,7 +2451,7 @@ impl std::default::Default for PaymentMethodType {
 }
 
 /// An enum representing the possible values of an `ListPaymentMethods`'s `type_` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodTypeFilter {
     AcssDebit,
@@ -2547,7 +2547,7 @@ impl std::default::Default for PaymentMethodTypeFilter {
 }
 
 /// An enum representing the possible values of an `PaymentMethodUsBankAccount`'s `account_holder_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodUsBankAccountAccountHolderType {
     Company,
@@ -2581,7 +2581,7 @@ impl std::default::Default for PaymentMethodUsBankAccountAccountHolderType {
 }
 
 /// An enum representing the possible values of an `PaymentMethodUsBankAccount`'s `account_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodUsBankAccountAccountType {
     Checking,
@@ -2615,7 +2615,7 @@ impl std::default::Default for PaymentMethodUsBankAccountAccountType {
 }
 
 /// An enum representing the possible values of an `PaymentMethodUsBankAccountBlocked`'s `network_code` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodUsBankAccountBlockedNetworkCode {
     #[serde(rename = "R02")]
@@ -2681,7 +2681,7 @@ impl std::default::Default for PaymentMethodUsBankAccountBlockedNetworkCode {
 }
 
 /// An enum representing the possible values of an `PaymentMethodUsBankAccountBlocked`'s `reason` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodUsBankAccountBlockedReason {
     BankAccountClosed,
@@ -2727,7 +2727,7 @@ impl std::default::Default for PaymentMethodUsBankAccountBlockedReason {
 }
 
 /// An enum representing the possible values of an `UpdatePaymentMethodUsBankAccount`'s `account_holder_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentMethodUsBankAccountAccountHolderType {
     Company,
@@ -2761,7 +2761,7 @@ impl std::default::Default for UpdatePaymentMethodUsBankAccountAccountHolderType
 }
 
 /// An enum representing the possible values of an `UpdatePaymentMethodUsBankAccount`'s `account_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentMethodUsBankAccountAccountType {
     Checking,
@@ -2795,7 +2795,7 @@ impl std::default::Default for UpdatePaymentMethodUsBankAccountAccountType {
 }
 
 /// An enum representing the possible values of an `UsBankAccountNetworks`'s `supported` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UsBankAccountNetworksSupported {
     Ach,
@@ -2829,7 +2829,7 @@ impl std::default::Default for UsBankAccountNetworksSupported {
 }
 
 /// An enum representing the possible values of an `WalletDetails`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum WalletDetailsType {
     AmexExpressCheckout,

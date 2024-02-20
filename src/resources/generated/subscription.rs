@@ -1872,7 +1872,7 @@ pub struct UpdateSubscriptionPaymentSettingsPaymentMethodOptionsCustomerBalanceB
 }
 
 /// An enum representing the possible values of an `CancellationDetails`'s `feedback` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CancellationDetailsFeedback {
     CustomerService,
@@ -1918,7 +1918,7 @@ impl std::default::Default for CancellationDetailsFeedback {
 }
 
 /// An enum representing the possible values of an `CancellationDetails`'s `reason` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CancellationDetailsReason {
     CancellationRequested,
@@ -1954,7 +1954,7 @@ impl std::default::Default for CancellationDetailsReason {
 }
 
 /// An enum representing the possible values of an `CreateSubscriptionAutomaticTaxLiability`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateSubscriptionAutomaticTaxLiabilityType {
     Account,
@@ -1989,7 +1989,7 @@ impl std::default::Default for CreateSubscriptionAutomaticTaxLiabilityType {
 }
 
 /// An enum representing the possible values of an `CreateSubscriptionInvoiceSettingsIssuer`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateSubscriptionInvoiceSettingsIssuerType {
     Account,
@@ -2024,7 +2024,7 @@ impl std::default::Default for CreateSubscriptionInvoiceSettingsIssuerType {
 }
 
 /// An enum representing the possible values of an `CreateSubscriptionPaymentSettingsPaymentMethodOptionsAcssDebitMandateOptions`'s `transaction_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateSubscriptionPaymentSettingsPaymentMethodOptionsAcssDebitMandateOptionsTransactionType
 {
@@ -2065,7 +2065,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `CreateSubscriptionPaymentSettingsPaymentMethodOptionsAcssDebit`'s `verification_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateSubscriptionPaymentSettingsPaymentMethodOptionsAcssDebitVerificationMethod {
     Automatic,
@@ -2107,7 +2107,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `CreateSubscriptionPaymentSettingsPaymentMethodOptionsBancontact`'s `preferred_language` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateSubscriptionPaymentSettingsPaymentMethodOptionsBancontactPreferredLanguage {
     De,
@@ -2151,7 +2151,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `CreateSubscriptionPaymentSettingsPaymentMethodOptionsCardMandateOptions`'s `amount_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateSubscriptionPaymentSettingsPaymentMethodOptionsCardMandateOptionsAmountType {
     Fixed,
@@ -2191,7 +2191,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `CreateSubscriptionPaymentSettingsPaymentMethodOptionsCard`'s `network` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateSubscriptionPaymentSettingsPaymentMethodOptionsCardNetwork {
     Amex,
@@ -2253,7 +2253,7 @@ impl std::default::Default for CreateSubscriptionPaymentSettingsPaymentMethodOpt
 }
 
 /// An enum representing the possible values of an `CreateSubscriptionPaymentSettingsPaymentMethodOptionsCard`'s `request_three_d_secure` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateSubscriptionPaymentSettingsPaymentMethodOptionsCardRequestThreeDSecure {
     Any,
@@ -2293,7 +2293,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `CreateSubscriptionPaymentSettingsPaymentMethodOptionsUsBankAccountFinancialConnections`'s `permissions` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateSubscriptionPaymentSettingsPaymentMethodOptionsUsBankAccountFinancialConnectionsPermissions
 {
@@ -2332,7 +2332,7 @@ impl std::default::Default for CreateSubscriptionPaymentSettingsPaymentMethodOpt
 }
 
 /// An enum representing the possible values of an `CreateSubscriptionPaymentSettingsPaymentMethodOptionsUsBankAccountFinancialConnections`'s `prefetch` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateSubscriptionPaymentSettingsPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch
 {
@@ -2369,7 +2369,7 @@ impl std::default::Default for CreateSubscriptionPaymentSettingsPaymentMethodOpt
 }
 
 /// An enum representing the possible values of an `CreateSubscriptionPaymentSettingsPaymentMethodOptionsUsBankAccount`'s `verification_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateSubscriptionPaymentSettingsPaymentMethodOptionsUsBankAccountVerificationMethod {
     Automatic,
@@ -2411,7 +2411,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `CreateSubscriptionPaymentSettings`'s `payment_method_types` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateSubscriptionPaymentSettingsPaymentMethodTypes {
     AchCreditTransfer,
@@ -2499,7 +2499,7 @@ impl std::default::Default for CreateSubscriptionPaymentSettingsPaymentMethodTyp
 }
 
 /// An enum representing the possible values of an `CreateSubscriptionPaymentSettings`'s `save_default_payment_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateSubscriptionPaymentSettingsSaveDefaultPaymentMethod {
     Off,
@@ -2535,7 +2535,7 @@ impl std::default::Default for CreateSubscriptionPaymentSettingsSaveDefaultPayme
 }
 
 /// An enum representing the possible values of an `CreateSubscriptionTrialSettingsEndBehavior`'s `missing_payment_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateSubscriptionTrialSettingsEndBehaviorMissingPaymentMethod {
     Cancel,
@@ -2573,7 +2573,7 @@ impl std::default::Default for CreateSubscriptionTrialSettingsEndBehaviorMissing
 }
 
 /// An enum representing the possible values of an `InvoiceItemPriceData`'s `tax_behavior` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum InvoiceItemPriceDataTaxBehavior {
     Exclusive,
@@ -2609,7 +2609,7 @@ impl std::default::Default for InvoiceItemPriceDataTaxBehavior {
 }
 
 /// An enum representing the possible values of an `InvoiceMandateOptionsCard`'s `amount_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum InvoiceMandateOptionsCardAmountType {
     Fixed,
@@ -2643,7 +2643,7 @@ impl std::default::Default for InvoiceMandateOptionsCardAmountType {
 }
 
 /// An enum representing the possible values of an `SubscriptionPendingInvoiceItemInterval`'s `interval` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PlanInterval {
     Day,
@@ -2681,7 +2681,7 @@ impl std::default::Default for PlanInterval {
 }
 
 /// An enum representing the possible values of an `UpdateSubscription`'s `billing_cycle_anchor` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum SubscriptionBillingCycleAnchor {
     Now,
@@ -2715,7 +2715,7 @@ impl std::default::Default for SubscriptionBillingCycleAnchor {
 }
 
 /// An enum representing the possible values of an `SubscriptionItemPriceData`'s `tax_behavior` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum SubscriptionItemPriceDataTaxBehavior {
     Exclusive,
@@ -2751,7 +2751,7 @@ impl std::default::Default for SubscriptionItemPriceDataTaxBehavior {
 }
 
 /// An enum representing the possible values of an `CreateSubscription`'s `payment_behavior` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum SubscriptionPaymentBehavior {
     AllowIncomplete,
@@ -2789,7 +2789,7 @@ impl std::default::Default for SubscriptionPaymentBehavior {
 }
 
 /// An enum representing the possible values of an `SubscriptionPaymentMethodOptionsCard`'s `network` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum SubscriptionPaymentMethodOptionsCardNetwork {
     Amex,
@@ -2841,7 +2841,7 @@ impl std::default::Default for SubscriptionPaymentMethodOptionsCardNetwork {
 }
 
 /// An enum representing the possible values of an `SubscriptionPaymentMethodOptionsCard`'s `request_three_d_secure` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum SubscriptionPaymentMethodOptionsCardRequestThreeDSecure {
     Any,
@@ -2877,7 +2877,7 @@ impl std::default::Default for SubscriptionPaymentMethodOptionsCardRequestThreeD
 }
 
 /// An enum representing the possible values of an `CreateSubscription`'s `proration_behavior` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum SubscriptionProrationBehavior {
     AlwaysInvoice,
@@ -2913,7 +2913,7 @@ impl std::default::Default for SubscriptionProrationBehavior {
 }
 
 /// An enum representing the possible values of an `Subscription`'s `status` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum SubscriptionStatus {
     Active,
@@ -2959,7 +2959,7 @@ impl std::default::Default for SubscriptionStatus {
 }
 
 /// An enum representing the possible values of an `ListSubscriptions`'s `status` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum SubscriptionStatusFilter {
     Active,
@@ -3009,7 +3009,7 @@ impl std::default::Default for SubscriptionStatusFilter {
 }
 
 /// An enum representing the possible values of an `SubscriptionsResourcePauseCollection`'s `behavior` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum SubscriptionsResourcePauseCollectionBehavior {
     KeepAsDraft,
@@ -3045,7 +3045,7 @@ impl std::default::Default for SubscriptionsResourcePauseCollectionBehavior {
 }
 
 /// An enum representing the possible values of an `SubscriptionsResourcePaymentSettings`'s `payment_method_types` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum SubscriptionsResourcePaymentSettingsPaymentMethodTypes {
     AchCreditTransfer,
@@ -3135,7 +3135,7 @@ impl std::default::Default for SubscriptionsResourcePaymentSettingsPaymentMethod
 }
 
 /// An enum representing the possible values of an `SubscriptionsResourcePaymentSettings`'s `save_default_payment_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod {
     Off,
@@ -3171,7 +3171,7 @@ impl std::default::Default for SubscriptionsResourcePaymentSettingsSaveDefaultPa
 }
 
 /// An enum representing the possible values of an `UpdateSubscriptionAutomaticTaxLiability`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdateSubscriptionAutomaticTaxLiabilityType {
     Account,
@@ -3206,7 +3206,7 @@ impl std::default::Default for UpdateSubscriptionAutomaticTaxLiabilityType {
 }
 
 /// An enum representing the possible values of an `UpdateSubscriptionCancellationDetails`'s `feedback` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdateSubscriptionCancellationDetailsFeedback {
     CustomerService,
@@ -3252,7 +3252,7 @@ impl std::default::Default for UpdateSubscriptionCancellationDetailsFeedback {
 }
 
 /// An enum representing the possible values of an `UpdateSubscriptionInvoiceSettingsIssuer`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdateSubscriptionInvoiceSettingsIssuerType {
     Account,
@@ -3287,7 +3287,7 @@ impl std::default::Default for UpdateSubscriptionInvoiceSettingsIssuerType {
 }
 
 /// An enum representing the possible values of an `UpdateSubscriptionPauseCollection`'s `behavior` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdateSubscriptionPauseCollectionBehavior {
     KeepAsDraft,
@@ -3323,7 +3323,7 @@ impl std::default::Default for UpdateSubscriptionPauseCollectionBehavior {
 }
 
 /// An enum representing the possible values of an `UpdateSubscriptionPaymentSettingsPaymentMethodOptionsAcssDebitMandateOptions`'s `transaction_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdateSubscriptionPaymentSettingsPaymentMethodOptionsAcssDebitMandateOptionsTransactionType
 {
@@ -3364,7 +3364,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `UpdateSubscriptionPaymentSettingsPaymentMethodOptionsAcssDebit`'s `verification_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdateSubscriptionPaymentSettingsPaymentMethodOptionsAcssDebitVerificationMethod {
     Automatic,
@@ -3406,7 +3406,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `UpdateSubscriptionPaymentSettingsPaymentMethodOptionsBancontact`'s `preferred_language` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdateSubscriptionPaymentSettingsPaymentMethodOptionsBancontactPreferredLanguage {
     De,
@@ -3450,7 +3450,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `UpdateSubscriptionPaymentSettingsPaymentMethodOptionsCardMandateOptions`'s `amount_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdateSubscriptionPaymentSettingsPaymentMethodOptionsCardMandateOptionsAmountType {
     Fixed,
@@ -3490,7 +3490,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `UpdateSubscriptionPaymentSettingsPaymentMethodOptionsCard`'s `network` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdateSubscriptionPaymentSettingsPaymentMethodOptionsCardNetwork {
     Amex,
@@ -3552,7 +3552,7 @@ impl std::default::Default for UpdateSubscriptionPaymentSettingsPaymentMethodOpt
 }
 
 /// An enum representing the possible values of an `UpdateSubscriptionPaymentSettingsPaymentMethodOptionsCard`'s `request_three_d_secure` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdateSubscriptionPaymentSettingsPaymentMethodOptionsCardRequestThreeDSecure {
     Any,
@@ -3592,7 +3592,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `UpdateSubscriptionPaymentSettingsPaymentMethodOptionsUsBankAccountFinancialConnections`'s `permissions` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdateSubscriptionPaymentSettingsPaymentMethodOptionsUsBankAccountFinancialConnectionsPermissions
 {
@@ -3631,7 +3631,7 @@ impl std::default::Default for UpdateSubscriptionPaymentSettingsPaymentMethodOpt
 }
 
 /// An enum representing the possible values of an `UpdateSubscriptionPaymentSettingsPaymentMethodOptionsUsBankAccountFinancialConnections`'s `prefetch` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdateSubscriptionPaymentSettingsPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch
 {
@@ -3668,7 +3668,7 @@ impl std::default::Default for UpdateSubscriptionPaymentSettingsPaymentMethodOpt
 }
 
 /// An enum representing the possible values of an `UpdateSubscriptionPaymentSettingsPaymentMethodOptionsUsBankAccount`'s `verification_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdateSubscriptionPaymentSettingsPaymentMethodOptionsUsBankAccountVerificationMethod {
     Automatic,
@@ -3710,7 +3710,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `UpdateSubscriptionPaymentSettings`'s `payment_method_types` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdateSubscriptionPaymentSettingsPaymentMethodTypes {
     AchCreditTransfer,
@@ -3798,7 +3798,7 @@ impl std::default::Default for UpdateSubscriptionPaymentSettingsPaymentMethodTyp
 }
 
 /// An enum representing the possible values of an `UpdateSubscriptionPaymentSettings`'s `save_default_payment_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdateSubscriptionPaymentSettingsSaveDefaultPaymentMethod {
     Off,
@@ -3834,7 +3834,7 @@ impl std::default::Default for UpdateSubscriptionPaymentSettingsSaveDefaultPayme
 }
 
 /// An enum representing the possible values of an `UpdateSubscriptionTrialSettingsEndBehavior`'s `missing_payment_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdateSubscriptionTrialSettingsEndBehaviorMissingPaymentMethod {
     Cancel,

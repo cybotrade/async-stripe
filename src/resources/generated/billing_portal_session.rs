@@ -373,7 +373,7 @@ pub struct CreateBillingPortalSessionFlowDataSubscriptionCancelRetentionCouponOf
 }
 
 /// An enum representing the possible values of an `BillingPortalSession`'s `locale` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum BillingPortalSessionLocale {
     Auto,
@@ -509,7 +509,7 @@ impl std::default::Default for BillingPortalSessionLocale {
 }
 
 /// An enum representing the possible values of an `CreateBillingPortalSessionFlowDataAfterCompletion`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateBillingPortalSessionFlowDataAfterCompletionType {
     HostedConfirmation,
@@ -549,7 +549,7 @@ impl std::default::Default for CreateBillingPortalSessionFlowDataAfterCompletion
 }
 
 /// An enum representing the possible values of an `CreateBillingPortalSessionFlowDataSubscriptionCancelRetention`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateBillingPortalSessionFlowDataSubscriptionCancelRetentionType {
     CouponOffer,
@@ -583,7 +583,7 @@ impl std::default::Default for CreateBillingPortalSessionFlowDataSubscriptionCan
 }
 
 /// An enum representing the possible values of an `CreateBillingPortalSessionFlowData`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateBillingPortalSessionFlowDataType {
     PaymentMethodUpdate,
@@ -623,7 +623,7 @@ impl std::default::Default for CreateBillingPortalSessionFlowDataType {
 }
 
 /// An enum representing the possible values of an `PortalFlowsFlowAfterCompletion`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PortalFlowsFlowAfterCompletionType {
     HostedConfirmation,
@@ -659,7 +659,7 @@ impl std::default::Default for PortalFlowsFlowAfterCompletionType {
 }
 
 /// An enum representing the possible values of an `PortalFlowsFlow`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PortalFlowsFlowType {
     PaymentMethodUpdate,
@@ -697,7 +697,7 @@ impl std::default::Default for PortalFlowsFlowType {
 }
 
 /// An enum representing the possible values of an `PortalFlowsRetention`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PortalFlowsRetentionType {
     CouponOffer,

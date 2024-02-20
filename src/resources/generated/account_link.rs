@@ -107,7 +107,7 @@ pub struct CreateAccountLinkCollectionOptions {
 }
 
 /// An enum representing the possible values of an `CreateAccountLink`'s `collect` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum AccountLinkCollect {
     CurrentlyDue,
@@ -141,7 +141,7 @@ impl std::default::Default for AccountLinkCollect {
 }
 
 /// An enum representing the possible values of an `CreateAccountLink`'s `type_` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum AccountLinkType {
     AccountOnboarding,
@@ -175,7 +175,7 @@ impl std::default::Default for AccountLinkType {
 }
 
 /// An enum representing the possible values of an `CreateAccountLinkCollectionOptions`'s `fields` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateAccountLinkCollectionOptionsFields {
     CurrentlyDue,
@@ -209,7 +209,7 @@ impl std::default::Default for CreateAccountLinkCollectionOptionsFields {
 }
 
 /// An enum representing the possible values of an `CreateAccountLinkCollectionOptions`'s `future_requirements` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateAccountLinkCollectionOptionsFutureRequirements {
     Include,

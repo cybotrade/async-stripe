@@ -74,7 +74,7 @@ pub struct TaxProductResourceTaxTransactionLineItemResourceReversal {
 }
 
 /// An enum representing the possible values of an `TaxTransactionLineItem`'s `tax_behavior` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TaxTransactionLineItemTaxBehavior {
     Exclusive,
@@ -108,7 +108,7 @@ impl std::default::Default for TaxTransactionLineItemTaxBehavior {
 }
 
 /// An enum representing the possible values of an `TaxTransactionLineItem`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TaxTransactionLineItemType {
     Reversal,

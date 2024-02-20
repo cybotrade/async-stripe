@@ -156,7 +156,7 @@ pub struct InvoicesResourceLineItemsCreditedItems {
 }
 
 /// An enum representing the possible values of an `InvoiceLineItem`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum InvoiceLineItemType {
     #[serde(rename = "invoiceitem")]
@@ -191,7 +191,7 @@ impl std::default::Default for InvoiceLineItemType {
 }
 
 /// An enum representing the possible values of an `TaxAmount`'s `taxability_reason` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TaxAmountTaxabilityReason {
     CustomerExempt,

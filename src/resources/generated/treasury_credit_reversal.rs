@@ -73,7 +73,7 @@ pub struct TreasuryReceivedCreditsResourceStatusTransitions {
 }
 
 /// An enum representing the possible values of an `TreasuryCreditReversal`'s `network` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TreasuryCreditReversalNetwork {
     Ach,
@@ -107,7 +107,7 @@ impl std::default::Default for TreasuryCreditReversalNetwork {
 }
 
 /// An enum representing the possible values of an `TreasuryCreditReversal`'s `status` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TreasuryCreditReversalStatus {
     Canceled,

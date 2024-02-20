@@ -38,7 +38,7 @@ pub struct InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransfer 
 }
 
 /// An enum representing the possible values of an `InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransfer`'s `country` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry {
     #[serde(rename = "BE")]
@@ -90,7 +90,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `InvoicePaymentMethodOptionsCustomerBalance`'s `funding_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum InvoicePaymentMethodOptionsCustomerBalanceFundingType {
     BankTransfer,

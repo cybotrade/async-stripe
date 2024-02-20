@@ -57,7 +57,7 @@ pub struct TaxProductResourcePostalAddress {
 }
 
 /// An enum representing the possible values of an `TaxProductResourceCustomerDetails`'s `address_source` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TaxProductResourceCustomerDetailsAddressSource {
     Billing,
@@ -91,7 +91,7 @@ impl std::default::Default for TaxProductResourceCustomerDetailsAddressSource {
 }
 
 /// An enum representing the possible values of an `TaxProductResourceCustomerDetailsResourceTaxId`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TaxProductResourceCustomerDetailsResourceTaxIdType {
     AdNrt,
@@ -255,7 +255,7 @@ impl std::default::Default for TaxProductResourceCustomerDetailsResourceTaxIdTyp
 }
 
 /// An enum representing the possible values of an `TaxProductResourceCustomerDetails`'s `taxability_override` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TaxProductResourceCustomerDetailsTaxabilityOverride {
     CustomerExempt,

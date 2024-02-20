@@ -207,7 +207,7 @@ pub struct IssuingNetworkTokenAddress {
 }
 
 /// An enum representing the possible values of an `IssuingNetworkTokenDevice`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum IssuingNetworkTokenDeviceType {
     Other,
@@ -243,7 +243,7 @@ impl std::default::Default for IssuingNetworkTokenDeviceType {
 }
 
 /// An enum representing the possible values of an `IssuingNetworkTokenNetworkData`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum IssuingNetworkTokenNetworkDataType {
     Mastercard,
@@ -277,7 +277,7 @@ impl std::default::Default for IssuingNetworkTokenNetworkDataType {
 }
 
 /// An enum representing the possible values of an `IssuingNetworkTokenWalletProvider`'s `card_number_source` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum IssuingNetworkTokenWalletProviderCardNumberSource {
     App,
@@ -315,7 +315,7 @@ impl std::default::Default for IssuingNetworkTokenWalletProviderCardNumberSource
 }
 
 /// An enum representing the possible values of an `IssuingNetworkTokenWalletProvider`'s `reason_codes` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum IssuingNetworkTokenWalletProviderReasonCodes {
     AccountCardTooNew,
@@ -401,7 +401,7 @@ impl std::default::Default for IssuingNetworkTokenWalletProviderReasonCodes {
 }
 
 /// An enum representing the possible values of an `IssuingNetworkTokenWalletProvider`'s `suggested_decision` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum IssuingNetworkTokenWalletProviderSuggestedDecision {
     Approve,
@@ -437,7 +437,7 @@ impl std::default::Default for IssuingNetworkTokenWalletProviderSuggestedDecisio
 }
 
 /// An enum representing the possible values of an `IssuingToken`'s `network` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum IssuingTokenNetwork {
     Mastercard,
@@ -471,7 +471,7 @@ impl std::default::Default for IssuingTokenNetwork {
 }
 
 /// An enum representing the possible values of an `IssuingToken`'s `status` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum IssuingTokenStatus {
     Active,
@@ -509,7 +509,7 @@ impl std::default::Default for IssuingTokenStatus {
 }
 
 /// An enum representing the possible values of an `IssuingToken`'s `wallet_provider` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum IssuingTokenWalletProvider {
     ApplePay,

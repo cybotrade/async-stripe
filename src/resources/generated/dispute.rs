@@ -304,7 +304,7 @@ impl Paginable for ListDisputes<'_> {
     }
 }
 /// An enum representing the possible values of an `DisputePaymentMethodDetails`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum DisputePaymentMethodDetailsType {
     Card,
@@ -336,7 +336,7 @@ impl std::default::Default for DisputePaymentMethodDetailsType {
 }
 
 /// An enum representing the possible values of an `Dispute`'s `status` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum DisputeStatus {
     Lost,

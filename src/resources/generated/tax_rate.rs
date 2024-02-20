@@ -317,7 +317,7 @@ impl<'a> UpdateTaxRate<'a> {
 }
 
 /// An enum representing the possible values of an `TaxRate`'s `jurisdiction_level` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TaxRateJurisdictionLevel {
     City,
@@ -359,7 +359,7 @@ impl std::default::Default for TaxRateJurisdictionLevel {
 }
 
 /// An enum representing the possible values of an `TaxRate`'s `tax_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TaxRateTaxType {
     AmusementTax,

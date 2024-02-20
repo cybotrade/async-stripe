@@ -20,7 +20,7 @@ pub struct ConnectAccountReference {
 }
 
 /// An enum representing the possible values of an `ConnectAccountReference`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum ConnectAccountReferenceType {
     Account,

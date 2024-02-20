@@ -854,7 +854,7 @@ pub struct UpdatePriceCurrencyOptionsTiers {
 }
 
 /// An enum representing the possible values of an `CreatePriceCurrencyOptions`'s `tax_behavior` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePriceCurrencyOptionsTaxBehavior {
     Exclusive,
@@ -890,7 +890,7 @@ impl std::default::Default for CreatePriceCurrencyOptionsTaxBehavior {
 }
 
 /// An enum representing the possible values of an `CreatePriceRecurring`'s `aggregate_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePriceRecurringAggregateUsage {
     LastDuringPeriod,
@@ -928,7 +928,7 @@ impl std::default::Default for CreatePriceRecurringAggregateUsage {
 }
 
 /// An enum representing the possible values of an `CreatePriceRecurring`'s `interval` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePriceRecurringInterval {
     Day,
@@ -966,7 +966,7 @@ impl std::default::Default for CreatePriceRecurringInterval {
 }
 
 /// An enum representing the possible values of an `CreatePriceRecurring`'s `usage_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePriceRecurringUsageType {
     Licensed,
@@ -1000,7 +1000,7 @@ impl std::default::Default for CreatePriceRecurringUsageType {
 }
 
 /// An enum representing the possible values of an `CreatePriceTransformQuantity`'s `round` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePriceTransformQuantityRound {
     Down,
@@ -1034,7 +1034,7 @@ impl std::default::Default for CreatePriceTransformQuantityRound {
 }
 
 /// An enum representing the possible values of an `CurrencyOption`'s `tax_behavior` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CurrencyOptionTaxBehavior {
     Exclusive,
@@ -1070,7 +1070,7 @@ impl std::default::Default for CurrencyOptionTaxBehavior {
 }
 
 /// An enum representing the possible values of an `ListPricesRecurring`'s `interval` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum ListPricesRecurringInterval {
     Day,
@@ -1108,7 +1108,7 @@ impl std::default::Default for ListPricesRecurringInterval {
 }
 
 /// An enum representing the possible values of an `ListPricesRecurring`'s `usage_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum ListPricesRecurringUsageType {
     Licensed,
@@ -1142,7 +1142,7 @@ impl std::default::Default for ListPricesRecurringUsageType {
 }
 
 /// An enum representing the possible values of an `Price`'s `billing_scheme` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PriceBillingScheme {
     PerUnit,
@@ -1176,7 +1176,7 @@ impl std::default::Default for PriceBillingScheme {
 }
 
 /// An enum representing the possible values of an `Price`'s `tax_behavior` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PriceTaxBehavior {
     Exclusive,
@@ -1212,7 +1212,7 @@ impl std::default::Default for PriceTaxBehavior {
 }
 
 /// An enum representing the possible values of an `Price`'s `tiers_mode` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PriceTiersMode {
     Graduated,
@@ -1246,7 +1246,7 @@ impl std::default::Default for PriceTiersMode {
 }
 
 /// An enum representing the possible values of an `Price`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PriceType {
     OneTime,
@@ -1280,7 +1280,7 @@ impl std::default::Default for PriceType {
 }
 
 /// An enum representing the possible values of an `Recurring`'s `aggregate_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum RecurringAggregateUsage {
     LastDuringPeriod,
@@ -1318,7 +1318,7 @@ impl std::default::Default for RecurringAggregateUsage {
 }
 
 /// An enum representing the possible values of an `Recurring`'s `interval` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum RecurringInterval {
     Day,
@@ -1356,7 +1356,7 @@ impl std::default::Default for RecurringInterval {
 }
 
 /// An enum representing the possible values of an `Recurring`'s `usage_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum RecurringUsageType {
     Licensed,
@@ -1390,7 +1390,7 @@ impl std::default::Default for RecurringUsageType {
 }
 
 /// An enum representing the possible values of an `TransformQuantity`'s `round` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TransformQuantityRound {
     Down,
@@ -1424,7 +1424,7 @@ impl std::default::Default for TransformQuantityRound {
 }
 
 /// An enum representing the possible values of an `UpdatePriceCurrencyOptions`'s `tax_behavior` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePriceCurrencyOptionsTaxBehavior {
     Exclusive,

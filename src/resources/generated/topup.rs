@@ -205,7 +205,7 @@ impl<'a> UpdateTopup<'a> {
 }
 
 /// An enum representing the possible values of an `Topup`'s `status` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TopupStatus {
     Canceled,
@@ -245,7 +245,7 @@ impl std::default::Default for TopupStatus {
 }
 
 /// An enum representing the possible values of an `ListTopups`'s `status` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TopupStatusFilter {
     Canceled,

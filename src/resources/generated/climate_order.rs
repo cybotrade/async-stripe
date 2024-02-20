@@ -147,7 +147,7 @@ pub struct ClimateRemovalsLocation {
 }
 
 /// An enum representing the possible values of an `ClimateOrder`'s `cancellation_reason` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum ClimateOrderCancellationReason {
     Expired,
@@ -183,7 +183,7 @@ impl std::default::Default for ClimateOrderCancellationReason {
 }
 
 /// An enum representing the possible values of an `ClimateOrder`'s `status` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum ClimateOrderStatus {
     AwaitingFunds,

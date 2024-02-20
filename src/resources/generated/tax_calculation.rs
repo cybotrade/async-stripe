@@ -186,7 +186,7 @@ pub struct TaxProductResourceTaxRateDetails {
 }
 
 /// An enum representing the possible values of an `TaxProductResourceJurisdiction`'s `level` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TaxProductResourceJurisdictionLevel {
     City,
@@ -226,7 +226,7 @@ impl std::default::Default for TaxProductResourceJurisdictionLevel {
 }
 
 /// An enum representing the possible values of an `TaxProductResourceLineItemTaxBreakdown`'s `sourcing` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TaxProductResourceLineItemTaxBreakdownSourcing {
     Destination,
@@ -260,7 +260,7 @@ impl std::default::Default for TaxProductResourceLineItemTaxBreakdownSourcing {
 }
 
 /// An enum representing the possible values of an `TaxProductResourceLineItemTaxBreakdown`'s `taxability_reason` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TaxProductResourceLineItemTaxBreakdownTaxabilityReason {
     CustomerExempt,
@@ -344,7 +344,7 @@ impl std::default::Default for TaxProductResourceLineItemTaxBreakdownTaxabilityR
 }
 
 /// An enum representing the possible values of an `TaxProductResourceLineItemTaxRateDetails`'s `tax_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TaxProductResourceLineItemTaxRateDetailsTaxType {
     AmusementTax,
@@ -400,7 +400,7 @@ impl std::default::Default for TaxProductResourceLineItemTaxRateDetailsTaxType {
 }
 
 /// An enum representing the possible values of an `TaxProductResourceTaxBreakdown`'s `taxability_reason` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TaxProductResourceTaxBreakdownTaxabilityReason {
     CustomerExempt,
@@ -472,7 +472,7 @@ impl std::default::Default for TaxProductResourceTaxBreakdownTaxabilityReason {
 }
 
 /// An enum representing the possible values of an `TaxProductResourceTaxCalculationShippingCost`'s `tax_behavior` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TaxProductResourceTaxCalculationShippingCostTaxBehavior {
     Exclusive,
@@ -506,7 +506,7 @@ impl std::default::Default for TaxProductResourceTaxCalculationShippingCostTaxBe
 }
 
 /// An enum representing the possible values of an `TaxProductResourceTaxRateDetails`'s `tax_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TaxProductResourceTaxRateDetailsTaxType {
     AmusementTax,

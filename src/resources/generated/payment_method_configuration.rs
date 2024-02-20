@@ -1893,7 +1893,7 @@ pub struct UpdatePaymentMethodConfigurationWechatPayDisplayPreference {
 }
 
 /// An enum representing the possible values of an `CreatePaymentMethodConfigurationAcssDebitDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentMethodConfigurationAcssDebitDisplayPreferencePreference {
     None,
@@ -1929,7 +1929,7 @@ impl std::default::Default for CreatePaymentMethodConfigurationAcssDebitDisplayP
 }
 
 /// An enum representing the possible values of an `CreatePaymentMethodConfigurationAffirmDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentMethodConfigurationAffirmDisplayPreferencePreference {
     None,
@@ -1965,7 +1965,7 @@ impl std::default::Default for CreatePaymentMethodConfigurationAffirmDisplayPref
 }
 
 /// An enum representing the possible values of an `CreatePaymentMethodConfigurationAfterpayClearpayDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentMethodConfigurationAfterpayClearpayDisplayPreferencePreference {
     None,
@@ -2001,7 +2001,7 @@ impl std::default::Default for CreatePaymentMethodConfigurationAfterpayClearpayD
 }
 
 /// An enum representing the possible values of an `CreatePaymentMethodConfigurationAlipayDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentMethodConfigurationAlipayDisplayPreferencePreference {
     None,
@@ -2037,7 +2037,7 @@ impl std::default::Default for CreatePaymentMethodConfigurationAlipayDisplayPref
 }
 
 /// An enum representing the possible values of an `CreatePaymentMethodConfigurationApplePayDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentMethodConfigurationApplePayDisplayPreferencePreference {
     None,
@@ -2073,7 +2073,7 @@ impl std::default::Default for CreatePaymentMethodConfigurationApplePayDisplayPr
 }
 
 /// An enum representing the possible values of an `CreatePaymentMethodConfigurationApplePayLaterDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentMethodConfigurationApplePayLaterDisplayPreferencePreference {
     None,
@@ -2109,7 +2109,7 @@ impl std::default::Default for CreatePaymentMethodConfigurationApplePayLaterDisp
 }
 
 /// An enum representing the possible values of an `CreatePaymentMethodConfigurationAuBecsDebitDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentMethodConfigurationAuBecsDebitDisplayPreferencePreference {
     None,
@@ -2145,7 +2145,7 @@ impl std::default::Default for CreatePaymentMethodConfigurationAuBecsDebitDispla
 }
 
 /// An enum representing the possible values of an `CreatePaymentMethodConfigurationBacsDebitDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentMethodConfigurationBacsDebitDisplayPreferencePreference {
     None,
@@ -2181,7 +2181,7 @@ impl std::default::Default for CreatePaymentMethodConfigurationBacsDebitDisplayP
 }
 
 /// An enum representing the possible values of an `CreatePaymentMethodConfigurationBancontactDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentMethodConfigurationBancontactDisplayPreferencePreference {
     None,
@@ -2217,7 +2217,7 @@ impl std::default::Default for CreatePaymentMethodConfigurationBancontactDisplay
 }
 
 /// An enum representing the possible values of an `CreatePaymentMethodConfigurationBlikDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentMethodConfigurationBlikDisplayPreferencePreference {
     None,
@@ -2253,7 +2253,7 @@ impl std::default::Default for CreatePaymentMethodConfigurationBlikDisplayPrefer
 }
 
 /// An enum representing the possible values of an `CreatePaymentMethodConfigurationBoletoDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentMethodConfigurationBoletoDisplayPreferencePreference {
     None,
@@ -2289,7 +2289,7 @@ impl std::default::Default for CreatePaymentMethodConfigurationBoletoDisplayPref
 }
 
 /// An enum representing the possible values of an `CreatePaymentMethodConfigurationCartesBancairesDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentMethodConfigurationCartesBancairesDisplayPreferencePreference {
     None,
@@ -2325,7 +2325,7 @@ impl std::default::Default for CreatePaymentMethodConfigurationCartesBancairesDi
 }
 
 /// An enum representing the possible values of an `CreatePaymentMethodConfigurationCashappDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentMethodConfigurationCashappDisplayPreferencePreference {
     None,
@@ -2361,7 +2361,7 @@ impl std::default::Default for CreatePaymentMethodConfigurationCashappDisplayPre
 }
 
 /// An enum representing the possible values of an `CreatePaymentMethodConfigurationCustomerBalanceDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentMethodConfigurationCustomerBalanceDisplayPreferencePreference {
     None,
@@ -2397,7 +2397,7 @@ impl std::default::Default for CreatePaymentMethodConfigurationCustomerBalanceDi
 }
 
 /// An enum representing the possible values of an `CreatePaymentMethodConfigurationEpsDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentMethodConfigurationEpsDisplayPreferencePreference {
     None,
@@ -2433,7 +2433,7 @@ impl std::default::Default for CreatePaymentMethodConfigurationEpsDisplayPrefere
 }
 
 /// An enum representing the possible values of an `CreatePaymentMethodConfigurationFpxDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentMethodConfigurationFpxDisplayPreferencePreference {
     None,
@@ -2469,7 +2469,7 @@ impl std::default::Default for CreatePaymentMethodConfigurationFpxDisplayPrefere
 }
 
 /// An enum representing the possible values of an `CreatePaymentMethodConfigurationGiropayDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentMethodConfigurationGiropayDisplayPreferencePreference {
     None,
@@ -2505,7 +2505,7 @@ impl std::default::Default for CreatePaymentMethodConfigurationGiropayDisplayPre
 }
 
 /// An enum representing the possible values of an `CreatePaymentMethodConfigurationGooglePayDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentMethodConfigurationGooglePayDisplayPreferencePreference {
     None,
@@ -2541,7 +2541,7 @@ impl std::default::Default for CreatePaymentMethodConfigurationGooglePayDisplayP
 }
 
 /// An enum representing the possible values of an `CreatePaymentMethodConfigurationGrabpayDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentMethodConfigurationGrabpayDisplayPreferencePreference {
     None,
@@ -2577,7 +2577,7 @@ impl std::default::Default for CreatePaymentMethodConfigurationGrabpayDisplayPre
 }
 
 /// An enum representing the possible values of an `CreatePaymentMethodConfigurationIdealDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentMethodConfigurationIdealDisplayPreferencePreference {
     None,
@@ -2613,7 +2613,7 @@ impl std::default::Default for CreatePaymentMethodConfigurationIdealDisplayPrefe
 }
 
 /// An enum representing the possible values of an `CreatePaymentMethodConfigurationJcbDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentMethodConfigurationJcbDisplayPreferencePreference {
     None,
@@ -2649,7 +2649,7 @@ impl std::default::Default for CreatePaymentMethodConfigurationJcbDisplayPrefere
 }
 
 /// An enum representing the possible values of an `CreatePaymentMethodConfigurationKlarnaDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentMethodConfigurationKlarnaDisplayPreferencePreference {
     None,
@@ -2685,7 +2685,7 @@ impl std::default::Default for CreatePaymentMethodConfigurationKlarnaDisplayPref
 }
 
 /// An enum representing the possible values of an `CreatePaymentMethodConfigurationKonbiniDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentMethodConfigurationKonbiniDisplayPreferencePreference {
     None,
@@ -2721,7 +2721,7 @@ impl std::default::Default for CreatePaymentMethodConfigurationKonbiniDisplayPre
 }
 
 /// An enum representing the possible values of an `CreatePaymentMethodConfigurationLinkDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentMethodConfigurationLinkDisplayPreferencePreference {
     None,
@@ -2757,7 +2757,7 @@ impl std::default::Default for CreatePaymentMethodConfigurationLinkDisplayPrefer
 }
 
 /// An enum representing the possible values of an `CreatePaymentMethodConfigurationOxxoDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentMethodConfigurationOxxoDisplayPreferencePreference {
     None,
@@ -2793,7 +2793,7 @@ impl std::default::Default for CreatePaymentMethodConfigurationOxxoDisplayPrefer
 }
 
 /// An enum representing the possible values of an `CreatePaymentMethodConfigurationP24DisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentMethodConfigurationP24DisplayPreferencePreference {
     None,
@@ -2829,7 +2829,7 @@ impl std::default::Default for CreatePaymentMethodConfigurationP24DisplayPrefere
 }
 
 /// An enum representing the possible values of an `CreatePaymentMethodConfigurationPaynowDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentMethodConfigurationPaynowDisplayPreferencePreference {
     None,
@@ -2865,7 +2865,7 @@ impl std::default::Default for CreatePaymentMethodConfigurationPaynowDisplayPref
 }
 
 /// An enum representing the possible values of an `CreatePaymentMethodConfigurationPaypalDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentMethodConfigurationPaypalDisplayPreferencePreference {
     None,
@@ -2901,7 +2901,7 @@ impl std::default::Default for CreatePaymentMethodConfigurationPaypalDisplayPref
 }
 
 /// An enum representing the possible values of an `CreatePaymentMethodConfigurationPromptpayDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentMethodConfigurationPromptpayDisplayPreferencePreference {
     None,
@@ -2937,7 +2937,7 @@ impl std::default::Default for CreatePaymentMethodConfigurationPromptpayDisplayP
 }
 
 /// An enum representing the possible values of an `CreatePaymentMethodConfigurationRevolutPayDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentMethodConfigurationRevolutPayDisplayPreferencePreference {
     None,
@@ -2973,7 +2973,7 @@ impl std::default::Default for CreatePaymentMethodConfigurationRevolutPayDisplay
 }
 
 /// An enum representing the possible values of an `CreatePaymentMethodConfigurationSepaDebitDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentMethodConfigurationSepaDebitDisplayPreferencePreference {
     None,
@@ -3009,7 +3009,7 @@ impl std::default::Default for CreatePaymentMethodConfigurationSepaDebitDisplayP
 }
 
 /// An enum representing the possible values of an `CreatePaymentMethodConfigurationSofortDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentMethodConfigurationSofortDisplayPreferencePreference {
     None,
@@ -3045,7 +3045,7 @@ impl std::default::Default for CreatePaymentMethodConfigurationSofortDisplayPref
 }
 
 /// An enum representing the possible values of an `CreatePaymentMethodConfigurationUsBankAccountDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentMethodConfigurationUsBankAccountDisplayPreferencePreference {
     None,
@@ -3081,7 +3081,7 @@ impl std::default::Default for CreatePaymentMethodConfigurationUsBankAccountDisp
 }
 
 /// An enum representing the possible values of an `CreatePaymentMethodConfigurationWechatPayDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentMethodConfigurationWechatPayDisplayPreferencePreference {
     None,
@@ -3117,7 +3117,7 @@ impl std::default::Default for CreatePaymentMethodConfigurationWechatPayDisplayP
 }
 
 /// An enum representing the possible values of an `PaymentMethodConfigResourceDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodConfigResourceDisplayPreferencePreference {
     None,
@@ -3153,7 +3153,7 @@ impl std::default::Default for PaymentMethodConfigResourceDisplayPreferencePrefe
 }
 
 /// An enum representing the possible values of an `PaymentMethodConfigResourceDisplayPreference`'s `value` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodConfigResourceDisplayPreferenceValue {
     Off,
@@ -3187,7 +3187,7 @@ impl std::default::Default for PaymentMethodConfigResourceDisplayPreferenceValue
 }
 
 /// An enum representing the possible values of an `UpdatePaymentMethodConfigurationAcssDebitDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentMethodConfigurationAcssDebitDisplayPreferencePreference {
     None,
@@ -3223,7 +3223,7 @@ impl std::default::Default for UpdatePaymentMethodConfigurationAcssDebitDisplayP
 }
 
 /// An enum representing the possible values of an `UpdatePaymentMethodConfigurationAffirmDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentMethodConfigurationAffirmDisplayPreferencePreference {
     None,
@@ -3259,7 +3259,7 @@ impl std::default::Default for UpdatePaymentMethodConfigurationAffirmDisplayPref
 }
 
 /// An enum representing the possible values of an `UpdatePaymentMethodConfigurationAfterpayClearpayDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentMethodConfigurationAfterpayClearpayDisplayPreferencePreference {
     None,
@@ -3295,7 +3295,7 @@ impl std::default::Default for UpdatePaymentMethodConfigurationAfterpayClearpayD
 }
 
 /// An enum representing the possible values of an `UpdatePaymentMethodConfigurationAlipayDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentMethodConfigurationAlipayDisplayPreferencePreference {
     None,
@@ -3331,7 +3331,7 @@ impl std::default::Default for UpdatePaymentMethodConfigurationAlipayDisplayPref
 }
 
 /// An enum representing the possible values of an `UpdatePaymentMethodConfigurationApplePayDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentMethodConfigurationApplePayDisplayPreferencePreference {
     None,
@@ -3367,7 +3367,7 @@ impl std::default::Default for UpdatePaymentMethodConfigurationApplePayDisplayPr
 }
 
 /// An enum representing the possible values of an `UpdatePaymentMethodConfigurationApplePayLaterDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentMethodConfigurationApplePayLaterDisplayPreferencePreference {
     None,
@@ -3403,7 +3403,7 @@ impl std::default::Default for UpdatePaymentMethodConfigurationApplePayLaterDisp
 }
 
 /// An enum representing the possible values of an `UpdatePaymentMethodConfigurationAuBecsDebitDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentMethodConfigurationAuBecsDebitDisplayPreferencePreference {
     None,
@@ -3439,7 +3439,7 @@ impl std::default::Default for UpdatePaymentMethodConfigurationAuBecsDebitDispla
 }
 
 /// An enum representing the possible values of an `UpdatePaymentMethodConfigurationBacsDebitDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentMethodConfigurationBacsDebitDisplayPreferencePreference {
     None,
@@ -3475,7 +3475,7 @@ impl std::default::Default for UpdatePaymentMethodConfigurationBacsDebitDisplayP
 }
 
 /// An enum representing the possible values of an `UpdatePaymentMethodConfigurationBancontactDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentMethodConfigurationBancontactDisplayPreferencePreference {
     None,
@@ -3511,7 +3511,7 @@ impl std::default::Default for UpdatePaymentMethodConfigurationBancontactDisplay
 }
 
 /// An enum representing the possible values of an `UpdatePaymentMethodConfigurationBlikDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentMethodConfigurationBlikDisplayPreferencePreference {
     None,
@@ -3547,7 +3547,7 @@ impl std::default::Default for UpdatePaymentMethodConfigurationBlikDisplayPrefer
 }
 
 /// An enum representing the possible values of an `UpdatePaymentMethodConfigurationBoletoDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentMethodConfigurationBoletoDisplayPreferencePreference {
     None,
@@ -3583,7 +3583,7 @@ impl std::default::Default for UpdatePaymentMethodConfigurationBoletoDisplayPref
 }
 
 /// An enum representing the possible values of an `UpdatePaymentMethodConfigurationCartesBancairesDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentMethodConfigurationCartesBancairesDisplayPreferencePreference {
     None,
@@ -3619,7 +3619,7 @@ impl std::default::Default for UpdatePaymentMethodConfigurationCartesBancairesDi
 }
 
 /// An enum representing the possible values of an `UpdatePaymentMethodConfigurationCashappDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentMethodConfigurationCashappDisplayPreferencePreference {
     None,
@@ -3655,7 +3655,7 @@ impl std::default::Default for UpdatePaymentMethodConfigurationCashappDisplayPre
 }
 
 /// An enum representing the possible values of an `UpdatePaymentMethodConfigurationCustomerBalanceDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentMethodConfigurationCustomerBalanceDisplayPreferencePreference {
     None,
@@ -3691,7 +3691,7 @@ impl std::default::Default for UpdatePaymentMethodConfigurationCustomerBalanceDi
 }
 
 /// An enum representing the possible values of an `UpdatePaymentMethodConfigurationEpsDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentMethodConfigurationEpsDisplayPreferencePreference {
     None,
@@ -3727,7 +3727,7 @@ impl std::default::Default for UpdatePaymentMethodConfigurationEpsDisplayPrefere
 }
 
 /// An enum representing the possible values of an `UpdatePaymentMethodConfigurationFpxDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentMethodConfigurationFpxDisplayPreferencePreference {
     None,
@@ -3763,7 +3763,7 @@ impl std::default::Default for UpdatePaymentMethodConfigurationFpxDisplayPrefere
 }
 
 /// An enum representing the possible values of an `UpdatePaymentMethodConfigurationGiropayDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentMethodConfigurationGiropayDisplayPreferencePreference {
     None,
@@ -3799,7 +3799,7 @@ impl std::default::Default for UpdatePaymentMethodConfigurationGiropayDisplayPre
 }
 
 /// An enum representing the possible values of an `UpdatePaymentMethodConfigurationGooglePayDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentMethodConfigurationGooglePayDisplayPreferencePreference {
     None,
@@ -3835,7 +3835,7 @@ impl std::default::Default for UpdatePaymentMethodConfigurationGooglePayDisplayP
 }
 
 /// An enum representing the possible values of an `UpdatePaymentMethodConfigurationGrabpayDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentMethodConfigurationGrabpayDisplayPreferencePreference {
     None,
@@ -3871,7 +3871,7 @@ impl std::default::Default for UpdatePaymentMethodConfigurationGrabpayDisplayPre
 }
 
 /// An enum representing the possible values of an `UpdatePaymentMethodConfigurationIdealDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentMethodConfigurationIdealDisplayPreferencePreference {
     None,
@@ -3907,7 +3907,7 @@ impl std::default::Default for UpdatePaymentMethodConfigurationIdealDisplayPrefe
 }
 
 /// An enum representing the possible values of an `UpdatePaymentMethodConfigurationJcbDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentMethodConfigurationJcbDisplayPreferencePreference {
     None,
@@ -3943,7 +3943,7 @@ impl std::default::Default for UpdatePaymentMethodConfigurationJcbDisplayPrefere
 }
 
 /// An enum representing the possible values of an `UpdatePaymentMethodConfigurationKlarnaDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentMethodConfigurationKlarnaDisplayPreferencePreference {
     None,
@@ -3979,7 +3979,7 @@ impl std::default::Default for UpdatePaymentMethodConfigurationKlarnaDisplayPref
 }
 
 /// An enum representing the possible values of an `UpdatePaymentMethodConfigurationKonbiniDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentMethodConfigurationKonbiniDisplayPreferencePreference {
     None,
@@ -4015,7 +4015,7 @@ impl std::default::Default for UpdatePaymentMethodConfigurationKonbiniDisplayPre
 }
 
 /// An enum representing the possible values of an `UpdatePaymentMethodConfigurationLinkDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentMethodConfigurationLinkDisplayPreferencePreference {
     None,
@@ -4051,7 +4051,7 @@ impl std::default::Default for UpdatePaymentMethodConfigurationLinkDisplayPrefer
 }
 
 /// An enum representing the possible values of an `UpdatePaymentMethodConfigurationOxxoDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentMethodConfigurationOxxoDisplayPreferencePreference {
     None,
@@ -4087,7 +4087,7 @@ impl std::default::Default for UpdatePaymentMethodConfigurationOxxoDisplayPrefer
 }
 
 /// An enum representing the possible values of an `UpdatePaymentMethodConfigurationP24DisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentMethodConfigurationP24DisplayPreferencePreference {
     None,
@@ -4123,7 +4123,7 @@ impl std::default::Default for UpdatePaymentMethodConfigurationP24DisplayPrefere
 }
 
 /// An enum representing the possible values of an `UpdatePaymentMethodConfigurationPaynowDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentMethodConfigurationPaynowDisplayPreferencePreference {
     None,
@@ -4159,7 +4159,7 @@ impl std::default::Default for UpdatePaymentMethodConfigurationPaynowDisplayPref
 }
 
 /// An enum representing the possible values of an `UpdatePaymentMethodConfigurationPaypalDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentMethodConfigurationPaypalDisplayPreferencePreference {
     None,
@@ -4195,7 +4195,7 @@ impl std::default::Default for UpdatePaymentMethodConfigurationPaypalDisplayPref
 }
 
 /// An enum representing the possible values of an `UpdatePaymentMethodConfigurationPromptpayDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentMethodConfigurationPromptpayDisplayPreferencePreference {
     None,
@@ -4231,7 +4231,7 @@ impl std::default::Default for UpdatePaymentMethodConfigurationPromptpayDisplayP
 }
 
 /// An enum representing the possible values of an `UpdatePaymentMethodConfigurationRevolutPayDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentMethodConfigurationRevolutPayDisplayPreferencePreference {
     None,
@@ -4267,7 +4267,7 @@ impl std::default::Default for UpdatePaymentMethodConfigurationRevolutPayDisplay
 }
 
 /// An enum representing the possible values of an `UpdatePaymentMethodConfigurationSepaDebitDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentMethodConfigurationSepaDebitDisplayPreferencePreference {
     None,
@@ -4303,7 +4303,7 @@ impl std::default::Default for UpdatePaymentMethodConfigurationSepaDebitDisplayP
 }
 
 /// An enum representing the possible values of an `UpdatePaymentMethodConfigurationSofortDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentMethodConfigurationSofortDisplayPreferencePreference {
     None,
@@ -4339,7 +4339,7 @@ impl std::default::Default for UpdatePaymentMethodConfigurationSofortDisplayPref
 }
 
 /// An enum representing the possible values of an `UpdatePaymentMethodConfigurationUsBankAccountDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentMethodConfigurationUsBankAccountDisplayPreferencePreference {
     None,
@@ -4375,7 +4375,7 @@ impl std::default::Default for UpdatePaymentMethodConfigurationUsBankAccountDisp
 }
 
 /// An enum representing the possible values of an `UpdatePaymentMethodConfigurationWechatPayDisplayPreference`'s `preference` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentMethodConfigurationWechatPayDisplayPreferencePreference {
     None,

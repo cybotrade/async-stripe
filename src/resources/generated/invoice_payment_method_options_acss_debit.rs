@@ -22,7 +22,7 @@ pub struct InvoicePaymentMethodOptionsAcssDebitMandateOptions {
 }
 
 /// An enum representing the possible values of an `InvoicePaymentMethodOptionsAcssDebitMandateOptions`'s `transaction_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum InvoicePaymentMethodOptionsAcssDebitMandateOptionsTransactionType {
     Business,
@@ -60,7 +60,7 @@ impl std::default::Default for InvoicePaymentMethodOptionsAcssDebitMandateOption
 }
 
 /// An enum representing the possible values of an `InvoicePaymentMethodOptionsAcssDebit`'s `verification_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum InvoicePaymentMethodOptionsAcssDebitVerificationMethod {
     Automatic,

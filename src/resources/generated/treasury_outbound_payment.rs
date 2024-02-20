@@ -194,7 +194,7 @@ pub struct TreasuryOutboundPaymentsResourceReturnedStatus {
 }
 
 /// An enum representing the possible values of an `OutboundPaymentsPaymentMethodDetailsFinancialAccount`'s `network` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum OutboundPaymentsPaymentMethodDetailsFinancialAccountNetwork {
     Stripe,
@@ -226,7 +226,7 @@ impl std::default::Default for OutboundPaymentsPaymentMethodDetailsFinancialAcco
 }
 
 /// An enum representing the possible values of an `OutboundPaymentsPaymentMethodDetails`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum OutboundPaymentsPaymentMethodDetailsType {
     FinancialAccount,
@@ -260,7 +260,7 @@ impl std::default::Default for OutboundPaymentsPaymentMethodDetailsType {
 }
 
 /// An enum representing the possible values of an `OutboundPaymentsPaymentMethodDetailsUsBankAccount`'s `account_holder_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum OutboundPaymentsPaymentMethodDetailsUsBankAccountAccountHolderType {
     Company,
@@ -294,7 +294,7 @@ impl std::default::Default for OutboundPaymentsPaymentMethodDetailsUsBankAccount
 }
 
 /// An enum representing the possible values of an `OutboundPaymentsPaymentMethodDetailsUsBankAccount`'s `account_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum OutboundPaymentsPaymentMethodDetailsUsBankAccountAccountType {
     Checking,
@@ -328,7 +328,7 @@ impl std::default::Default for OutboundPaymentsPaymentMethodDetailsUsBankAccount
 }
 
 /// An enum representing the possible values of an `OutboundPaymentsPaymentMethodDetailsUsBankAccount`'s `network` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork {
     Ach,
@@ -362,7 +362,7 @@ impl std::default::Default for OutboundPaymentsPaymentMethodDetailsUsBankAccount
 }
 
 /// An enum representing the possible values of an `TreasuryOutboundPayment`'s `status` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TreasuryOutboundPaymentStatus {
     Canceled,
@@ -402,7 +402,7 @@ impl std::default::Default for TreasuryOutboundPaymentStatus {
 }
 
 /// An enum representing the possible values of an `TreasuryOutboundPaymentsResourceReturnedStatus`'s `code` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TreasuryOutboundPaymentsResourceReturnedStatusCode {
     AccountClosed,

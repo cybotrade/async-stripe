@@ -103,7 +103,7 @@ pub struct TreasuryReceivedDebitsResourceReversalDetails {
 }
 
 /// An enum representing the possible values of an `TreasuryReceivedDebit`'s `failure_code` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TreasuryReceivedDebitFailureCode {
     AccountClosed,
@@ -141,7 +141,7 @@ impl std::default::Default for TreasuryReceivedDebitFailureCode {
 }
 
 /// An enum representing the possible values of an `TreasuryReceivedDebit`'s `network` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TreasuryReceivedDebitNetwork {
     Ach,
@@ -177,7 +177,7 @@ impl std::default::Default for TreasuryReceivedDebitNetwork {
 }
 
 /// An enum representing the possible values of an `TreasuryReceivedDebit`'s `status` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TreasuryReceivedDebitStatus {
     Failed,
@@ -211,7 +211,7 @@ impl std::default::Default for TreasuryReceivedDebitStatus {
 }
 
 /// An enum representing the possible values of an `TreasuryReceivedDebitsResourceReversalDetails`'s `restricted_reason` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TreasuryReceivedDebitsResourceReversalDetailsRestrictedReason {
     AlreadyReversed,

@@ -13,7 +13,7 @@ pub struct PaymentMethodOptionsUsBankAccountMandateOptions {
 }
 
 /// An enum representing the possible values of an `PaymentMethodOptionsUsBankAccountMandateOptions`'s `collection_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod {
     Paper,

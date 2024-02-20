@@ -60,7 +60,7 @@ pub struct ClimateRemovalsLocation {
 }
 
 /// An enum representing the possible values of an `ClimateSupplier`'s `removal_pathway` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum ClimateSupplierRemovalPathway {
     BiomassCarbonRemovalAndStorage,

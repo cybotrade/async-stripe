@@ -239,7 +239,7 @@ pub struct ListTaxIdsOwner {
 }
 
 /// An enum representing the possible values of an `CreateTaxIdOwner`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateTaxIdOwnerType {
     Account,
@@ -277,7 +277,7 @@ impl std::default::Default for CreateTaxIdOwnerType {
 }
 
 /// An enum representing the possible values of an `ListTaxIdsOwner`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum ListTaxIdsOwnerType {
     Account,
@@ -315,7 +315,7 @@ impl std::default::Default for ListTaxIdsOwnerType {
 }
 
 /// An enum representing the possible values of an `TaxIDsOwner`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TaxIDsOwnerType {
     Account,
@@ -353,7 +353,7 @@ impl std::default::Default for TaxIDsOwnerType {
 }
 
 /// An enum representing the possible values of an `TaxId`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TaxIdType {
     AdNrt,
@@ -517,7 +517,7 @@ impl std::default::Default for TaxIdType {
 }
 
 /// An enum representing the possible values of an `CreateTaxId`'s `type_` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TaxIdTypeFilter {
     AdNrt,
@@ -679,7 +679,7 @@ impl std::default::Default for TaxIdTypeFilter {
 }
 
 /// An enum representing the possible values of an `TaxIdVerification`'s `status` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TaxIdVerificationStatus {
     Pending,

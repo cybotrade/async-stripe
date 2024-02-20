@@ -1750,7 +1750,7 @@ pub struct UpdatePaymentLinkSubscriptionDataTrialSettingsEndBehavior {
 }
 
 /// An enum representing the possible values of an `CreatePaymentLinkAfterCompletion`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentLinkAfterCompletionType {
     HostedConfirmation,
@@ -1784,7 +1784,7 @@ impl std::default::Default for CreatePaymentLinkAfterCompletionType {
 }
 
 /// An enum representing the possible values of an `CreatePaymentLinkAutomaticTaxLiability`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentLinkAutomaticTaxLiabilityType {
     Account,
@@ -1819,7 +1819,7 @@ impl std::default::Default for CreatePaymentLinkAutomaticTaxLiabilityType {
 }
 
 /// An enum representing the possible values of an `CreatePaymentLinkConsentCollectionPaymentMethodReuseAgreement`'s `position` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentLinkConsentCollectionPaymentMethodReuseAgreementPosition {
     Auto,
@@ -1857,7 +1857,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `CreatePaymentLinkConsentCollection`'s `promotions` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentLinkConsentCollectionPromotions {
     Auto,
@@ -1891,7 +1891,7 @@ impl std::default::Default for CreatePaymentLinkConsentCollectionPromotions {
 }
 
 /// An enum representing the possible values of an `CreatePaymentLinkConsentCollection`'s `terms_of_service` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentLinkConsentCollectionTermsOfService {
     None,
@@ -1925,7 +1925,7 @@ impl std::default::Default for CreatePaymentLinkConsentCollectionTermsOfService 
 }
 
 /// An enum representing the possible values of an `CreatePaymentLinkCustomFieldsLabel`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentLinkCustomFieldsLabelType {
     Custom,
@@ -1957,7 +1957,7 @@ impl std::default::Default for CreatePaymentLinkCustomFieldsLabelType {
 }
 
 /// An enum representing the possible values of an `CreatePaymentLinkCustomFields`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentLinkCustomFieldsType {
     Dropdown,
@@ -1993,7 +1993,7 @@ impl std::default::Default for CreatePaymentLinkCustomFieldsType {
 }
 
 /// An enum representing the possible values of an `CreatePaymentLinkInvoiceCreationInvoiceDataIssuer`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentLinkInvoiceCreationInvoiceDataIssuerType {
     Account,
@@ -2028,7 +2028,7 @@ impl std::default::Default for CreatePaymentLinkInvoiceCreationInvoiceDataIssuer
 }
 
 /// An enum representing the possible values of an `CreatePaymentLinkInvoiceCreationInvoiceDataRenderingOptions`'s `amount_tax_display` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentLinkInvoiceCreationInvoiceDataRenderingOptionsAmountTaxDisplay {
     ExcludeTax,
@@ -2066,7 +2066,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `CreatePaymentLinkPaymentIntentData`'s `capture_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentLinkPaymentIntentDataCaptureMethod {
     Automatic,
@@ -2102,7 +2102,7 @@ impl std::default::Default for CreatePaymentLinkPaymentIntentDataCaptureMethod {
 }
 
 /// An enum representing the possible values of an `CreatePaymentLinkPaymentIntentData`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentLinkPaymentIntentDataSetupFutureUsage {
     OffSession,
@@ -2136,7 +2136,7 @@ impl std::default::Default for CreatePaymentLinkPaymentIntentDataSetupFutureUsag
 }
 
 /// An enum representing the possible values of an `CreatePaymentLink`'s `payment_method_types` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentLinkPaymentMethodTypes {
     Affirm,
@@ -2224,7 +2224,7 @@ impl std::default::Default for CreatePaymentLinkPaymentMethodTypes {
 }
 
 /// An enum representing the possible values of an `CreatePaymentLinkShippingAddressCollection`'s `allowed_countries` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentLinkShippingAddressCollectionAllowedCountries {
     #[serde(rename = "AC")]
@@ -2965,7 +2965,7 @@ impl std::default::Default for CreatePaymentLinkShippingAddressCollectionAllowed
 }
 
 /// An enum representing the possible values of an `CreatePaymentLinkSubscriptionDataInvoiceSettingsIssuer`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentLinkSubscriptionDataInvoiceSettingsIssuerType {
     Account,
@@ -3000,7 +3000,7 @@ impl std::default::Default for CreatePaymentLinkSubscriptionDataInvoiceSettingsI
 }
 
 /// An enum representing the possible values of an `CreatePaymentLinkSubscriptionDataTrialSettingsEndBehavior`'s `missing_payment_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentLinkSubscriptionDataTrialSettingsEndBehaviorMissingPaymentMethod {
     Cancel,
@@ -3040,7 +3040,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `PaymentLink`'s `billing_address_collection` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentLinkBillingAddressCollection {
     Auto,
@@ -3074,7 +3074,7 @@ impl std::default::Default for PaymentLinkBillingAddressCollection {
 }
 
 /// An enum representing the possible values of an `PaymentLink`'s `customer_creation` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentLinkCustomerCreation {
     Always,
@@ -3108,7 +3108,7 @@ impl std::default::Default for PaymentLinkCustomerCreation {
 }
 
 /// An enum representing the possible values of an `PaymentLink`'s `payment_method_collection` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentLinkPaymentMethodCollection {
     Always,
@@ -3142,7 +3142,7 @@ impl std::default::Default for PaymentLinkPaymentMethodCollection {
 }
 
 /// An enum representing the possible values of an `PaymentLink`'s `payment_method_types` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentLinkPaymentMethodTypes {
     Affirm,
@@ -3230,7 +3230,7 @@ impl std::default::Default for PaymentLinkPaymentMethodTypes {
 }
 
 /// An enum representing the possible values of an `PaymentLink`'s `submit_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentLinkSubmitType {
     Auto,
@@ -3268,7 +3268,7 @@ impl std::default::Default for PaymentLinkSubmitType {
 }
 
 /// An enum representing the possible values of an `PaymentLinksResourceAfterCompletion`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentLinksResourceAfterCompletionType {
     HostedConfirmation,
@@ -3302,7 +3302,7 @@ impl std::default::Default for PaymentLinksResourceAfterCompletionType {
 }
 
 /// An enum representing the possible values of an `PaymentLinksResourceConsentCollection`'s `promotions` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentLinksResourceConsentCollectionPromotions {
     Auto,
@@ -3336,7 +3336,7 @@ impl std::default::Default for PaymentLinksResourceConsentCollectionPromotions {
 }
 
 /// An enum representing the possible values of an `PaymentLinksResourceConsentCollection`'s `terms_of_service` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentLinksResourceConsentCollectionTermsOfService {
     None,
@@ -3370,7 +3370,7 @@ impl std::default::Default for PaymentLinksResourceConsentCollectionTermsOfServi
 }
 
 /// An enum representing the possible values of an `PaymentLinksResourceCustomFieldsLabel`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentLinksResourceCustomFieldsLabelType {
     Custom,
@@ -3402,7 +3402,7 @@ impl std::default::Default for PaymentLinksResourceCustomFieldsLabelType {
 }
 
 /// An enum representing the possible values of an `PaymentLinksResourceCustomFields`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentLinksResourceCustomFieldsType {
     Dropdown,
@@ -3438,7 +3438,7 @@ impl std::default::Default for PaymentLinksResourceCustomFieldsType {
 }
 
 /// An enum representing the possible values of an `PaymentLinksResourcePaymentIntentData`'s `capture_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentLinksResourcePaymentIntentDataCaptureMethod {
     Automatic,
@@ -3474,7 +3474,7 @@ impl std::default::Default for PaymentLinksResourcePaymentIntentDataCaptureMetho
 }
 
 /// An enum representing the possible values of an `PaymentLinksResourcePaymentIntentData`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentLinksResourcePaymentIntentDataSetupFutureUsage {
     OffSession,
@@ -3508,7 +3508,7 @@ impl std::default::Default for PaymentLinksResourcePaymentIntentDataSetupFutureU
 }
 
 /// An enum representing the possible values of an `PaymentLinksResourcePaymentMethodReuseAgreement`'s `position` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentLinksResourcePaymentMethodReuseAgreementPosition {
     Auto,
@@ -3542,7 +3542,7 @@ impl std::default::Default for PaymentLinksResourcePaymentMethodReuseAgreementPo
 }
 
 /// An enum representing the possible values of an `PaymentLinksResourceShippingAddressCollection`'s `allowed_countries` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentLinksResourceShippingAddressCollectionAllowedCountries {
     #[serde(rename = "AC")]
@@ -4283,7 +4283,7 @@ impl std::default::Default for PaymentLinksResourceShippingAddressCollectionAllo
 }
 
 /// An enum representing the possible values of an `UpdatePaymentLinkAfterCompletion`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentLinkAfterCompletionType {
     HostedConfirmation,
@@ -4317,7 +4317,7 @@ impl std::default::Default for UpdatePaymentLinkAfterCompletionType {
 }
 
 /// An enum representing the possible values of an `UpdatePaymentLinkAutomaticTaxLiability`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentLinkAutomaticTaxLiabilityType {
     Account,
@@ -4352,7 +4352,7 @@ impl std::default::Default for UpdatePaymentLinkAutomaticTaxLiabilityType {
 }
 
 /// An enum representing the possible values of an `UpdatePaymentLinkCustomFieldsLabel`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentLinkCustomFieldsLabelType {
     Custom,
@@ -4384,7 +4384,7 @@ impl std::default::Default for UpdatePaymentLinkCustomFieldsLabelType {
 }
 
 /// An enum representing the possible values of an `UpdatePaymentLinkCustomFields`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentLinkCustomFieldsType {
     Dropdown,
@@ -4420,7 +4420,7 @@ impl std::default::Default for UpdatePaymentLinkCustomFieldsType {
 }
 
 /// An enum representing the possible values of an `UpdatePaymentLinkInvoiceCreationInvoiceDataIssuer`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentLinkInvoiceCreationInvoiceDataIssuerType {
     Account,
@@ -4455,7 +4455,7 @@ impl std::default::Default for UpdatePaymentLinkInvoiceCreationInvoiceDataIssuer
 }
 
 /// An enum representing the possible values of an `UpdatePaymentLinkInvoiceCreationInvoiceDataRenderingOptions`'s `amount_tax_display` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentLinkInvoiceCreationInvoiceDataRenderingOptionsAmountTaxDisplay {
     ExcludeTax,
@@ -4493,7 +4493,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `UpdatePaymentLink`'s `payment_method_types` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentLinkPaymentMethodTypes {
     Affirm,
@@ -4581,7 +4581,7 @@ impl std::default::Default for UpdatePaymentLinkPaymentMethodTypes {
 }
 
 /// An enum representing the possible values of an `UpdatePaymentLinkShippingAddressCollection`'s `allowed_countries` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentLinkShippingAddressCollectionAllowedCountries {
     #[serde(rename = "AC")]
@@ -5322,7 +5322,7 @@ impl std::default::Default for UpdatePaymentLinkShippingAddressCollectionAllowed
 }
 
 /// An enum representing the possible values of an `UpdatePaymentLinkSubscriptionDataInvoiceSettingsIssuer`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentLinkSubscriptionDataInvoiceSettingsIssuerType {
     Account,
@@ -5357,7 +5357,7 @@ impl std::default::Default for UpdatePaymentLinkSubscriptionDataInvoiceSettingsI
 }
 
 /// An enum representing the possible values of an `UpdatePaymentLinkSubscriptionDataTrialSettingsEndBehavior`'s `missing_payment_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentLinkSubscriptionDataTrialSettingsEndBehaviorMissingPaymentMethod {
     Cancel,

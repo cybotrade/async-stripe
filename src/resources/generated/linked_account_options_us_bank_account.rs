@@ -24,7 +24,7 @@ pub struct LinkedAccountOptionsUsBankAccount {
 }
 
 /// An enum representing the possible values of an `LinkedAccountOptionsUsBankAccount`'s `permissions` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum LinkedAccountOptionsUsBankAccountPermissions {
     Balances,
@@ -62,7 +62,7 @@ impl std::default::Default for LinkedAccountOptionsUsBankAccountPermissions {
 }
 
 /// An enum representing the possible values of an `LinkedAccountOptionsUsBankAccount`'s `prefetch` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum LinkedAccountOptionsUsBankAccountPrefetch {
     Balances,

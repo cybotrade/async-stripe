@@ -1481,7 +1481,7 @@ pub struct CreateInvoicePaymentSettingsPaymentMethodOptionsCustomerBalanceBankTr
 }
 
 /// An enum representing the possible values of an `AutomaticTax`'s `status` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum AutomaticTaxStatus {
     Complete,
@@ -1517,7 +1517,7 @@ impl std::default::Default for AutomaticTaxStatus {
 }
 
 /// An enum representing the possible values of an `Invoice`'s `collection_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CollectionMethod {
     ChargeAutomatically,
@@ -1551,7 +1551,7 @@ impl std::default::Default for CollectionMethod {
 }
 
 /// An enum representing the possible values of an `CreateInvoiceAutomaticTaxLiability`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateInvoiceAutomaticTaxLiabilityType {
     Account,
@@ -1586,7 +1586,7 @@ impl std::default::Default for CreateInvoiceAutomaticTaxLiabilityType {
 }
 
 /// An enum representing the possible values of an `CreateInvoiceFromInvoice`'s `action` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateInvoiceFromInvoiceAction {
     Revision,
@@ -1618,7 +1618,7 @@ impl std::default::Default for CreateInvoiceFromInvoiceAction {
 }
 
 /// An enum representing the possible values of an `CreateInvoiceIssuer`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateInvoiceIssuerType {
     Account,
@@ -1653,7 +1653,7 @@ impl std::default::Default for CreateInvoiceIssuerType {
 }
 
 /// An enum representing the possible values of an `CreateInvoicePaymentSettingsPaymentMethodOptionsAcssDebitMandateOptions`'s `transaction_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateInvoicePaymentSettingsPaymentMethodOptionsAcssDebitMandateOptionsTransactionType {
     Business,
@@ -1693,7 +1693,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `CreateInvoicePaymentSettingsPaymentMethodOptionsAcssDebit`'s `verification_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateInvoicePaymentSettingsPaymentMethodOptionsAcssDebitVerificationMethod {
     Automatic,
@@ -1733,7 +1733,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `CreateInvoicePaymentSettingsPaymentMethodOptionsBancontact`'s `preferred_language` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateInvoicePaymentSettingsPaymentMethodOptionsBancontactPreferredLanguage {
     De,
@@ -1775,7 +1775,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `CreateInvoicePaymentSettingsPaymentMethodOptionsCardInstallmentsPlan`'s `interval` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateInvoicePaymentSettingsPaymentMethodOptionsCardInstallmentsPlanInterval {
     Month,
@@ -1813,7 +1813,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `CreateInvoicePaymentSettingsPaymentMethodOptionsCardInstallmentsPlan`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateInvoicePaymentSettingsPaymentMethodOptionsCardInstallmentsPlanType {
     FixedCount,
@@ -1849,7 +1849,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `CreateInvoicePaymentSettingsPaymentMethodOptionsCard`'s `request_three_d_secure` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateInvoicePaymentSettingsPaymentMethodOptionsCardRequestThreeDSecure {
     Any,
@@ -1891,7 +1891,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `CreateInvoicePaymentSettingsPaymentMethodOptionsUsBankAccountFinancialConnections`'s `permissions` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateInvoicePaymentSettingsPaymentMethodOptionsUsBankAccountFinancialConnectionsPermissions
 {
@@ -1936,7 +1936,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `CreateInvoicePaymentSettingsPaymentMethodOptionsUsBankAccountFinancialConnections`'s `prefetch` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateInvoicePaymentSettingsPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch {
     Balances,
@@ -1976,7 +1976,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `CreateInvoicePaymentSettingsPaymentMethodOptionsUsBankAccount`'s `verification_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateInvoicePaymentSettingsPaymentMethodOptionsUsBankAccountVerificationMethod {
     Automatic,
@@ -2018,7 +2018,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `CreateInvoicePaymentSettings`'s `payment_method_types` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateInvoicePaymentSettingsPaymentMethodTypes {
     AchCreditTransfer,
@@ -2104,7 +2104,7 @@ impl std::default::Default for CreateInvoicePaymentSettingsPaymentMethodTypes {
 }
 
 /// An enum representing the possible values of an `CreateInvoiceRendering`'s `amount_tax_display` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateInvoiceRenderingAmountTaxDisplay {
     ExcludeTax,
@@ -2138,7 +2138,7 @@ impl std::default::Default for CreateInvoiceRenderingAmountTaxDisplay {
 }
 
 /// An enum representing the possible values of an `CreateInvoiceRenderingOptions`'s `amount_tax_display` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateInvoiceRenderingOptionsAmountTaxDisplay {
     ExcludeTax,
@@ -2174,7 +2174,7 @@ impl std::default::Default for CreateInvoiceRenderingOptionsAmountTaxDisplay {
 }
 
 /// An enum representing the possible values of an `CreateInvoiceRenderingPdf`'s `page_size` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateInvoiceRenderingPdfPageSize {
     A4,
@@ -2210,7 +2210,7 @@ impl std::default::Default for CreateInvoiceRenderingPdfPageSize {
 }
 
 /// An enum representing the possible values of an `CreateInvoiceShippingCostShippingRateDataDeliveryEstimateMaximum`'s `unit` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateInvoiceShippingCostShippingRateDataDeliveryEstimateMaximumUnit {
     BusinessDay,
@@ -2254,7 +2254,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `CreateInvoiceShippingCostShippingRateDataDeliveryEstimateMinimum`'s `unit` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateInvoiceShippingCostShippingRateDataDeliveryEstimateMinimumUnit {
     BusinessDay,
@@ -2298,7 +2298,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `CreateInvoiceShippingCostShippingRateDataFixedAmountCurrencyOptions`'s `tax_behavior` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateInvoiceShippingCostShippingRateDataFixedAmountCurrencyOptionsTaxBehavior {
     Exclusive,
@@ -2338,7 +2338,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `CreateInvoiceShippingCostShippingRateData`'s `tax_behavior` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateInvoiceShippingCostShippingRateDataTaxBehavior {
     Exclusive,
@@ -2374,7 +2374,7 @@ impl std::default::Default for CreateInvoiceShippingCostShippingRateDataTaxBehav
 }
 
 /// An enum representing the possible values of an `CreateInvoiceShippingCostShippingRateData`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateInvoiceShippingCostShippingRateDataType {
     FixedAmount,
@@ -2406,7 +2406,7 @@ impl std::default::Default for CreateInvoiceShippingCostShippingRateDataType {
 }
 
 /// An enum representing the possible values of an `Invoice`'s `billing_reason` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum InvoiceBillingReason {
     AutomaticPendingInvoiceItemInvoice,
@@ -2456,7 +2456,7 @@ impl std::default::Default for InvoiceBillingReason {
 }
 
 /// An enum representing the possible values of an `Invoice`'s `customer_tax_exempt` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum InvoiceCustomerTaxExempt {
     Exempt,
@@ -2492,7 +2492,7 @@ impl std::default::Default for InvoiceCustomerTaxExempt {
 }
 
 /// An enum representing the possible values of an `InvoicePaymentMethodOptionsCard`'s `request_three_d_secure` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum InvoicePaymentMethodOptionsCardRequestThreeDSecure {
     Any,
@@ -2528,7 +2528,7 @@ impl std::default::Default for InvoicePaymentMethodOptionsCardRequestThreeDSecur
 }
 
 /// An enum representing the possible values of an `CreateInvoice`'s `pending_invoice_items_behavior` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum InvoicePendingInvoiceItemsBehavior {
     Exclude,
@@ -2564,7 +2564,7 @@ impl std::default::Default for InvoicePendingInvoiceItemsBehavior {
 }
 
 /// An enum representing the possible values of an `InvoiceRenderingPdf`'s `page_size` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum InvoiceRenderingPdfPageSize {
     A4,
@@ -2600,7 +2600,7 @@ impl std::default::Default for InvoiceRenderingPdfPageSize {
 }
 
 /// An enum representing the possible values of an `Invoice`'s `status` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum InvoiceStatus {
     Draft,
@@ -2640,7 +2640,7 @@ impl std::default::Default for InvoiceStatus {
 }
 
 /// An enum representing the possible values of an `InvoicesPaymentSettings`'s `payment_method_types` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum InvoicesPaymentSettingsPaymentMethodTypes {
     AchCreditTransfer,
@@ -2722,7 +2722,7 @@ impl std::default::Default for InvoicesPaymentSettingsPaymentMethodTypes {
 }
 
 /// An enum representing the possible values of an `TaxAmount`'s `taxability_reason` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TaxAmountTaxabilityReason {
     CustomerExempt,
@@ -2782,7 +2782,7 @@ impl std::default::Default for TaxAmountTaxabilityReason {
 }
 
 /// An enum representing the possible values of an `InvoicesResourceInvoiceTaxId`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TaxIdType {
     AdNrt,

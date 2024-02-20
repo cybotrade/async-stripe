@@ -67,7 +67,7 @@ pub struct ApiErrors {
 }
 
 /// An enum representing the possible values of an `ApiErrors`'s `code` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum ApiErrorsCode {
     AccountClosed,
@@ -469,7 +469,7 @@ impl std::default::Default for ApiErrorsCode {
 }
 
 /// An enum representing the possible values of an `ApiErrors`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum ApiErrorsType {
     ApiError,

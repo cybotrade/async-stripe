@@ -128,7 +128,7 @@ pub struct TreasuryReceivedCreditsResourceSourceFlowsDetails {
 }
 
 /// An enum representing the possible values of an `TreasuryReceivedCredit`'s `failure_code` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TreasuryReceivedCreditFailureCode {
     AccountClosed,
@@ -164,7 +164,7 @@ impl std::default::Default for TreasuryReceivedCreditFailureCode {
 }
 
 /// An enum representing the possible values of an `TreasuryReceivedCredit`'s `network` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TreasuryReceivedCreditNetwork {
     Ach,
@@ -202,7 +202,7 @@ impl std::default::Default for TreasuryReceivedCreditNetwork {
 }
 
 /// An enum representing the possible values of an `TreasuryReceivedCredit`'s `status` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TreasuryReceivedCreditStatus {
     Failed,
@@ -236,7 +236,7 @@ impl std::default::Default for TreasuryReceivedCreditStatus {
 }
 
 /// An enum representing the possible values of an `TreasuryReceivedCreditsResourceReversalDetails`'s `restricted_reason` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TreasuryReceivedCreditsResourceReversalDetailsRestrictedReason {
     AlreadyReversed,
@@ -276,7 +276,7 @@ impl std::default::Default for TreasuryReceivedCreditsResourceReversalDetailsRes
 }
 
 /// An enum representing the possible values of an `TreasuryReceivedCreditsResourceSourceFlowsDetails`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TreasuryReceivedCreditsResourceSourceFlowsDetailsType {
     CreditReversal,

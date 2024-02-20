@@ -60,7 +60,7 @@ pub struct TreasurySharedResourceInitiatingPaymentMethodDetailsUsBankAccount {
 }
 
 /// An enum representing the possible values of an `ReceivedPaymentMethodDetailsFinancialAccount`'s `network` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum ReceivedPaymentMethodDetailsFinancialAccountNetwork {
     Stripe,
@@ -92,7 +92,7 @@ impl std::default::Default for ReceivedPaymentMethodDetailsFinancialAccountNetwo
 }
 
 /// An enum representing the possible values of an `TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails`'s `balance` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance {
     Payments,
@@ -124,7 +124,7 @@ impl std::default::Default for TreasurySharedResourceInitiatingPaymentMethodDeta
 }
 
 /// An enum representing the possible values of an `TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType {
     Balance,

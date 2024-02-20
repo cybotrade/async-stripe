@@ -17,7 +17,7 @@ pub struct SubscriptionsTrialsResourceEndBehavior {
 }
 
 /// An enum representing the possible values of an `SubscriptionsTrialsResourceEndBehavior`'s `missing_payment_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum SubscriptionsTrialsResourceEndBehaviorMissingPaymentMethod {
     Cancel,

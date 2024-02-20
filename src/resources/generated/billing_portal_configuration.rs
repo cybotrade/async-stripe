@@ -188,7 +188,7 @@ pub struct PortalSubscriptionUpdateProduct {
 }
 
 /// An enum representing the possible values of an `PortalCustomerUpdate`'s `allowed_updates` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PortalCustomerUpdateAllowedUpdates {
     Address,
@@ -230,7 +230,7 @@ impl std::default::Default for PortalCustomerUpdateAllowedUpdates {
 }
 
 /// An enum representing the possible values of an `PortalSubscriptionCancel`'s `mode` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PortalSubscriptionCancelMode {
     AtPeriodEnd,
@@ -264,7 +264,7 @@ impl std::default::Default for PortalSubscriptionCancelMode {
 }
 
 /// An enum representing the possible values of an `PortalSubscriptionCancel`'s `proration_behavior` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PortalSubscriptionCancelProrationBehavior {
     AlwaysInvoice,
@@ -300,7 +300,7 @@ impl std::default::Default for PortalSubscriptionCancelProrationBehavior {
 }
 
 /// An enum representing the possible values of an `PortalSubscriptionCancellationReason`'s `options` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PortalSubscriptionCancellationReasonOptions {
     CustomerService,
@@ -346,7 +346,7 @@ impl std::default::Default for PortalSubscriptionCancellationReasonOptions {
 }
 
 /// An enum representing the possible values of an `PortalSubscriptionUpdate`'s `default_allowed_updates` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PortalSubscriptionUpdateDefaultAllowedUpdates {
     Price,
@@ -382,7 +382,7 @@ impl std::default::Default for PortalSubscriptionUpdateDefaultAllowedUpdates {
 }
 
 /// An enum representing the possible values of an `PortalSubscriptionUpdate`'s `proration_behavior` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PortalSubscriptionUpdateProrationBehavior {
     AlwaysInvoice,

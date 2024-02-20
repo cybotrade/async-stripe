@@ -146,7 +146,7 @@ pub struct TreasuryFinancialAccountsResourceClosedStatusDetails {
 }
 
 /// An enum representing the possible values of an `TreasuryFinancialAccount`'s `active_features` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TreasuryFinancialAccountActiveFeatures {
     CardIssuing,
@@ -202,7 +202,7 @@ impl std::default::Default for TreasuryFinancialAccountActiveFeatures {
 }
 
 /// An enum representing the possible values of an `TreasuryFinancialAccount`'s `pending_features` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TreasuryFinancialAccountPendingFeatures {
     CardIssuing,
@@ -258,7 +258,7 @@ impl std::default::Default for TreasuryFinancialAccountPendingFeatures {
 }
 
 /// An enum representing the possible values of an `TreasuryFinancialAccount`'s `restricted_features` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TreasuryFinancialAccountRestrictedFeatures {
     CardIssuing,
@@ -314,7 +314,7 @@ impl std::default::Default for TreasuryFinancialAccountRestrictedFeatures {
 }
 
 /// An enum representing the possible values of an `TreasuryFinancialAccount`'s `status` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TreasuryFinancialAccountStatus {
     Closed,
@@ -348,7 +348,7 @@ impl std::default::Default for TreasuryFinancialAccountStatus {
 }
 
 /// An enum representing the possible values of an `TreasuryFinancialAccountsResourceClosedStatusDetails`'s `reasons` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TreasuryFinancialAccountsResourceClosedStatusDetailsReasons {
     AccountRejected,
@@ -384,7 +384,7 @@ impl std::default::Default for TreasuryFinancialAccountsResourceClosedStatusDeta
 }
 
 /// An enum representing the possible values of an `TreasuryFinancialAccountsResourceFinancialAddress`'s `supported_networks` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks {
     Ach,
@@ -418,7 +418,7 @@ impl std::default::Default for TreasuryFinancialAccountsResourceFinancialAddress
 }
 
 /// An enum representing the possible values of an `TreasuryFinancialAccountsResourceFinancialAddress`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TreasuryFinancialAccountsResourceFinancialAddressType {
     Aba,
@@ -450,7 +450,7 @@ impl std::default::Default for TreasuryFinancialAccountsResourceFinancialAddress
 }
 
 /// An enum representing the possible values of an `TreasuryFinancialAccountsResourcePlatformRestrictions`'s `inbound_flows` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows {
     Restricted,
@@ -484,7 +484,7 @@ impl std::default::Default for TreasuryFinancialAccountsResourcePlatformRestrict
 }
 
 /// An enum representing the possible values of an `TreasuryFinancialAccountsResourcePlatformRestrictions`'s `outbound_flows` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows {
     Restricted,

@@ -463,7 +463,7 @@ impl<'a> UpdateRefund<'a> {
 }
 
 /// An enum representing the possible values of an `RefundDestinationDetailsCard`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum RefundDestinationDetailsCardType {
     Pending,
@@ -499,7 +499,7 @@ impl std::default::Default for RefundDestinationDetailsCardType {
 }
 
 /// An enum representing the possible values of an `CreateRefund`'s `origin` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum RefundOrigin {
     CustomerBalance,
@@ -531,7 +531,7 @@ impl std::default::Default for RefundOrigin {
 }
 
 /// An enum representing the possible values of an `Refund`'s `reason` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum RefundReason {
     Duplicate,
@@ -569,7 +569,7 @@ impl std::default::Default for RefundReason {
 }
 
 /// An enum representing the possible values of an `CreateRefund`'s `reason` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum RefundReasonFilter {
     Duplicate,

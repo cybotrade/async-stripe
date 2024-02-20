@@ -1283,7 +1283,7 @@ pub struct UpdateSubscriptionSchedulePhasesItemsPriceDataRecurring {
 }
 
 /// An enum representing the possible values of an `CreateSubscriptionSchedulePhasesAutomaticTaxLiability`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateSubscriptionSchedulePhasesAutomaticTaxLiabilityType {
     Account,
@@ -1318,7 +1318,7 @@ impl std::default::Default for CreateSubscriptionSchedulePhasesAutomaticTaxLiabi
 }
 
 /// An enum representing the possible values of an `CreateSubscriptionSchedulePhases`'s `billing_cycle_anchor` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateSubscriptionSchedulePhasesBillingCycleAnchor {
     Automatic,
@@ -1352,7 +1352,7 @@ impl std::default::Default for CreateSubscriptionSchedulePhasesBillingCycleAncho
 }
 
 /// An enum representing the possible values of an `CreateSubscriptionSchedulePhasesItemsPriceDataRecurring`'s `interval` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateSubscriptionSchedulePhasesItemsPriceDataRecurringInterval {
     Day,
@@ -1390,7 +1390,7 @@ impl std::default::Default for CreateSubscriptionSchedulePhasesItemsPriceDataRec
 }
 
 /// An enum representing the possible values of an `CreateSubscriptionSchedulePhasesItemsPriceData`'s `tax_behavior` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreateSubscriptionSchedulePhasesItemsPriceDataTaxBehavior {
     Exclusive,
@@ -1426,7 +1426,7 @@ impl std::default::Default for CreateSubscriptionSchedulePhasesItemsPriceDataTax
 }
 
 /// An enum representing the possible values of an `InvoiceItemPriceData`'s `tax_behavior` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum InvoiceItemPriceDataTaxBehavior {
     Exclusive,
@@ -1462,7 +1462,7 @@ impl std::default::Default for InvoiceItemPriceDataTaxBehavior {
 }
 
 /// An enum representing the possible values of an `SubscriptionSchedulePhaseConfiguration`'s `proration_behavior` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum SubscriptionProrationBehavior {
     AlwaysInvoice,
@@ -1498,7 +1498,7 @@ impl std::default::Default for SubscriptionProrationBehavior {
 }
 
 /// An enum representing the possible values of an `SubscriptionScheduleDefaultSettings`'s `billing_cycle_anchor` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum SubscriptionScheduleDefaultSettingsBillingCycleAnchor {
     Automatic,
@@ -1532,7 +1532,7 @@ impl std::default::Default for SubscriptionScheduleDefaultSettingsBillingCycleAn
 }
 
 /// An enum representing the possible values of an `SubscriptionScheduleDefaultSettings`'s `collection_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum SubscriptionScheduleDefaultSettingsCollectionMethod {
     ChargeAutomatically,
@@ -1568,7 +1568,7 @@ impl std::default::Default for SubscriptionScheduleDefaultSettingsCollectionMeth
 }
 
 /// An enum representing the possible values of an `SubscriptionScheduleDefaultSettingsParamsAutomaticTaxLiability`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum SubscriptionScheduleDefaultSettingsParamsAutomaticTaxLiabilityType {
     Account,
@@ -1605,7 +1605,7 @@ impl std::default::Default for SubscriptionScheduleDefaultSettingsParamsAutomati
 }
 
 /// An enum representing the possible values of an `SubscriptionScheduleDefaultSettingsParams`'s `billing_cycle_anchor` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum SubscriptionScheduleDefaultSettingsParamsBillingCycleAnchor {
     Automatic,
@@ -1641,7 +1641,7 @@ impl std::default::Default for SubscriptionScheduleDefaultSettingsParamsBillingC
 }
 
 /// An enum representing the possible values of an `SubscriptionSchedule`'s `end_behavior` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum SubscriptionScheduleEndBehavior {
     Cancel,
@@ -1679,7 +1679,7 @@ impl std::default::Default for SubscriptionScheduleEndBehavior {
 }
 
 /// An enum representing the possible values of an `SubscriptionScheduleInvoiceSettingsIssuer`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum SubscriptionScheduleInvoiceSettingsIssuerType {
     Account,
@@ -1714,7 +1714,7 @@ impl std::default::Default for SubscriptionScheduleInvoiceSettingsIssuerType {
 }
 
 /// An enum representing the possible values of an `SubscriptionSchedulePhaseConfiguration`'s `billing_cycle_anchor` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum SubscriptionSchedulePhaseConfigurationBillingCycleAnchor {
     Automatic,
@@ -1748,7 +1748,7 @@ impl std::default::Default for SubscriptionSchedulePhaseConfigurationBillingCycl
 }
 
 /// An enum representing the possible values of an `SubscriptionSchedule`'s `status` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum SubscriptionScheduleStatus {
     Active,
@@ -1788,7 +1788,7 @@ impl std::default::Default for SubscriptionScheduleStatus {
 }
 
 /// An enum representing the possible values of an `UpdateSubscriptionSchedulePhasesAutomaticTaxLiability`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdateSubscriptionSchedulePhasesAutomaticTaxLiabilityType {
     Account,
@@ -1823,7 +1823,7 @@ impl std::default::Default for UpdateSubscriptionSchedulePhasesAutomaticTaxLiabi
 }
 
 /// An enum representing the possible values of an `UpdateSubscriptionSchedulePhases`'s `billing_cycle_anchor` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdateSubscriptionSchedulePhasesBillingCycleAnchor {
     Automatic,
@@ -1857,7 +1857,7 @@ impl std::default::Default for UpdateSubscriptionSchedulePhasesBillingCycleAncho
 }
 
 /// An enum representing the possible values of an `UpdateSubscriptionSchedulePhasesItemsPriceDataRecurring`'s `interval` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdateSubscriptionSchedulePhasesItemsPriceDataRecurringInterval {
     Day,
@@ -1895,7 +1895,7 @@ impl std::default::Default for UpdateSubscriptionSchedulePhasesItemsPriceDataRec
 }
 
 /// An enum representing the possible values of an `UpdateSubscriptionSchedulePhasesItemsPriceData`'s `tax_behavior` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdateSubscriptionSchedulePhasesItemsPriceDataTaxBehavior {
     Exclusive,

@@ -171,7 +171,7 @@ impl Paginable for ListReviews<'_> {
     }
 }
 /// An enum representing the possible values of an `Review`'s `closed_reason` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum ReviewClosedReason {
     Approved,
@@ -211,7 +211,7 @@ impl std::default::Default for ReviewClosedReason {
 }
 
 /// An enum representing the possible values of an `Review`'s `opened_reason` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum ReviewOpenedReason {
     Manual,

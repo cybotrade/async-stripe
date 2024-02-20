@@ -62,7 +62,7 @@ impl Object for TreasuryTransactionEntry {
 }
 
 /// An enum representing the possible values of an `TreasuryTransactionEntry`'s `flow_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TreasuryTransactionEntryFlowType {
     CreditReversal,
@@ -110,7 +110,7 @@ impl std::default::Default for TreasuryTransactionEntryFlowType {
 }
 
 /// An enum representing the possible values of an `TreasuryTransactionEntry`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum TreasuryTransactionEntryType {
     CreditReversal,

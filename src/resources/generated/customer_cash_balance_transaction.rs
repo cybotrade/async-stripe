@@ -197,7 +197,7 @@ pub struct CustomerBalanceResourceCashBalanceTransactionResourceUnappliedFromPay
 }
 
 /// An enum representing the possible values of an `CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceUsBankTransfer`'s `network` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceUsBankTransferNetwork {
     Ach,
@@ -233,7 +233,7 @@ impl std::default::Default for CustomerBalanceResourceCashBalanceTransactionReso
 }
 
 /// An enum representing the possible values of an `CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransfer`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType {
     EuBankTransfer,
@@ -273,7 +273,7 @@ impl std::default::Default for CustomerBalanceResourceCashBalanceTransactionReso
 }
 
 /// An enum representing the possible values of an `CustomerCashBalanceTransaction`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CustomerCashBalanceTransactionType {
     AdjustedForOverdraft,

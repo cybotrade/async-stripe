@@ -103,7 +103,7 @@ pub struct DiscountsResourceDiscountAmount {
 }
 
 /// An enum representing the possible values of an `CreditNoteLineItem`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreditNoteLineItemType {
     CustomLineItem,
@@ -137,7 +137,7 @@ impl std::default::Default for CreditNoteLineItemType {
 }
 
 /// An enum representing the possible values of an `CreditNoteTaxAmount`'s `taxability_reason` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreditNoteTaxAmountTaxabilityReason {
     CustomerExempt,

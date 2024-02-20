@@ -182,7 +182,7 @@ impl Object for Card {
 }
 
 /// An enum representing the possible values of an `Card`'s `available_payout_methods` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CardAvailablePayoutMethods {
     Instant,

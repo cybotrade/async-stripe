@@ -5179,7 +5179,7 @@ pub struct UpdatePaymentIntentPaymentMethodOptionsCardThreeDSecureNetworkOptions
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentAutomaticPaymentMethods`'s `allow_redirects` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentAutomaticPaymentMethodsAllowRedirects {
     Always,
@@ -5213,7 +5213,7 @@ impl std::default::Default for CreatePaymentIntentAutomaticPaymentMethodsAllowRe
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentMandateDataCustomerAcceptance`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentMandateDataCustomerAcceptanceType {
     Offline,
@@ -5247,7 +5247,7 @@ impl std::default::Default for CreatePaymentIntentMandateDataCustomerAcceptanceT
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodDataEps`'s `bank` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodDataEpsBank {
     ArzteUndApothekerBank,
@@ -5361,7 +5361,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodDataEpsBank {
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodDataFpx`'s `account_holder_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodDataFpxAccountHolderType {
     Company,
@@ -5395,7 +5395,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodDataFpxAccountHol
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodDataFpx`'s `bank` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodDataFpxBank {
     AffinBank,
@@ -5469,7 +5469,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodDataFpxBank {
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodDataIdeal`'s `bank` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodDataIdealBank {
     AbnAmro,
@@ -5531,7 +5531,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodDataIdealBank {
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodDataP24`'s `bank` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodDataP24Bank {
     AliorBank,
@@ -5619,7 +5619,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodDataP24Bank {
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodDataSofort`'s `country` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodDataSofortCountry {
     #[serde(rename = "AT")]
@@ -5667,7 +5667,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodDataSofortCountry
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodData`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodDataType {
     AcssDebit,
@@ -5761,7 +5761,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodDataType {
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodDataUsBankAccount`'s `account_holder_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodDataUsBankAccountAccountHolderType {
     Company,
@@ -5799,7 +5799,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodDataUsBankAccount
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodDataUsBankAccount`'s `account_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodDataUsBankAccountAccountType {
     Checking,
@@ -5833,7 +5833,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodDataUsBankAccount
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsAcssDebitMandateOptions`'s `payment_schedule` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsAcssDebitMandateOptionsPaymentSchedule {
     Combined,
@@ -5873,7 +5873,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsAcssDebitMandateOptions`'s `transaction_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsAcssDebitMandateOptionsTransactionType {
     Business,
@@ -5911,7 +5911,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsAcssDebit`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsAcssDebitSetupFutureUsage {
     None,
@@ -5951,7 +5951,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsAcssDebitS
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsAcssDebit`'s `verification_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsAcssDebitVerificationMethod {
     Automatic,
@@ -5993,7 +5993,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsAcssDebitV
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsAffirm`'s `capture_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsAffirmCaptureMethod {
     Manual,
@@ -6025,7 +6025,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsAffirmCapt
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsAffirm`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsAffirmSetupFutureUsage {
     None,
@@ -6057,7 +6057,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsAffirmSetu
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsAfterpayClearpay`'s `capture_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsAfterpayClearpayCaptureMethod {
     Manual,
@@ -6093,7 +6093,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsAfterpayClearpay`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsAfterpayClearpaySetupFutureUsage {
     None,
@@ -6127,7 +6127,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsAlipay`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsAlipaySetupFutureUsage {
     None,
@@ -6163,7 +6163,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsAlipaySetu
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsAuBecsDebit`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsAuBecsDebitSetupFutureUsage {
     None,
@@ -6203,7 +6203,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsAuBecsDebi
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsBacsDebit`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsBacsDebitSetupFutureUsage {
     None,
@@ -6243,7 +6243,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsBacsDebitS
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsBancontact`'s `preferred_language` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsBancontactPreferredLanguage {
     De,
@@ -6281,7 +6281,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsBancontact
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsBancontact`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsBancontactSetupFutureUsage {
     None,
@@ -6317,7 +6317,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsBancontact
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsBlik`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsBlikSetupFutureUsage {
     None,
@@ -6349,7 +6349,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsBlikSetupF
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsBoleto`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsBoletoSetupFutureUsage {
     None,
@@ -6389,7 +6389,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsBoletoSetu
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsCard`'s `capture_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsCardCaptureMethod {
     Manual,
@@ -6421,7 +6421,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsCardCaptur
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsCardInstallmentsPlan`'s `interval` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsCardInstallmentsPlanInterval {
     Month,
@@ -6453,7 +6453,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsCardInstal
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsCardInstallmentsPlan`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsCardInstallmentsPlanType {
     FixedCount,
@@ -6487,7 +6487,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsCardInstal
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsCardMandateOptions`'s `amount_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsCardMandateOptionsAmountType {
     Fixed,
@@ -6523,7 +6523,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsCardMandat
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsCardMandateOptions`'s `interval` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsCardMandateOptionsInterval {
     Day,
@@ -6565,7 +6565,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsCardMandat
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsCardMandateOptions`'s `supported_types` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsCardMandateOptionsSupportedTypes {
     India,
@@ -6601,7 +6601,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsCard`'s `network` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsCardNetwork {
     Amex,
@@ -6655,7 +6655,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsCardNetwor
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsCard`'s `request_extended_authorization` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsCardRequestExtendedAuthorization {
     IfAvailable,
@@ -6691,7 +6691,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsCard`'s `request_incremental_authorization` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsCardRequestIncrementalAuthorization {
     IfAvailable,
@@ -6729,7 +6729,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsCard`'s `request_multicapture` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsCardRequestMulticapture {
     IfAvailable,
@@ -6765,7 +6765,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsCardReques
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsCard`'s `request_overcapture` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsCardRequestOvercapture {
     IfAvailable,
@@ -6801,7 +6801,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsCardReques
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsCard`'s `request_three_d_secure` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsCardRequestThreeDSecure {
     Any,
@@ -6841,7 +6841,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsCardReques
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsCard`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsCardSetupFutureUsage {
     None,
@@ -6879,7 +6879,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsCardSetupF
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsCardThreeDSecure`'s `ares_trans_status` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsCardThreeDSecureAresTransStatus {
     #[serde(rename = "A")]
@@ -6932,7 +6932,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsCardThreeDSecure`'s `electronic_commerce_indicator` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsCardThreeDSecureElectronicCommerceIndicator {
     #[serde(rename = "01")]
@@ -6983,7 +6983,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsCardThreeDSecure`'s `exemption_indicator` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsCardThreeDSecureExemptionIndicator {
     LowRisk,
@@ -7025,7 +7025,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancaires`'s `cb_avalgo` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancairesCbAvalgo
 {
@@ -7080,7 +7080,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsCardThreeDSecure`'s `version` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsCardThreeDSecureVersion {
     #[serde(rename = "1.0.2")]
@@ -7119,7 +7119,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsCardThreeD
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsCashapp`'s `capture_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsCashappCaptureMethod {
     Manual,
@@ -7151,7 +7151,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsCashappCap
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsCashapp`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsCashappSetupFutureUsage {
     None,
@@ -7191,7 +7191,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsCashappSet
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsCustomerBalanceBankTransfer`'s `requested_address_types` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsCustomerBalanceBankTransferRequestedAddressTypes {
     Aba,
@@ -7241,7 +7241,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsCustomerBalanceBankTransfer`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsCustomerBalanceBankTransferType {
     EuBankTransfer,
@@ -7283,7 +7283,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsCustomerBalance`'s `funding_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsCustomerBalanceFundingType {
     BankTransfer,
@@ -7317,7 +7317,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsCustomerBa
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsCustomerBalance`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsCustomerBalanceSetupFutureUsage {
     None,
@@ -7351,7 +7351,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsEps`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsEpsSetupFutureUsage {
     None,
@@ -7383,7 +7383,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsEpsSetupFu
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsFpx`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsFpxSetupFutureUsage {
     None,
@@ -7415,7 +7415,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsFpxSetupFu
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsGiropay`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsGiropaySetupFutureUsage {
     None,
@@ -7447,7 +7447,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsGiropaySet
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsGrabpay`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsGrabpaySetupFutureUsage {
     None,
@@ -7479,7 +7479,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsGrabpaySet
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsIdeal`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsIdealSetupFutureUsage {
     None,
@@ -7515,7 +7515,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsIdealSetup
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsKlarna`'s `capture_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsKlarnaCaptureMethod {
     Manual,
@@ -7547,7 +7547,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsKlarnaCapt
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsKlarna`'s `preferred_locale` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsKlarnaPreferredLocale {
     #[serde(rename = "cs-CZ")]
@@ -7709,7 +7709,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsKlarnaPref
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsKlarna`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsKlarnaSetupFutureUsage {
     None,
@@ -7741,7 +7741,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsKlarnaSetu
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsKonbini`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsKonbiniSetupFutureUsage {
     None,
@@ -7773,7 +7773,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsKonbiniSet
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsLink`'s `capture_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsLinkCaptureMethod {
     Manual,
@@ -7805,7 +7805,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsLinkCaptur
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsLink`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsLinkSetupFutureUsage {
     None,
@@ -7841,7 +7841,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsLinkSetupF
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsOxxo`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsOxxoSetupFutureUsage {
     None,
@@ -7873,7 +7873,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsOxxoSetupF
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsP24`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsP24SetupFutureUsage {
     None,
@@ -7905,7 +7905,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsP24SetupFu
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsPaynow`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsPaynowSetupFutureUsage {
     None,
@@ -7937,7 +7937,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsPaynowSetu
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsPaypal`'s `capture_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsPaypalCaptureMethod {
     Manual,
@@ -7969,7 +7969,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsPaypalCapt
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsPaypal`'s `preferred_locale` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsPaypalPreferredLocale {
     #[serde(rename = "cs-CZ")]
@@ -8062,7 +8062,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsPaypalPref
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsPaypal`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsPaypalSetupFutureUsage {
     None,
@@ -8098,7 +8098,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsPaypalSetu
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsPix`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsPixSetupFutureUsage {
     None,
@@ -8130,7 +8130,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsPixSetupFu
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsPromptpay`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsPromptpaySetupFutureUsage {
     None,
@@ -8162,7 +8162,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsPromptpayS
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsRevolutPay`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsRevolutPaySetupFutureUsage {
     None,
@@ -8198,7 +8198,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsRevolutPay
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsSepaDebit`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsSepaDebitSetupFutureUsage {
     None,
@@ -8238,7 +8238,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsSepaDebitS
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsSofort`'s `preferred_language` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsSofortPreferredLanguage {
     De,
@@ -8282,7 +8282,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsSofortPref
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsSofort`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsSofortSetupFutureUsage {
     None,
@@ -8318,7 +8318,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsSofortSetu
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsSwish`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsSwishSetupFutureUsage {
     None,
@@ -8350,7 +8350,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsSwishSetup
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsUsBankAccountFinancialConnections`'s `permissions` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsUsBankAccountFinancialConnectionsPermissions {
     Balances,
@@ -8394,7 +8394,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsUsBankAccountFinancialConnections`'s `prefetch` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch {
     Balances,
@@ -8434,7 +8434,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsUsBankAccountMandateOptions`'s `collection_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod {
     Paper,
@@ -8472,7 +8472,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsUsBankAccountNetworks`'s `requested` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsUsBankAccountNetworksRequested {
     Ach,
@@ -8508,7 +8508,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsUsBankAccount`'s `preferred_settlement_speed` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsUsBankAccountPreferredSettlementSpeed {
     Fastest,
@@ -8546,7 +8546,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsUsBankAccount`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsUsBankAccountSetupFutureUsage {
     None,
@@ -8588,7 +8588,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsUsBankAccount`'s `verification_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsUsBankAccountVerificationMethod {
     Automatic,
@@ -8626,7 +8626,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsWechatPay`'s `client` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsWechatPayClient {
     Android,
@@ -8662,7 +8662,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsWechatPayC
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsWechatPay`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsWechatPaySetupFutureUsage {
     None,
@@ -8694,7 +8694,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsWechatPayS
 }
 
 /// An enum representing the possible values of an `CreatePaymentIntentPaymentMethodOptionsZip`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum CreatePaymentIntentPaymentMethodOptionsZipSetupFutureUsage {
     None,
@@ -8726,7 +8726,7 @@ impl std::default::Default for CreatePaymentIntentPaymentMethodOptionsZipSetupFu
 }
 
 /// An enum representing the possible values of an `FundingInstructionsBankTransferFinancialAddress`'s `supported_networks` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum FundingInstructionsBankTransferFinancialAddressSupportedNetworks {
     Ach,
@@ -8774,7 +8774,7 @@ impl std::default::Default for FundingInstructionsBankTransferFinancialAddressSu
 }
 
 /// An enum representing the possible values of an `FundingInstructionsBankTransferFinancialAddress`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum FundingInstructionsBankTransferFinancialAddressType {
     Aba,
@@ -8816,7 +8816,7 @@ impl std::default::Default for FundingInstructionsBankTransferFinancialAddressTy
 }
 
 /// An enum representing the possible values of an `PaymentFlowsAutomaticPaymentMethodsPaymentIntent`'s `allow_redirects` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentFlowsAutomaticPaymentMethodsPaymentIntentAllowRedirects {
     Always,
@@ -8850,7 +8850,7 @@ impl std::default::Default for PaymentFlowsAutomaticPaymentMethodsPaymentIntentA
 }
 
 /// An enum representing the possible values of an `PaymentIntent`'s `cancellation_reason` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentIntentCancellationReason {
     Abandoned,
@@ -8894,7 +8894,7 @@ impl std::default::Default for PaymentIntentCancellationReason {
 }
 
 /// An enum representing the possible values of an `PaymentIntent`'s `capture_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentIntentCaptureMethod {
     Automatic,
@@ -8930,7 +8930,7 @@ impl std::default::Default for PaymentIntentCaptureMethod {
 }
 
 /// An enum representing the possible values of an `PaymentIntent`'s `confirmation_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentIntentConfirmationMethod {
     Automatic,
@@ -8964,7 +8964,7 @@ impl std::default::Default for PaymentIntentConfirmationMethod {
 }
 
 /// An enum representing the possible values of an `PaymentIntentNextActionDisplayBankTransferInstructions`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentIntentNextActionDisplayBankTransferInstructionsType {
     EuBankTransfer,
@@ -9014,7 +9014,7 @@ impl std::default::Default for PaymentIntentNextActionDisplayBankTransferInstruc
 }
 
 /// An enum representing the possible values of an `PaymentIntentNextActionVerifyWithMicrodeposits`'s `microdeposit_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentIntentNextActionVerifyWithMicrodepositsMicrodepositType {
     Amounts,
@@ -9050,7 +9050,7 @@ impl std::default::Default for PaymentIntentNextActionVerifyWithMicrodepositsMic
 }
 
 /// An enum representing the possible values of an `PaymentIntentPaymentMethodOptionsAcssDebit`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentIntentPaymentMethodOptionsAcssDebitSetupFutureUsage {
     None,
@@ -9086,7 +9086,7 @@ impl std::default::Default for PaymentIntentPaymentMethodOptionsAcssDebitSetupFu
 }
 
 /// An enum representing the possible values of an `PaymentIntentPaymentMethodOptionsAcssDebit`'s `verification_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentIntentPaymentMethodOptionsAcssDebitVerificationMethod {
     Automatic,
@@ -9124,7 +9124,7 @@ impl std::default::Default for PaymentIntentPaymentMethodOptionsAcssDebitVerific
 }
 
 /// An enum representing the possible values of an `PaymentIntentPaymentMethodOptionsAuBecsDebit`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentIntentPaymentMethodOptionsAuBecsDebitSetupFutureUsage {
     None,
@@ -9162,7 +9162,7 @@ impl std::default::Default for PaymentIntentPaymentMethodOptionsAuBecsDebitSetup
 }
 
 /// An enum representing the possible values of an `PaymentIntentPaymentMethodOptionsBlik`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentIntentPaymentMethodOptionsBlikSetupFutureUsage {
     None,
@@ -9194,7 +9194,7 @@ impl std::default::Default for PaymentIntentPaymentMethodOptionsBlikSetupFutureU
 }
 
 /// An enum representing the possible values of an `PaymentIntentPaymentMethodOptionsCard`'s `capture_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentIntentPaymentMethodOptionsCardCaptureMethod {
     Manual,
@@ -9226,7 +9226,7 @@ impl std::default::Default for PaymentIntentPaymentMethodOptionsCardCaptureMetho
 }
 
 /// An enum representing the possible values of an `PaymentIntentPaymentMethodOptionsCard`'s `network` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentIntentPaymentMethodOptionsCardNetwork {
     Amex,
@@ -9278,7 +9278,7 @@ impl std::default::Default for PaymentIntentPaymentMethodOptionsCardNetwork {
 }
 
 /// An enum representing the possible values of an `PaymentIntentPaymentMethodOptionsCard`'s `request_extended_authorization` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentIntentPaymentMethodOptionsCardRequestExtendedAuthorization {
     IfAvailable,
@@ -9314,7 +9314,7 @@ impl std::default::Default for PaymentIntentPaymentMethodOptionsCardRequestExten
 }
 
 /// An enum representing the possible values of an `PaymentIntentPaymentMethodOptionsCard`'s `request_incremental_authorization` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentIntentPaymentMethodOptionsCardRequestIncrementalAuthorization {
     IfAvailable,
@@ -9352,7 +9352,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `PaymentIntentPaymentMethodOptionsCard`'s `request_multicapture` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentIntentPaymentMethodOptionsCardRequestMulticapture {
     IfAvailable,
@@ -9386,7 +9386,7 @@ impl std::default::Default for PaymentIntentPaymentMethodOptionsCardRequestMulti
 }
 
 /// An enum representing the possible values of an `PaymentIntentPaymentMethodOptionsCard`'s `request_overcapture` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentIntentPaymentMethodOptionsCardRequestOvercapture {
     IfAvailable,
@@ -9420,7 +9420,7 @@ impl std::default::Default for PaymentIntentPaymentMethodOptionsCardRequestOverc
 }
 
 /// An enum representing the possible values of an `PaymentIntentPaymentMethodOptionsCard`'s `request_three_d_secure` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentIntentPaymentMethodOptionsCardRequestThreeDSecure {
     Any,
@@ -9456,7 +9456,7 @@ impl std::default::Default for PaymentIntentPaymentMethodOptionsCardRequestThree
 }
 
 /// An enum representing the possible values of an `PaymentIntentPaymentMethodOptionsCard`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentIntentPaymentMethodOptionsCardSetupFutureUsage {
     None,
@@ -9492,7 +9492,7 @@ impl std::default::Default for PaymentIntentPaymentMethodOptionsCardSetupFutureU
 }
 
 /// An enum representing the possible values of an `PaymentIntentPaymentMethodOptionsEps`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentIntentPaymentMethodOptionsEpsSetupFutureUsage {
     None,
@@ -9524,7 +9524,7 @@ impl std::default::Default for PaymentIntentPaymentMethodOptionsEpsSetupFutureUs
 }
 
 /// An enum representing the possible values of an `PaymentIntentPaymentMethodOptionsLink`'s `capture_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentIntentPaymentMethodOptionsLinkCaptureMethod {
     Manual,
@@ -9556,7 +9556,7 @@ impl std::default::Default for PaymentIntentPaymentMethodOptionsLinkCaptureMetho
 }
 
 /// An enum representing the possible values of an `PaymentIntentPaymentMethodOptionsLink`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentIntentPaymentMethodOptionsLinkSetupFutureUsage {
     None,
@@ -9590,7 +9590,7 @@ impl std::default::Default for PaymentIntentPaymentMethodOptionsLinkSetupFutureU
 }
 
 /// An enum representing the possible values of an `PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebit`'s `payment_schedule` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentSchedule {
     Combined,
@@ -9634,7 +9634,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebit`'s `transaction_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebitTransactionType {
     Business,
@@ -9674,7 +9674,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `PaymentIntentPaymentMethodOptionsSepaDebit`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentIntentPaymentMethodOptionsSepaDebitSetupFutureUsage {
     None,
@@ -9710,7 +9710,7 @@ impl std::default::Default for PaymentIntentPaymentMethodOptionsSepaDebitSetupFu
 }
 
 /// An enum representing the possible values of an `PaymentIntentPaymentMethodOptionsSwish`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentIntentPaymentMethodOptionsSwishSetupFutureUsage {
     None,
@@ -9742,7 +9742,7 @@ impl std::default::Default for PaymentIntentPaymentMethodOptionsSwishSetupFuture
 }
 
 /// An enum representing the possible values of an `PaymentIntentPaymentMethodOptionsUsBankAccount`'s `preferred_settlement_speed` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentIntentPaymentMethodOptionsUsBankAccountPreferredSettlementSpeed {
     Fastest,
@@ -9782,7 +9782,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `PaymentIntentPaymentMethodOptionsUsBankAccount`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentIntentPaymentMethodOptionsUsBankAccountSetupFutureUsage {
     None,
@@ -9822,7 +9822,7 @@ impl std::default::Default for PaymentIntentPaymentMethodOptionsUsBankAccountSet
 }
 
 /// An enum representing the possible values of an `PaymentIntentPaymentMethodOptionsUsBankAccount`'s `verification_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentIntentPaymentMethodOptionsUsBankAccountVerificationMethod {
     Automatic,
@@ -9862,7 +9862,7 @@ impl std::default::Default for PaymentIntentPaymentMethodOptionsUsBankAccountVer
 }
 
 /// An enum representing the possible values of an `PaymentIntentProcessing`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentIntentProcessingType {
     Card,
@@ -9894,7 +9894,7 @@ impl std::default::Default for PaymentIntentProcessingType {
 }
 
 /// An enum representing the possible values of an `PaymentIntent`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentIntentSetupFutureUsage {
     OffSession,
@@ -9928,7 +9928,7 @@ impl std::default::Default for PaymentIntentSetupFutureUsage {
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntent`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentIntentSetupFutureUsageFilter {
     OffSession,
@@ -9962,7 +9962,7 @@ impl std::default::Default for PaymentIntentSetupFutureUsageFilter {
 }
 
 /// An enum representing the possible values of an `PaymentIntent`'s `status` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentIntentStatus {
     Canceled,
@@ -10006,7 +10006,7 @@ impl std::default::Default for PaymentIntentStatus {
 }
 
 /// An enum representing the possible values of an `PaymentMethodOptionsAffirm`'s `capture_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodOptionsAffirmCaptureMethod {
     Manual,
@@ -10038,7 +10038,7 @@ impl std::default::Default for PaymentMethodOptionsAffirmCaptureMethod {
 }
 
 /// An enum representing the possible values of an `PaymentMethodOptionsAffirm`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodOptionsAffirmSetupFutureUsage {
     None,
@@ -10070,7 +10070,7 @@ impl std::default::Default for PaymentMethodOptionsAffirmSetupFutureUsage {
 }
 
 /// An enum representing the possible values of an `PaymentMethodOptionsAfterpayClearpay`'s `capture_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodOptionsAfterpayClearpayCaptureMethod {
     Manual,
@@ -10102,7 +10102,7 @@ impl std::default::Default for PaymentMethodOptionsAfterpayClearpayCaptureMethod
 }
 
 /// An enum representing the possible values of an `PaymentMethodOptionsAfterpayClearpay`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodOptionsAfterpayClearpaySetupFutureUsage {
     None,
@@ -10134,7 +10134,7 @@ impl std::default::Default for PaymentMethodOptionsAfterpayClearpaySetupFutureUs
 }
 
 /// An enum representing the possible values of an `PaymentMethodOptionsAlipay`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodOptionsAlipaySetupFutureUsage {
     None,
@@ -10168,7 +10168,7 @@ impl std::default::Default for PaymentMethodOptionsAlipaySetupFutureUsage {
 }
 
 /// An enum representing the possible values of an `PaymentMethodOptionsBacsDebit`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodOptionsBacsDebitSetupFutureUsage {
     None,
@@ -10204,7 +10204,7 @@ impl std::default::Default for PaymentMethodOptionsBacsDebitSetupFutureUsage {
 }
 
 /// An enum representing the possible values of an `PaymentMethodOptionsBancontact`'s `preferred_language` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodOptionsBancontactPreferredLanguage {
     De,
@@ -10242,7 +10242,7 @@ impl std::default::Default for PaymentMethodOptionsBancontactPreferredLanguage {
 }
 
 /// An enum representing the possible values of an `PaymentMethodOptionsBancontact`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodOptionsBancontactSetupFutureUsage {
     None,
@@ -10276,7 +10276,7 @@ impl std::default::Default for PaymentMethodOptionsBancontactSetupFutureUsage {
 }
 
 /// An enum representing the possible values of an `PaymentMethodOptionsBoleto`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodOptionsBoletoSetupFutureUsage {
     None,
@@ -10312,7 +10312,7 @@ impl std::default::Default for PaymentMethodOptionsBoletoSetupFutureUsage {
 }
 
 /// An enum representing the possible values of an `PaymentMethodOptionsCardMandateOptions`'s `amount_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodOptionsCardMandateOptionsAmountType {
     Fixed,
@@ -10346,7 +10346,7 @@ impl std::default::Default for PaymentMethodOptionsCardMandateOptionsAmountType 
 }
 
 /// An enum representing the possible values of an `PaymentMethodOptionsCardMandateOptions`'s `interval` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodOptionsCardMandateOptionsInterval {
     Day,
@@ -10386,7 +10386,7 @@ impl std::default::Default for PaymentMethodOptionsCardMandateOptionsInterval {
 }
 
 /// An enum representing the possible values of an `PaymentMethodOptionsCardMandateOptions`'s `supported_types` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodOptionsCardMandateOptionsSupportedTypes {
     India,
@@ -10418,7 +10418,7 @@ impl std::default::Default for PaymentMethodOptionsCardMandateOptionsSupportedTy
 }
 
 /// An enum representing the possible values of an `PaymentMethodOptionsCashapp`'s `capture_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodOptionsCashappCaptureMethod {
     Manual,
@@ -10450,7 +10450,7 @@ impl std::default::Default for PaymentMethodOptionsCashappCaptureMethod {
 }
 
 /// An enum representing the possible values of an `PaymentMethodOptionsCashapp`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodOptionsCashappSetupFutureUsage {
     None,
@@ -10486,7 +10486,7 @@ impl std::default::Default for PaymentMethodOptionsCashappSetupFutureUsage {
 }
 
 /// An enum representing the possible values of an `PaymentMethodOptionsCustomerBalanceBankTransfer`'s `requested_address_types` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodOptionsCustomerBalanceBankTransferRequestedAddressTypes {
     Aba,
@@ -10536,7 +10536,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `PaymentMethodOptionsCustomerBalanceBankTransfer`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodOptionsCustomerBalanceBankTransferType {
     EuBankTransfer,
@@ -10586,7 +10586,7 @@ impl std::default::Default for PaymentMethodOptionsCustomerBalanceBankTransferTy
 }
 
 /// An enum representing the possible values of an `PaymentMethodOptionsCustomerBalance`'s `funding_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodOptionsCustomerBalanceFundingType {
     BankTransfer,
@@ -10618,7 +10618,7 @@ impl std::default::Default for PaymentMethodOptionsCustomerBalanceFundingType {
 }
 
 /// An enum representing the possible values of an `PaymentMethodOptionsCustomerBalance`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodOptionsCustomerBalanceSetupFutureUsage {
     None,
@@ -10650,7 +10650,7 @@ impl std::default::Default for PaymentMethodOptionsCustomerBalanceSetupFutureUsa
 }
 
 /// An enum representing the possible values of an `PaymentMethodOptionsFpx`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodOptionsFpxSetupFutureUsage {
     None,
@@ -10682,7 +10682,7 @@ impl std::default::Default for PaymentMethodOptionsFpxSetupFutureUsage {
 }
 
 /// An enum representing the possible values of an `PaymentMethodOptionsGiropay`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodOptionsGiropaySetupFutureUsage {
     None,
@@ -10714,7 +10714,7 @@ impl std::default::Default for PaymentMethodOptionsGiropaySetupFutureUsage {
 }
 
 /// An enum representing the possible values of an `PaymentMethodOptionsGrabpay`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodOptionsGrabpaySetupFutureUsage {
     None,
@@ -10746,7 +10746,7 @@ impl std::default::Default for PaymentMethodOptionsGrabpaySetupFutureUsage {
 }
 
 /// An enum representing the possible values of an `PaymentMethodOptionsIdeal`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodOptionsIdealSetupFutureUsage {
     None,
@@ -10780,7 +10780,7 @@ impl std::default::Default for PaymentMethodOptionsIdealSetupFutureUsage {
 }
 
 /// An enum representing the possible values of an `PaymentMethodOptionsKlarna`'s `capture_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodOptionsKlarnaCaptureMethod {
     Manual,
@@ -10812,7 +10812,7 @@ impl std::default::Default for PaymentMethodOptionsKlarnaCaptureMethod {
 }
 
 /// An enum representing the possible values of an `PaymentMethodOptionsKlarna`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodOptionsKlarnaSetupFutureUsage {
     None,
@@ -10844,7 +10844,7 @@ impl std::default::Default for PaymentMethodOptionsKlarnaSetupFutureUsage {
 }
 
 /// An enum representing the possible values of an `PaymentMethodOptionsKonbini`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodOptionsKonbiniSetupFutureUsage {
     None,
@@ -10876,7 +10876,7 @@ impl std::default::Default for PaymentMethodOptionsKonbiniSetupFutureUsage {
 }
 
 /// An enum representing the possible values of an `PaymentMethodOptionsOxxo`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodOptionsOxxoSetupFutureUsage {
     None,
@@ -10908,7 +10908,7 @@ impl std::default::Default for PaymentMethodOptionsOxxoSetupFutureUsage {
 }
 
 /// An enum representing the possible values of an `PaymentMethodOptionsP24`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodOptionsP24SetupFutureUsage {
     None,
@@ -10940,7 +10940,7 @@ impl std::default::Default for PaymentMethodOptionsP24SetupFutureUsage {
 }
 
 /// An enum representing the possible values of an `PaymentMethodOptionsPaynow`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodOptionsPaynowSetupFutureUsage {
     None,
@@ -10972,7 +10972,7 @@ impl std::default::Default for PaymentMethodOptionsPaynowSetupFutureUsage {
 }
 
 /// An enum representing the possible values of an `PaymentMethodOptionsPaypal`'s `capture_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodOptionsPaypalCaptureMethod {
     Manual,
@@ -11004,7 +11004,7 @@ impl std::default::Default for PaymentMethodOptionsPaypalCaptureMethod {
 }
 
 /// An enum representing the possible values of an `PaymentMethodOptionsPaypal`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodOptionsPaypalSetupFutureUsage {
     None,
@@ -11038,7 +11038,7 @@ impl std::default::Default for PaymentMethodOptionsPaypalSetupFutureUsage {
 }
 
 /// An enum representing the possible values of an `PaymentMethodOptionsPix`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodOptionsPixSetupFutureUsage {
     None,
@@ -11070,7 +11070,7 @@ impl std::default::Default for PaymentMethodOptionsPixSetupFutureUsage {
 }
 
 /// An enum representing the possible values of an `PaymentMethodOptionsPromptpay`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodOptionsPromptpaySetupFutureUsage {
     None,
@@ -11102,7 +11102,7 @@ impl std::default::Default for PaymentMethodOptionsPromptpaySetupFutureUsage {
 }
 
 /// An enum representing the possible values of an `PaymentMethodOptionsSofort`'s `preferred_language` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodOptionsSofortPreferredLanguage {
     De,
@@ -11146,7 +11146,7 @@ impl std::default::Default for PaymentMethodOptionsSofortPreferredLanguage {
 }
 
 /// An enum representing the possible values of an `PaymentMethodOptionsSofort`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodOptionsSofortSetupFutureUsage {
     None,
@@ -11180,7 +11180,7 @@ impl std::default::Default for PaymentMethodOptionsSofortSetupFutureUsage {
 }
 
 /// An enum representing the possible values of an `PaymentMethodOptionsWechatPay`'s `client` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodOptionsWechatPayClient {
     Android,
@@ -11216,7 +11216,7 @@ impl std::default::Default for PaymentMethodOptionsWechatPayClient {
 }
 
 /// An enum representing the possible values of an `PaymentMethodOptionsWechatPay`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodOptionsWechatPaySetupFutureUsage {
     None,
@@ -11248,7 +11248,7 @@ impl std::default::Default for PaymentMethodOptionsWechatPaySetupFutureUsage {
 }
 
 /// An enum representing the possible values of an `PaymentMethodOptionsZip`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PaymentMethodOptionsZipSetupFutureUsage {
     None,
@@ -11280,7 +11280,7 @@ impl std::default::Default for PaymentMethodOptionsZipSetupFutureUsage {
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodDataEps`'s `bank` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodDataEpsBank {
     ArzteUndApothekerBank,
@@ -11394,7 +11394,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodDataEpsBank {
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodDataFpx`'s `account_holder_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodDataFpxAccountHolderType {
     Company,
@@ -11428,7 +11428,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodDataFpxAccountHol
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodDataFpx`'s `bank` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodDataFpxBank {
     AffinBank,
@@ -11502,7 +11502,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodDataFpxBank {
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodDataIdeal`'s `bank` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodDataIdealBank {
     AbnAmro,
@@ -11564,7 +11564,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodDataIdealBank {
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodDataP24`'s `bank` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodDataP24Bank {
     AliorBank,
@@ -11652,7 +11652,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodDataP24Bank {
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodDataSofort`'s `country` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodDataSofortCountry {
     #[serde(rename = "AT")]
@@ -11700,7 +11700,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodDataSofortCountry
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodData`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodDataType {
     AcssDebit,
@@ -11794,7 +11794,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodDataType {
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodDataUsBankAccount`'s `account_holder_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodDataUsBankAccountAccountHolderType {
     Company,
@@ -11832,7 +11832,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodDataUsBankAccount
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodDataUsBankAccount`'s `account_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodDataUsBankAccountAccountType {
     Checking,
@@ -11866,7 +11866,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodDataUsBankAccount
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsAcssDebitMandateOptions`'s `payment_schedule` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsAcssDebitMandateOptionsPaymentSchedule {
     Combined,
@@ -11906,7 +11906,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsAcssDebitMandateOptions`'s `transaction_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsAcssDebitMandateOptionsTransactionType {
     Business,
@@ -11944,7 +11944,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsAcssDebit`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsAcssDebitSetupFutureUsage {
     None,
@@ -11984,7 +11984,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsAcssDebitS
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsAcssDebit`'s `verification_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsAcssDebitVerificationMethod {
     Automatic,
@@ -12026,7 +12026,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsAcssDebitV
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsAffirm`'s `capture_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsAffirmCaptureMethod {
     Manual,
@@ -12058,7 +12058,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsAffirmCapt
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsAffirm`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsAffirmSetupFutureUsage {
     None,
@@ -12090,7 +12090,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsAffirmSetu
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsAfterpayClearpay`'s `capture_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsAfterpayClearpayCaptureMethod {
     Manual,
@@ -12126,7 +12126,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsAfterpayClearpay`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsAfterpayClearpaySetupFutureUsage {
     None,
@@ -12160,7 +12160,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsAlipay`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsAlipaySetupFutureUsage {
     None,
@@ -12196,7 +12196,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsAlipaySetu
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsAuBecsDebit`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsAuBecsDebitSetupFutureUsage {
     None,
@@ -12236,7 +12236,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsAuBecsDebi
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsBacsDebit`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsBacsDebitSetupFutureUsage {
     None,
@@ -12276,7 +12276,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsBacsDebitS
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsBancontact`'s `preferred_language` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsBancontactPreferredLanguage {
     De,
@@ -12314,7 +12314,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsBancontact
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsBancontact`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsBancontactSetupFutureUsage {
     None,
@@ -12350,7 +12350,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsBancontact
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsBlik`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsBlikSetupFutureUsage {
     None,
@@ -12382,7 +12382,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsBlikSetupF
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsBoleto`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsBoletoSetupFutureUsage {
     None,
@@ -12422,7 +12422,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsBoletoSetu
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsCard`'s `capture_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsCardCaptureMethod {
     Manual,
@@ -12454,7 +12454,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsCardCaptur
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsCardInstallmentsPlan`'s `interval` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsCardInstallmentsPlanInterval {
     Month,
@@ -12486,7 +12486,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsCardInstal
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsCardInstallmentsPlan`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsCardInstallmentsPlanType {
     FixedCount,
@@ -12520,7 +12520,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsCardInstal
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsCardMandateOptions`'s `amount_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsCardMandateOptionsAmountType {
     Fixed,
@@ -12556,7 +12556,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsCardMandat
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsCardMandateOptions`'s `interval` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsCardMandateOptionsInterval {
     Day,
@@ -12598,7 +12598,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsCardMandat
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsCardMandateOptions`'s `supported_types` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsCardMandateOptionsSupportedTypes {
     India,
@@ -12634,7 +12634,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsCard`'s `network` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsCardNetwork {
     Amex,
@@ -12688,7 +12688,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsCardNetwor
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsCard`'s `request_extended_authorization` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsCardRequestExtendedAuthorization {
     IfAvailable,
@@ -12724,7 +12724,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsCard`'s `request_incremental_authorization` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsCardRequestIncrementalAuthorization {
     IfAvailable,
@@ -12762,7 +12762,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsCard`'s `request_multicapture` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsCardRequestMulticapture {
     IfAvailable,
@@ -12798,7 +12798,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsCardReques
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsCard`'s `request_overcapture` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsCardRequestOvercapture {
     IfAvailable,
@@ -12834,7 +12834,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsCardReques
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsCard`'s `request_three_d_secure` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsCardRequestThreeDSecure {
     Any,
@@ -12874,7 +12874,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsCardReques
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsCard`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsCardSetupFutureUsage {
     None,
@@ -12912,7 +12912,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsCardSetupF
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsCardThreeDSecure`'s `ares_trans_status` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsCardThreeDSecureAresTransStatus {
     #[serde(rename = "A")]
@@ -12965,7 +12965,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsCardThreeDSecure`'s `electronic_commerce_indicator` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsCardThreeDSecureElectronicCommerceIndicator {
     #[serde(rename = "01")]
@@ -13016,7 +13016,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsCardThreeDSecure`'s `exemption_indicator` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsCardThreeDSecureExemptionIndicator {
     LowRisk,
@@ -13058,7 +13058,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancaires`'s `cb_avalgo` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancairesCbAvalgo
 {
@@ -13113,7 +13113,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsCardThreeDSecure`'s `version` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsCardThreeDSecureVersion {
     #[serde(rename = "1.0.2")]
@@ -13152,7 +13152,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsCardThreeD
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsCashapp`'s `capture_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsCashappCaptureMethod {
     Manual,
@@ -13184,7 +13184,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsCashappCap
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsCashapp`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsCashappSetupFutureUsage {
     None,
@@ -13224,7 +13224,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsCashappSet
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsCustomerBalanceBankTransfer`'s `requested_address_types` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsCustomerBalanceBankTransferRequestedAddressTypes {
     Aba,
@@ -13274,7 +13274,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsCustomerBalanceBankTransfer`'s `type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsCustomerBalanceBankTransferType {
     EuBankTransfer,
@@ -13316,7 +13316,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsCustomerBalance`'s `funding_type` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsCustomerBalanceFundingType {
     BankTransfer,
@@ -13350,7 +13350,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsCustomerBa
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsCustomerBalance`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsCustomerBalanceSetupFutureUsage {
     None,
@@ -13384,7 +13384,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsEps`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsEpsSetupFutureUsage {
     None,
@@ -13416,7 +13416,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsEpsSetupFu
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsFpx`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsFpxSetupFutureUsage {
     None,
@@ -13448,7 +13448,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsFpxSetupFu
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsGiropay`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsGiropaySetupFutureUsage {
     None,
@@ -13480,7 +13480,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsGiropaySet
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsGrabpay`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsGrabpaySetupFutureUsage {
     None,
@@ -13512,7 +13512,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsGrabpaySet
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsIdeal`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsIdealSetupFutureUsage {
     None,
@@ -13548,7 +13548,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsIdealSetup
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsKlarna`'s `capture_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsKlarnaCaptureMethod {
     Manual,
@@ -13580,7 +13580,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsKlarnaCapt
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsKlarna`'s `preferred_locale` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsKlarnaPreferredLocale {
     #[serde(rename = "cs-CZ")]
@@ -13742,7 +13742,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsKlarnaPref
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsKlarna`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsKlarnaSetupFutureUsage {
     None,
@@ -13774,7 +13774,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsKlarnaSetu
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsKonbini`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsKonbiniSetupFutureUsage {
     None,
@@ -13806,7 +13806,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsKonbiniSet
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsLink`'s `capture_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsLinkCaptureMethod {
     Manual,
@@ -13838,7 +13838,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsLinkCaptur
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsLink`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsLinkSetupFutureUsage {
     None,
@@ -13874,7 +13874,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsLinkSetupF
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsOxxo`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsOxxoSetupFutureUsage {
     None,
@@ -13906,7 +13906,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsOxxoSetupF
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsP24`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsP24SetupFutureUsage {
     None,
@@ -13938,7 +13938,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsP24SetupFu
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsPaynow`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsPaynowSetupFutureUsage {
     None,
@@ -13970,7 +13970,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsPaynowSetu
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsPaypal`'s `capture_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsPaypalCaptureMethod {
     Manual,
@@ -14002,7 +14002,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsPaypalCapt
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsPaypal`'s `preferred_locale` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsPaypalPreferredLocale {
     #[serde(rename = "cs-CZ")]
@@ -14095,7 +14095,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsPaypalPref
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsPaypal`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsPaypalSetupFutureUsage {
     None,
@@ -14131,7 +14131,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsPaypalSetu
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsPix`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsPixSetupFutureUsage {
     None,
@@ -14163,7 +14163,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsPixSetupFu
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsPromptpay`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsPromptpaySetupFutureUsage {
     None,
@@ -14195,7 +14195,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsPromptpayS
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsRevolutPay`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsRevolutPaySetupFutureUsage {
     None,
@@ -14231,7 +14231,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsRevolutPay
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsSepaDebit`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsSepaDebitSetupFutureUsage {
     None,
@@ -14271,7 +14271,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsSepaDebitS
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsSofort`'s `preferred_language` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsSofortPreferredLanguage {
     De,
@@ -14315,7 +14315,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsSofortPref
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsSofort`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsSofortSetupFutureUsage {
     None,
@@ -14351,7 +14351,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsSofortSetu
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsSwish`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsSwishSetupFutureUsage {
     None,
@@ -14383,7 +14383,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsSwishSetup
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsUsBankAccountFinancialConnections`'s `permissions` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsUsBankAccountFinancialConnectionsPermissions {
     Balances,
@@ -14427,7 +14427,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsUsBankAccountFinancialConnections`'s `prefetch` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch {
     Balances,
@@ -14467,7 +14467,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsUsBankAccountMandateOptions`'s `collection_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod {
     Paper,
@@ -14505,7 +14505,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsUsBankAccountNetworks`'s `requested` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsUsBankAccountNetworksRequested {
     Ach,
@@ -14541,7 +14541,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsUsBankAccount`'s `preferred_settlement_speed` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsUsBankAccountPreferredSettlementSpeed {
     Fastest,
@@ -14579,7 +14579,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsUsBankAccount`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsUsBankAccountSetupFutureUsage {
     None,
@@ -14621,7 +14621,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsUsBankAccount`'s `verification_method` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsUsBankAccountVerificationMethod {
     Automatic,
@@ -14659,7 +14659,7 @@ impl std::default::Default
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsWechatPay`'s `client` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsWechatPayClient {
     Android,
@@ -14695,7 +14695,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsWechatPayC
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsWechatPay`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsWechatPaySetupFutureUsage {
     None,
@@ -14727,7 +14727,7 @@ impl std::default::Default for UpdatePaymentIntentPaymentMethodOptionsWechatPayS
 }
 
 /// An enum representing the possible values of an `UpdatePaymentIntentPaymentMethodOptionsZip`'s `setup_future_usage` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum UpdatePaymentIntentPaymentMethodOptionsZipSetupFutureUsage {
     None,

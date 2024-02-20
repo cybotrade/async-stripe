@@ -403,7 +403,7 @@ pub struct SubscriptionItemPriceDataRecurring {
 }
 
 /// An enum representing the possible values of an `SubscriptionItemPriceDataRecurring`'s `interval` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum PlanInterval {
     Day,
@@ -441,7 +441,7 @@ impl std::default::Default for PlanInterval {
 }
 
 /// An enum representing the possible values of an `SubscriptionItemPriceData`'s `tax_behavior` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum SubscriptionItemPriceDataTaxBehavior {
     Exclusive,
@@ -477,7 +477,7 @@ impl std::default::Default for SubscriptionItemPriceDataTaxBehavior {
 }
 
 /// An enum representing the possible values of an `CreateSubscriptionItem`'s `payment_behavior` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum SubscriptionPaymentBehavior {
     AllowIncomplete,
@@ -515,7 +515,7 @@ impl std::default::Default for SubscriptionPaymentBehavior {
 }
 
 /// An enum representing the possible values of an `CreateSubscriptionItem`'s `proration_behavior` field.
-#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, utoipa::ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum SubscriptionProrationBehavior {
     AlwaysInvoice,
