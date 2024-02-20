@@ -284,7 +284,7 @@ impl<T> SearchList<T> {
 /// A single page of a cursor-paginated list of an object.
 ///
 /// For more details, see <https://stripe.com/docs/api/pagination>
-#[derive(Debug, Clone, Deserialize, Serialize)]
+#[derive(Debug, Clone, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct List<T> {
     pub data: Vec<T>,
     pub has_more: bool,
