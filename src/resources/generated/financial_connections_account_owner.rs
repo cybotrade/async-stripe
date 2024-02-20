@@ -7,7 +7,7 @@ use crate::params::{Object, Timestamp};
 use serde::{Deserialize, Serialize};
 
 /// The resource representing a Stripe "BankConnectionsResourceOwner".
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct FinancialConnectionsAccountOwner {
     /// Unique identifier for the object.
     pub id: FinancialConnectionsAccountOwnerId,

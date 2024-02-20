@@ -10,7 +10,7 @@ use serde::{Deserialize, Serialize};
 /// The resource representing a Stripe "BankConnectionsResourceLinkedAccount".
 ///
 /// For more details see <https://stripe.com/docs/api/financial_connections/accounts/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct FinancialConnectionsAccount {
     /// Unique identifier for the object.
     pub id: FinancialConnectionsAccountId,
@@ -96,7 +96,7 @@ impl Object for FinancialConnectionsAccount {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct BankConnectionsResourceBalance {
 
     /// The time that the external institution calculated this balance.
@@ -127,7 +127,7 @@ pub struct BankConnectionsResourceBalance {
     pub type_: BankConnectionsResourceBalanceType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct BankConnectionsResourceBalanceApiResourceCashBalance {
 
     /// The funds available to the account holder.
@@ -138,7 +138,7 @@ pub struct BankConnectionsResourceBalanceApiResourceCashBalance {
     pub available: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct BankConnectionsResourceBalanceApiResourceCreditBalance {
 
     /// The credit that has been used by the account holder.
@@ -152,7 +152,7 @@ pub struct BankConnectionsResourceBalanceApiResourceCreditBalance {
     pub used: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct BankConnectionsResourceBalanceRefresh {
 
     /// The time at which the last refresh attempt was initiated.
@@ -170,7 +170,7 @@ pub struct BankConnectionsResourceBalanceRefresh {
     pub status: BankConnectionsResourceBalanceRefreshStatus,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct BankConnectionsResourceOwnershipRefresh {
 
     /// The time at which the last refresh attempt was initiated.
@@ -182,7 +182,7 @@ pub struct BankConnectionsResourceOwnershipRefresh {
     pub status: BankConnectionsResourceOwnershipRefreshStatus,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct BankConnectionsResourceTransactionRefresh {
 
     /// Unique identifier for the object.

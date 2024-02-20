@@ -12,7 +12,7 @@ use crate::resources::{Currency, PaymentMethod};
 /// The resource representing a Stripe "Mandate".
 ///
 /// For more details see <https://stripe.com/docs/api/mandates/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct Mandate {
     /// Unique identifier for the object.
     pub id: MandateId,
@@ -62,7 +62,7 @@ impl Object for Mandate {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CustomerAcceptance {
     /// The time that the customer accepts the mandate.
     pub accepted_at: Option<Timestamp>,
@@ -78,10 +78,10 @@ pub struct CustomerAcceptance {
     pub type_: CustomerAcceptanceType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct MandateMultiUse {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct MandatePaymentMethodDetails {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub acss_debit: Option<MandateAcssDebit>,
@@ -117,10 +117,10 @@ pub struct MandatePaymentMethodDetails {
     pub us_bank_account: Option<MandateUsBankAccount>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CardMandatePaymentMethodDetails {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct MandateAcssDebit {
     /// List of Stripe products where this mandate can be selected automatically.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -138,7 +138,7 @@ pub struct MandateAcssDebit {
     pub transaction_type: MandateAcssDebitTransactionType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct MandateAuBecsDebit {
     /// The URL of the mandate.
     ///
@@ -146,7 +146,7 @@ pub struct MandateAuBecsDebit {
     pub url: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct MandateBacsDebit {
     /// The status of the mandate on the Bacs network.
     ///
@@ -163,13 +163,13 @@ pub struct MandateBacsDebit {
     pub url: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct MandateCashapp {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct MandateLink {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct MandatePaypal {
     /// The PayPal Billing Agreement ID (BAID).
     ///
@@ -182,7 +182,7 @@ pub struct MandatePaypal {
     pub payer_id: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct MandateSepaDebit {
     /// The unique reference of the mandate.
     pub reference: String,
@@ -193,7 +193,7 @@ pub struct MandateSepaDebit {
     pub url: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct MandateSingleUse {
     /// The amount of the payment on a single use mandate.
     pub amount: i64,
@@ -202,17 +202,17 @@ pub struct MandateSingleUse {
     pub currency: Currency,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct MandateUsBankAccount {
     /// Mandate collection method.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub collection_method: Option<MandateUsBankAccountCollectionMethod>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct OfflineAcceptance {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct OnlineAcceptance {
     /// The customer accepts the mandate from this IP address.
     pub ip_address: Option<String>,

@@ -8,7 +8,7 @@ use crate::resources::{Currency, TreasuryTransaction};
 use serde::{Deserialize, Serialize};
 
 /// The resource representing a Stripe "TreasuryReceivedDebitsResourceDebitReversal".
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TreasuryDebitReversal {
     /// Unique identifier for the object.
     pub id: TreasuryDebitReversalId,
@@ -68,14 +68,14 @@ impl Object for TreasuryDebitReversal {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TreasuryReceivedDebitsResourceDebitReversalLinkedFlows {
 
     /// Set if there is an Issuing dispute associated with the DebitReversal.
     pub issuing_dispute: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TreasuryReceivedDebitsResourceStatusTransitions {
 
     /// Timestamp describing when the DebitReversal changed status to `completed`.

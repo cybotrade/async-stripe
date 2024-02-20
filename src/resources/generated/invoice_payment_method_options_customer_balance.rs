@@ -5,7 +5,7 @@
 use serde::{Deserialize, Serialize};
 
 /// The resource representing a Stripe "invoice_payment_method_options_customer_balance".
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct InvoicePaymentMethodOptionsCustomerBalance {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub bank_transfer: Option<InvoicePaymentMethodOptionsCustomerBalanceBankTransfer>,
@@ -16,7 +16,7 @@ pub struct InvoicePaymentMethodOptionsCustomerBalance {
     pub funding_type: Option<InvoicePaymentMethodOptionsCustomerBalanceFundingType>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct InvoicePaymentMethodOptionsCustomerBalanceBankTransfer {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub eu_bank_transfer:
@@ -29,7 +29,7 @@ pub struct InvoicePaymentMethodOptionsCustomerBalanceBankTransfer {
     pub type_: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransfer {
     /// The desired country code of the bank account information.
     ///

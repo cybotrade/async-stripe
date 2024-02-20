@@ -9,7 +9,7 @@ use crate::params::{Expandable, Object};
 use crate::resources::{Account, Currency};
 
 /// The resource representing a Stripe "ConnectCollectionTransfer".
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct ConnectCollectionTransfer {
     /// Unique identifier for the object.
     pub id: ConnectCollectionTransferId,

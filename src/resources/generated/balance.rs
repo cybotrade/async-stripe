@@ -10,7 +10,7 @@ use crate::resources::{BalanceAmountBySourceType, Currency};
 /// The resource representing a Stripe "Balance".
 ///
 /// For more details see <https://stripe.com/docs/api/balance/balance_object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct Balance {
     /// Available funds that you can transfer or pay out automatically by Stripe or explicitly through the [Transfers API](https://stripe.com/docs/api#transfers) or [Payouts API](https://stripe.com/docs/api#payouts).
     ///
@@ -47,7 +47,7 @@ impl Object for Balance {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct BalanceAmount {
     /// Balance amount.
     pub amount: i64,
@@ -61,7 +61,7 @@ pub struct BalanceAmount {
     pub source_types: Option<BalanceAmountBySourceType>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct BalanceAmountNet {
     /// Balance amount.
     pub amount: i64,
@@ -75,7 +75,7 @@ pub struct BalanceAmountNet {
     pub source_types: Option<BalanceAmountBySourceType>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct BalanceDetail {
     /// Funds that are available for use.
     pub available: Vec<BalanceAmount>,

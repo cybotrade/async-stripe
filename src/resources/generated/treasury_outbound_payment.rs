@@ -8,7 +8,7 @@ use crate::resources::{Currency, TreasurySharedResourceBillingDetails, TreasuryT
 use serde::{Deserialize, Serialize};
 
 /// The resource representing a Stripe "TreasuryOutboundPaymentsResourceOutboundPayment".
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TreasuryOutboundPayment {
     /// Unique identifier for the object.
     pub id: TreasuryOutboundPaymentId,
@@ -96,7 +96,7 @@ impl Object for TreasuryOutboundPayment {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct OutboundPaymentsPaymentMethodDetails {
 
     pub billing_details: TreasurySharedResourceBillingDetails,
@@ -112,7 +112,7 @@ pub struct OutboundPaymentsPaymentMethodDetails {
     pub us_bank_account: Option<OutboundPaymentsPaymentMethodDetailsUsBankAccount>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct OutboundPaymentsPaymentMethodDetailsFinancialAccount {
 
     /// Token of the FinancialAccount.
@@ -122,7 +122,7 @@ pub struct OutboundPaymentsPaymentMethodDetailsFinancialAccount {
     pub network: OutboundPaymentsPaymentMethodDetailsFinancialAccountNetwork,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct OutboundPaymentsPaymentMethodDetailsUsBankAccount {
 
     /// Account holder type: individual or company.
@@ -151,7 +151,7 @@ pub struct OutboundPaymentsPaymentMethodDetailsUsBankAccount {
     pub routing_number: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TreasuryOutboundPaymentsResourceOutboundPaymentResourceEndUserDetails {
 
     /// IP address of the user initiating the OutboundPayment.
@@ -167,7 +167,7 @@ pub struct TreasuryOutboundPaymentsResourceOutboundPaymentResourceEndUserDetails
     pub present: bool,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TreasuryOutboundPaymentsResourceOutboundPaymentResourceStatusTransitions {
 
     /// Timestamp describing when an OutboundPayment changed status to `canceled`.
@@ -183,7 +183,7 @@ pub struct TreasuryOutboundPaymentsResourceOutboundPaymentResourceStatusTransiti
     pub returned_at: Option<Timestamp>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TreasuryOutboundPaymentsResourceReturnedStatus {
 
     /// Reason for the return.

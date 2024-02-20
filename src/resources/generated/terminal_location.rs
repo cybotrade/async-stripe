@@ -12,7 +12,7 @@ use crate::resources::Address;
 /// The resource representing a Stripe "TerminalLocationLocation".
 ///
 /// For more details see <https://stripe.com/docs/api/terminal/locations/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TerminalLocation {
     /// Unique identifier for the object.
     pub id: TerminalLocationId,
@@ -154,7 +154,7 @@ impl Paginable for ListTerminalLocations<'_> {
         self.starting_after = Some(item.id());
     }
 }
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateTerminalLocationAddress {
     /// City, district, suburb, town, or village.
     #[serde(skip_serializing_if = "Option::is_none")]

@@ -7,7 +7,7 @@ use crate::resources::{Currency};
 use serde::{Deserialize, Serialize};
 
 /// The resource representing a Stripe "CustomerBalanceFundingInstructionsCustomerBalanceFundingInstructions".
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct FundingInstructions {
 
     pub bank_transfer: FundingInstructionsBankTransfer,
@@ -32,7 +32,7 @@ impl Object for FundingInstructions {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct FundingInstructionsBankTransfer {
 
     /// The country of the bank account to fund.
@@ -46,7 +46,7 @@ pub struct FundingInstructionsBankTransfer {
     pub type_: FundingInstructionsBankTransferType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct FundingInstructionsBankTransferFinancialAddress {
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -76,7 +76,7 @@ pub struct FundingInstructionsBankTransferFinancialAddress {
     pub zengin: Option<FundingInstructionsBankTransferZenginRecord>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct FundingInstructionsBankTransferAbaRecord {
 
     /// The ABA account number.
@@ -89,7 +89,7 @@ pub struct FundingInstructionsBankTransferAbaRecord {
     pub routing_number: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct FundingInstructionsBankTransferIbanRecord {
 
     /// The name of the person or business that owns the bank account.
@@ -105,7 +105,7 @@ pub struct FundingInstructionsBankTransferIbanRecord {
     pub iban: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct FundingInstructionsBankTransferSortCodeRecord {
 
     /// The name of the person or business that owns the bank account.
@@ -118,7 +118,7 @@ pub struct FundingInstructionsBankTransferSortCodeRecord {
     pub sort_code: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct FundingInstructionsBankTransferSpeiRecord {
 
     /// The three-digit bank code.
@@ -131,7 +131,7 @@ pub struct FundingInstructionsBankTransferSpeiRecord {
     pub clabe: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct FundingInstructionsBankTransferSwiftRecord {
 
     /// The account number.
@@ -144,7 +144,7 @@ pub struct FundingInstructionsBankTransferSwiftRecord {
     pub swift_code: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct FundingInstructionsBankTransferZenginRecord {
 
     /// The account holder name.

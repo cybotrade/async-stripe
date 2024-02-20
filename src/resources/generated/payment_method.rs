@@ -15,7 +15,7 @@ use crate::resources::{
 /// The resource representing a Stripe "PaymentMethod".
 ///
 /// For more details see <https://stripe.com/docs/api/payment_methods/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethod {
     /// Unique identifier for the object.
     pub id: PaymentMethodId,
@@ -204,10 +204,10 @@ impl Object for PaymentMethod {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentFlowsPrivatePaymentMethodsAlipay {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethodAcssDebit {
     /// Name of the bank associated with the bank account.
     pub bank_name: Option<String>,
@@ -227,13 +227,13 @@ pub struct PaymentMethodAcssDebit {
     pub transit_number: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethodAffirm {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethodAfterpayClearpay {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethodAuBecsDebit {
     /// Six-digit number identifying bank and branch associated with this bank account.
     pub bsb_number: Option<String>,
@@ -247,7 +247,7 @@ pub struct PaymentMethodAuBecsDebit {
     pub last4: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethodBacsDebit {
     /// Uniquely identifies this particular bank account.
     ///
@@ -263,19 +263,19 @@ pub struct PaymentMethodBacsDebit {
     pub sort_code: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethodBancontact {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethodBlik {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethodBoleto {
     /// Uniquely identifies the customer tax id (CNPJ or CPF).
     pub tax_id: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CardDetails {
     /// Card brand.
     ///
@@ -339,7 +339,7 @@ pub struct CardDetails {
     pub wallet: Option<WalletDetails>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct Networks {
     /// All available networks for the card.
     pub available: Vec<String>,
@@ -350,7 +350,7 @@ pub struct Networks {
     pub preferred: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethodCardChecks {
     /// If a address line1 was provided, results of the check, one of `pass`, `fail`, `unavailable`, or `unchecked`.
     pub address_line1_check: Option<String>,
@@ -362,7 +362,7 @@ pub struct PaymentMethodCardChecks {
     pub cvc_check: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CardPresent {
     /// Card brand.
     ///
@@ -426,7 +426,7 @@ pub struct CardPresent {
     pub read_method: Option<CardPresentReadMethod>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct WalletDetails {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub amex_express_checkout: Option<WalletAmexExpressCheckout>,
@@ -460,19 +460,19 @@ pub struct WalletDetails {
     pub visa_checkout: Option<WalletVisaCheckout>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct WalletAmexExpressCheckout {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct WalletApplePay {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct WalletGooglePay {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethodCardWalletLink {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct WalletMasterpass {
     /// Owner's verified billing address.
     ///
@@ -499,10 +499,10 @@ pub struct WalletMasterpass {
     pub shipping_address: Option<Address>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct WalletSamsungPay {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct WalletVisaCheckout {
     /// Owner's verified billing address.
     ///
@@ -529,7 +529,7 @@ pub struct WalletVisaCheckout {
     pub shipping_address: Option<Address>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethodCashapp {
     /// A unique and immutable identifier assigned by Cash App to every buyer.
     pub buyer_id: Option<String>,
@@ -538,10 +538,10 @@ pub struct PaymentMethodCashapp {
     pub cashtag: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethodCustomerBalance {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethodEps {
     /// The customer's bank.
     ///
@@ -549,7 +549,7 @@ pub struct PaymentMethodEps {
     pub bank: Option<PaymentMethodEpsBank>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethodFpx {
     /// Account holder type, if provided.
     ///
@@ -562,13 +562,13 @@ pub struct PaymentMethodFpx {
     pub bank: PaymentMethodFpxBank,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethodGiropay {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethodGrabpay {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethodIdeal {
     /// The customer's bank, if provided.
     ///
@@ -579,7 +579,7 @@ pub struct PaymentMethodIdeal {
     pub bic: Option<PaymentMethodIdealBic>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethodInteracPresent {
     /// Card brand.
     ///
@@ -648,13 +648,13 @@ pub struct PaymentMethodInteracPresent {
     pub read_method: Option<PaymentMethodInteracPresentReadMethod>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethodKlarna {
     /// The customer's date of birth, if provided.
     pub dob: Option<PaymentFlowsPrivatePaymentMethodsKlarnaDob>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentFlowsPrivatePaymentMethodsKlarnaDob {
     /// The day of birth, between 1 and 31.
     pub day: Option<i64>,
@@ -666,10 +666,10 @@ pub struct PaymentFlowsPrivatePaymentMethodsKlarnaDob {
     pub year: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethodKonbini {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethodLink {
     /// Account owner's email address.
     pub email: Option<String>,
@@ -679,19 +679,19 @@ pub struct PaymentMethodLink {
     pub persistent_token: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethodOxxo {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethodP24 {
     /// The customer's bank, if provided.
     pub bank: Option<PaymentMethodP24Bank>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethodPaynow {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethodPaypal {
     /// Owner's email.
     ///
@@ -705,16 +705,16 @@ pub struct PaymentMethodPaypal {
     pub payer_id: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethodPix {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethodPromptpay {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethodRevolutPay {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethodSepaDebit {
     /// Bank code of bank associated with the bank account.
     pub bank_code: Option<String>,
@@ -737,16 +737,16 @@ pub struct PaymentMethodSepaDebit {
     pub last4: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethodSofort {
     /// Two-letter ISO code representing the country the bank account is located in.
     pub country: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethodSwish {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethodUsBankAccount {
     /// Account holder type: individual or company.
     pub account_holder_type: Option<PaymentMethodUsBankAccountAccountHolderType>,
@@ -780,13 +780,13 @@ pub struct PaymentMethodUsBankAccount {
     pub status_details: Option<PaymentMethodUsBankAccountStatusDetails>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethodUsBankAccountStatusDetails {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub blocked: Option<PaymentMethodUsBankAccountBlocked>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethodUsBankAccountBlocked {
     /// The ACH network code that resulted in this block.
     pub network_code: Option<PaymentMethodUsBankAccountBlockedNetworkCode>,
@@ -795,13 +795,13 @@ pub struct PaymentMethodUsBankAccountBlocked {
     pub reason: Option<PaymentMethodUsBankAccountBlockedReason>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethodWechatPay {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethodZip {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SepaDebitGeneratedFrom {
     /// The ID of the Charge that generated this PaymentMethod, if any.
     pub charge: Option<Expandable<Charge>>,
@@ -810,13 +810,13 @@ pub struct SepaDebitGeneratedFrom {
     pub setup_attempt: Option<Expandable<SetupAttempt>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct ThreeDSecureUsage {
     /// Whether 3D Secure is supported on this card.
     pub supported: bool,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UsBankAccountNetworks {
     /// The preferred network.
     pub preferred: Option<String>,
@@ -1158,7 +1158,7 @@ impl<'a> UpdatePaymentMethod<'a> {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodAcssDebit {
     /// Customer's bank account number.
     pub account_number: String,
@@ -1170,16 +1170,16 @@ pub struct CreatePaymentMethodAcssDebit {
     pub transit_number: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodAffirm {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodAfterpayClearpay {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodAlipay {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodAuBecsDebit {
     /// The account number for the bank account.
     pub account_number: String,
@@ -1188,7 +1188,7 @@ pub struct CreatePaymentMethodAuBecsDebit {
     pub bsb_number: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodBacsDebit {
     /// Account number of the bank account that the funds will be debited from.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1201,32 +1201,32 @@ pub struct CreatePaymentMethodBacsDebit {
     pub sort_code: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodBancontact {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodBlik {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodBoleto {
     /// The tax ID of the customer (CPF for individual consumers or CNPJ for businesses consumers).
     pub tax_id: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodCashapp {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodCustomerBalance {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodEps {
     /// The customer's bank.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub bank: Option<CreatePaymentMethodEpsBank>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodFpx {
     /// Account holder type for FPX transaction.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1236,83 +1236,83 @@ pub struct CreatePaymentMethodFpx {
     pub bank: CreatePaymentMethodFpxBank,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodGiropay {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodGrabpay {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodIdeal {
     /// The customer's bank.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub bank: Option<CreatePaymentMethodIdealBank>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodInteracPresent {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodKlarna {
     /// Customer's date of birth.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub dob: Option<CreatePaymentMethodKlarnaDob>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodKonbini {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodLink {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodOxxo {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodP24 {
     /// The customer's bank.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub bank: Option<CreatePaymentMethodP24Bank>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodPaynow {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodPaypal {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodPix {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodPromptpay {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodRadarOptions {
     /// A [Radar Session](https://stripe.com/docs/radar/radar-session) is a snapshot of the browser metadata and device details that help Radar make more accurate predictions on your payments.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub session: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodRevolutPay {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodSepaDebit {
     /// IBAN of the bank account.
     pub iban: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodSofort {
     /// Two-letter ISO code representing the country the bank account is located in.
     pub country: CreatePaymentMethodSofortCountry,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodSwish {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodUsBankAccount {
     /// Account holder type: individual or company.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1337,16 +1337,16 @@ pub struct CreatePaymentMethodUsBankAccount {
     pub routing_number: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodWechatPay {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodZip {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodLink {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodUsBankAccount {
     /// Bank account holder type.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1357,7 +1357,7 @@ pub struct UpdatePaymentMethodUsBankAccount {
     pub account_type: Option<UpdatePaymentMethodUsBankAccountAccountType>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodKlarnaDob {
     /// The day of birth, between 1 and 31.
     pub day: i64,
@@ -2884,7 +2884,7 @@ pub enum CreatePaymentMethodCardUnion {
     TokenParams(TokenParams),
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CardDetailsParams {
     /// The card's CVC.
     ///
@@ -2899,14 +2899,14 @@ pub struct CardDetailsParams {
     pub number: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TokenParams {
     /// For backwards compatibility, you can alternatively provide a Stripe token (e.g., for Apple Pay, Amex Express Checkout, or legacy Checkout) into the card hash with format card: {token: "tok_visa"}.
     pub token: String,
 }
 
 /// If this is a `card` PaymentMethod, this hash contains the user's card details.
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateApiParam {
     /// Two-digit number representing the card's expiration month.
     #[serde(skip_serializing_if = "Option::is_none")]

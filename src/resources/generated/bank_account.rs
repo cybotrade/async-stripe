@@ -9,7 +9,7 @@ use crate::params::{Expandable, Metadata, Object};
 use crate::resources::{Account, BankAccountStatus, Currency, Customer};
 
 /// The resource representing a Stripe "BankAccount".
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct BankAccount {
     /// Unique identifier for the object.
     pub id: BankAccountId,
@@ -118,7 +118,7 @@ impl Object for BankAccount {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct ExternalAccountRequirements {
     /// Fields that need to be collected to keep the external account enabled.
     ///
@@ -140,7 +140,7 @@ pub struct ExternalAccountRequirements {
     pub pending_verification: Option<Vec<String>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct AccountRequirementsError {
     /// The code for the type of error.
     pub code: AccountRequirementsErrorCode,

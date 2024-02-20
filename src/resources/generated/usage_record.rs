@@ -10,7 +10,7 @@ use crate::params::{Object, Timestamp};
 /// The resource representing a Stripe "UsageRecord".
 ///
 /// For more details see <https://stripe.com/docs/api/usage_records/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UsageRecord {
     /// Unique identifier for the object.
     pub id: UsageRecordId,

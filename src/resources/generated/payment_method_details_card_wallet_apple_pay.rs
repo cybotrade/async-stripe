@@ -5,5 +5,5 @@
 use serde::{Deserialize, Serialize};
 
 /// The resource representing a Stripe "payment_method_details_card_wallet_apple_pay".
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethodDetailsCardWalletApplePay {}

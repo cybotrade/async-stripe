@@ -8,7 +8,7 @@ use crate::resources::{Currency, TreasurySharedResourceBillingDetails, TreasuryT
 use serde::{Deserialize, Serialize};
 
 /// The resource representing a Stripe "TreasuryInboundTransfersResourceInboundTransfer".
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TreasuryInboundTransfer {
     /// Unique identifier for the object.
     pub id: TreasuryInboundTransferId,
@@ -92,7 +92,7 @@ impl Object for TreasuryInboundTransfer {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct InboundTransfers {
 
     pub billing_details: TreasurySharedResourceBillingDetails,
@@ -105,7 +105,7 @@ pub struct InboundTransfers {
     pub us_bank_account: Option<InboundTransfersPaymentMethodDetailsUsBankAccount>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct InboundTransfersPaymentMethodDetailsUsBankAccount {
 
     /// Account holder type: individual or company.
@@ -134,21 +134,21 @@ pub struct InboundTransfersPaymentMethodDetailsUsBankAccount {
     pub routing_number: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TreasuryInboundTransfersResourceFailureDetails {
 
     /// Reason for the failure.
     pub code: TreasuryInboundTransfersResourceFailureDetailsCode,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TreasuryInboundTransfersResourceInboundTransferResourceLinkedFlows {
 
     /// If funds for this flow were returned after the flow went to the `succeeded` state, this field contains a reference to the ReceivedDebit return.
     pub received_debit: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TreasuryInboundTransfersResourceInboundTransferResourceStatusTransitions {
 
     /// Timestamp describing when an InboundTransfer changed status to `canceled`.

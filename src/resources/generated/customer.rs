@@ -17,7 +17,7 @@ use crate::resources::{
 /// The resource representing a Stripe "Customer".
 ///
 /// For more details see <https://stripe.com/docs/api/customers/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct Customer {
     /// Unique identifier for the object.
     pub id: CustomerId,
@@ -212,7 +212,7 @@ impl Object for Customer {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CustomerTax {
     /// Surfaces if automatic tax computation is possible given the current customer location information.
     pub automatic_tax: CustomerTaxAutomaticTax,
@@ -224,7 +224,7 @@ pub struct CustomerTax {
     pub location: Option<CustomerTaxLocation>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CustomerTaxLocation {
     /// The customer's country as identified by Stripe Tax.
     pub country: String,
@@ -236,7 +236,7 @@ pub struct CustomerTaxLocation {
     pub state: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct InvoiceSettingCustomerSetting {
     /// Default custom fields to be displayed on invoices for this customer.
     pub custom_fields: Option<Vec<InvoiceSettingCustomField>>,
@@ -251,7 +251,7 @@ pub struct InvoiceSettingCustomerSetting {
     pub rendering_options: Option<InvoiceSettingRenderingOptions>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct InvoiceSettingCustomField {
     /// The name of the custom field.
     pub name: String,
@@ -605,7 +605,7 @@ impl<'a> UpdateCustomer<'a> {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCustomerCashBalance {
     /// Settings controlling the behavior of the customer's cash balance,
     /// such as reconciliation of funds received.
@@ -613,7 +613,7 @@ pub struct CreateCustomerCashBalance {
     pub settings: Option<CreateCustomerCashBalanceSettings>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCustomerShipping {
     /// Customer shipping address.
     pub address: CreateCustomerShippingAddress,
@@ -626,7 +626,7 @@ pub struct CreateCustomerShipping {
     pub phone: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCustomerTax {
     /// A recent IP address of the customer used for tax reporting and tax location inference.
     ///
@@ -642,7 +642,7 @@ pub struct CreateCustomerTax {
     pub validate_location: Option<CreateCustomerTaxValidateLocation>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CustomerInvoiceSettings {
     /// The list of up to 4 default custom fields to be displayed on invoices for this customer.
     ///
@@ -663,7 +663,7 @@ pub struct CustomerInvoiceSettings {
     pub rendering_options: Option<CustomerInvoiceSettingsRenderingOptions>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TaxIdData {
     /// Type of the tax ID, one of `ad_nrt`, `ae_trn`, `ar_cuit`, `au_abn`, `au_arn`, `bg_uic`, `bo_tin`, `br_cnpj`, `br_cpf`, `ca_bn`, `ca_gst_hst`, `ca_pst_bc`, `ca_pst_mb`, `ca_pst_sk`, `ca_qst`, `ch_vat`, `cl_tin`, `cn_tin`, `co_nit`, `cr_tin`, `do_rcn`, `ec_ruc`, `eg_tin`, `es_cif`, `eu_oss_vat`, `eu_vat`, `gb_vat`, `ge_vat`, `hk_br`, `hu_tin`, `id_npwp`, `il_vat`, `in_gst`, `is_vat`, `jp_cn`, `jp_rn`, `jp_trn`, `ke_pin`, `kr_brn`, `li_uid`, `mx_rfc`, `my_frp`, `my_itn`, `my_sst`, `no_vat`, `nz_gst`, `pe_ruc`, `ph_tin`, `ro_tin`, `rs_pib`, `ru_inn`, `ru_kpp`, `sa_vat`, `sg_gst`, `sg_uen`, `si_tin`, `sv_nit`, `th_vat`, `tr_tin`, `tw_vat`, `ua_vat`, `us_ein`, `uy_ruc`, `ve_rif`, `vn_tin`, or `za_vat`.
     #[serde(rename = "type")]
@@ -673,7 +673,7 @@ pub struct TaxIdData {
     pub value: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateCustomerCashBalance {
     /// Settings controlling the behavior of the customer's cash balance,
     /// such as reconciliation of funds received.
@@ -681,7 +681,7 @@ pub struct UpdateCustomerCashBalance {
     pub settings: Option<UpdateCustomerCashBalanceSettings>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateCustomerShipping {
     /// Customer shipping address.
     pub address: UpdateCustomerShippingAddress,
@@ -694,7 +694,7 @@ pub struct UpdateCustomerShipping {
     pub phone: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateCustomerTax {
     /// A recent IP address of the customer used for tax reporting and tax location inference.
     ///
@@ -710,7 +710,7 @@ pub struct UpdateCustomerTax {
     pub validate_location: Option<UpdateCustomerTaxValidateLocation>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCustomerCashBalanceSettings {
     /// Controls how funds transferred by the customer are applied to payment intents and invoices.
     ///
@@ -720,7 +720,7 @@ pub struct CreateCustomerCashBalanceSettings {
     pub reconciliation_mode: Option<CreateCustomerCashBalanceSettingsReconciliationMode>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCustomerShippingAddress {
     /// City, district, suburb, town, or village.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -747,7 +747,7 @@ pub struct CreateCustomerShippingAddress {
     pub state: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CustomerInvoiceSettingsCustomFields {
     /// The name of the custom field.
     ///
@@ -760,7 +760,7 @@ pub struct CustomerInvoiceSettingsCustomFields {
     pub value: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CustomerInvoiceSettingsRenderingOptions {
     /// How line-item prices and amounts will be displayed with respect to tax on invoice PDFs.
     ///
@@ -771,7 +771,7 @@ pub struct CustomerInvoiceSettingsRenderingOptions {
     pub amount_tax_display: Option<CustomerInvoiceSettingsRenderingOptionsAmountTaxDisplay>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateCustomerCashBalanceSettings {
     /// Controls how funds transferred by the customer are applied to payment intents and invoices.
     ///
@@ -781,7 +781,7 @@ pub struct UpdateCustomerCashBalanceSettings {
     pub reconciliation_mode: Option<UpdateCustomerCashBalanceSettingsReconciliationMode>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateCustomerShippingAddress {
     /// City, district, suburb, town, or village.
     #[serde(skip_serializing_if = "Option::is_none")]

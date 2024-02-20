@@ -12,7 +12,7 @@ use crate::resources::{Address, BankAccount, Card, CompanyParams, PersonParams, 
 /// The resource representing a Stripe "Token".
 ///
 /// For more details see <https://stripe.com/docs/api/tokens/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct Token {
     /// Unique identifier for the object.
     pub id: TokenId,
@@ -120,7 +120,7 @@ impl<'a> CreateToken<'a> {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateTokenAccount {
     /// The business type.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -141,13 +141,13 @@ pub struct CreateTokenAccount {
     pub tos_shown_and_accepted: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateTokenCvcUpdate {
     /// The CVC value, in string form.
     pub cvc: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateTokenPerson {
     /// Details on the legal guardian's acceptance of the required Stripe agreements.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -268,21 +268,21 @@ pub struct CreateTokenPerson {
     pub verification: Option<PersonVerificationParams>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateTokenPii {
     /// The `id_number` for the PII, in string form.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub id_number: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateTokenPersonAdditionalTosAcceptances {
     /// Details on the legal guardian's acceptance of the main Stripe service agreement.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub account: Option<CreateTokenPersonAdditionalTosAcceptancesAccount>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateTokenPersonDob {
     /// The day of birth, between 1 and 31.
     pub day: i64,
@@ -294,7 +294,7 @@ pub struct CreateTokenPersonDob {
     pub year: i64,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateTokenPersonDocuments {
     /// One or more documents that demonstrate proof that this person is authorized to represent the company.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -309,7 +309,7 @@ pub struct CreateTokenPersonDocuments {
     pub visa: Option<CreateTokenPersonDocumentsVisa>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateTokenPersonRegisteredAddress {
     /// City, district, suburb, town, or village.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -336,7 +336,7 @@ pub struct CreateTokenPersonRegisteredAddress {
     pub state: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateTokenPersonRelationship {
     /// Whether the person is a director of the account's legal entity.
     ///
@@ -373,7 +373,7 @@ pub struct CreateTokenPersonRelationship {
     pub title: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PersonVerificationParams {
     /// A document showing address, either a passport, local ID card, or utility bill from a well-known utility company.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -384,7 +384,7 @@ pub struct PersonVerificationParams {
     pub document: Option<VerificationDocumentParams>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateTokenPersonAdditionalTosAcceptancesAccount {
     /// The Unix timestamp marking when the account representative accepted the service agreement.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -399,28 +399,28 @@ pub struct CreateTokenPersonAdditionalTosAcceptancesAccount {
     pub user_agent: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateTokenPersonDocumentsCompanyAuthorization {
     /// One or more document ids returned by a [file upload](https://stripe.com/docs/api#create_file) with a `purpose` value of `account_requirement`.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub files: Option<Vec<String>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateTokenPersonDocumentsPassport {
     /// One or more document ids returned by a [file upload](https://stripe.com/docs/api#create_file) with a `purpose` value of `account_requirement`.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub files: Option<Vec<String>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateTokenPersonDocumentsVisa {
     /// One or more document ids returned by a [file upload](https://stripe.com/docs/api#create_file) with a `purpose` value of `account_requirement`.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub files: Option<Vec<String>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct VerificationDocumentParams {
     /// The back of an ID returned by a [file upload](https://stripe.com/docs/api#create_file) with a `purpose` value of `identity_document`.
     ///
@@ -484,7 +484,7 @@ pub enum CreateTokenCardUnion {
     String(String),
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreditCardSpecs {
     /// City / District / Suburb / Town / Village.
     #[serde(skip_serializing_if = "Option::is_none")]

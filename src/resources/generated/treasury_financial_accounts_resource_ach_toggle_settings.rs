@@ -5,7 +5,7 @@
 use serde::{Deserialize, Serialize};
 
 /// The resource representing a Stripe "TreasuryFinancialAccountsResourceAchToggleSettings".
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TreasuryFinancialAccountsResourceAchToggleSettings {
 
     /// Whether the FinancialAccount should have the Feature.
@@ -18,7 +18,7 @@ pub struct TreasuryFinancialAccountsResourceAchToggleSettings {
     pub status_details: Vec<TreasuryFinancialAccountsResourceTogglesSettingStatusDetails>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TreasuryFinancialAccountsResourceTogglesSettingStatusDetails {
 
     /// Represents the reason why the status is `pending` or `restricted`.

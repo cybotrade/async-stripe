@@ -10,7 +10,7 @@ use serde::{Deserialize, Serialize};
 /// The resource representing a Stripe "PaymentMethodConfigResourcePaymentMethodConfiguration".
 ///
 /// For more details see <https://stripe.com/docs/api/payment_method_configurations/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethodConfiguration {
     /// Unique identifier for the object.
     pub id: PaymentMethodConfigurationId,
@@ -170,7 +170,7 @@ impl Object for PaymentMethodConfiguration {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethodConfigResourcePaymentMethodProperties {
 
     /// Whether this payment method may be offered at checkout.
@@ -181,7 +181,7 @@ pub struct PaymentMethodConfigResourcePaymentMethodProperties {
     pub display_preference: PaymentMethodConfigResourceDisplayPreference,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethodConfigResourceDisplayPreference {
 
     /// For child configs, whether or not the account's preference will be observed.
@@ -804,7 +804,7 @@ impl<'a> UpdatePaymentMethodConfiguration<'a> {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationAcssDebit {
 
     /// Whether or not the payment method should be displayed.
@@ -812,7 +812,7 @@ pub struct CreatePaymentMethodConfigurationAcssDebit {
     pub display_preference: Option<CreatePaymentMethodConfigurationAcssDebitDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationAffirm {
 
     /// Whether or not the payment method should be displayed.
@@ -820,7 +820,7 @@ pub struct CreatePaymentMethodConfigurationAffirm {
     pub display_preference: Option<CreatePaymentMethodConfigurationAffirmDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationAfterpayClearpay {
 
     /// Whether or not the payment method should be displayed.
@@ -828,7 +828,7 @@ pub struct CreatePaymentMethodConfigurationAfterpayClearpay {
     pub display_preference: Option<CreatePaymentMethodConfigurationAfterpayClearpayDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationAlipay {
 
     /// Whether or not the payment method should be displayed.
@@ -836,7 +836,7 @@ pub struct CreatePaymentMethodConfigurationAlipay {
     pub display_preference: Option<CreatePaymentMethodConfigurationAlipayDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationApplePay {
 
     /// Whether or not the payment method should be displayed.
@@ -844,7 +844,7 @@ pub struct CreatePaymentMethodConfigurationApplePay {
     pub display_preference: Option<CreatePaymentMethodConfigurationApplePayDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationApplePayLater {
 
     /// Whether or not the payment method should be displayed.
@@ -852,7 +852,7 @@ pub struct CreatePaymentMethodConfigurationApplePayLater {
     pub display_preference: Option<CreatePaymentMethodConfigurationApplePayLaterDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationAuBecsDebit {
 
     /// Whether or not the payment method should be displayed.
@@ -860,7 +860,7 @@ pub struct CreatePaymentMethodConfigurationAuBecsDebit {
     pub display_preference: Option<CreatePaymentMethodConfigurationAuBecsDebitDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationBacsDebit {
 
     /// Whether or not the payment method should be displayed.
@@ -868,7 +868,7 @@ pub struct CreatePaymentMethodConfigurationBacsDebit {
     pub display_preference: Option<CreatePaymentMethodConfigurationBacsDebitDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationBancontact {
 
     /// Whether or not the payment method should be displayed.
@@ -876,7 +876,7 @@ pub struct CreatePaymentMethodConfigurationBancontact {
     pub display_preference: Option<CreatePaymentMethodConfigurationBancontactDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationBlik {
 
     /// Whether or not the payment method should be displayed.
@@ -884,7 +884,7 @@ pub struct CreatePaymentMethodConfigurationBlik {
     pub display_preference: Option<CreatePaymentMethodConfigurationBlikDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationBoleto {
 
     /// Whether or not the payment method should be displayed.
@@ -892,7 +892,7 @@ pub struct CreatePaymentMethodConfigurationBoleto {
     pub display_preference: Option<CreatePaymentMethodConfigurationBoletoDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationCartesBancaires {
 
     /// Whether or not the payment method should be displayed.
@@ -900,7 +900,7 @@ pub struct CreatePaymentMethodConfigurationCartesBancaires {
     pub display_preference: Option<CreatePaymentMethodConfigurationCartesBancairesDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationCashapp {
 
     /// Whether or not the payment method should be displayed.
@@ -908,7 +908,7 @@ pub struct CreatePaymentMethodConfigurationCashapp {
     pub display_preference: Option<CreatePaymentMethodConfigurationCashappDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationCustomerBalance {
 
     /// Whether or not the payment method should be displayed.
@@ -916,7 +916,7 @@ pub struct CreatePaymentMethodConfigurationCustomerBalance {
     pub display_preference: Option<CreatePaymentMethodConfigurationCustomerBalanceDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationEps {
 
     /// Whether or not the payment method should be displayed.
@@ -924,7 +924,7 @@ pub struct CreatePaymentMethodConfigurationEps {
     pub display_preference: Option<CreatePaymentMethodConfigurationEpsDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationFpx {
 
     /// Whether or not the payment method should be displayed.
@@ -932,7 +932,7 @@ pub struct CreatePaymentMethodConfigurationFpx {
     pub display_preference: Option<CreatePaymentMethodConfigurationFpxDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationGiropay {
 
     /// Whether or not the payment method should be displayed.
@@ -940,7 +940,7 @@ pub struct CreatePaymentMethodConfigurationGiropay {
     pub display_preference: Option<CreatePaymentMethodConfigurationGiropayDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationGooglePay {
 
     /// Whether or not the payment method should be displayed.
@@ -948,7 +948,7 @@ pub struct CreatePaymentMethodConfigurationGooglePay {
     pub display_preference: Option<CreatePaymentMethodConfigurationGooglePayDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationGrabpay {
 
     /// Whether or not the payment method should be displayed.
@@ -956,7 +956,7 @@ pub struct CreatePaymentMethodConfigurationGrabpay {
     pub display_preference: Option<CreatePaymentMethodConfigurationGrabpayDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationIdeal {
 
     /// Whether or not the payment method should be displayed.
@@ -964,7 +964,7 @@ pub struct CreatePaymentMethodConfigurationIdeal {
     pub display_preference: Option<CreatePaymentMethodConfigurationIdealDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationJcb {
 
     /// Whether or not the payment method should be displayed.
@@ -972,7 +972,7 @@ pub struct CreatePaymentMethodConfigurationJcb {
     pub display_preference: Option<CreatePaymentMethodConfigurationJcbDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationKlarna {
 
     /// Whether or not the payment method should be displayed.
@@ -980,7 +980,7 @@ pub struct CreatePaymentMethodConfigurationKlarna {
     pub display_preference: Option<CreatePaymentMethodConfigurationKlarnaDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationKonbini {
 
     /// Whether or not the payment method should be displayed.
@@ -988,7 +988,7 @@ pub struct CreatePaymentMethodConfigurationKonbini {
     pub display_preference: Option<CreatePaymentMethodConfigurationKonbiniDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationLink {
 
     /// Whether or not the payment method should be displayed.
@@ -996,7 +996,7 @@ pub struct CreatePaymentMethodConfigurationLink {
     pub display_preference: Option<CreatePaymentMethodConfigurationLinkDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationOxxo {
 
     /// Whether or not the payment method should be displayed.
@@ -1004,7 +1004,7 @@ pub struct CreatePaymentMethodConfigurationOxxo {
     pub display_preference: Option<CreatePaymentMethodConfigurationOxxoDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationP24 {
 
     /// Whether or not the payment method should be displayed.
@@ -1012,7 +1012,7 @@ pub struct CreatePaymentMethodConfigurationP24 {
     pub display_preference: Option<CreatePaymentMethodConfigurationP24DisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationPaynow {
 
     /// Whether or not the payment method should be displayed.
@@ -1020,7 +1020,7 @@ pub struct CreatePaymentMethodConfigurationPaynow {
     pub display_preference: Option<CreatePaymentMethodConfigurationPaynowDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationPaypal {
 
     /// Whether or not the payment method should be displayed.
@@ -1028,7 +1028,7 @@ pub struct CreatePaymentMethodConfigurationPaypal {
     pub display_preference: Option<CreatePaymentMethodConfigurationPaypalDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationPromptpay {
 
     /// Whether or not the payment method should be displayed.
@@ -1036,7 +1036,7 @@ pub struct CreatePaymentMethodConfigurationPromptpay {
     pub display_preference: Option<CreatePaymentMethodConfigurationPromptpayDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationRevolutPay {
 
     /// Whether or not the payment method should be displayed.
@@ -1044,7 +1044,7 @@ pub struct CreatePaymentMethodConfigurationRevolutPay {
     pub display_preference: Option<CreatePaymentMethodConfigurationRevolutPayDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationSepaDebit {
 
     /// Whether or not the payment method should be displayed.
@@ -1052,7 +1052,7 @@ pub struct CreatePaymentMethodConfigurationSepaDebit {
     pub display_preference: Option<CreatePaymentMethodConfigurationSepaDebitDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationSofort {
 
     /// Whether or not the payment method should be displayed.
@@ -1060,7 +1060,7 @@ pub struct CreatePaymentMethodConfigurationSofort {
     pub display_preference: Option<CreatePaymentMethodConfigurationSofortDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationUsBankAccount {
 
     /// Whether or not the payment method should be displayed.
@@ -1068,7 +1068,7 @@ pub struct CreatePaymentMethodConfigurationUsBankAccount {
     pub display_preference: Option<CreatePaymentMethodConfigurationUsBankAccountDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationWechatPay {
 
     /// Whether or not the payment method should be displayed.
@@ -1076,7 +1076,7 @@ pub struct CreatePaymentMethodConfigurationWechatPay {
     pub display_preference: Option<CreatePaymentMethodConfigurationWechatPayDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationAcssDebit {
 
     /// Whether or not the payment method should be displayed.
@@ -1084,7 +1084,7 @@ pub struct UpdatePaymentMethodConfigurationAcssDebit {
     pub display_preference: Option<UpdatePaymentMethodConfigurationAcssDebitDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationAffirm {
 
     /// Whether or not the payment method should be displayed.
@@ -1092,7 +1092,7 @@ pub struct UpdatePaymentMethodConfigurationAffirm {
     pub display_preference: Option<UpdatePaymentMethodConfigurationAffirmDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationAfterpayClearpay {
 
     /// Whether or not the payment method should be displayed.
@@ -1100,7 +1100,7 @@ pub struct UpdatePaymentMethodConfigurationAfterpayClearpay {
     pub display_preference: Option<UpdatePaymentMethodConfigurationAfterpayClearpayDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationAlipay {
 
     /// Whether or not the payment method should be displayed.
@@ -1108,7 +1108,7 @@ pub struct UpdatePaymentMethodConfigurationAlipay {
     pub display_preference: Option<UpdatePaymentMethodConfigurationAlipayDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationApplePay {
 
     /// Whether or not the payment method should be displayed.
@@ -1116,7 +1116,7 @@ pub struct UpdatePaymentMethodConfigurationApplePay {
     pub display_preference: Option<UpdatePaymentMethodConfigurationApplePayDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationApplePayLater {
 
     /// Whether or not the payment method should be displayed.
@@ -1124,7 +1124,7 @@ pub struct UpdatePaymentMethodConfigurationApplePayLater {
     pub display_preference: Option<UpdatePaymentMethodConfigurationApplePayLaterDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationAuBecsDebit {
 
     /// Whether or not the payment method should be displayed.
@@ -1132,7 +1132,7 @@ pub struct UpdatePaymentMethodConfigurationAuBecsDebit {
     pub display_preference: Option<UpdatePaymentMethodConfigurationAuBecsDebitDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationBacsDebit {
 
     /// Whether or not the payment method should be displayed.
@@ -1140,7 +1140,7 @@ pub struct UpdatePaymentMethodConfigurationBacsDebit {
     pub display_preference: Option<UpdatePaymentMethodConfigurationBacsDebitDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationBancontact {
 
     /// Whether or not the payment method should be displayed.
@@ -1148,7 +1148,7 @@ pub struct UpdatePaymentMethodConfigurationBancontact {
     pub display_preference: Option<UpdatePaymentMethodConfigurationBancontactDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationBlik {
 
     /// Whether or not the payment method should be displayed.
@@ -1156,7 +1156,7 @@ pub struct UpdatePaymentMethodConfigurationBlik {
     pub display_preference: Option<UpdatePaymentMethodConfigurationBlikDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationBoleto {
 
     /// Whether or not the payment method should be displayed.
@@ -1164,7 +1164,7 @@ pub struct UpdatePaymentMethodConfigurationBoleto {
     pub display_preference: Option<UpdatePaymentMethodConfigurationBoletoDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationCartesBancaires {
 
     /// Whether or not the payment method should be displayed.
@@ -1172,7 +1172,7 @@ pub struct UpdatePaymentMethodConfigurationCartesBancaires {
     pub display_preference: Option<UpdatePaymentMethodConfigurationCartesBancairesDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationCashapp {
 
     /// Whether or not the payment method should be displayed.
@@ -1180,7 +1180,7 @@ pub struct UpdatePaymentMethodConfigurationCashapp {
     pub display_preference: Option<UpdatePaymentMethodConfigurationCashappDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationCustomerBalance {
 
     /// Whether or not the payment method should be displayed.
@@ -1188,7 +1188,7 @@ pub struct UpdatePaymentMethodConfigurationCustomerBalance {
     pub display_preference: Option<UpdatePaymentMethodConfigurationCustomerBalanceDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationEps {
 
     /// Whether or not the payment method should be displayed.
@@ -1196,7 +1196,7 @@ pub struct UpdatePaymentMethodConfigurationEps {
     pub display_preference: Option<UpdatePaymentMethodConfigurationEpsDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationFpx {
 
     /// Whether or not the payment method should be displayed.
@@ -1204,7 +1204,7 @@ pub struct UpdatePaymentMethodConfigurationFpx {
     pub display_preference: Option<UpdatePaymentMethodConfigurationFpxDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationGiropay {
 
     /// Whether or not the payment method should be displayed.
@@ -1212,7 +1212,7 @@ pub struct UpdatePaymentMethodConfigurationGiropay {
     pub display_preference: Option<UpdatePaymentMethodConfigurationGiropayDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationGooglePay {
 
     /// Whether or not the payment method should be displayed.
@@ -1220,7 +1220,7 @@ pub struct UpdatePaymentMethodConfigurationGooglePay {
     pub display_preference: Option<UpdatePaymentMethodConfigurationGooglePayDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationGrabpay {
 
     /// Whether or not the payment method should be displayed.
@@ -1228,7 +1228,7 @@ pub struct UpdatePaymentMethodConfigurationGrabpay {
     pub display_preference: Option<UpdatePaymentMethodConfigurationGrabpayDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationIdeal {
 
     /// Whether or not the payment method should be displayed.
@@ -1236,7 +1236,7 @@ pub struct UpdatePaymentMethodConfigurationIdeal {
     pub display_preference: Option<UpdatePaymentMethodConfigurationIdealDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationJcb {
 
     /// Whether or not the payment method should be displayed.
@@ -1244,7 +1244,7 @@ pub struct UpdatePaymentMethodConfigurationJcb {
     pub display_preference: Option<UpdatePaymentMethodConfigurationJcbDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationKlarna {
 
     /// Whether or not the payment method should be displayed.
@@ -1252,7 +1252,7 @@ pub struct UpdatePaymentMethodConfigurationKlarna {
     pub display_preference: Option<UpdatePaymentMethodConfigurationKlarnaDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationKonbini {
 
     /// Whether or not the payment method should be displayed.
@@ -1260,7 +1260,7 @@ pub struct UpdatePaymentMethodConfigurationKonbini {
     pub display_preference: Option<UpdatePaymentMethodConfigurationKonbiniDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationLink {
 
     /// Whether or not the payment method should be displayed.
@@ -1268,7 +1268,7 @@ pub struct UpdatePaymentMethodConfigurationLink {
     pub display_preference: Option<UpdatePaymentMethodConfigurationLinkDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationOxxo {
 
     /// Whether or not the payment method should be displayed.
@@ -1276,7 +1276,7 @@ pub struct UpdatePaymentMethodConfigurationOxxo {
     pub display_preference: Option<UpdatePaymentMethodConfigurationOxxoDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationP24 {
 
     /// Whether or not the payment method should be displayed.
@@ -1284,7 +1284,7 @@ pub struct UpdatePaymentMethodConfigurationP24 {
     pub display_preference: Option<UpdatePaymentMethodConfigurationP24DisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationPaynow {
 
     /// Whether or not the payment method should be displayed.
@@ -1292,7 +1292,7 @@ pub struct UpdatePaymentMethodConfigurationPaynow {
     pub display_preference: Option<UpdatePaymentMethodConfigurationPaynowDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationPaypal {
 
     /// Whether or not the payment method should be displayed.
@@ -1300,7 +1300,7 @@ pub struct UpdatePaymentMethodConfigurationPaypal {
     pub display_preference: Option<UpdatePaymentMethodConfigurationPaypalDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationPromptpay {
 
     /// Whether or not the payment method should be displayed.
@@ -1308,7 +1308,7 @@ pub struct UpdatePaymentMethodConfigurationPromptpay {
     pub display_preference: Option<UpdatePaymentMethodConfigurationPromptpayDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationRevolutPay {
 
     /// Whether or not the payment method should be displayed.
@@ -1316,7 +1316,7 @@ pub struct UpdatePaymentMethodConfigurationRevolutPay {
     pub display_preference: Option<UpdatePaymentMethodConfigurationRevolutPayDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationSepaDebit {
 
     /// Whether or not the payment method should be displayed.
@@ -1324,7 +1324,7 @@ pub struct UpdatePaymentMethodConfigurationSepaDebit {
     pub display_preference: Option<UpdatePaymentMethodConfigurationSepaDebitDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationSofort {
 
     /// Whether or not the payment method should be displayed.
@@ -1332,7 +1332,7 @@ pub struct UpdatePaymentMethodConfigurationSofort {
     pub display_preference: Option<UpdatePaymentMethodConfigurationSofortDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationUsBankAccount {
 
     /// Whether or not the payment method should be displayed.
@@ -1340,7 +1340,7 @@ pub struct UpdatePaymentMethodConfigurationUsBankAccount {
     pub display_preference: Option<UpdatePaymentMethodConfigurationUsBankAccountDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationWechatPay {
 
     /// Whether or not the payment method should be displayed.
@@ -1348,7 +1348,7 @@ pub struct UpdatePaymentMethodConfigurationWechatPay {
     pub display_preference: Option<UpdatePaymentMethodConfigurationWechatPayDisplayPreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationAcssDebitDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1356,7 +1356,7 @@ pub struct CreatePaymentMethodConfigurationAcssDebitDisplayPreference {
     pub preference: Option<CreatePaymentMethodConfigurationAcssDebitDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationAffirmDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1364,7 +1364,7 @@ pub struct CreatePaymentMethodConfigurationAffirmDisplayPreference {
     pub preference: Option<CreatePaymentMethodConfigurationAffirmDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationAfterpayClearpayDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1372,7 +1372,7 @@ pub struct CreatePaymentMethodConfigurationAfterpayClearpayDisplayPreference {
     pub preference: Option<CreatePaymentMethodConfigurationAfterpayClearpayDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationAlipayDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1380,7 +1380,7 @@ pub struct CreatePaymentMethodConfigurationAlipayDisplayPreference {
     pub preference: Option<CreatePaymentMethodConfigurationAlipayDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationApplePayDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1388,7 +1388,7 @@ pub struct CreatePaymentMethodConfigurationApplePayDisplayPreference {
     pub preference: Option<CreatePaymentMethodConfigurationApplePayDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationApplePayLaterDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1396,7 +1396,7 @@ pub struct CreatePaymentMethodConfigurationApplePayLaterDisplayPreference {
     pub preference: Option<CreatePaymentMethodConfigurationApplePayLaterDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationAuBecsDebitDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1404,7 +1404,7 @@ pub struct CreatePaymentMethodConfigurationAuBecsDebitDisplayPreference {
     pub preference: Option<CreatePaymentMethodConfigurationAuBecsDebitDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationBacsDebitDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1412,7 +1412,7 @@ pub struct CreatePaymentMethodConfigurationBacsDebitDisplayPreference {
     pub preference: Option<CreatePaymentMethodConfigurationBacsDebitDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationBancontactDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1420,7 +1420,7 @@ pub struct CreatePaymentMethodConfigurationBancontactDisplayPreference {
     pub preference: Option<CreatePaymentMethodConfigurationBancontactDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationBlikDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1428,7 +1428,7 @@ pub struct CreatePaymentMethodConfigurationBlikDisplayPreference {
     pub preference: Option<CreatePaymentMethodConfigurationBlikDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationBoletoDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1436,7 +1436,7 @@ pub struct CreatePaymentMethodConfigurationBoletoDisplayPreference {
     pub preference: Option<CreatePaymentMethodConfigurationBoletoDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationCartesBancairesDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1444,7 +1444,7 @@ pub struct CreatePaymentMethodConfigurationCartesBancairesDisplayPreference {
     pub preference: Option<CreatePaymentMethodConfigurationCartesBancairesDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationCashappDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1452,7 +1452,7 @@ pub struct CreatePaymentMethodConfigurationCashappDisplayPreference {
     pub preference: Option<CreatePaymentMethodConfigurationCashappDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationCustomerBalanceDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1460,7 +1460,7 @@ pub struct CreatePaymentMethodConfigurationCustomerBalanceDisplayPreference {
     pub preference: Option<CreatePaymentMethodConfigurationCustomerBalanceDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationEpsDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1468,7 +1468,7 @@ pub struct CreatePaymentMethodConfigurationEpsDisplayPreference {
     pub preference: Option<CreatePaymentMethodConfigurationEpsDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationFpxDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1476,7 +1476,7 @@ pub struct CreatePaymentMethodConfigurationFpxDisplayPreference {
     pub preference: Option<CreatePaymentMethodConfigurationFpxDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationGiropayDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1484,7 +1484,7 @@ pub struct CreatePaymentMethodConfigurationGiropayDisplayPreference {
     pub preference: Option<CreatePaymentMethodConfigurationGiropayDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationGooglePayDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1492,7 +1492,7 @@ pub struct CreatePaymentMethodConfigurationGooglePayDisplayPreference {
     pub preference: Option<CreatePaymentMethodConfigurationGooglePayDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationGrabpayDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1500,7 +1500,7 @@ pub struct CreatePaymentMethodConfigurationGrabpayDisplayPreference {
     pub preference: Option<CreatePaymentMethodConfigurationGrabpayDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationIdealDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1508,7 +1508,7 @@ pub struct CreatePaymentMethodConfigurationIdealDisplayPreference {
     pub preference: Option<CreatePaymentMethodConfigurationIdealDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationJcbDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1516,7 +1516,7 @@ pub struct CreatePaymentMethodConfigurationJcbDisplayPreference {
     pub preference: Option<CreatePaymentMethodConfigurationJcbDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationKlarnaDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1524,7 +1524,7 @@ pub struct CreatePaymentMethodConfigurationKlarnaDisplayPreference {
     pub preference: Option<CreatePaymentMethodConfigurationKlarnaDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationKonbiniDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1532,7 +1532,7 @@ pub struct CreatePaymentMethodConfigurationKonbiniDisplayPreference {
     pub preference: Option<CreatePaymentMethodConfigurationKonbiniDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationLinkDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1540,7 +1540,7 @@ pub struct CreatePaymentMethodConfigurationLinkDisplayPreference {
     pub preference: Option<CreatePaymentMethodConfigurationLinkDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationOxxoDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1548,7 +1548,7 @@ pub struct CreatePaymentMethodConfigurationOxxoDisplayPreference {
     pub preference: Option<CreatePaymentMethodConfigurationOxxoDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationP24DisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1556,7 +1556,7 @@ pub struct CreatePaymentMethodConfigurationP24DisplayPreference {
     pub preference: Option<CreatePaymentMethodConfigurationP24DisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationPaynowDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1564,7 +1564,7 @@ pub struct CreatePaymentMethodConfigurationPaynowDisplayPreference {
     pub preference: Option<CreatePaymentMethodConfigurationPaynowDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationPaypalDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1572,7 +1572,7 @@ pub struct CreatePaymentMethodConfigurationPaypalDisplayPreference {
     pub preference: Option<CreatePaymentMethodConfigurationPaypalDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationPromptpayDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1580,7 +1580,7 @@ pub struct CreatePaymentMethodConfigurationPromptpayDisplayPreference {
     pub preference: Option<CreatePaymentMethodConfigurationPromptpayDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationRevolutPayDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1588,7 +1588,7 @@ pub struct CreatePaymentMethodConfigurationRevolutPayDisplayPreference {
     pub preference: Option<CreatePaymentMethodConfigurationRevolutPayDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationSepaDebitDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1596,7 +1596,7 @@ pub struct CreatePaymentMethodConfigurationSepaDebitDisplayPreference {
     pub preference: Option<CreatePaymentMethodConfigurationSepaDebitDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationSofortDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1604,7 +1604,7 @@ pub struct CreatePaymentMethodConfigurationSofortDisplayPreference {
     pub preference: Option<CreatePaymentMethodConfigurationSofortDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationUsBankAccountDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1612,7 +1612,7 @@ pub struct CreatePaymentMethodConfigurationUsBankAccountDisplayPreference {
     pub preference: Option<CreatePaymentMethodConfigurationUsBankAccountDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentMethodConfigurationWechatPayDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1620,7 +1620,7 @@ pub struct CreatePaymentMethodConfigurationWechatPayDisplayPreference {
     pub preference: Option<CreatePaymentMethodConfigurationWechatPayDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationAcssDebitDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1628,7 +1628,7 @@ pub struct UpdatePaymentMethodConfigurationAcssDebitDisplayPreference {
     pub preference: Option<UpdatePaymentMethodConfigurationAcssDebitDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationAffirmDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1636,7 +1636,7 @@ pub struct UpdatePaymentMethodConfigurationAffirmDisplayPreference {
     pub preference: Option<UpdatePaymentMethodConfigurationAffirmDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationAfterpayClearpayDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1644,7 +1644,7 @@ pub struct UpdatePaymentMethodConfigurationAfterpayClearpayDisplayPreference {
     pub preference: Option<UpdatePaymentMethodConfigurationAfterpayClearpayDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationAlipayDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1652,7 +1652,7 @@ pub struct UpdatePaymentMethodConfigurationAlipayDisplayPreference {
     pub preference: Option<UpdatePaymentMethodConfigurationAlipayDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationApplePayDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1660,7 +1660,7 @@ pub struct UpdatePaymentMethodConfigurationApplePayDisplayPreference {
     pub preference: Option<UpdatePaymentMethodConfigurationApplePayDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationApplePayLaterDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1668,7 +1668,7 @@ pub struct UpdatePaymentMethodConfigurationApplePayLaterDisplayPreference {
     pub preference: Option<UpdatePaymentMethodConfigurationApplePayLaterDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationAuBecsDebitDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1676,7 +1676,7 @@ pub struct UpdatePaymentMethodConfigurationAuBecsDebitDisplayPreference {
     pub preference: Option<UpdatePaymentMethodConfigurationAuBecsDebitDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationBacsDebitDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1684,7 +1684,7 @@ pub struct UpdatePaymentMethodConfigurationBacsDebitDisplayPreference {
     pub preference: Option<UpdatePaymentMethodConfigurationBacsDebitDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationBancontactDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1692,7 +1692,7 @@ pub struct UpdatePaymentMethodConfigurationBancontactDisplayPreference {
     pub preference: Option<UpdatePaymentMethodConfigurationBancontactDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationBlikDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1700,7 +1700,7 @@ pub struct UpdatePaymentMethodConfigurationBlikDisplayPreference {
     pub preference: Option<UpdatePaymentMethodConfigurationBlikDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationBoletoDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1708,7 +1708,7 @@ pub struct UpdatePaymentMethodConfigurationBoletoDisplayPreference {
     pub preference: Option<UpdatePaymentMethodConfigurationBoletoDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationCartesBancairesDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1716,7 +1716,7 @@ pub struct UpdatePaymentMethodConfigurationCartesBancairesDisplayPreference {
     pub preference: Option<UpdatePaymentMethodConfigurationCartesBancairesDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationCashappDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1724,7 +1724,7 @@ pub struct UpdatePaymentMethodConfigurationCashappDisplayPreference {
     pub preference: Option<UpdatePaymentMethodConfigurationCashappDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationCustomerBalanceDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1732,7 +1732,7 @@ pub struct UpdatePaymentMethodConfigurationCustomerBalanceDisplayPreference {
     pub preference: Option<UpdatePaymentMethodConfigurationCustomerBalanceDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationEpsDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1740,7 +1740,7 @@ pub struct UpdatePaymentMethodConfigurationEpsDisplayPreference {
     pub preference: Option<UpdatePaymentMethodConfigurationEpsDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationFpxDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1748,7 +1748,7 @@ pub struct UpdatePaymentMethodConfigurationFpxDisplayPreference {
     pub preference: Option<UpdatePaymentMethodConfigurationFpxDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationGiropayDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1756,7 +1756,7 @@ pub struct UpdatePaymentMethodConfigurationGiropayDisplayPreference {
     pub preference: Option<UpdatePaymentMethodConfigurationGiropayDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationGooglePayDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1764,7 +1764,7 @@ pub struct UpdatePaymentMethodConfigurationGooglePayDisplayPreference {
     pub preference: Option<UpdatePaymentMethodConfigurationGooglePayDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationGrabpayDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1772,7 +1772,7 @@ pub struct UpdatePaymentMethodConfigurationGrabpayDisplayPreference {
     pub preference: Option<UpdatePaymentMethodConfigurationGrabpayDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationIdealDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1780,7 +1780,7 @@ pub struct UpdatePaymentMethodConfigurationIdealDisplayPreference {
     pub preference: Option<UpdatePaymentMethodConfigurationIdealDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationJcbDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1788,7 +1788,7 @@ pub struct UpdatePaymentMethodConfigurationJcbDisplayPreference {
     pub preference: Option<UpdatePaymentMethodConfigurationJcbDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationKlarnaDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1796,7 +1796,7 @@ pub struct UpdatePaymentMethodConfigurationKlarnaDisplayPreference {
     pub preference: Option<UpdatePaymentMethodConfigurationKlarnaDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationKonbiniDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1804,7 +1804,7 @@ pub struct UpdatePaymentMethodConfigurationKonbiniDisplayPreference {
     pub preference: Option<UpdatePaymentMethodConfigurationKonbiniDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationLinkDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1812,7 +1812,7 @@ pub struct UpdatePaymentMethodConfigurationLinkDisplayPreference {
     pub preference: Option<UpdatePaymentMethodConfigurationLinkDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationOxxoDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1820,7 +1820,7 @@ pub struct UpdatePaymentMethodConfigurationOxxoDisplayPreference {
     pub preference: Option<UpdatePaymentMethodConfigurationOxxoDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationP24DisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1828,7 +1828,7 @@ pub struct UpdatePaymentMethodConfigurationP24DisplayPreference {
     pub preference: Option<UpdatePaymentMethodConfigurationP24DisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationPaynowDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1836,7 +1836,7 @@ pub struct UpdatePaymentMethodConfigurationPaynowDisplayPreference {
     pub preference: Option<UpdatePaymentMethodConfigurationPaynowDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationPaypalDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1844,7 +1844,7 @@ pub struct UpdatePaymentMethodConfigurationPaypalDisplayPreference {
     pub preference: Option<UpdatePaymentMethodConfigurationPaypalDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationPromptpayDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1852,7 +1852,7 @@ pub struct UpdatePaymentMethodConfigurationPromptpayDisplayPreference {
     pub preference: Option<UpdatePaymentMethodConfigurationPromptpayDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationRevolutPayDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1860,7 +1860,7 @@ pub struct UpdatePaymentMethodConfigurationRevolutPayDisplayPreference {
     pub preference: Option<UpdatePaymentMethodConfigurationRevolutPayDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationSepaDebitDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1868,7 +1868,7 @@ pub struct UpdatePaymentMethodConfigurationSepaDebitDisplayPreference {
     pub preference: Option<UpdatePaymentMethodConfigurationSepaDebitDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationSofortDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1876,7 +1876,7 @@ pub struct UpdatePaymentMethodConfigurationSofortDisplayPreference {
     pub preference: Option<UpdatePaymentMethodConfigurationSofortDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationUsBankAccountDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -1884,7 +1884,7 @@ pub struct UpdatePaymentMethodConfigurationUsBankAccountDisplayPreference {
     pub preference: Option<UpdatePaymentMethodConfigurationUsBankAccountDisplayPreferencePreference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentMethodConfigurationWechatPayDisplayPreference {
 
     /// The account's preference for whether or not to display this payment method.
@@ -4413,7 +4413,7 @@ impl std::default::Default for UpdatePaymentMethodConfigurationWechatPayDisplayP
 /// Cards are a popular way for consumers and businesses to pay online or in person.
 ///
 /// Stripe supports global and local card networks.
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethodParam {
     /// Whether or not the payment method should be displayed.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -4421,7 +4421,7 @@ pub struct PaymentMethodParam {
 }
 
 /// Whether or not the payment method should be displayed.
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct DisplayPreference {
     /// The account's preference for whether or not to display this payment method.
     #[serde(skip_serializing_if = "Option::is_none")]

@@ -12,7 +12,7 @@ use crate::resources::{ApiVersion, WebhookEndpointStatus};
 /// The resource representing a Stripe "NotificationWebhookEndpoint".
 ///
 /// For more details see <https://stripe.com/docs/api/webhook_endpoints/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct WebhookEndpoint {
     /// Unique identifier for the object.
     pub id: WebhookEndpointId,

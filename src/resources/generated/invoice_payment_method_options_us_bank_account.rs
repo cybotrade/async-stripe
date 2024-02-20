@@ -5,7 +5,7 @@
 use serde::{Deserialize, Serialize};
 
 /// The resource representing a Stripe "invoice_payment_method_options_us_bank_account".
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct InvoicePaymentMethodOptionsUsBankAccount {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub financial_connections: Option<InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptions>,
@@ -15,7 +15,7 @@ pub struct InvoicePaymentMethodOptionsUsBankAccount {
     pub verification_method: Option<InvoicePaymentMethodOptionsUsBankAccountVerificationMethod>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptions {
     /// The list of permissions to request.
     ///

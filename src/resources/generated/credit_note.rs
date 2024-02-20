@@ -15,7 +15,7 @@ use crate::resources::{
 /// The resource representing a Stripe "CreditNote".
 ///
 /// For more details see <https://stripe.com/docs/api/credit_notes/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreditNote {
     /// Unique identifier for the object.
     pub id: CreditNoteId,
@@ -161,7 +161,7 @@ impl Object for CreditNote {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreditNoteTaxAmount {
     /// The amount, in cents (or local equivalent), of the tax.
     pub amount: i64,
@@ -181,7 +181,7 @@ pub struct CreditNoteTaxAmount {
     pub taxable_amount: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct DiscountsResourceDiscountAmount {
     /// The amount, in cents (or local equivalent), of the discount.
     pub amount: i64,
@@ -358,7 +358,7 @@ impl<'a> UpdateCreditNote<'a> {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCreditNoteLines {
     /// The line item amount to credit.
     ///
@@ -412,14 +412,14 @@ pub struct CreateCreditNoteLines {
     pub unit_amount_decimal: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCreditNoteShippingCost {
     /// The ID of the shipping rate to use for this order.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub shipping_rate: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCreditNoteLinesTaxAmounts {
     /// The amount, in cents (or local equivalent), of the tax.
     pub amount: i64,

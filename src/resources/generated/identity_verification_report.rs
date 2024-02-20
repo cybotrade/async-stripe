@@ -10,7 +10,7 @@ use serde::{Deserialize, Serialize};
 /// The resource representing a Stripe "GelatoVerificationReport".
 ///
 /// For more details see <https://stripe.com/docs/api/identity/verification_reports/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IdentityVerificationReport {
     /// Unique identifier for the object.
     pub id: IdentityVerificationReportId,
@@ -54,7 +54,7 @@ impl Object for IdentityVerificationReport {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct GelatoDocumentReport {
 
     /// Address as it appears in the document.
@@ -97,7 +97,7 @@ pub struct GelatoDocumentReport {
     pub type_: Option<GelatoDocumentReportType>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct GelatoDataDocumentReportDateOfBirth {
 
     /// Numerical day between 1 and 31.
@@ -110,7 +110,7 @@ pub struct GelatoDataDocumentReportDateOfBirth {
     pub year: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct GelatoDataDocumentReportExpirationDate {
 
     /// Numerical day between 1 and 31.
@@ -123,7 +123,7 @@ pub struct GelatoDataDocumentReportExpirationDate {
     pub year: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct GelatoDataDocumentReportIssuedDate {
 
     /// Numerical day between 1 and 31.
@@ -136,7 +136,7 @@ pub struct GelatoDataDocumentReportIssuedDate {
     pub year: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct GelatoDocumentReportError {
 
     /// A short machine-readable string giving the reason for the verification failure.
@@ -148,7 +148,7 @@ pub struct GelatoDocumentReportError {
     pub reason: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct GelatoIdNumberReport {
 
     /// Date of birth.
@@ -177,7 +177,7 @@ pub struct GelatoIdNumberReport {
     pub status: GelatoIdNumberReportStatus,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct GelatoDataIdNumberReportDate {
 
     /// Numerical day between 1 and 31.
@@ -190,7 +190,7 @@ pub struct GelatoDataIdNumberReportDate {
     pub year: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct GelatoIdNumberReportError {
 
     /// A short machine-readable string giving the reason for the verification failure.
@@ -202,7 +202,7 @@ pub struct GelatoIdNumberReportError {
     pub reason: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct GelatoSelfieReport {
 
     /// ID of the [File](https://stripe.com/docs/api/files) holding the image of the identity document used in this check.
@@ -220,7 +220,7 @@ pub struct GelatoSelfieReport {
     pub status: GelatoSelfieReportStatus,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct GelatoSelfieReportError {
 
     /// A short machine-readable string giving the reason for the verification failure.
@@ -232,7 +232,7 @@ pub struct GelatoSelfieReportError {
     pub reason: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct GelatoVerificationReportOptions {
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -242,7 +242,7 @@ pub struct GelatoVerificationReportOptions {
     pub id_number: Option<GelatoReportIdNumberOptions>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct GelatoReportDocumentOptions {
 
     /// Array of strings of allowed identity document types.
@@ -266,7 +266,7 @@ pub struct GelatoReportDocumentOptions {
     pub require_matching_selfie: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct GelatoReportIdNumberOptions {
 }
 

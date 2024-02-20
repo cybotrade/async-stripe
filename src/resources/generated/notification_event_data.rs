@@ -5,7 +5,7 @@
 use serde::{Deserialize, Serialize};
 
 /// The resource representing a Stripe "NotificationEventData".
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct NotificationEventData {
 
     /// Object containing the names of the updated attributes and their values prior to the event (only included in events of type `*.updated`).
@@ -16,6 +16,6 @@ pub struct NotificationEventData {
     pub previous_attributes: Option<NotificationEventDataPreviousAttributes>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct NotificationEventDataPreviousAttributes {
 }

@@ -5,6 +5,6 @@
 use serde::{Deserialize, Serialize};
 
 /// The resource representing a Stripe "radar.early_fraud_warning.created".
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct RadarEarlyFraudWarningCreated {
 }

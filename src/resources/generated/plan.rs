@@ -15,7 +15,7 @@ use crate::resources::{CreateProduct, Currency, Product};
 /// The resource representing a Stripe "Plan".
 ///
 /// For more details see <https://stripe.com/docs/api/plans/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct Plan {
     /// Unique identifier for the object.
     pub id: PlanId,
@@ -168,7 +168,7 @@ impl Object for Plan {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PlanTier {
     /// Price for the entire tier.
     pub flat_amount: Option<i64>,
@@ -186,7 +186,7 @@ pub struct PlanTier {
     pub up_to: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TransformUsage {
     /// Divide usage by this number.
     pub divide_by: i64,

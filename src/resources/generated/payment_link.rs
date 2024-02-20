@@ -15,7 +15,7 @@ use crate::resources::{
 /// The resource representing a Stripe "PaymentLink".
 ///
 /// For more details see <https://stripe.com/docs/api/payment_links/payment_links/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentLink {
     /// Unique identifier for the object.
     pub id: PaymentLinkId,
@@ -160,7 +160,7 @@ impl Object for PaymentLink {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentLinksResourceAfterCompletion {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub hosted_confirmation: Option<PaymentLinksResourceCompletionBehaviorConfirmationPage>,
@@ -173,7 +173,7 @@ pub struct PaymentLinksResourceAfterCompletion {
     pub type_: PaymentLinksResourceAfterCompletionType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentLinksResourceAutomaticTax {
     /// If `true`, tax will be calculated automatically using the customer's location.
     pub enabled: bool,
@@ -185,19 +185,19 @@ pub struct PaymentLinksResourceAutomaticTax {
     pub liability: Option<ConnectAccountReference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentLinksResourceCompletionBehaviorConfirmationPage {
     /// The custom message that is displayed to the customer after the purchase is complete.
     pub custom_message: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentLinksResourceCompletionBehaviorRedirect {
     /// The URL the customer will be redirected to after the purchase is complete.
     pub url: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentLinksResourceConsentCollection {
     /// Settings related to the payment method reuse text shown in the Checkout UI.
     pub payment_method_reuse_agreement: Option<PaymentLinksResourcePaymentMethodReuseAgreement>,
@@ -211,7 +211,7 @@ pub struct PaymentLinksResourceConsentCollection {
     pub terms_of_service: Option<PaymentLinksResourceConsentCollectionTermsOfService>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentLinksResourceCustomFields {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub dropdown: Option<PaymentLinksResourceCustomFieldsDropdown>,
@@ -239,7 +239,7 @@ pub struct PaymentLinksResourceCustomFields {
     pub type_: PaymentLinksResourceCustomFieldsType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentLinksResourceCustomFieldsDropdown {
     /// The options available for the customer to select.
     ///
@@ -247,7 +247,7 @@ pub struct PaymentLinksResourceCustomFieldsDropdown {
     pub options: Vec<PaymentLinksResourceCustomFieldsDropdownOption>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentLinksResourceCustomFieldsDropdownOption {
     /// The label for the option, displayed to the customer.
     ///
@@ -260,7 +260,7 @@ pub struct PaymentLinksResourceCustomFieldsDropdownOption {
     pub value: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentLinksResourceCustomFieldsLabel {
     /// Custom text for the label, displayed to the customer.
     ///
@@ -272,7 +272,7 @@ pub struct PaymentLinksResourceCustomFieldsLabel {
     pub type_: PaymentLinksResourceCustomFieldsLabelType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentLinksResourceCustomFieldsNumeric {
     /// The maximum character length constraint for the customer's input.
     pub maximum_length: Option<i64>,
@@ -281,7 +281,7 @@ pub struct PaymentLinksResourceCustomFieldsNumeric {
     pub minimum_length: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentLinksResourceCustomFieldsText {
     /// The maximum character length constraint for the customer's input.
     pub maximum_length: Option<i64>,
@@ -290,7 +290,7 @@ pub struct PaymentLinksResourceCustomFieldsText {
     pub minimum_length: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentLinksResourceCustomText {
     /// Custom text that should be displayed after the payment confirmation button.
     pub after_submit: Option<PaymentLinksResourceCustomTextPosition>,
@@ -305,13 +305,13 @@ pub struct PaymentLinksResourceCustomText {
     pub terms_of_service_acceptance: Option<PaymentLinksResourceCustomTextPosition>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentLinksResourceCustomTextPosition {
     /// Text may be up to 1200 characters in length.
     pub message: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentLinksResourceInvoiceCreation {
     /// Enable creating an invoice on successful payment.
     pub enabled: bool,
@@ -322,7 +322,7 @@ pub struct PaymentLinksResourceInvoiceCreation {
     pub invoice_data: Option<PaymentLinksResourceInvoiceSettings>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentLinksResourceInvoiceSettings {
     /// The account tax IDs associated with the invoice.
     pub account_tax_ids: Option<Vec<Expandable<TaxId>>>,
@@ -352,7 +352,7 @@ pub struct PaymentLinksResourceInvoiceSettings {
     pub rendering_options: Option<InvoiceSettingRenderingOptions>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct InvoiceSettingCustomField {
     /// The name of the custom field.
     pub name: String,
@@ -361,7 +361,7 @@ pub struct InvoiceSettingCustomField {
     pub value: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentLinksResourcePaymentIntentData {
     /// Indicates when the funds will be captured from the customer's account.
     pub capture_method: Option<PaymentLinksResourcePaymentIntentDataCaptureMethod>,
@@ -394,7 +394,7 @@ pub struct PaymentLinksResourcePaymentIntentData {
     pub transfer_group: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentLinksResourcePaymentMethodReuseAgreement {
     /// Determines the position and visibility of the payment method reuse agreement in the UI.
     ///
@@ -402,18 +402,18 @@ pub struct PaymentLinksResourcePaymentMethodReuseAgreement {
     pub position: PaymentLinksResourcePaymentMethodReuseAgreementPosition,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentLinksResourcePhoneNumberCollection {
     /// If `true`, a phone number will be collected during checkout.
     pub enabled: bool,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentLinksResourceRestrictions {
     pub completed_sessions: PaymentLinksResourceCompletedSessions,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentLinksResourceCompletedSessions {
     /// The current number of checkout sessions that have been completed on the payment link which count towards the `completed_sessions` restriction to be met.
     pub count: u64,
@@ -422,7 +422,7 @@ pub struct PaymentLinksResourceCompletedSessions {
     pub limit: i64,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentLinksResourceShippingAddressCollection {
     /// An array of two-letter ISO country codes representing which countries Checkout should provide as options for shipping locations.
     ///
@@ -430,7 +430,7 @@ pub struct PaymentLinksResourceShippingAddressCollection {
     pub allowed_countries: Vec<PaymentLinksResourceShippingAddressCollectionAllowedCountries>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentLinksResourceShippingOption {
     /// A non-negative integer in cents representing how much to charge.
     pub shipping_amount: i64,
@@ -439,7 +439,7 @@ pub struct PaymentLinksResourceShippingOption {
     pub shipping_rate: Expandable<ShippingRate>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentLinksResourceSubscriptionData {
     /// The subscription's description, meant to be displayable to the customer.
     ///
@@ -458,18 +458,18 @@ pub struct PaymentLinksResourceSubscriptionData {
     pub trial_settings: Option<SubscriptionsTrialsResourceTrialSettings>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentLinksResourceSubscriptionDataInvoiceSettings {
     pub issuer: ConnectAccountReference,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentLinksResourceTaxIdCollection {
     /// Indicates whether tax ID collection is enabled for the session.
     pub enabled: bool,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentLinksResourceTransferData {
     /// The amount in cents (or local equivalent) that will be transferred to the destination account.
     ///
@@ -830,7 +830,7 @@ impl<'a> UpdatePaymentLink<'a> {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentLinkAfterCompletion {
     /// Configuration when `type=hosted_confirmation`.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -847,7 +847,7 @@ pub struct CreatePaymentLinkAfterCompletion {
     pub type_: CreatePaymentLinkAfterCompletionType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentLinkAutomaticTax {
     /// If `true`, tax will be calculated automatically using the customer's location.
     pub enabled: bool,
@@ -860,7 +860,7 @@ pub struct CreatePaymentLinkAutomaticTax {
     pub liability: Option<CreatePaymentLinkAutomaticTaxLiability>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentLinkConsentCollection {
     /// Determines the display of payment method reuse agreement text in the UI.
     ///
@@ -882,7 +882,7 @@ pub struct CreatePaymentLinkConsentCollection {
     pub terms_of_service: Option<CreatePaymentLinkConsentCollectionTermsOfService>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentLinkCustomFields {
     /// Configuration for `type=dropdown` fields.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -915,7 +915,7 @@ pub struct CreatePaymentLinkCustomFields {
     pub type_: CreatePaymentLinkCustomFieldsType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentLinkCustomText {
     /// Custom text that should be displayed after the payment confirmation button.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -934,7 +934,7 @@ pub struct CreatePaymentLinkCustomText {
     pub terms_of_service_acceptance: Option<CreatePaymentLinkCustomTextTermsOfServiceAcceptance>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentLinkInvoiceCreation {
     /// Whether the feature is enabled.
     pub enabled: bool,
@@ -944,7 +944,7 @@ pub struct CreatePaymentLinkInvoiceCreation {
     pub invoice_data: Option<CreatePaymentLinkInvoiceCreationInvoiceData>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentLinkLineItems {
     /// When set, provides configuration for this item’s quantity to be adjusted by the customer during checkout.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -957,7 +957,7 @@ pub struct CreatePaymentLinkLineItems {
     pub quantity: u64,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentLinkPaymentIntentData {
     /// Controls when the funds will be captured from the customer's account.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1010,19 +1010,19 @@ pub struct CreatePaymentLinkPaymentIntentData {
     pub transfer_group: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentLinkPhoneNumberCollection {
     /// Set to `true` to enable phone number collection.
     pub enabled: bool,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentLinkRestrictions {
     /// Configuration for the `completed_sessions` restriction type.
     pub completed_sessions: CreatePaymentLinkRestrictionsCompletedSessions,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentLinkShippingAddressCollection {
     /// An array of two-letter ISO country codes representing which countries Checkout should provide as options for
     /// shipping locations.
@@ -1031,14 +1031,14 @@ pub struct CreatePaymentLinkShippingAddressCollection {
     pub allowed_countries: Vec<CreatePaymentLinkShippingAddressCollectionAllowedCountries>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentLinkShippingOptions {
     /// The ID of the Shipping Rate to use for this shipping option.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub shipping_rate: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentLinkSubscriptionData {
     /// The subscription's description, meant to be displayable to the customer.
     ///
@@ -1068,13 +1068,13 @@ pub struct CreatePaymentLinkSubscriptionData {
     pub trial_settings: Option<CreatePaymentLinkSubscriptionDataTrialSettings>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentLinkTaxIdCollection {
     /// Set to `true` to enable tax ID collection.
     pub enabled: bool,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentLinkTransferData {
     /// The amount that will be transferred automatically when a charge succeeds.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1088,7 +1088,7 @@ pub struct CreatePaymentLinkTransferData {
     pub destination: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentLinkAfterCompletion {
     /// Configuration when `type=hosted_confirmation`.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1105,7 +1105,7 @@ pub struct UpdatePaymentLinkAfterCompletion {
     pub type_: UpdatePaymentLinkAfterCompletionType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentLinkAutomaticTax {
     /// If `true`, tax will be calculated automatically using the customer's location.
     pub enabled: bool,
@@ -1118,7 +1118,7 @@ pub struct UpdatePaymentLinkAutomaticTax {
     pub liability: Option<UpdatePaymentLinkAutomaticTaxLiability>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentLinkCustomFields {
     /// Configuration for `type=dropdown` fields.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1151,7 +1151,7 @@ pub struct UpdatePaymentLinkCustomFields {
     pub type_: UpdatePaymentLinkCustomFieldsType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentLinkCustomText {
     /// Custom text that should be displayed after the payment confirmation button.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1170,7 +1170,7 @@ pub struct UpdatePaymentLinkCustomText {
     pub terms_of_service_acceptance: Option<UpdatePaymentLinkCustomTextTermsOfServiceAcceptance>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentLinkInvoiceCreation {
     /// Whether the feature is enabled.
     pub enabled: bool,
@@ -1180,7 +1180,7 @@ pub struct UpdatePaymentLinkInvoiceCreation {
     pub invoice_data: Option<UpdatePaymentLinkInvoiceCreationInvoiceData>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentLinkLineItems {
     /// When set, provides configuration for this item’s quantity to be adjusted by the customer during checkout.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1194,7 +1194,7 @@ pub struct UpdatePaymentLinkLineItems {
     pub quantity: Option<u64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentLinkPaymentIntentData {
     /// An arbitrary string attached to the object.
     ///
@@ -1229,13 +1229,13 @@ pub struct UpdatePaymentLinkPaymentIntentData {
     pub transfer_group: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentLinkRestrictions {
     /// Configuration for the `completed_sessions` restriction type.
     pub completed_sessions: UpdatePaymentLinkRestrictionsCompletedSessions,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentLinkShippingAddressCollection {
     /// An array of two-letter ISO country codes representing which countries Checkout should provide as options for
     /// shipping locations.
@@ -1244,7 +1244,7 @@ pub struct UpdatePaymentLinkShippingAddressCollection {
     pub allowed_countries: Vec<UpdatePaymentLinkShippingAddressCollectionAllowedCountries>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentLinkSubscriptionData {
     /// All invoices will be billed using the specified settings.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1262,14 +1262,14 @@ pub struct UpdatePaymentLinkSubscriptionData {
     pub trial_settings: Option<UpdatePaymentLinkSubscriptionDataTrialSettings>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentLinkAfterCompletionHostedConfirmation {
     /// A custom message to display to the customer after the purchase is complete.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub custom_message: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentLinkAfterCompletionRedirect {
     /// The URL the customer will be redirected to after the purchase is complete.
     ///
@@ -1277,7 +1277,7 @@ pub struct CreatePaymentLinkAfterCompletionRedirect {
     pub url: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentLinkAutomaticTaxLiability {
     /// The connected account being referenced when `type` is `account`.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1288,7 +1288,7 @@ pub struct CreatePaymentLinkAutomaticTaxLiability {
     pub type_: CreatePaymentLinkAutomaticTaxLiabilityType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentLinkConsentCollectionPaymentMethodReuseAgreement {
     /// Determines the position and visibility of the payment method reuse agreement in the UI.
     ///
@@ -1297,7 +1297,7 @@ pub struct CreatePaymentLinkConsentCollectionPaymentMethodReuseAgreement {
     pub position: CreatePaymentLinkConsentCollectionPaymentMethodReuseAgreementPosition,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentLinkCustomFieldsDropdown {
     /// The options available for the customer to select.
     ///
@@ -1305,7 +1305,7 @@ pub struct CreatePaymentLinkCustomFieldsDropdown {
     pub options: Vec<CreatePaymentLinkCustomFieldsDropdownOptions>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentLinkCustomFieldsLabel {
     /// Custom text for the label, displayed to the customer.
     ///
@@ -1317,7 +1317,7 @@ pub struct CreatePaymentLinkCustomFieldsLabel {
     pub type_: CreatePaymentLinkCustomFieldsLabelType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentLinkCustomFieldsNumeric {
     /// The maximum character length constraint for the customer's input.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1328,7 +1328,7 @@ pub struct CreatePaymentLinkCustomFieldsNumeric {
     pub minimum_length: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentLinkCustomFieldsText {
     /// The maximum character length constraint for the customer's input.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1339,31 +1339,31 @@ pub struct CreatePaymentLinkCustomFieldsText {
     pub minimum_length: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentLinkCustomTextAfterSubmit {
     /// Text may be up to 1200 characters in length.
     pub message: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentLinkCustomTextShippingAddress {
     /// Text may be up to 1200 characters in length.
     pub message: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentLinkCustomTextSubmit {
     /// Text may be up to 1200 characters in length.
     pub message: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentLinkCustomTextTermsOfServiceAcceptance {
     /// Text may be up to 1200 characters in length.
     pub message: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentLinkInvoiceCreationInvoiceData {
     /// The account tax IDs associated with the invoice.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1402,7 +1402,7 @@ pub struct CreatePaymentLinkInvoiceCreationInvoiceData {
     pub rendering_options: Option<CreatePaymentLinkInvoiceCreationInvoiceDataRenderingOptions>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentLinkLineItemsAdjustableQuantity {
     /// Set to true if the quantity can be adjusted to any non-negative Integer.
     pub enabled: bool,
@@ -1422,13 +1422,13 @@ pub struct CreatePaymentLinkLineItemsAdjustableQuantity {
     pub minimum: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentLinkRestrictionsCompletedSessions {
     /// The maximum number of checkout sessions that can be completed for the `completed_sessions` restriction to be met.
     pub limit: i64,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentLinkSubscriptionDataInvoiceSettings {
     /// The connected account that issues the invoice.
     ///
@@ -1437,20 +1437,20 @@ pub struct CreatePaymentLinkSubscriptionDataInvoiceSettings {
     pub issuer: Option<CreatePaymentLinkSubscriptionDataInvoiceSettingsIssuer>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentLinkSubscriptionDataTrialSettings {
     /// Defines how the subscription should behave when the user's free trial ends.
     pub end_behavior: CreatePaymentLinkSubscriptionDataTrialSettingsEndBehavior,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentLinkAfterCompletionHostedConfirmation {
     /// A custom message to display to the customer after the purchase is complete.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub custom_message: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentLinkAfterCompletionRedirect {
     /// The URL the customer will be redirected to after the purchase is complete.
     ///
@@ -1458,7 +1458,7 @@ pub struct UpdatePaymentLinkAfterCompletionRedirect {
     pub url: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentLinkAutomaticTaxLiability {
     /// The connected account being referenced when `type` is `account`.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1469,7 +1469,7 @@ pub struct UpdatePaymentLinkAutomaticTaxLiability {
     pub type_: UpdatePaymentLinkAutomaticTaxLiabilityType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentLinkCustomFieldsDropdown {
     /// The options available for the customer to select.
     ///
@@ -1477,7 +1477,7 @@ pub struct UpdatePaymentLinkCustomFieldsDropdown {
     pub options: Vec<UpdatePaymentLinkCustomFieldsDropdownOptions>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentLinkCustomFieldsLabel {
     /// Custom text for the label, displayed to the customer.
     ///
@@ -1489,7 +1489,7 @@ pub struct UpdatePaymentLinkCustomFieldsLabel {
     pub type_: UpdatePaymentLinkCustomFieldsLabelType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentLinkCustomFieldsNumeric {
     /// The maximum character length constraint for the customer's input.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1500,7 +1500,7 @@ pub struct UpdatePaymentLinkCustomFieldsNumeric {
     pub minimum_length: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentLinkCustomFieldsText {
     /// The maximum character length constraint for the customer's input.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1511,31 +1511,31 @@ pub struct UpdatePaymentLinkCustomFieldsText {
     pub minimum_length: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentLinkCustomTextAfterSubmit {
     /// Text may be up to 1200 characters in length.
     pub message: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentLinkCustomTextShippingAddress {
     /// Text may be up to 1200 characters in length.
     pub message: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentLinkCustomTextSubmit {
     /// Text may be up to 1200 characters in length.
     pub message: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentLinkCustomTextTermsOfServiceAcceptance {
     /// Text may be up to 1200 characters in length.
     pub message: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentLinkInvoiceCreationInvoiceData {
     /// The account tax IDs associated with the invoice.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1574,7 +1574,7 @@ pub struct UpdatePaymentLinkInvoiceCreationInvoiceData {
     pub rendering_options: Option<UpdatePaymentLinkInvoiceCreationInvoiceDataRenderingOptions>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentLinkLineItemsAdjustableQuantity {
     /// Set to true if the quantity can be adjusted to any non-negative Integer.
     pub enabled: bool,
@@ -1594,13 +1594,13 @@ pub struct UpdatePaymentLinkLineItemsAdjustableQuantity {
     pub minimum: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentLinkRestrictionsCompletedSessions {
     /// The maximum number of checkout sessions that can be completed for the `completed_sessions` restriction to be met.
     pub limit: i64,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentLinkSubscriptionDataInvoiceSettings {
     /// The connected account that issues the invoice.
     ///
@@ -1609,13 +1609,13 @@ pub struct UpdatePaymentLinkSubscriptionDataInvoiceSettings {
     pub issuer: Option<UpdatePaymentLinkSubscriptionDataInvoiceSettingsIssuer>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentLinkSubscriptionDataTrialSettings {
     /// Defines how the subscription should behave when the user's free trial ends.
     pub end_behavior: UpdatePaymentLinkSubscriptionDataTrialSettingsEndBehavior,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentLinkCustomFieldsDropdownOptions {
     /// The label for the option, displayed to the customer.
     ///
@@ -1628,7 +1628,7 @@ pub struct CreatePaymentLinkCustomFieldsDropdownOptions {
     pub value: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentLinkInvoiceCreationInvoiceDataCustomFields {
     /// The name of the custom field.
     ///
@@ -1641,7 +1641,7 @@ pub struct CreatePaymentLinkInvoiceCreationInvoiceDataCustomFields {
     pub value: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentLinkInvoiceCreationInvoiceDataIssuer {
     /// The connected account being referenced when `type` is `account`.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1652,7 +1652,7 @@ pub struct CreatePaymentLinkInvoiceCreationInvoiceDataIssuer {
     pub type_: CreatePaymentLinkInvoiceCreationInvoiceDataIssuerType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentLinkInvoiceCreationInvoiceDataRenderingOptions {
     /// How line-item prices and amounts will be displayed with respect to tax on invoice PDFs.
     ///
@@ -1664,7 +1664,7 @@ pub struct CreatePaymentLinkInvoiceCreationInvoiceDataRenderingOptions {
         Option<CreatePaymentLinkInvoiceCreationInvoiceDataRenderingOptionsAmountTaxDisplay>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentLinkSubscriptionDataInvoiceSettingsIssuer {
     /// The connected account being referenced when `type` is `account`.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1675,14 +1675,14 @@ pub struct CreatePaymentLinkSubscriptionDataInvoiceSettingsIssuer {
     pub type_: CreatePaymentLinkSubscriptionDataInvoiceSettingsIssuerType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePaymentLinkSubscriptionDataTrialSettingsEndBehavior {
     /// Indicates how the subscription should change when the trial ends if the user did not provide a payment method.
     pub missing_payment_method:
         CreatePaymentLinkSubscriptionDataTrialSettingsEndBehaviorMissingPaymentMethod,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentLinkCustomFieldsDropdownOptions {
     /// The label for the option, displayed to the customer.
     ///
@@ -1695,7 +1695,7 @@ pub struct UpdatePaymentLinkCustomFieldsDropdownOptions {
     pub value: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentLinkInvoiceCreationInvoiceDataCustomFields {
     /// The name of the custom field.
     ///
@@ -1708,7 +1708,7 @@ pub struct UpdatePaymentLinkInvoiceCreationInvoiceDataCustomFields {
     pub value: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentLinkInvoiceCreationInvoiceDataIssuer {
     /// The connected account being referenced when `type` is `account`.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1719,7 +1719,7 @@ pub struct UpdatePaymentLinkInvoiceCreationInvoiceDataIssuer {
     pub type_: UpdatePaymentLinkInvoiceCreationInvoiceDataIssuerType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentLinkInvoiceCreationInvoiceDataRenderingOptions {
     /// How line-item prices and amounts will be displayed with respect to tax on invoice PDFs.
     ///
@@ -1731,7 +1731,7 @@ pub struct UpdatePaymentLinkInvoiceCreationInvoiceDataRenderingOptions {
         Option<UpdatePaymentLinkInvoiceCreationInvoiceDataRenderingOptionsAmountTaxDisplay>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentLinkSubscriptionDataInvoiceSettingsIssuer {
     /// The connected account being referenced when `type` is `account`.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1742,7 +1742,7 @@ pub struct UpdatePaymentLinkSubscriptionDataInvoiceSettingsIssuer {
     pub type_: UpdatePaymentLinkSubscriptionDataInvoiceSettingsIssuerType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePaymentLinkSubscriptionDataTrialSettingsEndBehavior {
     /// Indicates how the subscription should change when the trial ends if the user did not provide a payment method.
     pub missing_payment_method:

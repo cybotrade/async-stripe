@@ -12,7 +12,7 @@ use crate::resources::{BalanceTransaction, Charge, Currency, PaymentIntent, Tran
 /// The resource representing a Stripe "Refund".
 ///
 /// For more details see <https://stripe.com/docs/api/refunds/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct Refund {
     /// Unique identifier for the object.
     pub id: RefundId,
@@ -139,7 +139,7 @@ impl Object for Refund {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct RefundDestinationDetails {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub affirm: Option<DestinationDetailsUnimplemented>,
@@ -233,10 +233,10 @@ pub struct RefundDestinationDetails {
     pub zip: Option<DestinationDetailsUnimplemented>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct DestinationDetailsUnimplemented {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct RefundDestinationDetailsCard {
     /// Value of the reference number assigned to the refund.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -259,7 +259,7 @@ pub struct RefundDestinationDetailsCard {
     pub type_: RefundDestinationDetailsCardType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct RefundDestinationDetailsGeneric {
     /// The reference assigned to the refund.
     pub reference: Option<String>,
@@ -270,7 +270,7 @@ pub struct RefundDestinationDetailsGeneric {
     pub reference_status: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct RefundNextAction {
     /// Contains the refund details.
     pub display_details: Option<RefundNextActionDisplayDetails>,
@@ -280,7 +280,7 @@ pub struct RefundNextAction {
     pub type_: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct RefundNextActionDisplayDetails {
     pub email_sent: EmailSent,
 
@@ -288,7 +288,7 @@ pub struct RefundNextActionDisplayDetails {
     pub expires_at: Timestamp,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct EmailSent {
     /// The timestamp when the email was sent.
     pub email_sent_at: Timestamp,

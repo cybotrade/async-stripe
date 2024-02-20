@@ -8,7 +8,7 @@ use crate::ids::TaxCalculationLineItemId;
 use crate::params::Object;
 
 /// The resource representing a Stripe "TaxProductResourceTaxCalculationLineItem".
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TaxCalculationLineItem {
     /// Unique identifier for the object.
     pub id: TaxCalculationLineItemId,
@@ -58,7 +58,7 @@ impl Object for TaxCalculationLineItem {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TaxProductResourceLineItemTaxBreakdown {
     /// The amount of tax, in the [smallest currency unit](https://stripe.com/docs/currencies#zero-decimal).
     pub amount: i64,
@@ -82,7 +82,7 @@ pub struct TaxProductResourceLineItemTaxBreakdown {
     pub taxable_amount: i64,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TaxProductResourceJurisdiction {
     /// Two-letter country code ([ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)).
     pub country: String,
@@ -99,7 +99,7 @@ pub struct TaxProductResourceJurisdiction {
     pub state: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TaxProductResourceLineItemTaxRateDetails {
     /// A localized display name for tax type, intended to be human-readable.
     ///

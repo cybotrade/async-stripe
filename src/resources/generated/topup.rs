@@ -12,7 +12,7 @@ use crate::resources::{BalanceTransaction, Currency, Source};
 /// The resource representing a Stripe "Topup".
 ///
 /// For more details see <https://stripe.com/docs/api/topups/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct Topup {
     /// Unique identifier for the object.
     pub id: TopupId,

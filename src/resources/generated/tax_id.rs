@@ -12,7 +12,7 @@ use crate::resources::{Account, Application, Customer};
 /// The resource representing a Stripe "tax_id".
 ///
 /// For more details see <https://stripe.com/docs/api/tax_ids/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TaxId {
     /// Unique identifier for the object.
     pub id: TaxIdId,
@@ -91,7 +91,7 @@ impl Object for TaxId {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TaxIDsOwner {
     /// The account being referenced when `type` is `account`.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -110,7 +110,7 @@ pub struct TaxIDsOwner {
     pub type_: TaxIDsOwnerType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TaxIdVerification {
     /// Verification status, one of `pending`, `verified`, `unverified`, or `unavailable`.
     pub status: TaxIdVerificationStatus,
@@ -200,7 +200,7 @@ impl Paginable for ListTaxIds<'_> {
         self.starting_after = Some(item.id());
     }
 }
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateTaxIdOwner {
     /// Account the tax ID belongs to.
     ///
@@ -219,7 +219,7 @@ pub struct CreateTaxIdOwner {
     pub type_: CreateTaxIdOwnerType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct ListTaxIdsOwner {
     /// Account the tax ID belongs to.
     ///

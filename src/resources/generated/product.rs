@@ -15,7 +15,7 @@ use crate::resources::{Currency, Price, TaxCode, UpTo};
 /// The resource representing a Stripe "Product".
 ///
 /// For more details see <https://stripe.com/docs/api/products/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct Product {
     /// Unique identifier for the object.
     pub id: ProductId,
@@ -156,7 +156,7 @@ impl Object for Product {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PackageDimensions {
     /// Height, in inches.
     pub height: f64,
@@ -171,7 +171,7 @@ pub struct PackageDimensions {
     pub width: f64,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct ProductFeature {
     /// The feature's name.
     ///
@@ -469,7 +469,7 @@ impl<'a> UpdateProduct<'a> {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateProductDefaultPriceData {
     /// Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase.
     ///
@@ -507,7 +507,7 @@ pub struct CreateProductDefaultPriceData {
     pub unit_amount_decimal: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateProductFeatures {
     /// The feature's name.
     ///
@@ -515,7 +515,7 @@ pub struct CreateProductFeatures {
     pub name: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateProductFeatures {
     /// The feature's name.
     ///
@@ -523,7 +523,7 @@ pub struct UpdateProductFeatures {
     pub name: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateProductDefaultPriceDataCurrencyOptions {
     /// When set, provides configuration for the amount to be adjusted by the customer during Checkout Sessions and Payment Links.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -555,7 +555,7 @@ pub struct CreateProductDefaultPriceDataCurrencyOptions {
     pub unit_amount_decimal: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateProductDefaultPriceDataRecurring {
     /// Specifies billing frequency.
     ///
@@ -570,7 +570,7 @@ pub struct CreateProductDefaultPriceDataRecurring {
     pub interval_count: Option<u64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateProductDefaultPriceDataCurrencyOptionsCustomUnitAmount {
     /// Pass in `true` to enable `custom_unit_amount`, otherwise omit `custom_unit_amount`.
     pub enabled: bool,
@@ -590,7 +590,7 @@ pub struct CreateProductDefaultPriceDataCurrencyOptionsCustomUnitAmount {
     pub preset: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateProductDefaultPriceDataCurrencyOptionsTiers {
     /// The flat billing amount for an entire tier, regardless of the number of units in the tier.
     #[serde(skip_serializing_if = "Option::is_none")]

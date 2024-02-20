@@ -11,7 +11,7 @@ use crate::resources::{Address, File};
 /// The resource representing a Stripe "Person".
 ///
 /// For more details see <https://stripe.com/docs/api/persons/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct Person {
     /// Unique identifier for the object.
     pub id: PersonId,
@@ -150,7 +150,7 @@ impl Object for Person {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct LegalEntityDob {
     /// The day of birth, between 1 and 31.
     pub day: Option<i64>,
@@ -162,7 +162,7 @@ pub struct LegalEntityDob {
     pub year: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PersonVerification {
     /// A document showing address, either a passport, local ID card, or utility bill from a well-known utility company.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -189,7 +189,7 @@ pub struct PersonVerification {
     pub status: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PersonVerificationDocument {
     /// The back of an ID returned by a [file upload](https://stripe.com/docs/api#create_file) with a `purpose` value of `identity_document`.
     pub back: Option<Expandable<File>>,
@@ -208,12 +208,12 @@ pub struct PersonVerificationDocument {
     pub front: Option<Expandable<File>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PersonAdditionalTosAcceptances {
     pub account: PersonAdditionalTosAcceptance,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PersonAdditionalTosAcceptance {
     /// The Unix timestamp marking when the legal guardian accepted the service agreement.
     pub date: Option<Timestamp>,
@@ -225,7 +225,7 @@ pub struct PersonAdditionalTosAcceptance {
     pub user_agent: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PersonFutureRequirements {
     /// Fields that are due and can be satisfied by providing the corresponding alternative fields instead.
     pub alternatives: Option<Vec<AccountRequirementsAlternative>>,
@@ -256,7 +256,7 @@ pub struct PersonFutureRequirements {
     pub pending_verification: Vec<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct AccountRequirementsAlternative {
     /// Fields that can be provided to satisfy all fields in `original_fields_due`.
     pub alternative_fields_due: Vec<String>,
@@ -265,7 +265,7 @@ pub struct AccountRequirementsAlternative {
     pub original_fields_due: Vec<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct AccountRequirementsError {
     /// The code for the type of error.
     pub code: AccountRequirementsErrorCode,
@@ -277,7 +277,7 @@ pub struct AccountRequirementsError {
     pub requirement: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PersonRelationship {
     /// Whether the person is a director of the account's legal entity.
     ///
@@ -307,7 +307,7 @@ pub struct PersonRelationship {
     pub title: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PersonRequirements {
     /// Fields that are due and can be satisfied by providing the corresponding alternative fields instead.
     pub alternatives: Option<Vec<AccountRequirementsAlternative>>,

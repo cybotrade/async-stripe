@@ -11,7 +11,7 @@ use crate::resources::{Coupon, Customer, PromotionCode};
 /// The resource representing a Stripe "Discount".
 ///
 /// For more details see <https://stripe.com/docs/api/discounts/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct Discount {
     /// The ID of the discount object.
     ///

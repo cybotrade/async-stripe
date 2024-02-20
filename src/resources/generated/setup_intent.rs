@@ -17,7 +17,7 @@ use crate::resources::{
 /// The resource representing a Stripe "SetupIntent".
 ///
 /// For more details see <https://stripe.com/docs/api/setup_intents/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SetupIntent {
     /// Unique identifier for the object.
     pub id: SetupIntentId,
@@ -167,7 +167,7 @@ impl Object for SetupIntent {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentFlowsAutomaticPaymentMethodsSetupIntent {
     /// Controls whether this SetupIntent will accept redirect-based payment methods.
     ///
@@ -181,7 +181,7 @@ pub struct PaymentFlowsAutomaticPaymentMethodsSetupIntent {
     pub enabled: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SetupIntentNextAction {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub cashapp_handle_redirect_or_display_qr_code:
@@ -204,7 +204,7 @@ pub struct SetupIntentNextAction {
     pub verify_with_microdeposits: Option<SetupIntentNextActionVerifyWithMicrodeposits>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SetupIntentNextActionRedirectToUrl {
     /// If the customer does not exit their browser while authenticating, they will be redirected to this specified URL after completion.
     pub return_url: Option<String>,
@@ -213,7 +213,7 @@ pub struct SetupIntentNextActionRedirectToUrl {
     pub url: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SetupIntentNextActionVerifyWithMicrodeposits {
     /// The timestamp when the microdeposits are expected to land.
     pub arrival_date: Timestamp,
@@ -227,7 +227,7 @@ pub struct SetupIntentNextActionVerifyWithMicrodeposits {
     pub microdeposit_type: Option<SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SetupIntentPaymentMethodOptions {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub acss_debit: Option<SetupIntentPaymentMethodOptionsAcssDebit>,
@@ -248,7 +248,7 @@ pub struct SetupIntentPaymentMethodOptions {
     pub us_bank_account: Option<SetupIntentPaymentMethodOptionsUsBankAccount>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SetupIntentPaymentMethodOptionsAcssDebit {
     /// Currency supported by the bank account.
     pub currency: Option<Currency>,
@@ -261,7 +261,7 @@ pub struct SetupIntentPaymentMethodOptionsAcssDebit {
     pub verification_method: Option<SetupIntentPaymentMethodOptionsAcssDebitVerificationMethod>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SetupIntentPaymentMethodOptionsCard {
     /// Configuration options for setting up an eMandate for cards issued in India.
     pub mandate_options: Option<SetupIntentPaymentMethodOptionsCardMandateOptions>,
@@ -280,7 +280,7 @@ pub struct SetupIntentPaymentMethodOptionsCard {
     pub request_three_d_secure: Option<SetupIntentPaymentMethodOptionsCardRequestThreeDSecure>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SetupIntentPaymentMethodOptionsCardMandateOptions {
     /// Amount to be charged for future payments.
     pub amount: i64,
@@ -332,13 +332,13 @@ pub struct SetupIntentPaymentMethodOptionsCardMandateOptions {
         Option<Vec<SetupIntentPaymentMethodOptionsCardMandateOptionsSupportedTypes>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SetupIntentPaymentMethodOptionsLink {
     /// [Deprecated] This is a legacy parameter that no longer has any function.
     pub persistent_token: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SetupIntentPaymentMethodOptionsMandateOptionsAcssDebit {
     /// A URL for custom mandate text.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -362,7 +362,7 @@ pub struct SetupIntentPaymentMethodOptionsMandateOptionsAcssDebit {
         Option<SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitTransactionType>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SetupIntentPaymentMethodOptionsPaypal {
     /// The PayPal Billing Agreement ID (BAID).
     ///
@@ -370,16 +370,16 @@ pub struct SetupIntentPaymentMethodOptionsPaypal {
     pub billing_agreement_id: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SetupIntentPaymentMethodOptionsSepaDebit {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub mandate_options: Option<SetupIntentPaymentMethodOptionsMandateOptionsSepaDebit>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SetupIntentPaymentMethodOptionsMandateOptionsSepaDebit {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SetupIntentPaymentMethodOptionsUsBankAccount {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub financial_connections: Option<LinkedAccountOptionsUsBankAccount>,
@@ -681,7 +681,7 @@ impl<'a> UpdateSetupIntent<'a> {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentAutomaticPaymentMethods {
     /// Controls whether this SetupIntent will accept redirect-based payment methods.
     ///
@@ -695,13 +695,13 @@ pub struct CreateSetupIntentAutomaticPaymentMethods {
     pub enabled: bool,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentMandateData {
     /// This hash contains details about the customer acceptance of the Mandate.
     pub customer_acceptance: CreateSetupIntentMandateDataCustomerAcceptance,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodData {
     /// If this is an `acss_debit` PaymentMethod, this hash contains details about the ACSS Debit payment method.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -861,7 +861,7 @@ pub struct CreateSetupIntentPaymentMethodData {
     pub zip: Option<CreateSetupIntentPaymentMethodDataZip>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodOptions {
     /// If this is a `acss_debit` SetupIntent, this sub-hash contains details about the ACSS Debit payment method options.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -888,7 +888,7 @@ pub struct CreateSetupIntentPaymentMethodOptions {
     pub us_bank_account: Option<CreateSetupIntentPaymentMethodOptionsUsBankAccount>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentSingleUse {
     /// Amount the customer is granting permission to collect later.
     ///
@@ -903,7 +903,7 @@ pub struct CreateSetupIntentSingleUse {
     pub currency: Currency,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodData {
     /// If this is an `acss_debit` PaymentMethod, this hash contains details about the ACSS Debit payment method.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1063,7 +1063,7 @@ pub struct UpdateSetupIntentPaymentMethodData {
     pub zip: Option<UpdateSetupIntentPaymentMethodDataZip>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodOptions {
     /// If this is a `acss_debit` SetupIntent, this sub-hash contains details about the ACSS Debit payment method options.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1090,7 +1090,7 @@ pub struct UpdateSetupIntentPaymentMethodOptions {
     pub us_bank_account: Option<UpdateSetupIntentPaymentMethodOptionsUsBankAccount>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentMandateDataCustomerAcceptance {
     /// The time at which the customer accepted the Mandate.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1111,7 +1111,7 @@ pub struct CreateSetupIntentMandateDataCustomerAcceptance {
     pub type_: CreateSetupIntentMandateDataCustomerAcceptanceType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodDataAcssDebit {
     /// Customer's bank account number.
     pub account_number: String,
@@ -1123,16 +1123,16 @@ pub struct CreateSetupIntentPaymentMethodDataAcssDebit {
     pub transit_number: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodDataAffirm {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodDataAfterpayClearpay {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodDataAlipay {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodDataAuBecsDebit {
     /// The account number for the bank account.
     pub account_number: String,
@@ -1141,7 +1141,7 @@ pub struct CreateSetupIntentPaymentMethodDataAuBecsDebit {
     pub bsb_number: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodDataBacsDebit {
     /// Account number of the bank account that the funds will be debited from.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1154,10 +1154,10 @@ pub struct CreateSetupIntentPaymentMethodDataBacsDebit {
     pub sort_code: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodDataBancontact {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodDataBillingDetails {
     /// Billing address.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1176,29 +1176,29 @@ pub struct CreateSetupIntentPaymentMethodDataBillingDetails {
     pub phone: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodDataBlik {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodDataBoleto {
     /// The tax ID of the customer (CPF for individual consumers or CNPJ for businesses consumers).
     pub tax_id: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodDataCashapp {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodDataCustomerBalance {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodDataEps {
     /// The customer's bank.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub bank: Option<CreateSetupIntentPaymentMethodDataEpsBank>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodDataFpx {
     /// Account holder type for FPX transaction.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1208,83 +1208,83 @@ pub struct CreateSetupIntentPaymentMethodDataFpx {
     pub bank: CreateSetupIntentPaymentMethodDataFpxBank,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodDataGiropay {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodDataGrabpay {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodDataIdeal {
     /// The customer's bank.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub bank: Option<CreateSetupIntentPaymentMethodDataIdealBank>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodDataInteracPresent {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodDataKlarna {
     /// Customer's date of birth.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub dob: Option<CreateSetupIntentPaymentMethodDataKlarnaDob>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodDataKonbini {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodDataLink {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodDataOxxo {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodDataP24 {
     /// The customer's bank.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub bank: Option<CreateSetupIntentPaymentMethodDataP24Bank>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodDataPaynow {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodDataPaypal {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodDataPix {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodDataPromptpay {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodDataRadarOptions {
     /// A [Radar Session](https://stripe.com/docs/radar/radar-session) is a snapshot of the browser metadata and device details that help Radar make more accurate predictions on your payments.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub session: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodDataRevolutPay {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodDataSepaDebit {
     /// IBAN of the bank account.
     pub iban: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodDataSofort {
     /// Two-letter ISO code representing the country the bank account is located in.
     pub country: CreateSetupIntentPaymentMethodDataSofortCountry,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodDataSwish {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodDataUsBankAccount {
     /// Account holder type: individual or company.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1310,13 +1310,13 @@ pub struct CreateSetupIntentPaymentMethodDataUsBankAccount {
     pub routing_number: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodDataWechatPay {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodDataZip {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodOptionsAcssDebit {
     /// Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase.
     ///
@@ -1334,7 +1334,7 @@ pub struct CreateSetupIntentPaymentMethodOptionsAcssDebit {
         Option<CreateSetupIntentPaymentMethodOptionsAcssDebitVerificationMethod>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodOptionsCard {
     /// Configuration options for setting up an eMandate for cards issued in India.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1369,14 +1369,14 @@ pub struct CreateSetupIntentPaymentMethodOptionsCard {
     pub three_d_secure: Option<CreateSetupIntentPaymentMethodOptionsCardThreeDSecure>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodOptionsLink {
     /// [Deprecated] This is a legacy parameter that no longer has any function.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub persistent_token: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodOptionsPaypal {
     /// The PayPal Billing Agreement ID (BAID).
     ///
@@ -1385,14 +1385,14 @@ pub struct CreateSetupIntentPaymentMethodOptionsPaypal {
     pub billing_agreement_id: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodOptionsSepaDebit {
     /// Additional fields for Mandate creation.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub mandate_options: Option<CreateSetupIntentPaymentMethodOptionsSepaDebitMandateOptions>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodOptionsUsBankAccount {
     /// Additional fields for Financial Connections Session creation.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1413,7 +1413,7 @@ pub struct CreateSetupIntentPaymentMethodOptionsUsBankAccount {
         Option<CreateSetupIntentPaymentMethodOptionsUsBankAccountVerificationMethod>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodDataAcssDebit {
     /// Customer's bank account number.
     pub account_number: String,
@@ -1425,16 +1425,16 @@ pub struct UpdateSetupIntentPaymentMethodDataAcssDebit {
     pub transit_number: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodDataAffirm {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodDataAfterpayClearpay {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodDataAlipay {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodDataAuBecsDebit {
     /// The account number for the bank account.
     pub account_number: String,
@@ -1443,7 +1443,7 @@ pub struct UpdateSetupIntentPaymentMethodDataAuBecsDebit {
     pub bsb_number: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodDataBacsDebit {
     /// Account number of the bank account that the funds will be debited from.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1456,10 +1456,10 @@ pub struct UpdateSetupIntentPaymentMethodDataBacsDebit {
     pub sort_code: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodDataBancontact {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodDataBillingDetails {
     /// Billing address.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1478,29 +1478,29 @@ pub struct UpdateSetupIntentPaymentMethodDataBillingDetails {
     pub phone: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodDataBlik {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodDataBoleto {
     /// The tax ID of the customer (CPF for individual consumers or CNPJ for businesses consumers).
     pub tax_id: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodDataCashapp {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodDataCustomerBalance {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodDataEps {
     /// The customer's bank.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub bank: Option<UpdateSetupIntentPaymentMethodDataEpsBank>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodDataFpx {
     /// Account holder type for FPX transaction.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1510,83 +1510,83 @@ pub struct UpdateSetupIntentPaymentMethodDataFpx {
     pub bank: UpdateSetupIntentPaymentMethodDataFpxBank,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodDataGiropay {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodDataGrabpay {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodDataIdeal {
     /// The customer's bank.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub bank: Option<UpdateSetupIntentPaymentMethodDataIdealBank>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodDataInteracPresent {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodDataKlarna {
     /// Customer's date of birth.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub dob: Option<UpdateSetupIntentPaymentMethodDataKlarnaDob>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodDataKonbini {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodDataLink {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodDataOxxo {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodDataP24 {
     /// The customer's bank.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub bank: Option<UpdateSetupIntentPaymentMethodDataP24Bank>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodDataPaynow {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodDataPaypal {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodDataPix {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodDataPromptpay {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodDataRadarOptions {
     /// A [Radar Session](https://stripe.com/docs/radar/radar-session) is a snapshot of the browser metadata and device details that help Radar make more accurate predictions on your payments.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub session: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodDataRevolutPay {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodDataSepaDebit {
     /// IBAN of the bank account.
     pub iban: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodDataSofort {
     /// Two-letter ISO code representing the country the bank account is located in.
     pub country: UpdateSetupIntentPaymentMethodDataSofortCountry,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodDataSwish {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodDataUsBankAccount {
     /// Account holder type: individual or company.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1612,13 +1612,13 @@ pub struct UpdateSetupIntentPaymentMethodDataUsBankAccount {
     pub routing_number: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodDataWechatPay {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodDataZip {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodOptionsAcssDebit {
     /// Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase.
     ///
@@ -1636,7 +1636,7 @@ pub struct UpdateSetupIntentPaymentMethodOptionsAcssDebit {
         Option<UpdateSetupIntentPaymentMethodOptionsAcssDebitVerificationMethod>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodOptionsCard {
     /// Configuration options for setting up an eMandate for cards issued in India.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1671,14 +1671,14 @@ pub struct UpdateSetupIntentPaymentMethodOptionsCard {
     pub three_d_secure: Option<UpdateSetupIntentPaymentMethodOptionsCardThreeDSecure>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodOptionsLink {
     /// [Deprecated] This is a legacy parameter that no longer has any function.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub persistent_token: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodOptionsPaypal {
     /// The PayPal Billing Agreement ID (BAID).
     ///
@@ -1687,14 +1687,14 @@ pub struct UpdateSetupIntentPaymentMethodOptionsPaypal {
     pub billing_agreement_id: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodOptionsSepaDebit {
     /// Additional fields for Mandate creation.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub mandate_options: Option<UpdateSetupIntentPaymentMethodOptionsSepaDebitMandateOptions>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodOptionsUsBankAccount {
     /// Additional fields for Financial Connections Session creation.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1715,10 +1715,10 @@ pub struct UpdateSetupIntentPaymentMethodOptionsUsBankAccount {
         Option<UpdateSetupIntentPaymentMethodOptionsUsBankAccountVerificationMethod>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentMandateDataCustomerAcceptanceOffline {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentMandateDataCustomerAcceptanceOnline {
     /// The IP address from which the Mandate was accepted by the customer.
     pub ip_address: String,
@@ -1727,7 +1727,7 @@ pub struct CreateSetupIntentMandateDataCustomerAcceptanceOnline {
     pub user_agent: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodDataBillingDetailsAddress {
     /// City, district, suburb, town, or village.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1754,7 +1754,7 @@ pub struct CreateSetupIntentPaymentMethodDataBillingDetailsAddress {
     pub state: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodDataKlarnaDob {
     /// The day of birth, between 1 and 31.
     pub day: i64,
@@ -1766,7 +1766,7 @@ pub struct CreateSetupIntentPaymentMethodDataKlarnaDob {
     pub year: i64,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodOptionsAcssDebitMandateOptions {
     /// A URL for custom mandate text to render during confirmation step.
     /// The URL will be rendered with additional GET parameters `payment_intent` and `payment_intent_client_secret` when confirming a Payment Intent,
@@ -1796,7 +1796,7 @@ pub struct CreateSetupIntentPaymentMethodOptionsAcssDebitMandateOptions {
         Option<CreateSetupIntentPaymentMethodOptionsAcssDebitMandateOptionsTransactionType>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodOptionsCardMandateOptions {
     /// Amount to be charged for future payments.
     pub amount: i64,
@@ -1853,7 +1853,7 @@ pub struct CreateSetupIntentPaymentMethodOptionsCardMandateOptions {
         Option<Vec<CreateSetupIntentPaymentMethodOptionsCardMandateOptionsSupportedTypes>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodOptionsCardThreeDSecure {
     /// The `transStatus` returned from the card Issuer’s ACS in the ARes.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1899,10 +1899,10 @@ pub struct CreateSetupIntentPaymentMethodOptionsCardThreeDSecure {
     pub version: Option<CreateSetupIntentPaymentMethodOptionsCardThreeDSecureVersion>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodOptionsSepaDebitMandateOptions {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodOptionsUsBankAccountFinancialConnections {
     /// The list of permissions to request.
     ///
@@ -1925,7 +1925,7 @@ pub struct CreateSetupIntentPaymentMethodOptionsUsBankAccountFinancialConnection
     pub return_url: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodOptionsUsBankAccountMandateOptions {
     /// The method used to collect offline mandate customer acceptance.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1933,14 +1933,14 @@ pub struct CreateSetupIntentPaymentMethodOptionsUsBankAccountMandateOptions {
         Option<CreateSetupIntentPaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodOptionsUsBankAccountNetworks {
     /// Triggers validations to run across the selected networks.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub requested: Option<Vec<CreateSetupIntentPaymentMethodOptionsUsBankAccountNetworksRequested>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodDataBillingDetailsAddress {
     /// City, district, suburb, town, or village.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1967,7 +1967,7 @@ pub struct UpdateSetupIntentPaymentMethodDataBillingDetailsAddress {
     pub state: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodDataKlarnaDob {
     /// The day of birth, between 1 and 31.
     pub day: i64,
@@ -1979,7 +1979,7 @@ pub struct UpdateSetupIntentPaymentMethodDataKlarnaDob {
     pub year: i64,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodOptionsAcssDebitMandateOptions {
     /// A URL for custom mandate text to render during confirmation step.
     /// The URL will be rendered with additional GET parameters `payment_intent` and `payment_intent_client_secret` when confirming a Payment Intent,
@@ -2009,7 +2009,7 @@ pub struct UpdateSetupIntentPaymentMethodOptionsAcssDebitMandateOptions {
         Option<UpdateSetupIntentPaymentMethodOptionsAcssDebitMandateOptionsTransactionType>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodOptionsCardMandateOptions {
     /// Amount to be charged for future payments.
     pub amount: i64,
@@ -2066,7 +2066,7 @@ pub struct UpdateSetupIntentPaymentMethodOptionsCardMandateOptions {
         Option<Vec<UpdateSetupIntentPaymentMethodOptionsCardMandateOptionsSupportedTypes>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodOptionsCardThreeDSecure {
     /// The `transStatus` returned from the card Issuer’s ACS in the ARes.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -2112,10 +2112,10 @@ pub struct UpdateSetupIntentPaymentMethodOptionsCardThreeDSecure {
     pub version: Option<UpdateSetupIntentPaymentMethodOptionsCardThreeDSecureVersion>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodOptionsSepaDebitMandateOptions {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodOptionsUsBankAccountFinancialConnections {
     /// The list of permissions to request.
     ///
@@ -2138,7 +2138,7 @@ pub struct UpdateSetupIntentPaymentMethodOptionsUsBankAccountFinancialConnection
     pub return_url: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodOptionsUsBankAccountMandateOptions {
     /// The method used to collect offline mandate customer acceptance.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -2146,14 +2146,14 @@ pub struct UpdateSetupIntentPaymentMethodOptionsUsBankAccountMandateOptions {
         Option<UpdateSetupIntentPaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodOptionsUsBankAccountNetworks {
     /// Triggers validations to run across the selected networks.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub requested: Option<Vec<UpdateSetupIntentPaymentMethodOptionsUsBankAccountNetworksRequested>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodOptionsCardThreeDSecureNetworkOptions {
     /// Cartes Bancaires-specific 3DS fields.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -2161,7 +2161,7 @@ pub struct CreateSetupIntentPaymentMethodOptionsCardThreeDSecureNetworkOptions {
         Option<CreateSetupIntentPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancaires>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodOptionsCardThreeDSecureNetworkOptions {
     /// Cartes Bancaires-specific 3DS fields.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -2169,7 +2169,7 @@ pub struct UpdateSetupIntentPaymentMethodOptionsCardThreeDSecureNetworkOptions {
         Option<UpdateSetupIntentPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancaires>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSetupIntentPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancaires {
     /// The cryptogram calculation algorithm used by the card Issuer's ACS
     /// to calculate the Authentication cryptogram.
@@ -2191,7 +2191,7 @@ pub struct CreateSetupIntentPaymentMethodOptionsCardThreeDSecureNetworkOptionsCa
     pub cb_score: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSetupIntentPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancaires {
     /// The cryptogram calculation algorithm used by the card Issuer's ACS
     /// to calculate the Authentication cryptogram.

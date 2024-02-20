@@ -14,7 +14,7 @@ use crate::resources::Currency;
 /// The resource representing a Stripe "Coupon".
 ///
 /// For more details see <https://stripe.com/docs/api/coupons/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct Coupon {
     /// Unique identifier for the object.
     pub id: CouponId,
@@ -141,13 +141,13 @@ impl Object for Coupon {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CouponAppliesTo {
     /// A list of product IDs this coupon applies to.
     pub products: Vec<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CouponCurrencyOption {
     /// Amount (in the `currency` specified) that will be taken off the subtotal of any invoices for this customer.
     pub amount_off: i64,
@@ -335,20 +335,20 @@ impl<'a> UpdateCoupon<'a> {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCouponAppliesTo {
     /// An array of Product IDs that this Coupon will apply to.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub products: Option<Vec<String>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCouponCurrencyOptions {
     /// A positive integer representing the amount to subtract from an invoice total.
     pub amount_off: i64,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateCouponCurrencyOptions {
     /// A positive integer representing the amount to subtract from an invoice total.
     pub amount_off: i64,

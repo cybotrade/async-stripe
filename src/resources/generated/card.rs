@@ -11,7 +11,7 @@ use crate::resources::{Account, Currency, Customer};
 /// The resource representing a Stripe "Card".
 ///
 /// For more details see <https://stripe.com/docs/api/cards/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct Card {
     /// Unique identifier for the object.
     pub id: CardId,

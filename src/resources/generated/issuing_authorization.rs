@@ -15,7 +15,7 @@ use crate::resources::{
 /// The resource representing a Stripe "IssuingAuthorization".
 ///
 /// For more details see <https://stripe.com/docs/api/issuing/authorizations/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IssuingAuthorization {
     /// Unique identifier for the object.
     pub id: IssuingAuthorizationId,
@@ -130,7 +130,7 @@ impl Object for IssuingAuthorization {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IssuingAuthorizationNetworkData {
     /// Identifier assigned to the acquirer by the card network.
     ///
@@ -146,7 +146,7 @@ pub struct IssuingAuthorizationNetworkData {
     pub transaction_id: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IssuingAuthorizationPendingRequest {
     /// The additional amount Stripe will hold if the authorization is approved, in the card's [currency](https://stripe.com/docs/api#issuing_authorization_object-pending-request-currency) and in the [smallest currency unit](https://stripe.com/docs/currencies#zero-decimal).
     pub amount: i64,
@@ -178,7 +178,7 @@ pub struct IssuingAuthorizationPendingRequest {
     pub network_risk_score: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IssuingAuthorizationRequest {
     /// The `pending_request.amount` at the time of the request, presented in your card's currency and in the [smallest currency unit](https://stripe.com/docs/currencies#zero-decimal).
     ///
@@ -237,7 +237,7 @@ pub struct IssuingAuthorizationRequest {
     pub requested_at: Option<Timestamp>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IssuingAuthorizationTreasury {
     /// The array of [ReceivedCredits](https://stripe.com/docs/api/treasury/received_credits) associated with this authorization.
     pub received_credits: Vec<String>,
@@ -249,7 +249,7 @@ pub struct IssuingAuthorizationTreasury {
     pub transaction: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IssuingAuthorizationVerificationData {
     /// Whether the cardholder provided an address first line and if it matched the cardholder’s `billing.address.line1`.
     pub address_line1_check: IssuingAuthorizationCheck,
@@ -273,7 +273,7 @@ pub struct IssuingAuthorizationVerificationData {
     pub three_d_secure: Option<IssuingAuthorizationThreeDSecure>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IssuingAuthorizationAuthenticationExemption {
     /// The entity that requested the exemption, either the acquiring merchant or the Issuing user.
     pub claimed_by: IssuingAuthorizationAuthenticationExemptionClaimedBy,
@@ -283,7 +283,7 @@ pub struct IssuingAuthorizationAuthenticationExemption {
     pub type_: IssuingAuthorizationAuthenticationExemptionType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IssuingAuthorizationThreeDSecure {
     /// The outcome of the 3D Secure authentication request.
     pub result: IssuingAuthorizationThreeDSecureResult,

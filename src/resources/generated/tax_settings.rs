@@ -9,7 +9,7 @@ use serde::{Deserialize, Serialize};
 /// The resource representing a Stripe "TaxProductResourceTaxSettings".
 ///
 /// For more details see <https://stripe.com/docs/api/tax/settings/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TaxSettings {
 
     pub defaults: TaxProductResourceTaxSettingsDefaults,
@@ -36,7 +36,7 @@ impl Object for TaxSettings {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TaxProductResourceTaxSettingsDefaults {
 
     /// Default [tax behavior](https://stripe.com/docs/tax/products-prices-tax-categories-tax-behavior#tax-behavior) used to specify whether the price is considered inclusive of taxes or exclusive of taxes.
@@ -48,13 +48,13 @@ pub struct TaxProductResourceTaxSettingsDefaults {
     pub tax_code: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TaxProductResourceTaxSettingsHeadOffice {
 
     pub address: Address,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TaxProductResourceTaxSettingsStatusDetails {
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -64,11 +64,11 @@ pub struct TaxProductResourceTaxSettingsStatusDetails {
     pub pending: Option<TaxProductResourceTaxSettingsStatusDetailsResourcePending>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TaxProductResourceTaxSettingsStatusDetailsResourceActive {
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TaxProductResourceTaxSettingsStatusDetailsResourcePending {
 
     /// The list of missing fields that are required to perform calculations.

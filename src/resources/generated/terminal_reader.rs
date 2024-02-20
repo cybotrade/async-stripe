@@ -12,7 +12,7 @@ use crate::resources::{Charge, Currency, PaymentIntent, Refund, SetupIntent, Ter
 /// The resource representing a Stripe "TerminalReaderReader".
 ///
 /// For more details see <https://stripe.com/docs/api/terminal/readers/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TerminalReader {
     /// Unique identifier for the object.
     pub id: TerminalReaderId,
@@ -89,7 +89,7 @@ impl Object for TerminalReader {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TerminalReaderReaderResourceReaderAction {
     /// Failure code, only set if status is `failed`.
     pub failure_code: Option<String>,
@@ -117,7 +117,7 @@ pub struct TerminalReaderReaderResourceReaderAction {
     pub type_: TerminalReaderReaderResourceReaderActionType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TerminalReaderReaderResourceProcessPaymentIntentAction {
     /// Most recent PaymentIntent processed by the reader.
     pub payment_intent: Expandable<PaymentIntent>,
@@ -126,7 +126,7 @@ pub struct TerminalReaderReaderResourceProcessPaymentIntentAction {
     pub process_config: Option<TerminalReaderReaderResourceProcessConfig>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TerminalReaderReaderResourceProcessConfig {
     /// Override showing a tipping selection screen on this transaction.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -136,7 +136,7 @@ pub struct TerminalReaderReaderResourceProcessConfig {
     pub tipping: Option<TerminalReaderReaderResourceTippingConfig>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TerminalReaderReaderResourceProcessSetupIntentAction {
     /// ID of a card PaymentMethod generated from the card_present PaymentMethod that may be attached to a Customer for future transactions.
     ///
@@ -151,10 +151,10 @@ pub struct TerminalReaderReaderResourceProcessSetupIntentAction {
     pub setup_intent: Expandable<SetupIntent>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TerminalReaderReaderResourceProcessSetupConfig {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TerminalReaderReaderResourceRefundPaymentAction {
     /// The amount being refunded.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -198,7 +198,7 @@ pub struct TerminalReaderReaderResourceRefundPaymentAction {
     pub reverse_transfer: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TerminalReaderReaderResourceSetReaderDisplayAction {
     /// Cart object to be displayed by the reader.
     pub cart: Option<TerminalReaderReaderResourceCart>,
@@ -208,7 +208,7 @@ pub struct TerminalReaderReaderResourceSetReaderDisplayAction {
     pub type_: TerminalReaderReaderResourceSetReaderDisplayActionType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TerminalReaderReaderResourceCart {
     /// Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase.
     ///
@@ -229,7 +229,7 @@ pub struct TerminalReaderReaderResourceCart {
     pub total: i64,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TerminalReaderReaderResourceLineItem {
     /// The amount of the line item.
     ///
@@ -243,7 +243,7 @@ pub struct TerminalReaderReaderResourceLineItem {
     pub quantity: u64,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TerminalReaderReaderResourceTippingConfig {
     /// Amount used to calculate tip suggestions on tipping selection screen for this transaction.
     ///

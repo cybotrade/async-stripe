@@ -17,7 +17,7 @@ use crate::resources::{
 /// The resource representing a Stripe "InvoiceItem".
 ///
 /// For more details see <https://stripe.com/docs/api/invoiceitems/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct InvoiceItem {
     /// Unique identifier for the object.
     pub id: InvoiceItemId,
@@ -509,7 +509,7 @@ impl<'a> UpdateInvoiceItem<'a> {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateInvoiceItemDiscounts {
     /// ID of the coupon to create a new discount for.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -520,7 +520,7 @@ pub struct CreateInvoiceItemDiscounts {
     pub discount: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct InvoiceItemPriceData {
     /// Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase.
     ///
@@ -549,7 +549,7 @@ pub struct InvoiceItemPriceData {
     pub unit_amount_decimal: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateInvoiceItemDiscounts {
     /// ID of the coupon to create a new discount for.
     #[serde(skip_serializing_if = "Option::is_none")]

@@ -9,7 +9,7 @@ use serde::{Deserialize, Serialize};
 /// The resource representing a Stripe "TaxProductRegistrationsResourceTaxRegistration".
 ///
 /// For more details see <https://stripe.com/docs/api/tax/registrations/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TaxRegistration {
     /// Unique identifier for the object.
     pub id: TaxRegistrationId,
@@ -54,7 +54,7 @@ impl Object for TaxRegistration {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TaxProductRegistrationsResourceCountryOptions {
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -205,7 +205,7 @@ pub struct TaxProductRegistrationsResourceCountryOptions {
     pub za: Option<TaxProductRegistrationsResourceCountryOptionsDefault>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TaxProductRegistrationsResourceCountryOptionsCanada {
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -216,14 +216,14 @@ pub struct TaxProductRegistrationsResourceCountryOptionsCanada {
     pub type_: TaxProductRegistrationsResourceCountryOptionsCanadaType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TaxProductRegistrationsResourceCountryOptionsCaProvinceStandard {
 
     /// Two-letter CA province code ([ISO 3166-2](https://en.wikipedia.org/wiki/ISO_3166-2)).
     pub province: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TaxProductRegistrationsResourceCountryOptionsDefault {
 
     /// Type of registration in `country`.
@@ -231,7 +231,7 @@ pub struct TaxProductRegistrationsResourceCountryOptionsDefault {
     pub type_: TaxProductRegistrationsResourceCountryOptionsDefaultType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TaxProductRegistrationsResourceCountryOptionsEurope {
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -242,14 +242,14 @@ pub struct TaxProductRegistrationsResourceCountryOptionsEurope {
     pub type_: TaxProductRegistrationsResourceCountryOptionsEuropeType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TaxProductRegistrationsResourceCountryOptionsEuStandard {
 
     /// Place of supply scheme used in an EU standard registration.
     pub place_of_supply_scheme: TaxProductRegistrationsResourceCountryOptionsEuStandardPlaceOfSupplyScheme,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TaxProductRegistrationsResourceCountryOptionsSimplified {
 
     /// Type of registration in `country`.
@@ -257,7 +257,7 @@ pub struct TaxProductRegistrationsResourceCountryOptionsSimplified {
     pub type_: TaxProductRegistrationsResourceCountryOptionsSimplifiedType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TaxProductRegistrationsResourceCountryOptionsUnitedStates {
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -274,14 +274,14 @@ pub struct TaxProductRegistrationsResourceCountryOptionsUnitedStates {
     pub type_: TaxProductRegistrationsResourceCountryOptionsUnitedStatesType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TaxProductRegistrationsResourceCountryOptionsUsLocalAmusementTax {
 
     /// A [FIPS code](https://www.census.gov/library/reference/code-lists/ansi.html) representing the local jurisdiction.
     pub jurisdiction: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TaxProductRegistrationsResourceCountryOptionsUsLocalLeaseTax {
 
     /// A [FIPS code](https://www.census.gov/library/reference/code-lists/ansi.html) representing the local jurisdiction.

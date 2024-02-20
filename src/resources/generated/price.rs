@@ -15,7 +15,7 @@ use crate::resources::{CreateProduct, Currency, CustomUnitAmount, Product, UpTo}
 /// The resource representing a Stripe "Price".
 ///
 /// For more details see <https://stripe.com/docs/api/prices/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct Price {
     /// Unique identifier for the object.
     pub id: PriceId,
@@ -170,7 +170,7 @@ impl Object for Price {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CurrencyOption {
     /// When set, provides configuration for the amount to be adjusted by the customer during Checkout Sessions and Payment Links.
     pub custom_unit_amount: Option<CustomUnitAmount>,
@@ -200,7 +200,7 @@ pub struct CurrencyOption {
     pub unit_amount_decimal: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PriceTier {
     /// Price for the entire tier.
     pub flat_amount: Option<i64>,
@@ -218,7 +218,7 @@ pub struct PriceTier {
     pub up_to: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct Recurring {
     /// Specifies a usage aggregation strategy for prices of `usage_type=metered`.
     ///
@@ -247,7 +247,7 @@ pub struct Recurring {
     pub usage_type: RecurringUsageType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TransformQuantity {
     /// Divide usage by this number.
     pub divide_by: i64,
@@ -539,7 +539,7 @@ impl<'a> UpdatePrice<'a> {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePriceCurrencyOptions {
     /// When set, provides configuration for the amount to be adjusted by the customer during Checkout Sessions and Payment Links.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -571,7 +571,7 @@ pub struct CreatePriceCurrencyOptions {
     pub unit_amount_decimal: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePriceCustomUnitAmount {
     /// Pass in `true` to enable `custom_unit_amount`, otherwise omit `custom_unit_amount`.
     pub enabled: bool,
@@ -591,7 +591,7 @@ pub struct CreatePriceCustomUnitAmount {
     pub preset: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePriceProductData {
     /// Whether the product is currently available for purchase.
     ///
@@ -636,7 +636,7 @@ pub struct CreatePriceProductData {
     pub unit_label: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePriceRecurring {
     /// Specifies a usage aggregation strategy for prices of `usage_type=metered`.
     ///
@@ -670,7 +670,7 @@ pub struct CreatePriceRecurring {
     pub usage_type: Option<CreatePriceRecurringUsageType>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePriceTiers {
     /// The flat billing amount for an entire tier, regardless of the number of units in the tier.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -699,7 +699,7 @@ pub struct CreatePriceTiers {
     pub up_to: Option<UpTo>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePriceTransformQuantity {
     /// Divide usage by this number.
     pub divide_by: i64,
@@ -708,7 +708,7 @@ pub struct CreatePriceTransformQuantity {
     pub round: CreatePriceTransformQuantityRound,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct ListPricesRecurring {
     /// Filter by billing frequency.
     ///
@@ -723,7 +723,7 @@ pub struct ListPricesRecurring {
     pub usage_type: Option<ListPricesRecurringUsageType>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePriceCurrencyOptions {
     /// When set, provides configuration for the amount to be adjusted by the customer during Checkout Sessions and Payment Links.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -755,7 +755,7 @@ pub struct UpdatePriceCurrencyOptions {
     pub unit_amount_decimal: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePriceCurrencyOptionsCustomUnitAmount {
     /// Pass in `true` to enable `custom_unit_amount`, otherwise omit `custom_unit_amount`.
     pub enabled: bool,
@@ -775,7 +775,7 @@ pub struct CreatePriceCurrencyOptionsCustomUnitAmount {
     pub preset: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreatePriceCurrencyOptionsTiers {
     /// The flat billing amount for an entire tier, regardless of the number of units in the tier.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -804,7 +804,7 @@ pub struct CreatePriceCurrencyOptionsTiers {
     pub up_to: Option<UpTo>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePriceCurrencyOptionsCustomUnitAmount {
     /// Pass in `true` to enable `custom_unit_amount`, otherwise omit `custom_unit_amount`.
     pub enabled: bool,
@@ -824,7 +824,7 @@ pub struct UpdatePriceCurrencyOptionsCustomUnitAmount {
     pub preset: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePriceCurrencyOptionsTiers {
     /// The flat billing amount for an entire tier, regardless of the number of units in the tier.
     #[serde(skip_serializing_if = "Option::is_none")]

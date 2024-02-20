@@ -11,7 +11,7 @@ use crate::resources::IssuingCard;
 /// The resource representing a Stripe "IssuingNetworkToken".
 ///
 /// For more details see <https://stripe.com/docs/api/issuing/tokens/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IssuingToken {
     /// Unique identifier for the object.
     pub id: IssuingTokenId,
@@ -63,7 +63,7 @@ impl Object for IssuingToken {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IssuingNetworkTokenNetworkData {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub device: Option<IssuingNetworkTokenDevice>,
@@ -84,7 +84,7 @@ pub struct IssuingNetworkTokenNetworkData {
     pub wallet_provider: Option<IssuingNetworkTokenWalletProvider>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IssuingNetworkTokenDevice {
     /// An obfuscated ID derived from the device ID.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -114,7 +114,7 @@ pub struct IssuingNetworkTokenDevice {
     pub type_: Option<IssuingNetworkTokenDeviceType>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IssuingNetworkTokenMastercard {
     /// A unique reference ID from MasterCard to represent the card account number.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -133,7 +133,7 @@ pub struct IssuingNetworkTokenMastercard {
     pub token_requestor_name: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IssuingNetworkTokenVisa {
     /// A unique reference ID from Visa to represent the card account number.
     pub card_reference_id: String,
@@ -151,7 +151,7 @@ pub struct IssuingNetworkTokenVisa {
     pub token_risk_score: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IssuingNetworkTokenWalletProvider {
     /// The wallet provider-given account ID of the digital wallet the token belongs to.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -197,7 +197,7 @@ pub struct IssuingNetworkTokenWalletProvider {
     pub suggested_decision_version: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IssuingNetworkTokenAddress {
     /// The street address of the cardholder tokenizing the card.
     pub line1: String,

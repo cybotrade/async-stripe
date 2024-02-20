@@ -8,7 +8,7 @@ use crate::resources::{Currency, Payout, TreasuryCreditReversal, TreasuryOutboun
 use serde::{Deserialize, Serialize};
 
 /// The resource representing a Stripe "TreasuryReceivedCreditsResourceReceivedCredit".
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TreasuryReceivedCredit {
     /// Unique identifier for the object.
     pub id: TreasuryReceivedCreditId,
@@ -75,7 +75,7 @@ impl Object for TreasuryReceivedCredit {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TreasuryReceivedCreditsResourceLinkedFlows {
 
     /// The CreditReversal created as a result of this ReceivedCredit being reversed.
@@ -100,7 +100,7 @@ pub struct TreasuryReceivedCreditsResourceLinkedFlows {
     pub source_flow_type: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TreasuryReceivedCreditsResourceReversalDetails {
 
     /// Time before which a ReceivedCredit can be reversed.
@@ -110,7 +110,7 @@ pub struct TreasuryReceivedCreditsResourceReversalDetails {
     pub restricted_reason: Option<TreasuryReceivedCreditsResourceReversalDetailsRestrictedReason>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TreasuryReceivedCreditsResourceSourceFlowsDetails {
 
     #[serde(skip_serializing_if = "Option::is_none")]

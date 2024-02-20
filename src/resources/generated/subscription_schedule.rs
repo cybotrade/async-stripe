@@ -17,7 +17,7 @@ use crate::resources::{
 /// The resource representing a Stripe "SubscriptionSchedule".
 ///
 /// For more details see <https://stripe.com/docs/api/subscription_schedules/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SubscriptionSchedule {
     /// Unique identifier for the object.
     pub id: SubscriptionScheduleId,
@@ -137,7 +137,7 @@ impl Object for SubscriptionSchedule {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SubscriptionScheduleCurrentPhase {
     /// The end of this phase of the subscription schedule.
     pub end_date: Timestamp,
@@ -146,7 +146,7 @@ pub struct SubscriptionScheduleCurrentPhase {
     pub start_date: Timestamp,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SubscriptionSchedulePhaseConfiguration {
     /// A list of prices and quantities that will generate invoice items appended to the next invoice for this phase.
     pub add_invoice_items: Vec<SubscriptionScheduleAddInvoiceItem>,
@@ -233,7 +233,7 @@ pub struct SubscriptionSchedulePhaseConfiguration {
     pub trial_end: Option<Timestamp>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct InvoiceSettingSubscriptionSchedulePhaseSetting {
     /// The account tax IDs associated with this phase of the subscription schedule.
     ///
@@ -252,7 +252,7 @@ pub struct InvoiceSettingSubscriptionSchedulePhaseSetting {
     pub issuer: Option<ConnectAccountReference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SchedulesPhaseAutomaticTax {
     /// Whether Stripe automatically computes tax on invoices created during this phase.
     pub enabled: bool,
@@ -264,7 +264,7 @@ pub struct SchedulesPhaseAutomaticTax {
     pub liability: Option<ConnectAccountReference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SubscriptionScheduleAddInvoiceItem {
     /// ID of the price used to generate the invoice item.
     pub price: Expandable<Price>,
@@ -279,7 +279,7 @@ pub struct SubscriptionScheduleAddInvoiceItem {
     pub tax_rates: Option<Vec<TaxRate>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SubscriptionScheduleConfigurationItem {
     /// Define thresholds at which an invoice will be sent, and the related subscription advanced to a new billing period.
     pub billing_thresholds: Option<SubscriptionItemBillingThresholds>,
@@ -306,7 +306,7 @@ pub struct SubscriptionScheduleConfigurationItem {
     pub tax_rates: Option<Vec<TaxRate>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SubscriptionScheduleDefaultSettings {
     /// A non-negative decimal between 0 and 100, with at most two decimal places.
     ///
@@ -353,7 +353,7 @@ pub struct SubscriptionScheduleDefaultSettings {
     pub transfer_data: Option<SubscriptionTransferData>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SubscriptionSchedulesResourceDefaultSettingsAutomaticTax {
     /// Whether Stripe automatically computes tax on invoices created during this phase.
     pub enabled: bool,
@@ -563,7 +563,7 @@ impl<'a> UpdateSubscriptionSchedule<'a> {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSubscriptionSchedulePhases {
     /// A list of prices and quantities that will generate invoice items appended to the next invoice for this phase.
     ///
@@ -688,7 +688,7 @@ pub struct CreateSubscriptionSchedulePhases {
     pub trial_end: Option<Scheduled>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SubscriptionScheduleDefaultSettingsParams {
     /// A non-negative decimal between 0 and 100, with at most two decimal places.
     ///
@@ -749,7 +749,7 @@ pub struct SubscriptionScheduleDefaultSettingsParams {
     pub transfer_data: Option<SubscriptionScheduleDefaultSettingsParamsTransferData>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSubscriptionSchedulePhases {
     /// A list of prices and quantities that will generate invoice items appended to the next invoice for this phase.
     ///
@@ -880,7 +880,7 @@ pub struct UpdateSubscriptionSchedulePhases {
     pub trial_end: Option<Scheduled>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct AddInvoiceItems {
     /// The ID of the price object.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -903,7 +903,7 @@ pub struct AddInvoiceItems {
     pub tax_rates: Option<Vec<String>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSubscriptionSchedulePhasesAutomaticTax {
     /// Enabled automatic tax calculation which will automatically compute tax rates on all invoices generated by the subscription.
     pub enabled: bool,
@@ -916,7 +916,7 @@ pub struct CreateSubscriptionSchedulePhasesAutomaticTax {
     pub liability: Option<CreateSubscriptionSchedulePhasesAutomaticTaxLiability>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSubscriptionSchedulePhasesItems {
     /// Define thresholds at which an invoice will be sent, and the subscription advanced to a new billing period.
     ///
@@ -960,7 +960,7 @@ pub struct CreateSubscriptionSchedulePhasesItems {
     pub tax_rates: Option<Vec<String>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSubscriptionSchedulePhasesTransferData {
     /// A non-negative decimal between 0 and 100, with at most two decimal places.
     ///
@@ -973,7 +973,7 @@ pub struct CreateSubscriptionSchedulePhasesTransferData {
     pub destination: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SubscriptionScheduleBillingThresholds {
     /// Monetary threshold that triggers the subscription to advance to a new billing period.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -986,7 +986,7 @@ pub struct SubscriptionScheduleBillingThresholds {
     pub reset_billing_cycle_anchor: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SubscriptionScheduleDefaultSettingsParamsAutomaticTax {
     /// Enabled automatic tax calculation which will automatically compute tax rates on all invoices generated by the subscription.
     pub enabled: bool,
@@ -999,7 +999,7 @@ pub struct SubscriptionScheduleDefaultSettingsParamsAutomaticTax {
     pub liability: Option<SubscriptionScheduleDefaultSettingsParamsAutomaticTaxLiability>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SubscriptionScheduleDefaultSettingsParamsTransferData {
     /// A non-negative decimal between 0 and 100, with at most two decimal places.
     ///
@@ -1012,7 +1012,7 @@ pub struct SubscriptionScheduleDefaultSettingsParamsTransferData {
     pub destination: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SubscriptionScheduleInvoiceSettings {
     /// The account tax IDs associated with this phase of the subscription schedule.
     ///
@@ -1033,7 +1033,7 @@ pub struct SubscriptionScheduleInvoiceSettings {
     pub issuer: Option<SubscriptionScheduleInvoiceSettingsIssuer>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSubscriptionSchedulePhasesAutomaticTax {
     /// Enabled automatic tax calculation which will automatically compute tax rates on all invoices generated by the subscription.
     pub enabled: bool,
@@ -1046,7 +1046,7 @@ pub struct UpdateSubscriptionSchedulePhasesAutomaticTax {
     pub liability: Option<UpdateSubscriptionSchedulePhasesAutomaticTaxLiability>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSubscriptionSchedulePhasesItems {
     /// Define thresholds at which an invoice will be sent, and the subscription advanced to a new billing period.
     ///
@@ -1090,7 +1090,7 @@ pub struct UpdateSubscriptionSchedulePhasesItems {
     pub tax_rates: Option<Vec<String>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSubscriptionSchedulePhasesTransferData {
     /// A non-negative decimal between 0 and 100, with at most two decimal places.
     ///
@@ -1103,7 +1103,7 @@ pub struct UpdateSubscriptionSchedulePhasesTransferData {
     pub destination: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSubscriptionSchedulePhasesAutomaticTaxLiability {
     /// The connected account being referenced when `type` is `account`.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1114,13 +1114,13 @@ pub struct CreateSubscriptionSchedulePhasesAutomaticTaxLiability {
     pub type_: CreateSubscriptionSchedulePhasesAutomaticTaxLiabilityType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSubscriptionSchedulePhasesItemsBillingThresholds {
     /// Number of units that meets the billing threshold to advance the subscription to a new billing period (e.g., it takes 10 $5 units to meet a $50 [monetary threshold](https://stripe.com/docs/api/subscriptions/update#update_subscription-billing_thresholds-amount_gte)).
     pub usage_gte: i64,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSubscriptionSchedulePhasesItemsPriceData {
     /// Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase.
     ///
@@ -1152,7 +1152,7 @@ pub struct CreateSubscriptionSchedulePhasesItemsPriceData {
     pub unit_amount_decimal: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct InvoiceItemPriceData {
     /// Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase.
     ///
@@ -1181,7 +1181,7 @@ pub struct InvoiceItemPriceData {
     pub unit_amount_decimal: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SubscriptionScheduleDefaultSettingsParamsAutomaticTaxLiability {
     /// The connected account being referenced when `type` is `account`.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1192,7 +1192,7 @@ pub struct SubscriptionScheduleDefaultSettingsParamsAutomaticTaxLiability {
     pub type_: SubscriptionScheduleDefaultSettingsParamsAutomaticTaxLiabilityType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SubscriptionScheduleInvoiceSettingsIssuer {
     /// The connected account being referenced when `type` is `account`.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1203,7 +1203,7 @@ pub struct SubscriptionScheduleInvoiceSettingsIssuer {
     pub type_: SubscriptionScheduleInvoiceSettingsIssuerType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSubscriptionSchedulePhasesAutomaticTaxLiability {
     /// The connected account being referenced when `type` is `account`.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1214,13 +1214,13 @@ pub struct UpdateSubscriptionSchedulePhasesAutomaticTaxLiability {
     pub type_: UpdateSubscriptionSchedulePhasesAutomaticTaxLiabilityType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSubscriptionSchedulePhasesItemsBillingThresholds {
     /// Number of units that meets the billing threshold to advance the subscription to a new billing period (e.g., it takes 10 $5 units to meet a $50 [monetary threshold](https://stripe.com/docs/api/subscriptions/update#update_subscription-billing_thresholds-amount_gte)).
     pub usage_gte: i64,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSubscriptionSchedulePhasesItemsPriceData {
     /// Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase.
     ///
@@ -1252,7 +1252,7 @@ pub struct UpdateSubscriptionSchedulePhasesItemsPriceData {
     pub unit_amount_decimal: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSubscriptionSchedulePhasesItemsPriceDataRecurring {
     /// Specifies billing frequency.
     ///
@@ -1267,7 +1267,7 @@ pub struct CreateSubscriptionSchedulePhasesItemsPriceDataRecurring {
     pub interval_count: Option<u64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSubscriptionSchedulePhasesItemsPriceDataRecurring {
     /// Specifies billing frequency.
     ///

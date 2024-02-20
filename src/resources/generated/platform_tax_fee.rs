@@ -8,7 +8,7 @@ use crate::ids::PlatformTaxFeeId;
 use crate::params::Object;
 
 /// The resource representing a Stripe "PlatformTax".
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PlatformTaxFee {
     /// Unique identifier for the object.
     pub id: PlatformTaxFeeId,

@@ -9,7 +9,7 @@ use serde::{Deserialize, Serialize};
 /// The resource representing a Stripe "ClimateRemovalsSuppliers".
 ///
 /// For more details see <https://stripe.com/docs/api/climate/supplier/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct ClimateSupplier {
     /// Unique identifier for the object.
     pub id: ClimateSupplierId,
@@ -40,7 +40,7 @@ impl Object for ClimateSupplier {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct ClimateRemovalsLocation {
 
     /// The city where the supplier is located.

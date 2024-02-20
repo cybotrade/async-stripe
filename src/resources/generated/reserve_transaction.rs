@@ -9,7 +9,7 @@ use crate::params::Object;
 use crate::resources::Currency;
 
 /// The resource representing a Stripe "ReserveTransaction".
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct ReserveTransaction {
     /// Unique identifier for the object.
     pub id: ReserveTransactionId,

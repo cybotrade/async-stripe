@@ -22,7 +22,7 @@ use crate::resources::{
 /// The resource representing a Stripe "Subscription".
 ///
 /// For more details see <https://stripe.com/docs/api/subscriptions/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct Subscription {
     /// Unique identifier for the object.
     pub id: SubscriptionId,
@@ -281,7 +281,7 @@ impl Object for Subscription {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CancellationDetails {
     /// Additional comments about why the user canceled the subscription, if the subscription was canceled explicitly by the user.
     pub comment: Option<String>,
@@ -293,7 +293,7 @@ pub struct CancellationDetails {
     pub reason: Option<CancellationDetailsReason>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SubscriptionAutomaticTax {
     /// Whether Stripe automatically computes tax on this subscription.
     pub enabled: bool,
@@ -305,7 +305,7 @@ pub struct SubscriptionAutomaticTax {
     pub liability: Option<ConnectAccountReference>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SubscriptionPendingInvoiceItemInterval {
     /// Specifies invoicing frequency.
     ///
@@ -319,7 +319,7 @@ pub struct SubscriptionPendingInvoiceItemInterval {
     pub interval_count: u64,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SubscriptionsResourceBillingCycleAnchorConfig {
     /// The day of the month of the billing_cycle_anchor.
     pub day_of_month: i64,
@@ -337,7 +337,7 @@ pub struct SubscriptionsResourceBillingCycleAnchorConfig {
     pub second: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SubscriptionsResourcePauseCollection {
     /// The payment collection behavior for this subscription while paused.
     ///
@@ -348,7 +348,7 @@ pub struct SubscriptionsResourcePauseCollection {
     pub resumes_at: Option<Timestamp>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SubscriptionsResourcePaymentSettings {
     /// Payment-method-specific configuration to provide to invoices created by the subscription.
     pub payment_method_options: Option<SubscriptionsResourcePaymentMethodOptions>,
@@ -365,7 +365,7 @@ pub struct SubscriptionsResourcePaymentSettings {
         Option<SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SubscriptionsResourcePaymentMethodOptions {
     /// This sub-hash contains details about the Canadian pre-authorized debit payment method options to pass to invoices created by the subscription.
     pub acss_debit: Option<InvoicePaymentMethodOptionsAcssDebit>,
@@ -386,7 +386,7 @@ pub struct SubscriptionsResourcePaymentMethodOptions {
     pub us_bank_account: Option<InvoicePaymentMethodOptionsUsBankAccount>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SubscriptionPaymentMethodOptionsCard {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub mandate_options: Option<InvoiceMandateOptionsCard>,
@@ -404,7 +404,7 @@ pub struct SubscriptionPaymentMethodOptionsCard {
     pub request_three_d_secure: Option<SubscriptionPaymentMethodOptionsCardRequestThreeDSecure>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct InvoiceMandateOptionsCard {
     /// Amount to be charged for future payments.
     pub amount: Option<i64>,
@@ -419,7 +419,7 @@ pub struct InvoiceMandateOptionsCard {
     pub description: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SubscriptionsResourcePendingUpdate {
     /// If the update is applied, determines the date of the first full invoice, and, for plans with `month` or `year` intervals, the day of the month for subsequent invoices.
     ///
@@ -1045,7 +1045,7 @@ impl<'a> UpdateSubscription<'a> {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct AddInvoiceItems {
     /// The ID of the price object.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1068,7 +1068,7 @@ pub struct AddInvoiceItems {
     pub tax_rates: Option<Vec<String>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSubscriptionAutomaticTax {
     /// Enabled automatic tax calculation which will automatically compute tax rates on all invoices generated by the subscription.
     pub enabled: bool,
@@ -1081,7 +1081,7 @@ pub struct CreateSubscriptionAutomaticTax {
     pub liability: Option<CreateSubscriptionAutomaticTaxLiability>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSubscriptionBillingCycleAnchorConfig {
     /// The day of the month the billing_cycle_anchor should be.
     ///
@@ -1113,7 +1113,7 @@ pub struct CreateSubscriptionBillingCycleAnchorConfig {
     pub second: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSubscriptionInvoiceSettings {
     /// The account tax IDs associated with the subscription.
     ///
@@ -1128,7 +1128,7 @@ pub struct CreateSubscriptionInvoiceSettings {
     pub issuer: Option<CreateSubscriptionInvoiceSettingsIssuer>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSubscriptionItems {
     /// Define thresholds at which an invoice will be sent, and the subscription advanced to a new billing period.
     ///
@@ -1168,7 +1168,7 @@ pub struct CreateSubscriptionItems {
     pub tax_rates: Option<Vec<String>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSubscriptionPaymentSettings {
     /// Payment-method-specific configuration to provide to invoices created by the subscription.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1189,7 +1189,7 @@ pub struct CreateSubscriptionPaymentSettings {
         Option<CreateSubscriptionPaymentSettingsSaveDefaultPaymentMethod>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSubscriptionPendingInvoiceItemInterval {
     /// Specifies invoicing frequency.
     ///
@@ -1204,7 +1204,7 @@ pub struct CreateSubscriptionPendingInvoiceItemInterval {
     pub interval_count: Option<u64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSubscriptionTransferData {
     /// A non-negative decimal between 0 and 100, with at most two decimal places.
     ///
@@ -1217,19 +1217,19 @@ pub struct CreateSubscriptionTransferData {
     pub destination: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSubscriptionTrialSettings {
     /// Defines how the subscription should behave when the user's free trial ends.
     pub end_behavior: CreateSubscriptionTrialSettingsEndBehavior,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct ListSubscriptionsAutomaticTax {
     /// Enabled automatic tax calculation which will automatically compute tax rates on all invoices generated by the subscription.
     pub enabled: bool,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSubscriptionAutomaticTax {
     /// Enabled automatic tax calculation which will automatically compute tax rates on all invoices generated by the subscription.
     pub enabled: bool,
@@ -1242,7 +1242,7 @@ pub struct UpdateSubscriptionAutomaticTax {
     pub liability: Option<UpdateSubscriptionAutomaticTaxLiability>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSubscriptionCancellationDetails {
     /// Additional comments about why the user canceled the subscription, if the subscription was canceled explicitly by the user.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1253,7 +1253,7 @@ pub struct UpdateSubscriptionCancellationDetails {
     pub feedback: Option<UpdateSubscriptionCancellationDetailsFeedback>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSubscriptionInvoiceSettings {
     /// The account tax IDs associated with the subscription.
     ///
@@ -1268,7 +1268,7 @@ pub struct UpdateSubscriptionInvoiceSettings {
     pub issuer: Option<UpdateSubscriptionInvoiceSettingsIssuer>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSubscriptionItems {
     /// Define thresholds at which an invoice will be sent, and the subscription advanced to a new billing period.
     ///
@@ -1324,7 +1324,7 @@ pub struct UpdateSubscriptionItems {
     pub tax_rates: Option<Vec<String>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSubscriptionPauseCollection {
     /// The payment collection behavior for this subscription while paused.
     ///
@@ -1336,7 +1336,7 @@ pub struct UpdateSubscriptionPauseCollection {
     pub resumes_at: Option<Timestamp>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSubscriptionPaymentSettings {
     /// Payment-method-specific configuration to provide to invoices created by the subscription.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1357,7 +1357,7 @@ pub struct UpdateSubscriptionPaymentSettings {
         Option<UpdateSubscriptionPaymentSettingsSaveDefaultPaymentMethod>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSubscriptionPendingInvoiceItemInterval {
     /// Specifies invoicing frequency.
     ///
@@ -1372,7 +1372,7 @@ pub struct UpdateSubscriptionPendingInvoiceItemInterval {
     pub interval_count: Option<u64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSubscriptionTransferData {
     /// A non-negative decimal between 0 and 100, with at most two decimal places.
     ///
@@ -1385,13 +1385,13 @@ pub struct UpdateSubscriptionTransferData {
     pub destination: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSubscriptionTrialSettings {
     /// Defines how the subscription should behave when the user's free trial ends.
     pub end_behavior: UpdateSubscriptionTrialSettingsEndBehavior,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSubscriptionAutomaticTaxLiability {
     /// The connected account being referenced when `type` is `account`.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1402,7 +1402,7 @@ pub struct CreateSubscriptionAutomaticTaxLiability {
     pub type_: CreateSubscriptionAutomaticTaxLiabilityType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSubscriptionInvoiceSettingsIssuer {
     /// The connected account being referenced when `type` is `account`.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1413,13 +1413,13 @@ pub struct CreateSubscriptionInvoiceSettingsIssuer {
     pub type_: CreateSubscriptionInvoiceSettingsIssuerType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSubscriptionItemsBillingThresholds {
     /// Number of units that meets the billing threshold to advance the subscription to a new billing period (e.g., it takes 10 $5 units to meet a $50 [monetary threshold](https://stripe.com/docs/api/subscriptions/update#update_subscription-billing_thresholds-amount_gte)).
     pub usage_gte: i64,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSubscriptionPaymentSettingsPaymentMethodOptions {
     /// This sub-hash contains details about the Canadian pre-authorized debit payment method options to pass to the invoice’s PaymentIntent.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1447,13 +1447,13 @@ pub struct CreateSubscriptionPaymentSettingsPaymentMethodOptions {
     pub us_bank_account: Option<CreateSubscriptionPaymentSettingsPaymentMethodOptionsUsBankAccount>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSubscriptionTrialSettingsEndBehavior {
     /// Indicates how the subscription should change when the trial ends if the user did not provide a payment method.
     pub missing_payment_method: CreateSubscriptionTrialSettingsEndBehaviorMissingPaymentMethod,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct InvoiceItemPriceData {
     /// Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase.
     ///
@@ -1482,7 +1482,7 @@ pub struct InvoiceItemPriceData {
     pub unit_amount_decimal: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SubscriptionItemPriceData {
     /// Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase.
     ///
@@ -1514,7 +1514,7 @@ pub struct SubscriptionItemPriceData {
     pub unit_amount_decimal: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSubscriptionAutomaticTaxLiability {
     /// The connected account being referenced when `type` is `account`.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1525,7 +1525,7 @@ pub struct UpdateSubscriptionAutomaticTaxLiability {
     pub type_: UpdateSubscriptionAutomaticTaxLiabilityType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSubscriptionInvoiceSettingsIssuer {
     /// The connected account being referenced when `type` is `account`.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1536,7 +1536,7 @@ pub struct UpdateSubscriptionInvoiceSettingsIssuer {
     pub type_: UpdateSubscriptionInvoiceSettingsIssuerType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSubscriptionPaymentSettingsPaymentMethodOptions {
     /// This sub-hash contains details about the Canadian pre-authorized debit payment method options to pass to the invoice’s PaymentIntent.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1564,13 +1564,13 @@ pub struct UpdateSubscriptionPaymentSettingsPaymentMethodOptions {
     pub us_bank_account: Option<UpdateSubscriptionPaymentSettingsPaymentMethodOptionsUsBankAccount>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSubscriptionTrialSettingsEndBehavior {
     /// Indicates how the subscription should change when the trial ends if the user did not provide a payment method.
     pub missing_payment_method: UpdateSubscriptionTrialSettingsEndBehaviorMissingPaymentMethod,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSubscriptionPaymentSettingsPaymentMethodOptionsAcssDebit {
     /// Additional fields for Mandate creation.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1583,7 +1583,7 @@ pub struct CreateSubscriptionPaymentSettingsPaymentMethodOptionsAcssDebit {
         Option<CreateSubscriptionPaymentSettingsPaymentMethodOptionsAcssDebitVerificationMethod>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSubscriptionPaymentSettingsPaymentMethodOptionsBancontact {
     /// Preferred language of the Bancontact authorization page that the customer is redirected to.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1591,7 +1591,7 @@ pub struct CreateSubscriptionPaymentSettingsPaymentMethodOptionsBancontact {
         Option<CreateSubscriptionPaymentSettingsPaymentMethodOptionsBancontactPreferredLanguage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSubscriptionPaymentSettingsPaymentMethodOptionsCard {
     /// Configuration options for setting up an eMandate for cards issued in India.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1614,7 +1614,7 @@ pub struct CreateSubscriptionPaymentSettingsPaymentMethodOptionsCard {
         Option<CreateSubscriptionPaymentSettingsPaymentMethodOptionsCardRequestThreeDSecure>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSubscriptionPaymentSettingsPaymentMethodOptionsCustomerBalance {
     /// Configuration for the bank transfer funding type, if the `funding_type` is set to `bank_transfer`.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1628,10 +1628,10 @@ pub struct CreateSubscriptionPaymentSettingsPaymentMethodOptionsCustomerBalance 
     pub funding_type: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSubscriptionPaymentSettingsPaymentMethodOptionsKonbini {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSubscriptionPaymentSettingsPaymentMethodOptionsUsBankAccount {
     /// Additional fields for Financial Connections Session creation.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1646,7 +1646,7 @@ pub struct CreateSubscriptionPaymentSettingsPaymentMethodOptionsUsBankAccount {
     >,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SubscriptionItemPriceDataRecurring {
     /// Specifies billing frequency.
     ///
@@ -1661,7 +1661,7 @@ pub struct SubscriptionItemPriceDataRecurring {
     pub interval_count: Option<u64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSubscriptionPaymentSettingsPaymentMethodOptionsAcssDebit {
     /// Additional fields for Mandate creation.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1674,7 +1674,7 @@ pub struct UpdateSubscriptionPaymentSettingsPaymentMethodOptionsAcssDebit {
         Option<UpdateSubscriptionPaymentSettingsPaymentMethodOptionsAcssDebitVerificationMethod>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSubscriptionPaymentSettingsPaymentMethodOptionsBancontact {
     /// Preferred language of the Bancontact authorization page that the customer is redirected to.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1682,7 +1682,7 @@ pub struct UpdateSubscriptionPaymentSettingsPaymentMethodOptionsBancontact {
         Option<UpdateSubscriptionPaymentSettingsPaymentMethodOptionsBancontactPreferredLanguage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSubscriptionPaymentSettingsPaymentMethodOptionsCard {
     /// Configuration options for setting up an eMandate for cards issued in India.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1705,7 +1705,7 @@ pub struct UpdateSubscriptionPaymentSettingsPaymentMethodOptionsCard {
         Option<UpdateSubscriptionPaymentSettingsPaymentMethodOptionsCardRequestThreeDSecure>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSubscriptionPaymentSettingsPaymentMethodOptionsCustomerBalance {
     /// Configuration for the bank transfer funding type, if the `funding_type` is set to `bank_transfer`.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1719,10 +1719,10 @@ pub struct UpdateSubscriptionPaymentSettingsPaymentMethodOptionsCustomerBalance 
     pub funding_type: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSubscriptionPaymentSettingsPaymentMethodOptionsKonbini {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSubscriptionPaymentSettingsPaymentMethodOptionsUsBankAccount {
     /// Additional fields for Financial Connections Session creation.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1737,7 +1737,7 @@ pub struct UpdateSubscriptionPaymentSettingsPaymentMethodOptionsUsBankAccount {
     >,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSubscriptionPaymentSettingsPaymentMethodOptionsAcssDebitMandateOptions {
     /// Transaction type of the mandate.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1746,7 +1746,7 @@ pub struct CreateSubscriptionPaymentSettingsPaymentMethodOptionsAcssDebitMandate
     >,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSubscriptionPaymentSettingsPaymentMethodOptionsCardMandateOptions {
     /// Amount to be charged for future payments.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1765,7 +1765,7 @@ pub struct CreateSubscriptionPaymentSettingsPaymentMethodOptionsCardMandateOptio
     pub description: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSubscriptionPaymentSettingsPaymentMethodOptionsCustomerBalanceBankTransfer {
 
     /// Configuration for eu_bank_transfer funding type.
@@ -1780,7 +1780,7 @@ pub struct CreateSubscriptionPaymentSettingsPaymentMethodOptionsCustomerBalanceB
     pub type_: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSubscriptionPaymentSettingsPaymentMethodOptionsUsBankAccountFinancialConnections {
 
     /// The list of permissions to request.
@@ -1795,7 +1795,7 @@ pub struct CreateSubscriptionPaymentSettingsPaymentMethodOptionsUsBankAccountFin
     pub prefetch: Option<Vec<CreateSubscriptionPaymentSettingsPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSubscriptionPaymentSettingsPaymentMethodOptionsAcssDebitMandateOptions {
     /// Transaction type of the mandate.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1804,7 +1804,7 @@ pub struct UpdateSubscriptionPaymentSettingsPaymentMethodOptionsAcssDebitMandate
     >,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSubscriptionPaymentSettingsPaymentMethodOptionsCardMandateOptions {
     /// Amount to be charged for future payments.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1823,7 +1823,7 @@ pub struct UpdateSubscriptionPaymentSettingsPaymentMethodOptionsCardMandateOptio
     pub description: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSubscriptionPaymentSettingsPaymentMethodOptionsCustomerBalanceBankTransfer {
 
     /// Configuration for eu_bank_transfer funding type.
@@ -1838,7 +1838,7 @@ pub struct UpdateSubscriptionPaymentSettingsPaymentMethodOptionsCustomerBalanceB
     pub type_: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSubscriptionPaymentSettingsPaymentMethodOptionsUsBankAccountFinancialConnections {
 
     /// The list of permissions to request.
@@ -1853,7 +1853,7 @@ pub struct UpdateSubscriptionPaymentSettingsPaymentMethodOptionsUsBankAccountFin
     pub prefetch: Option<Vec<UpdateSubscriptionPaymentSettingsPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateSubscriptionPaymentSettingsPaymentMethodOptionsCustomerBalanceBankTransferEuBankTransfer
 {
     /// The desired country code of the bank account information.
@@ -1862,7 +1862,7 @@ pub struct CreateSubscriptionPaymentSettingsPaymentMethodOptionsCustomerBalanceB
     pub country: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateSubscriptionPaymentSettingsPaymentMethodOptionsCustomerBalanceBankTransferEuBankTransfer
 {
     /// The desired country code of the bank account information.

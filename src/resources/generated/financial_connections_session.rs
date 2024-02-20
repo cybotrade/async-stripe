@@ -11,7 +11,7 @@ use serde::{Deserialize, Serialize};
 /// The resource representing a Stripe "BankConnectionsResourceLinkAccountSession".
 ///
 /// For more details see <https://stripe.com/docs/api/financial_connections/sessions/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct FinancialConnectionsSession {
     /// Unique identifier for the object.
     pub id: FinancialConnectionsSessionId,
@@ -64,7 +64,7 @@ impl Object for FinancialConnectionsSession {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct BankConnectionsResourceLinkAccountSessionFilters {
 
     /// List of countries from which to filter accounts.
@@ -115,7 +115,7 @@ impl<'a> CreateFinancialConnectionsSession<'a> {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateFinancialConnectionsSessionAccountHolder {
 
     /// The ID of the Stripe account whose accounts will be retrieved.
@@ -135,7 +135,7 @@ pub struct CreateFinancialConnectionsSessionAccountHolder {
     pub type_: CreateFinancialConnectionsSessionAccountHolderType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateFinancialConnectionsSessionFilters {
 
     /// List of countries from which to collect accounts.

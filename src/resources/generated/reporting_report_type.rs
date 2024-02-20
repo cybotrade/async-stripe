@@ -9,7 +9,7 @@ use serde::{Deserialize, Serialize};
 /// The resource representing a Stripe "reporting_report_type".
 ///
 /// For more details see <https://stripe.com/docs/api/reporting/report_type/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct ReportingReportType {
     /// The [ID of the Report Type](https://stripe.com/docs/reporting/statements/api#available-report-types), such as `balance.summary.1`.
     pub id: ReportingReportTypeId,

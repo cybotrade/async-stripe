@@ -12,7 +12,7 @@ use crate::resources::{EventType, NotificationEventData};
 /// The resource representing a Stripe "NotificationEvent".
 ///
 /// For more details see <https://stripe.com/docs/api/events/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct Event {
     /// Unique identifier for the object.
     pub id: EventId,
@@ -73,7 +73,7 @@ impl Object for Event {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct NotificationEventRequest {
     /// ID of the API request that caused the event.
     ///

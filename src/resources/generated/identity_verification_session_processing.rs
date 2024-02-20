@@ -5,6 +5,6 @@
 use serde::{Deserialize, Serialize};
 
 /// The resource representing a Stripe "identity.verification_session.processing".
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IdentityVerificationSessionProcessing {
 }

@@ -17,7 +17,7 @@ use crate::resources::{
 /// The resource representing a Stripe "Account".
 ///
 /// For more details see <https://stripe.com/docs/api/accounts/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct Account {
     /// Unique identifier for the object.
     pub id: AccountId,
@@ -172,7 +172,7 @@ impl Object for Account {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct BusinessProfile {
     /// The applicant's gross annual revenue for its preceding fiscal year.
     pub annual_revenue: Option<AccountAnnualRevenue>,
@@ -215,7 +215,7 @@ pub struct BusinessProfile {
     pub url: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct AccountAnnualRevenue {
     /// A non-negative integer representing the amount in the [smallest currency unit](https://stripe.com/docs/currencies#zero-decimal).
     pub amount: Option<i64>,
@@ -232,7 +232,7 @@ pub struct AccountAnnualRevenue {
     pub fiscal_year_end: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct AccountCapabilities {
     /// The status of the Canadian pre-authorized debits payments capability of the account, or whether the account can directly process Canadian pre-authorized debits charges.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -387,7 +387,7 @@ pub struct AccountCapabilities {
     pub zip_payments: Option<AccountCapabilitiesZipPayments>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct AccountFutureRequirements {
     /// Fields that are due and can be satisfied by providing the corresponding alternative fields instead.
     pub alternatives: Option<Vec<AccountRequirementsAlternative>>,
@@ -426,7 +426,7 @@ pub struct AccountFutureRequirements {
     pub pending_verification: Option<Vec<String>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct AccountMonthlyEstimatedRevenue {
     /// A non-negative integer representing how much to charge in the [smallest currency unit](https://stripe.com/docs/currencies#zero-decimal).
     pub amount: i64,
@@ -437,7 +437,7 @@ pub struct AccountMonthlyEstimatedRevenue {
     pub currency: Currency,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct AccountRequirements {
     /// Fields that are due and can be satisfied by providing the corresponding alternative fields instead.
     pub alternatives: Option<Vec<AccountRequirementsAlternative>>,
@@ -478,7 +478,7 @@ pub struct AccountRequirements {
     pub pending_verification: Option<Vec<String>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct AccountRequirementsAlternative {
     /// Fields that can be provided to satisfy all fields in `original_fields_due`.
     pub alternative_fields_due: Vec<String>,
@@ -487,7 +487,7 @@ pub struct AccountRequirementsAlternative {
     pub original_fields_due: Vec<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct AccountRequirementsError {
     /// The code for the type of error.
     pub code: AccountRequirementsErrorCode,
@@ -499,7 +499,7 @@ pub struct AccountRequirementsError {
     pub requirement: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct AccountSettings {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub bacs_debit_payments: Option<AccountBacsDebitPaymentsSettings>,
@@ -528,7 +528,7 @@ pub struct AccountSettings {
     pub treasury: Option<AccountTreasurySettings>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct AccountBacsDebitPaymentsSettings {
     /// The Bacs Direct Debit display name for this account.
     ///
@@ -546,7 +546,7 @@ pub struct AccountBacsDebitPaymentsSettings {
     pub service_user_number: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct BrandingSettings {
     /// (ID of a [file upload](https://stripe.com/docs/guides/file-upload)) An icon for the account.
     ///
@@ -565,13 +565,13 @@ pub struct BrandingSettings {
     pub secondary_color: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct AccountCardIssuingSettings {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub tos_acceptance: Option<CardIssuingAccountTermsOfService>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CardPaymentsSettings {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub decline_on: Option<DeclineChargeOn>,
@@ -595,7 +595,7 @@ pub struct CardPaymentsSettings {
     pub statement_descriptor_prefix_kanji: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct DashboardSettings {
     /// The display name for this account.
     ///
@@ -608,7 +608,7 @@ pub struct DashboardSettings {
     pub timezone: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct DeclineChargeOn {
     /// Whether Stripe automatically declines charges with an incorrect ZIP or postal code.
     ///
@@ -621,7 +621,7 @@ pub struct DeclineChargeOn {
     pub cvc_failure: bool,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct AccountInvoicesSettings {
     /// The list of default Account Tax IDs to automatically include on invoices.
     ///
@@ -629,7 +629,7 @@ pub struct AccountInvoicesSettings {
     pub default_account_tax_ids: Option<Vec<Expandable<TaxId>>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentsSettings {
     /// The default text that appears on credit card statements when a charge is made.
     ///
@@ -655,7 +655,7 @@ pub struct PaymentsSettings {
     pub statement_descriptor_prefix_kanji: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PayoutSettings {
     /// A Boolean indicating if Stripe should try to reclaim negative balances from an attached bank account.
     ///
@@ -671,14 +671,14 @@ pub struct PayoutSettings {
     pub statement_descriptor: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct AccountSepaDebitPaymentsSettings {
     /// SEPA creditor identifier that identifies the company making the payment.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub creditor_id: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TosAcceptance {
     /// The Unix timestamp marking when the account representative accepted their service agreement.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -697,13 +697,13 @@ pub struct TosAcceptance {
     pub user_agent: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct AccountTreasurySettings {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub tos_acceptance: Option<AccountTermsOfService>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct AccountTermsOfService {
     /// The Unix timestamp marking when the account representative accepted the service agreement.
     pub date: Option<Timestamp>,
@@ -716,7 +716,7 @@ pub struct AccountTermsOfService {
     pub user_agent: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct AccountUnificationAccountController {
     /// `true` if the Connect application retrieving the resource controls the account and can therefore exercise [platform controls](https://stripe.com/docs/connect/platform-controls-for-standard-accounts).
     ///
@@ -731,7 +731,7 @@ pub struct AccountUnificationAccountController {
     pub type_: AccountUnificationAccountControllerType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CardIssuingAccountTermsOfService {
     /// The Unix timestamp marking when the account representative accepted the service agreement.
     pub date: Option<Timestamp>,
@@ -744,7 +744,7 @@ pub struct CardIssuingAccountTermsOfService {
     pub user_agent: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct Company {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub address: Option<Address>,
@@ -827,12 +827,12 @@ pub struct Company {
     pub verification: Option<CompanyVerification>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CompanyVerification {
     pub document: CompanyVerificationDocument,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CompanyVerificationDocument {
     /// The back of a document returned by a [file upload](https://stripe.com/docs/api#create_file) with a `purpose` value of `additional_verification`.
     pub back: Option<Expandable<File>>,
@@ -849,7 +849,7 @@ pub struct CompanyVerificationDocument {
     pub front: Option<Expandable<File>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct LegalEntityUboDeclaration {
     /// The Unix timestamp marking when the beneficial owner attestation was made.
     pub date: Option<Timestamp>,
@@ -861,7 +861,7 @@ pub struct LegalEntityUboDeclaration {
     pub user_agent: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TransferSchedule {
     /// The number of days charges for the account will be held before being paid out.
     pub delay_days: u32,
@@ -1164,7 +1164,7 @@ impl<'a> UpdateAccount<'a> {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct AcceptTos {
     /// The Unix timestamp marking when the account representative accepted their service agreement.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1183,7 +1183,7 @@ pub struct AcceptTos {
     pub user_agent: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct AccountSettingsParams {
     /// Settings specific to Bacs Direct Debit.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1214,7 +1214,7 @@ pub struct AccountSettingsParams {
     pub treasury: Option<AccountSettingsParamsTreasury>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CompanyParams {
     /// The company's primary address.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1307,7 +1307,7 @@ pub struct CompanyParams {
     pub verification: Option<CompanyVerificationParams>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountCapabilities {
     /// The acss_debit_payments capability.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1462,7 +1462,7 @@ pub struct CreateAccountCapabilities {
     pub zip_payments: Option<CreateAccountCapabilitiesZipPayments>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountDocuments {
     /// One or more documents that support the [Bank account ownership verification](https://support.stripe.com/questions/bank-account-ownership-verification) requirement.
     ///
@@ -1498,7 +1498,7 @@ pub struct CreateAccountDocuments {
     pub proof_of_registration: Option<CreateAccountDocumentsProofOfRegistration>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PersonParams {
     /// The individual's primary address.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1605,7 +1605,7 @@ pub struct PersonParams {
     pub verification: Option<PersonVerificationParams>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountCapabilities {
     /// The acss_debit_payments capability.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1760,7 +1760,7 @@ pub struct UpdateAccountCapabilities {
     pub zip_payments: Option<UpdateAccountCapabilitiesZipPayments>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountDocuments {
     /// One or more documents that support the [Bank account ownership verification](https://support.stripe.com/questions/bank-account-ownership-verification) requirement.
     ///
@@ -1796,7 +1796,7 @@ pub struct UpdateAccountDocuments {
     pub proof_of_registration: Option<UpdateAccountDocumentsProofOfRegistration>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct AccountSettingsParamsBacsDebitPayments {
     /// The Bacs Direct Debit Display Name for this account.
     ///
@@ -1809,21 +1809,21 @@ pub struct AccountSettingsParamsBacsDebitPayments {
     pub display_name: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct AccountSettingsParamsCardIssuing {
     /// Details on the account's acceptance of the [Stripe Issuing Terms and Disclosures](https://stripe.com/docs/issuing/connect/tos_acceptance).
     #[serde(skip_serializing_if = "Option::is_none")]
     pub tos_acceptance: Option<AccountSettingsParamsCardIssuingTosAcceptance>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct AccountSettingsParamsTreasury {
     /// Details on the account's acceptance of the Stripe Treasury Services Agreement.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub tos_acceptance: Option<AccountSettingsParamsTreasuryTosAcceptance>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct BrandingSettingsParams {
     /// (ID of a [file upload](https://stripe.com/docs/guides/file-upload)) An icon for the account.
     ///
@@ -1846,7 +1846,7 @@ pub struct BrandingSettingsParams {
     pub secondary_color: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CardPaymentsSettingsParams {
     /// Automatically declines certain charge types regardless of whether the card issuer accepted or declined the charge.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1874,7 +1874,7 @@ pub struct CardPaymentsSettingsParams {
     pub statement_descriptor_prefix_kanji: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CompanyParamsOwnershipDeclaration {
     /// The Unix timestamp marking when the beneficial owner attestation was made.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1889,14 +1889,14 @@ pub struct CompanyParamsOwnershipDeclaration {
     pub user_agent: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CompanyVerificationParams {
     /// A document verifying the business.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub document: Option<VerificationDocumentParams>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountCapabilitiesAcssDebitPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -1906,7 +1906,7 @@ pub struct CreateAccountCapabilitiesAcssDebitPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountCapabilitiesAffirmPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -1916,7 +1916,7 @@ pub struct CreateAccountCapabilitiesAffirmPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountCapabilitiesAfterpayClearpayPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -1926,7 +1926,7 @@ pub struct CreateAccountCapabilitiesAfterpayClearpayPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountCapabilitiesAuBecsDebitPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -1936,7 +1936,7 @@ pub struct CreateAccountCapabilitiesAuBecsDebitPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountCapabilitiesBacsDebitPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -1946,7 +1946,7 @@ pub struct CreateAccountCapabilitiesBacsDebitPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountCapabilitiesBancontactPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -1956,7 +1956,7 @@ pub struct CreateAccountCapabilitiesBancontactPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountCapabilitiesBankTransferPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -1966,7 +1966,7 @@ pub struct CreateAccountCapabilitiesBankTransferPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountCapabilitiesBlikPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -1976,7 +1976,7 @@ pub struct CreateAccountCapabilitiesBlikPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountCapabilitiesBoletoPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -1986,7 +1986,7 @@ pub struct CreateAccountCapabilitiesBoletoPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountCapabilitiesCardIssuing {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -1996,7 +1996,7 @@ pub struct CreateAccountCapabilitiesCardIssuing {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountCapabilitiesCardPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2006,7 +2006,7 @@ pub struct CreateAccountCapabilitiesCardPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountCapabilitiesCartesBancairesPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2016,7 +2016,7 @@ pub struct CreateAccountCapabilitiesCartesBancairesPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountCapabilitiesCashappPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2026,7 +2026,7 @@ pub struct CreateAccountCapabilitiesCashappPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountCapabilitiesEpsPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2036,7 +2036,7 @@ pub struct CreateAccountCapabilitiesEpsPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountCapabilitiesFpxPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2046,7 +2046,7 @@ pub struct CreateAccountCapabilitiesFpxPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountCapabilitiesGiropayPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2056,7 +2056,7 @@ pub struct CreateAccountCapabilitiesGiropayPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountCapabilitiesGrabpayPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2066,7 +2066,7 @@ pub struct CreateAccountCapabilitiesGrabpayPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountCapabilitiesIdealPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2076,7 +2076,7 @@ pub struct CreateAccountCapabilitiesIdealPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountCapabilitiesIndiaInternationalPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2086,7 +2086,7 @@ pub struct CreateAccountCapabilitiesIndiaInternationalPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountCapabilitiesJcbPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2096,7 +2096,7 @@ pub struct CreateAccountCapabilitiesJcbPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountCapabilitiesKlarnaPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2106,7 +2106,7 @@ pub struct CreateAccountCapabilitiesKlarnaPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountCapabilitiesKonbiniPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2116,7 +2116,7 @@ pub struct CreateAccountCapabilitiesKonbiniPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountCapabilitiesLegacyPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2126,7 +2126,7 @@ pub struct CreateAccountCapabilitiesLegacyPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountCapabilitiesLinkPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2136,7 +2136,7 @@ pub struct CreateAccountCapabilitiesLinkPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountCapabilitiesOxxoPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2146,7 +2146,7 @@ pub struct CreateAccountCapabilitiesOxxoPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountCapabilitiesP24Payments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2156,7 +2156,7 @@ pub struct CreateAccountCapabilitiesP24Payments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountCapabilitiesPaynowPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2166,7 +2166,7 @@ pub struct CreateAccountCapabilitiesPaynowPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountCapabilitiesPromptpayPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2176,7 +2176,7 @@ pub struct CreateAccountCapabilitiesPromptpayPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountCapabilitiesRevolutPayPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2186,7 +2186,7 @@ pub struct CreateAccountCapabilitiesRevolutPayPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountCapabilitiesSepaDebitPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2196,7 +2196,7 @@ pub struct CreateAccountCapabilitiesSepaDebitPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountCapabilitiesSofortPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2206,7 +2206,7 @@ pub struct CreateAccountCapabilitiesSofortPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountCapabilitiesSwishPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2216,7 +2216,7 @@ pub struct CreateAccountCapabilitiesSwishPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountCapabilitiesTaxReportingUs1099K {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2226,7 +2226,7 @@ pub struct CreateAccountCapabilitiesTaxReportingUs1099K {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountCapabilitiesTaxReportingUs1099Misc {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2236,7 +2236,7 @@ pub struct CreateAccountCapabilitiesTaxReportingUs1099Misc {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountCapabilitiesTransfers {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2246,7 +2246,7 @@ pub struct CreateAccountCapabilitiesTransfers {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountCapabilitiesTreasury {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2256,7 +2256,7 @@ pub struct CreateAccountCapabilitiesTreasury {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountCapabilitiesUsBankAccountAchPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2266,7 +2266,7 @@ pub struct CreateAccountCapabilitiesUsBankAccountAchPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountCapabilitiesZipPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2276,56 +2276,56 @@ pub struct CreateAccountCapabilitiesZipPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountDocumentsBankAccountOwnershipVerification {
     /// One or more document ids returned by a [file upload](https://stripe.com/docs/api#create_file) with a `purpose` value of `account_requirement`.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub files: Option<Vec<String>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountDocumentsCompanyLicense {
     /// One or more document ids returned by a [file upload](https://stripe.com/docs/api#create_file) with a `purpose` value of `account_requirement`.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub files: Option<Vec<String>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountDocumentsCompanyMemorandumOfAssociation {
     /// One or more document ids returned by a [file upload](https://stripe.com/docs/api#create_file) with a `purpose` value of `account_requirement`.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub files: Option<Vec<String>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountDocumentsCompanyMinisterialDecree {
     /// One or more document ids returned by a [file upload](https://stripe.com/docs/api#create_file) with a `purpose` value of `account_requirement`.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub files: Option<Vec<String>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountDocumentsCompanyRegistrationVerification {
     /// One or more document ids returned by a [file upload](https://stripe.com/docs/api#create_file) with a `purpose` value of `account_requirement`.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub files: Option<Vec<String>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountDocumentsCompanyTaxIdVerification {
     /// One or more document ids returned by a [file upload](https://stripe.com/docs/api#create_file) with a `purpose` value of `account_requirement`.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub files: Option<Vec<String>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountDocumentsProofOfRegistration {
     /// One or more document ids returned by a [file upload](https://stripe.com/docs/api#create_file) with a `purpose` value of `account_requirement`.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub files: Option<Vec<String>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentsSettingsParams {
     /// The default text that appears on credit card statements when a charge is made.
     ///
@@ -2342,7 +2342,7 @@ pub struct PaymentsSettingsParams {
     pub statement_descriptor_kanji: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PayoutSettingsParams {
     /// A Boolean indicating whether Stripe should try to reclaim negative balances from an attached bank account.
     ///
@@ -2363,7 +2363,7 @@ pub struct PayoutSettingsParams {
     pub statement_descriptor: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PersonParamsDob {
     /// The day of birth, between 1 and 31.
     pub day: i64,
@@ -2375,7 +2375,7 @@ pub struct PersonParamsDob {
     pub year: i64,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PersonParamsRegisteredAddress {
     /// City, district, suburb, town, or village.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -2402,7 +2402,7 @@ pub struct PersonParamsRegisteredAddress {
     pub state: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PersonParamsRelationship {
     /// Whether the person is a director of the account's legal entity.
     ///
@@ -2427,7 +2427,7 @@ pub struct PersonParamsRelationship {
     pub title: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountCapabilitiesAcssDebitPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2437,7 +2437,7 @@ pub struct UpdateAccountCapabilitiesAcssDebitPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountCapabilitiesAffirmPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2447,7 +2447,7 @@ pub struct UpdateAccountCapabilitiesAffirmPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountCapabilitiesAfterpayClearpayPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2457,7 +2457,7 @@ pub struct UpdateAccountCapabilitiesAfterpayClearpayPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountCapabilitiesAuBecsDebitPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2467,7 +2467,7 @@ pub struct UpdateAccountCapabilitiesAuBecsDebitPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountCapabilitiesBacsDebitPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2477,7 +2477,7 @@ pub struct UpdateAccountCapabilitiesBacsDebitPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountCapabilitiesBancontactPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2487,7 +2487,7 @@ pub struct UpdateAccountCapabilitiesBancontactPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountCapabilitiesBankTransferPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2497,7 +2497,7 @@ pub struct UpdateAccountCapabilitiesBankTransferPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountCapabilitiesBlikPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2507,7 +2507,7 @@ pub struct UpdateAccountCapabilitiesBlikPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountCapabilitiesBoletoPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2517,7 +2517,7 @@ pub struct UpdateAccountCapabilitiesBoletoPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountCapabilitiesCardIssuing {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2527,7 +2527,7 @@ pub struct UpdateAccountCapabilitiesCardIssuing {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountCapabilitiesCardPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2537,7 +2537,7 @@ pub struct UpdateAccountCapabilitiesCardPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountCapabilitiesCartesBancairesPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2547,7 +2547,7 @@ pub struct UpdateAccountCapabilitiesCartesBancairesPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountCapabilitiesCashappPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2557,7 +2557,7 @@ pub struct UpdateAccountCapabilitiesCashappPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountCapabilitiesEpsPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2567,7 +2567,7 @@ pub struct UpdateAccountCapabilitiesEpsPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountCapabilitiesFpxPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2577,7 +2577,7 @@ pub struct UpdateAccountCapabilitiesFpxPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountCapabilitiesGiropayPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2587,7 +2587,7 @@ pub struct UpdateAccountCapabilitiesGiropayPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountCapabilitiesGrabpayPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2597,7 +2597,7 @@ pub struct UpdateAccountCapabilitiesGrabpayPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountCapabilitiesIdealPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2607,7 +2607,7 @@ pub struct UpdateAccountCapabilitiesIdealPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountCapabilitiesIndiaInternationalPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2617,7 +2617,7 @@ pub struct UpdateAccountCapabilitiesIndiaInternationalPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountCapabilitiesJcbPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2627,7 +2627,7 @@ pub struct UpdateAccountCapabilitiesJcbPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountCapabilitiesKlarnaPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2637,7 +2637,7 @@ pub struct UpdateAccountCapabilitiesKlarnaPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountCapabilitiesKonbiniPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2647,7 +2647,7 @@ pub struct UpdateAccountCapabilitiesKonbiniPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountCapabilitiesLegacyPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2657,7 +2657,7 @@ pub struct UpdateAccountCapabilitiesLegacyPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountCapabilitiesLinkPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2667,7 +2667,7 @@ pub struct UpdateAccountCapabilitiesLinkPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountCapabilitiesOxxoPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2677,7 +2677,7 @@ pub struct UpdateAccountCapabilitiesOxxoPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountCapabilitiesP24Payments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2687,7 +2687,7 @@ pub struct UpdateAccountCapabilitiesP24Payments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountCapabilitiesPaynowPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2697,7 +2697,7 @@ pub struct UpdateAccountCapabilitiesPaynowPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountCapabilitiesPromptpayPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2707,7 +2707,7 @@ pub struct UpdateAccountCapabilitiesPromptpayPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountCapabilitiesRevolutPayPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2717,7 +2717,7 @@ pub struct UpdateAccountCapabilitiesRevolutPayPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountCapabilitiesSepaDebitPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2727,7 +2727,7 @@ pub struct UpdateAccountCapabilitiesSepaDebitPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountCapabilitiesSofortPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2737,7 +2737,7 @@ pub struct UpdateAccountCapabilitiesSofortPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountCapabilitiesSwishPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2747,7 +2747,7 @@ pub struct UpdateAccountCapabilitiesSwishPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountCapabilitiesTaxReportingUs1099K {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2757,7 +2757,7 @@ pub struct UpdateAccountCapabilitiesTaxReportingUs1099K {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountCapabilitiesTaxReportingUs1099Misc {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2767,7 +2767,7 @@ pub struct UpdateAccountCapabilitiesTaxReportingUs1099Misc {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountCapabilitiesTransfers {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2777,7 +2777,7 @@ pub struct UpdateAccountCapabilitiesTransfers {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountCapabilitiesTreasury {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2787,7 +2787,7 @@ pub struct UpdateAccountCapabilitiesTreasury {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountCapabilitiesUsBankAccountAchPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2797,7 +2797,7 @@ pub struct UpdateAccountCapabilitiesUsBankAccountAchPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountCapabilitiesZipPayments {
     /// Passing true requests the capability for the account, if it is not already requested.
     ///
@@ -2807,56 +2807,56 @@ pub struct UpdateAccountCapabilitiesZipPayments {
     pub requested: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountDocumentsBankAccountOwnershipVerification {
     /// One or more document ids returned by a [file upload](https://stripe.com/docs/api#create_file) with a `purpose` value of `account_requirement`.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub files: Option<Vec<String>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountDocumentsCompanyLicense {
     /// One or more document ids returned by a [file upload](https://stripe.com/docs/api#create_file) with a `purpose` value of `account_requirement`.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub files: Option<Vec<String>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountDocumentsCompanyMemorandumOfAssociation {
     /// One or more document ids returned by a [file upload](https://stripe.com/docs/api#create_file) with a `purpose` value of `account_requirement`.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub files: Option<Vec<String>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountDocumentsCompanyMinisterialDecree {
     /// One or more document ids returned by a [file upload](https://stripe.com/docs/api#create_file) with a `purpose` value of `account_requirement`.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub files: Option<Vec<String>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountDocumentsCompanyRegistrationVerification {
     /// One or more document ids returned by a [file upload](https://stripe.com/docs/api#create_file) with a `purpose` value of `account_requirement`.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub files: Option<Vec<String>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountDocumentsCompanyTaxIdVerification {
     /// One or more document ids returned by a [file upload](https://stripe.com/docs/api#create_file) with a `purpose` value of `account_requirement`.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub files: Option<Vec<String>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateAccountDocumentsProofOfRegistration {
     /// One or more document ids returned by a [file upload](https://stripe.com/docs/api#create_file) with a `purpose` value of `account_requirement`.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub files: Option<Vec<String>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct AccountSettingsParamsCardIssuingTosAcceptance {
     /// The Unix timestamp marking when the account representative accepted the service agreement.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -2871,7 +2871,7 @@ pub struct AccountSettingsParamsCardIssuingTosAcceptance {
     pub user_agent: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct AccountSettingsParamsTreasuryTosAcceptance {
     /// The Unix timestamp marking when the account representative accepted the service agreement.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -2886,7 +2886,7 @@ pub struct AccountSettingsParamsTreasuryTosAcceptance {
     pub user_agent: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct DeclineChargeOnParams {
     /// Whether Stripe automatically declines charges with an incorrect ZIP or postal code.
     ///
@@ -2901,7 +2901,7 @@ pub struct DeclineChargeOnParams {
     pub cvc_failure: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TransferScheduleParams {
     /// The number of days charge funds are held before being paid out.
     ///

@@ -14,7 +14,7 @@ use crate::resources::{
 /// The resource representing a Stripe "IssuingCard".
 ///
 /// For more details see <https://stripe.com/docs/api/issuing/cards/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IssuingCard {
     /// Unique identifier for the object.
     pub id: IssuingCardId,
@@ -110,7 +110,7 @@ impl Object for IssuingCard {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IssuingCardAuthorizationControls {
     /// Array of strings containing [categories](https://stripe.com/docs/api#issuing_authorization_object-merchant_data-category) of authorizations to allow.
     ///
@@ -133,7 +133,7 @@ pub struct IssuingCardAuthorizationControls {
     pub spending_limits_currency: Option<Currency>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IssuingCardShipping {
     pub address: Address,
 
@@ -179,7 +179,7 @@ pub struct IssuingCardShipping {
     pub type_: IssuingCardShippingType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IssuingCardShippingCustoms {
     /// A registration number used for customs in Europe.
     ///
@@ -187,7 +187,7 @@ pub struct IssuingCardShippingCustoms {
     pub eori_number: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IssuingCardSpendingLimit {
     /// Maximum amount allowed to spend per interval.
     ///
@@ -203,7 +203,7 @@ pub struct IssuingCardSpendingLimit {
     pub interval: IssuingCardSpendingLimitInterval,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IssuingCardWallets {
     pub apple_pay: IssuingCardApplePay,
 
@@ -213,7 +213,7 @@ pub struct IssuingCardWallets {
     pub primary_account_identifier: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IssuingCardApplePay {
     /// Apple Pay Eligibility.
     pub eligible: bool,
@@ -222,7 +222,7 @@ pub struct IssuingCardApplePay {
     pub ineligible_reason: Option<IssuingCardApplePayIneligibleReason>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IssuingCardGooglePay {
     /// Google Pay Eligibility.
     pub eligible: bool,

@@ -10,7 +10,7 @@ use crate::params::{Expand, Object};
 /// The resource representing a Stripe "TerminalConnectionToken".
 ///
 /// For more details see <https://stripe.com/docs/api/terminal/connection_tokens/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TerminalConnectionToken {
     /// The id of the location that this connection token is scoped to.
     ///

@@ -14,7 +14,7 @@ use crate::resources::{
 /// The resource representing a Stripe "IssuingTransaction".
 ///
 /// For more details see <https://stripe.com/docs/api/issuing/transactions/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IssuingTransaction {
     /// Unique identifier for the object.
     pub id: IssuingTransactionId,
@@ -108,7 +108,7 @@ impl Object for IssuingTransaction {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IssuingTransactionAmountDetails {
     /// The fee charged by the ATM for the cash withdrawal.
     pub atm_fee: Option<i64>,
@@ -117,7 +117,7 @@ pub struct IssuingTransactionAmountDetails {
     pub cashback_amount: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IssuingTransactionNetworkData {
     /// A code created by Stripe which is shared with the merchant to validate the authorization.
     ///
@@ -136,7 +136,7 @@ pub struct IssuingTransactionNetworkData {
     pub transaction_id: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IssuingTransactionPurchaseDetails {
     /// Information about the flight that was purchased with this transaction.
     pub flight: Option<IssuingTransactionFlightData>,
@@ -154,7 +154,7 @@ pub struct IssuingTransactionPurchaseDetails {
     pub reference: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IssuingTransactionFlightData {
     /// The time that the flight departed.
     pub departure_at: Option<i64>,
@@ -172,7 +172,7 @@ pub struct IssuingTransactionFlightData {
     pub travel_agency: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IssuingTransactionFlightDataLeg {
     /// The three-letter IATA airport code of the flight's destination.
     pub arrival_airport_code: Option<String>,
@@ -193,7 +193,7 @@ pub struct IssuingTransactionFlightDataLeg {
     pub stopover_allowed: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IssuingTransactionFuelData {
     /// The type of fuel that was purchased.
     ///
@@ -213,7 +213,7 @@ pub struct IssuingTransactionFuelData {
     pub volume_decimal: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IssuingTransactionLodgingData {
     /// The time of checking into the lodging.
     pub check_in_at: Option<i64>,
@@ -222,7 +222,7 @@ pub struct IssuingTransactionLodgingData {
     pub nights: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IssuingTransactionReceiptData {
     /// The description of the item.
     ///
@@ -239,7 +239,7 @@ pub struct IssuingTransactionReceiptData {
     pub unit_cost: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IssuingTransactionTreasury {
     /// The Treasury [ReceivedCredit](https://stripe.com/docs/api/treasury/received_credits) representing this Issuing transaction if it is a refund.
     pub received_credit: Option<String>,

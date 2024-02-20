@@ -11,7 +11,7 @@ use crate::params::{Expand, Object, Timestamp};
 /// The resource representing a Stripe "AccountLink".
 ///
 /// For more details see <https://stripe.com/docs/api/account_links/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct AccountLink {
     /// Time at which the object was created.
     ///
@@ -92,7 +92,7 @@ impl<'a> CreateAccountLink<'a> {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountLinkCollectionOptions {
     /// Specifies whether the platform collects only currently_due requirements (`currently_due`) or both currently_due and eventually_due requirements (`eventually_due`).
     ///

@@ -138,6 +138,9 @@ tokio = { version = "1.2", optional = true }
 smart-default = "0.6.0"
 uuid = { version = "0.8", optional=true, features=["v4"] }
 
+# utoipa
+utoipa = { version = "4.2.0", features = ["uuid", "chrono", "preserve_order"] }
+
 # stream for lists
 futures-util = { version = "0.3.21", optional = true }
 

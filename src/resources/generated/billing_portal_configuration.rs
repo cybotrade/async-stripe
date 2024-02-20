@@ -9,7 +9,7 @@ use crate::params::{Expandable, Metadata, Object, Timestamp};
 use crate::resources::Application;
 
 /// The resource representing a Stripe "PortalConfiguration".
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct BillingPortalConfiguration {
     /// Unique identifier for the object.
     pub id: BillingPortalConfigurationId,
@@ -65,7 +65,7 @@ impl Object for BillingPortalConfiguration {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PortalBusinessProfile {
     /// The messaging shown to customers in the portal.
     pub headline: Option<String>,
@@ -77,7 +77,7 @@ pub struct PortalBusinessProfile {
     pub terms_of_service_url: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PortalFeatures {
     pub customer_update: PortalCustomerUpdate,
 
@@ -92,7 +92,7 @@ pub struct PortalFeatures {
     pub subscription_update: PortalSubscriptionUpdate,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PortalCustomerUpdate {
     /// The types of customer updates that are supported.
     ///
@@ -103,13 +103,13 @@ pub struct PortalCustomerUpdate {
     pub enabled: bool,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PortalInvoiceList {
     /// Whether the feature is enabled.
     pub enabled: bool,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PortalLoginPage {
     /// If `true`, a shareable `url` will be generated that will take your customers to a hosted login page for the customer portal.
     ///
@@ -122,13 +122,13 @@ pub struct PortalLoginPage {
     pub url: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PortalPaymentMethodUpdate {
     /// Whether the feature is enabled.
     pub enabled: bool,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PortalSubscriptionCancel {
     pub cancellation_reason: PortalSubscriptionCancellationReason,
 
@@ -144,7 +144,7 @@ pub struct PortalSubscriptionCancel {
     pub proration_behavior: PortalSubscriptionCancelProrationBehavior,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PortalSubscriptionCancellationReason {
     /// Whether the feature is enabled.
     pub enabled: bool,
@@ -153,13 +153,13 @@ pub struct PortalSubscriptionCancellationReason {
     pub options: Vec<PortalSubscriptionCancellationReasonOptions>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PortalSubscriptionPause {
     /// Whether the feature is enabled.
     pub enabled: bool,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PortalSubscriptionUpdate {
     /// The types of subscription updates that are supported for items listed in the `products` attribute.
     ///
@@ -178,7 +178,7 @@ pub struct PortalSubscriptionUpdate {
     pub proration_behavior: PortalSubscriptionUpdateProrationBehavior,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PortalSubscriptionUpdateProduct {
     /// The list of price IDs which, when subscribed to, a subscription can be updated.
     pub prices: Vec<String>,

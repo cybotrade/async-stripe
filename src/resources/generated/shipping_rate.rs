@@ -14,7 +14,7 @@ use crate::resources::{Currency, TaxCode};
 /// The resource representing a Stripe "ShippingRate".
 ///
 /// For more details see <https://stripe.com/docs/api/shipping_rates/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct ShippingRate {
     /// Unique identifier for the object.
     pub id: ShippingRateId,
@@ -107,7 +107,7 @@ impl Object for ShippingRate {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct ShippingRateDeliveryEstimate {
     /// The upper bound of the estimated range.
     ///
@@ -120,7 +120,7 @@ pub struct ShippingRateDeliveryEstimate {
     pub minimum: Option<ShippingRateDeliveryEstimateBound>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct ShippingRateDeliveryEstimateBound {
     /// A unit of time.
     pub unit: ShippingRateDeliveryEstimateBoundUnit,
@@ -129,7 +129,7 @@ pub struct ShippingRateDeliveryEstimateBound {
     pub value: i64,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct ShippingRateFixedAmount {
     /// A non-negative integer in cents representing how much to charge.
     pub amount: i64,
@@ -146,7 +146,7 @@ pub struct ShippingRateFixedAmount {
     pub currency_options: Option<CurrencyMap<ShippingRateCurrencyOption>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct ShippingRateCurrencyOption {
     /// A non-negative integer in cents representing how much to charge.
     pub amount: i64,
@@ -331,7 +331,7 @@ impl<'a> UpdateShippingRate<'a> {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateShippingRateDeliveryEstimate {
     /// The upper bound of the estimated range.
     ///
@@ -346,7 +346,7 @@ pub struct CreateShippingRateDeliveryEstimate {
     pub minimum: Option<CreateShippingRateDeliveryEstimateMinimum>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateShippingRateFixedAmount {
     /// A non-negative integer in cents representing how much to charge.
     pub amount: i64,
@@ -363,7 +363,7 @@ pub struct CreateShippingRateFixedAmount {
     pub currency_options: Option<CurrencyMap<CreateShippingRateFixedAmountCurrencyOptions>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateShippingRateFixedAmount {
     /// Shipping rates defined in each available currency option.
     ///
@@ -372,7 +372,7 @@ pub struct UpdateShippingRateFixedAmount {
     pub currency_options: Option<CurrencyMap<UpdateShippingRateFixedAmountCurrencyOptions>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateShippingRateDeliveryEstimateMaximum {
     /// A unit of time.
     pub unit: CreateShippingRateDeliveryEstimateMaximumUnit,
@@ -381,7 +381,7 @@ pub struct CreateShippingRateDeliveryEstimateMaximum {
     pub value: i64,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateShippingRateDeliveryEstimateMinimum {
     /// A unit of time.
     pub unit: CreateShippingRateDeliveryEstimateMinimumUnit,
@@ -390,7 +390,7 @@ pub struct CreateShippingRateDeliveryEstimateMinimum {
     pub value: i64,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateShippingRateFixedAmountCurrencyOptions {
     /// A non-negative integer in cents representing how much to charge.
     pub amount: i64,
@@ -402,7 +402,7 @@ pub struct CreateShippingRateFixedAmountCurrencyOptions {
     pub tax_behavior: Option<CreateShippingRateFixedAmountCurrencyOptionsTaxBehavior>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdateShippingRateFixedAmountCurrencyOptions {
     /// A non-negative integer in cents representing how much to charge.
     #[serde(skip_serializing_if = "Option::is_none")]

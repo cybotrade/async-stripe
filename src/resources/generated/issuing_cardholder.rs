@@ -11,7 +11,7 @@ use crate::resources::{Address, Currency, File, MerchantCategory};
 /// The resource representing a Stripe "IssuingCardholder".
 ///
 /// For more details see <https://stripe.com/docs/api/issuing/cardholders/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IssuingCardholder {
     /// Unique identifier for the object.
     pub id: IssuingCardholderId,
@@ -83,12 +83,12 @@ impl Object for IssuingCardholder {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IssuingCardholderAddress {
     pub address: Address,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IssuingCardholderAuthorizationControls {
     /// Array of strings containing [categories](https://stripe.com/docs/api#issuing_authorization_object-merchant_data-category) of authorizations to allow.
     ///
@@ -109,13 +109,13 @@ pub struct IssuingCardholderAuthorizationControls {
     pub spending_limits_currency: Option<Currency>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IssuingCardholderCompany {
     /// Whether the company's business ID number was provided.
     pub tax_id_provided: bool,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IssuingCardholderIndividual {
     /// Information related to the card_issuing program for this cardholder.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -140,7 +140,7 @@ pub struct IssuingCardholderIndividual {
     pub verification: Option<IssuingCardholderVerification>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IssuingCardholderCardIssuing {
     /// Information about cardholder acceptance of Celtic [Authorized User Terms](https://stripe.com/docs/issuing/cards#accept-authorized-user-terms).
     ///
@@ -148,7 +148,7 @@ pub struct IssuingCardholderCardIssuing {
     pub user_terms_acceptance: Option<IssuingCardholderUserTermsAcceptance>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IssuingCardholderIndividualDob {
     /// The day of birth, between 1 and 31.
     pub day: Option<i64>,
@@ -160,7 +160,7 @@ pub struct IssuingCardholderIndividualDob {
     pub year: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IssuingCardholderRequirements {
     /// If `disabled_reason` is present, all cards will decline authorizations with `cardholder_verification_required` reason.
     pub disabled_reason: Option<IssuingCardholderRequirementsDisabledReason>,
@@ -169,7 +169,7 @@ pub struct IssuingCardholderRequirements {
     pub past_due: Option<Vec<IssuingCardholderRequirementsPastDue>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IssuingCardholderSpendingLimit {
     /// Maximum amount allowed to spend per interval.
     ///
@@ -185,7 +185,7 @@ pub struct IssuingCardholderSpendingLimit {
     pub interval: IssuingCardholderSpendingLimitInterval,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IssuingCardholderUserTermsAcceptance {
     /// The Unix timestamp marking when the cardholder accepted the Authorized User Terms.
     pub date: Option<Timestamp>,
@@ -197,13 +197,13 @@ pub struct IssuingCardholderUserTermsAcceptance {
     pub user_agent: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IssuingCardholderVerification {
     /// An identifying document, either a passport or local ID card.
     pub document: Option<IssuingCardholderIdDocument>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IssuingCardholderIdDocument {
     /// The back of a document returned by a [file upload](https://stripe.com/docs/api#create_file) with a `purpose` value of `identity_document`.
     pub back: Option<Expandable<File>>,

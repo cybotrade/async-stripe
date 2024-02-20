@@ -10,7 +10,7 @@ use serde::{Deserialize, Serialize};
 /// The resource representing a Stripe "RadarListList".
 ///
 /// For more details see <https://stripe.com/docs/api/radar/value_lists/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct RadarValueList {
     /// Unique identifier for the object.
     pub id: RadarValueListId,

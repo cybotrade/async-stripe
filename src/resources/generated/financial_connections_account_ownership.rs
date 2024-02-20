@@ -8,7 +8,7 @@ use crate::resources::{FinancialConnectionsAccountOwner};
 use serde::{Deserialize, Serialize};
 
 /// The resource representing a Stripe "BankConnectionsResourceOwnership".
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct FinancialConnectionsAccountOwnership {
     /// Unique identifier for the object.
     pub id: FinancialConnectionsAccountOwnershipId,

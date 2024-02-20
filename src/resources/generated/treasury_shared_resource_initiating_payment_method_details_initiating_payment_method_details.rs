@@ -6,7 +6,7 @@ use crate::resources::{TreasurySharedResourceBillingDetails};
 use serde::{Deserialize, Serialize};
 
 /// The resource representing a Stripe "TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails".
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails {
 
     /// Set when `type` is `balance`.
@@ -34,7 +34,7 @@ pub struct TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPayment
     pub us_bank_account: Option<TreasurySharedResourceInitiatingPaymentMethodDetailsUsBankAccount>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct ReceivedPaymentMethodDetailsFinancialAccount {
 
     /// The FinancialAccount ID.
@@ -46,7 +46,7 @@ pub struct ReceivedPaymentMethodDetailsFinancialAccount {
     pub network: ReceivedPaymentMethodDetailsFinancialAccountNetwork,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TreasurySharedResourceInitiatingPaymentMethodDetailsUsBankAccount {
 
     /// Bank name.

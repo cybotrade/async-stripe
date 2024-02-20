@@ -7,7 +7,7 @@ use crate::resources::{Account};
 use serde::{Deserialize, Serialize};
 
 /// The resource representing a Stripe "SubscriptionTransferData".
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SubscriptionTransferData {
 
     /// A non-negative decimal between 0 and 100, with at most two decimal places.

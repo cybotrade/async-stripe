@@ -8,7 +8,7 @@ use crate::resources::{Currency, TreasuryTransactionEntry, TreasuryTransactionsR
 use serde::{Deserialize, Serialize};
 
 /// The resource representing a Stripe "TreasuryTransactionsResourceTransaction".
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TreasuryTransaction {
     /// Unique identifier for the object.
     pub id: TreasuryTransactionId,
@@ -69,7 +69,7 @@ impl Object for TreasuryTransaction {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TreasuryTransactionsResourceAbstractTransactionResourceStatusTransitions {
 
     /// Timestamp describing when the Transaction changed status to `posted`.

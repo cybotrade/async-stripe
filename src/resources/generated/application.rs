@@ -8,7 +8,7 @@ use crate::ids::ApplicationId;
 use crate::params::Object;
 
 /// The resource representing a Stripe "Application".
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct Application {
     /// Unique identifier for the object.
     pub id: ApplicationId,

@@ -10,7 +10,7 @@ use serde::{Deserialize, Serialize};
 /// The resource representing a Stripe "ClimateRemovalsOrders".
 ///
 /// For more details see <https://stripe.com/docs/api/climate/order/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct ClimateOrder {
     /// Unique identifier for the object.
     pub id: ClimateOrderId,
@@ -100,14 +100,14 @@ impl Object for ClimateOrder {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct ClimateRemovalsBeneficiary {
 
     /// Publicly displayable name for the end beneficiary of carbon removal.
     pub public_name: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct ClimateRemovalsOrderDeliveries {
 
     /// Time at which the delivery occurred.
@@ -127,7 +127,7 @@ pub struct ClimateRemovalsOrderDeliveries {
     pub supplier: ClimateSupplier,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct ClimateRemovalsLocation {
 
     /// The city where the supplier is located.

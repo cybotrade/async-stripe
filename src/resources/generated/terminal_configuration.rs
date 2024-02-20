@@ -12,7 +12,7 @@ use crate::resources::File;
 /// The resource representing a Stripe "TerminalConfigurationConfiguration".
 ///
 /// For more details see <https://stripe.com/docs/api/terminal/configuration/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TerminalConfiguration {
     /// Unique identifier for the object.
     pub id: TerminalConfigurationId,
@@ -70,14 +70,14 @@ impl Object for TerminalConfiguration {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig {
     /// A File ID representing an image you would like displayed on the reader.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub splashscreen: Option<Expandable<File>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TerminalConfigurationConfigurationResourceOfflineConfig {
     /// Determines whether to allow transactions to be collected while reader is offline.
     ///
@@ -85,7 +85,7 @@ pub struct TerminalConfigurationConfigurationResourceOfflineConfig {
     pub enabled: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TerminalConfigurationConfigurationResourceTipping {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub aud: Option<TerminalConfigurationConfigurationResourceCurrencySpecificConfig>,
@@ -130,7 +130,7 @@ pub struct TerminalConfigurationConfigurationResourceTipping {
     pub usd: Option<TerminalConfigurationConfigurationResourceCurrencySpecificConfig>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TerminalConfigurationConfigurationResourceCurrencySpecificConfig {
     /// Fixed amounts displayed when collecting a tip.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -230,14 +230,14 @@ impl Paginable for ListTerminalConfigurations<'_> {
         self.starting_after = Some(item.id());
     }
 }
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateTerminalConfigurationBbposWiseposE {
     /// A File ID representing an image you would like displayed on the reader.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub splashscreen: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateTerminalConfigurationOffline {
     /// Determines whether to allow transactions to be collected while reader is offline.
     ///
@@ -245,7 +245,7 @@ pub struct CreateTerminalConfigurationOffline {
     pub enabled: bool,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateTerminalConfigurationTipping {
     /// Tipping configuration for AUD.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -304,14 +304,14 @@ pub struct CreateTerminalConfigurationTipping {
     pub usd: Option<CreateTerminalConfigurationTippingUsd>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateTerminalConfigurationVerifoneP400 {
     /// A File ID representing an image you would like displayed on the reader.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub splashscreen: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateTerminalConfigurationTippingAud {
     /// Fixed amounts displayed when collecting a tip.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -326,7 +326,7 @@ pub struct CreateTerminalConfigurationTippingAud {
     pub smart_tip_threshold: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateTerminalConfigurationTippingCad {
     /// Fixed amounts displayed when collecting a tip.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -341,7 +341,7 @@ pub struct CreateTerminalConfigurationTippingCad {
     pub smart_tip_threshold: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateTerminalConfigurationTippingChf {
     /// Fixed amounts displayed when collecting a tip.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -356,7 +356,7 @@ pub struct CreateTerminalConfigurationTippingChf {
     pub smart_tip_threshold: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateTerminalConfigurationTippingCzk {
     /// Fixed amounts displayed when collecting a tip.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -371,7 +371,7 @@ pub struct CreateTerminalConfigurationTippingCzk {
     pub smart_tip_threshold: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateTerminalConfigurationTippingDkk {
     /// Fixed amounts displayed when collecting a tip.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -386,7 +386,7 @@ pub struct CreateTerminalConfigurationTippingDkk {
     pub smart_tip_threshold: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateTerminalConfigurationTippingEur {
     /// Fixed amounts displayed when collecting a tip.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -401,7 +401,7 @@ pub struct CreateTerminalConfigurationTippingEur {
     pub smart_tip_threshold: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateTerminalConfigurationTippingGbp {
     /// Fixed amounts displayed when collecting a tip.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -416,7 +416,7 @@ pub struct CreateTerminalConfigurationTippingGbp {
     pub smart_tip_threshold: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateTerminalConfigurationTippingHkd {
     /// Fixed amounts displayed when collecting a tip.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -431,7 +431,7 @@ pub struct CreateTerminalConfigurationTippingHkd {
     pub smart_tip_threshold: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateTerminalConfigurationTippingMyr {
     /// Fixed amounts displayed when collecting a tip.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -446,7 +446,7 @@ pub struct CreateTerminalConfigurationTippingMyr {
     pub smart_tip_threshold: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateTerminalConfigurationTippingNok {
     /// Fixed amounts displayed when collecting a tip.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -461,7 +461,7 @@ pub struct CreateTerminalConfigurationTippingNok {
     pub smart_tip_threshold: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateTerminalConfigurationTippingNzd {
     /// Fixed amounts displayed when collecting a tip.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -476,7 +476,7 @@ pub struct CreateTerminalConfigurationTippingNzd {
     pub smart_tip_threshold: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateTerminalConfigurationTippingSek {
     /// Fixed amounts displayed when collecting a tip.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -491,7 +491,7 @@ pub struct CreateTerminalConfigurationTippingSek {
     pub smart_tip_threshold: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateTerminalConfigurationTippingSgd {
     /// Fixed amounts displayed when collecting a tip.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -506,7 +506,7 @@ pub struct CreateTerminalConfigurationTippingSgd {
     pub smart_tip_threshold: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateTerminalConfigurationTippingUsd {
     /// Fixed amounts displayed when collecting a tip.
     #[serde(skip_serializing_if = "Option::is_none")]

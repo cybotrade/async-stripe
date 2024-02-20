@@ -5,6 +5,6 @@
 use serde::{Deserialize, Serialize};
 
 /// The resource representing a Stripe "source.refund_attributes_required".
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SourceRefundAttributesRequired {
 }

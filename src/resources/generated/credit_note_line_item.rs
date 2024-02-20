@@ -11,7 +11,7 @@ use crate::resources::{Discount, TaxRate};
 /// The resource representing a Stripe "CreditNoteLineItem".
 ///
 /// For more details see <https://stripe.com/docs/api/credit_notes/line_item>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreditNoteLineItem {
     /// Unique identifier for the object.
     pub id: CreditNoteLineItemId,
@@ -73,7 +73,7 @@ impl Object for CreditNoteLineItem {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreditNoteTaxAmount {
     /// The amount, in cents (or local equivalent), of the tax.
     pub amount: i64,
@@ -93,7 +93,7 @@ pub struct CreditNoteTaxAmount {
     pub taxable_amount: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct DiscountsResourceDiscountAmount {
     /// The amount, in cents (or local equivalent), of the discount.
     pub amount: i64,

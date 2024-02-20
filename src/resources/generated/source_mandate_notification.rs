@@ -8,7 +8,7 @@ use crate::resources::{Source};
 use serde::{Deserialize, Serialize};
 
 /// The resource representing a Stripe "SourceMandateNotification".
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SourceMandateNotification {
     /// Unique identifier for the object.
     pub id: SourceMandateNotificationId,
@@ -65,7 +65,7 @@ impl Object for SourceMandateNotification {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SourceMandateNotificationAcssDebitData {
 
     /// The statement descriptor associate with the debit.
@@ -73,7 +73,7 @@ pub struct SourceMandateNotificationAcssDebitData {
     pub statement_descriptor: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SourceMandateNotificationBacsDebitData {
 
     /// Last 4 digits of the account number associated with the debit.
@@ -81,7 +81,7 @@ pub struct SourceMandateNotificationBacsDebitData {
     pub last4: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SourceMandateNotificationSepaDebitData {
 
     /// SEPA creditor ID.

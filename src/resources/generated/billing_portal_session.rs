@@ -10,7 +10,7 @@ use crate::params::{Expand, Expandable, Object, Timestamp};
 use crate::resources::BillingPortalConfiguration;
 
 /// The resource representing a Stripe "PortalSession".
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct BillingPortalSession {
     /// Unique identifier for the object.
     pub id: BillingPortalSessionId,
@@ -73,7 +73,7 @@ impl Object for BillingPortalSession {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PortalFlowsFlow {
     pub after_completion: PortalFlowsFlowAfterCompletion,
 
@@ -91,7 +91,7 @@ pub struct PortalFlowsFlow {
     pub type_: PortalFlowsFlowType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PortalFlowsFlowAfterCompletion {
     /// Configuration when `after_completion.type=hosted_confirmation`.
     pub hosted_confirmation: Option<PortalFlowsAfterCompletionHostedConfirmation>,
@@ -104,19 +104,19 @@ pub struct PortalFlowsFlowAfterCompletion {
     pub type_: PortalFlowsFlowAfterCompletionType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PortalFlowsAfterCompletionHostedConfirmation {
     /// A custom message to display to the customer after the flow is completed.
     pub custom_message: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PortalFlowsAfterCompletionRedirect {
     /// The URL the customer will be redirected to after the flow is completed.
     pub return_url: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PortalFlowsFlowSubscriptionCancel {
     /// Specify a retention strategy to be used in the cancellation flow.
     pub retention: Option<PortalFlowsRetention>,
@@ -125,13 +125,13 @@ pub struct PortalFlowsFlowSubscriptionCancel {
     pub subscription: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PortalFlowsFlowSubscriptionUpdate {
     /// The ID of the subscription to be updated.
     pub subscription: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PortalFlowsFlowSubscriptionUpdateConfirm {
     /// The coupon or promotion code to apply to this subscription update.
     ///
@@ -147,7 +147,7 @@ pub struct PortalFlowsFlowSubscriptionUpdateConfirm {
     pub subscription: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PortalFlowsRetention {
     /// Configuration when `retention.type=coupon_offer`.
     pub coupon_offer: Option<PortalFlowsCouponOffer>,
@@ -157,13 +157,13 @@ pub struct PortalFlowsRetention {
     pub type_: PortalFlowsRetentionType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PortalFlowsCouponOffer {
     /// The ID of the coupon to be offered.
     pub coupon: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PortalFlowsSubscriptionUpdateConfirmDiscount {
     /// The ID of the coupon to apply to this subscription update.
     pub coupon: Option<String>,
@@ -172,7 +172,7 @@ pub struct PortalFlowsSubscriptionUpdateConfirmDiscount {
     pub promotion_code: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PortalFlowsSubscriptionUpdateConfirmItem {
     /// The ID of the [subscription item](https://stripe.com/docs/api/subscriptions/object#subscription_object-items-data-id) to be updated.
     pub id: Option<String>,
@@ -242,7 +242,7 @@ impl<'a> CreateBillingPortalSession<'a> {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateBillingPortalSessionFlowData {
     /// Behavior after the flow is completed.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -266,7 +266,7 @@ pub struct CreateBillingPortalSessionFlowData {
     pub type_: CreateBillingPortalSessionFlowDataType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateBillingPortalSessionFlowDataAfterCompletion {
     /// Configuration when `after_completion.type=hosted_confirmation`.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -282,7 +282,7 @@ pub struct CreateBillingPortalSessionFlowDataAfterCompletion {
     pub type_: CreateBillingPortalSessionFlowDataAfterCompletionType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateBillingPortalSessionFlowDataSubscriptionCancel {
     /// Specify a retention strategy to be used in the cancellation flow.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -292,13 +292,13 @@ pub struct CreateBillingPortalSessionFlowDataSubscriptionCancel {
     pub subscription: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateBillingPortalSessionFlowDataSubscriptionUpdate {
     /// The ID of the subscription to be updated.
     pub subscription: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateBillingPortalSessionFlowDataSubscriptionUpdateConfirm {
     /// The coupon or promotion code to apply to this subscription update.
     ///
@@ -316,20 +316,20 @@ pub struct CreateBillingPortalSessionFlowDataSubscriptionUpdateConfirm {
     pub subscription: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateBillingPortalSessionFlowDataAfterCompletionHostedConfirmation {
     /// A custom message to display to the customer after the flow is completed.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub custom_message: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateBillingPortalSessionFlowDataAfterCompletionRedirect {
     /// The URL the customer will be redirected to after the flow is completed.
     pub return_url: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateBillingPortalSessionFlowDataSubscriptionCancelRetention {
     /// Configuration when `retention.type=coupon_offer`.
     pub coupon_offer: CreateBillingPortalSessionFlowDataSubscriptionCancelRetentionCouponOffer,
@@ -339,7 +339,7 @@ pub struct CreateBillingPortalSessionFlowDataSubscriptionCancelRetention {
     pub type_: CreateBillingPortalSessionFlowDataSubscriptionCancelRetentionType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateBillingPortalSessionFlowDataSubscriptionUpdateConfirmDiscounts {
     /// The ID of the coupon to apply to this subscription update.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -350,7 +350,7 @@ pub struct CreateBillingPortalSessionFlowDataSubscriptionUpdateConfirmDiscounts 
     pub promotion_code: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateBillingPortalSessionFlowDataSubscriptionUpdateConfirmItems {
     /// The ID of the [subscription item](https://stripe.com/docs/api/subscriptions/object#subscription_object-items-data-id) to be updated.
     pub id: String,
@@ -366,7 +366,7 @@ pub struct CreateBillingPortalSessionFlowDataSubscriptionUpdateConfirmItems {
     pub quantity: Option<u64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateBillingPortalSessionFlowDataSubscriptionCancelRetentionCouponOffer {
     /// The ID of the coupon to be offered.
     pub coupon: String,

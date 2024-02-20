@@ -7,7 +7,7 @@ use serde::{Deserialize, Serialize};
 use crate::resources::Address;
 
 /// The resource representing a Stripe "billing_details".
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct BillingDetails {
     /// Billing address.
     pub address: Option<Address>,

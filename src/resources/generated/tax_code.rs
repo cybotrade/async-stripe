@@ -11,7 +11,7 @@ use crate::params::{Expand, List, Object, Paginable};
 /// The resource representing a Stripe "TaxProductResourceTaxCode".
 ///
 /// For more details see <https://stripe.com/docs/api/tax_codes/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TaxCode {
     /// Unique identifier for the object.
     pub id: TaxCodeId,

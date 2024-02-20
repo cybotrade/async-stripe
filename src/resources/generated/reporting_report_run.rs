@@ -10,7 +10,7 @@ use serde::{Deserialize, Serialize};
 /// The resource representing a Stripe "reporting_report_run".
 ///
 /// For more details see <https://stripe.com/docs/api/reporting/report_run/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct ReportingReportRun {
     /// Unique identifier for the object.
     pub id: ReportingReportRunId,
@@ -58,7 +58,7 @@ impl Object for ReportingReportRun {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct FinancialReportingFinanceReportRunRunParameters {
 
     /// The set of output columns requested for inclusion in the report run.

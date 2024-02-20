@@ -7,7 +7,7 @@ use serde::{Deserialize, Serialize};
 use crate::resources::{Discount, TaxRate};
 
 /// The resource representing a Stripe "QuotesResourceTotalDetails".
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct QuotesResourceTotalDetails {
     /// This is the sum of all the discounts.
     pub amount_discount: i64,
@@ -22,7 +22,7 @@ pub struct QuotesResourceTotalDetails {
     pub breakdown: Option<QuotesResourceTotalDetailsResourceBreakdown>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct QuotesResourceTotalDetailsResourceBreakdown {
     /// The aggregated discounts.
     pub discounts: Vec<LineItemsDiscountAmount>,
@@ -31,7 +31,7 @@ pub struct QuotesResourceTotalDetailsResourceBreakdown {
     pub taxes: Vec<LineItemsTaxAmount>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct LineItemsDiscountAmount {
     /// The amount discounted.
     pub amount: i64,
@@ -39,7 +39,7 @@ pub struct LineItemsDiscountAmount {
     pub discount: Discount,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct LineItemsTaxAmount {
     /// Amount of tax applied for this rate.
     pub amount: i64,

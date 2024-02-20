@@ -9,7 +9,7 @@ use crate::params::Object;
 /// The resource representing a Stripe "cash_balance".
 ///
 /// For more details see <https://stripe.com/docs/api/cash_balance/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CashBalance {
     /// A hash of all cash balances available to this customer.
     ///
@@ -34,7 +34,7 @@ impl Object for CashBalance {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CustomerBalanceCustomerBalanceSettings {
     /// The configuration for how funds that land in the customer cash balance are reconciled.
     pub reconciliation_mode: CustomerBalanceCustomerBalanceSettingsReconciliationMode,

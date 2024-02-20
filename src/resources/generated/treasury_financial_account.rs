@@ -8,7 +8,7 @@ use crate::resources::{TreasuryFinancialAccountFeatures};
 use serde::{Deserialize, Serialize};
 
 /// The resource representing a Stripe "TreasuryFinancialAccountsResourceFinancialAccount".
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TreasuryFinancialAccount {
     /// Unique identifier for the object.
     pub id: TreasuryFinancialAccountId,
@@ -74,7 +74,7 @@ impl Object for TreasuryFinancialAccount {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TreasuryFinancialAccountsResourceBalance {
 
     /// Funds the user can spend right now.
@@ -87,7 +87,7 @@ pub struct TreasuryFinancialAccountsResourceBalance {
     pub outbound_pending: i64,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TreasuryFinancialAccountsResourceFinancialAddress {
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -102,7 +102,7 @@ pub struct TreasuryFinancialAccountsResourceFinancialAddress {
     pub type_: TreasuryFinancialAccountsResourceFinancialAddressType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TreasuryFinancialAccountsResourceAbaRecord {
 
     /// The name of the person or business that owns the bank account.
@@ -121,7 +121,7 @@ pub struct TreasuryFinancialAccountsResourceAbaRecord {
     pub routing_number: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TreasuryFinancialAccountsResourcePlatformRestrictions {
 
     /// Restricts all inbound money movement.
@@ -131,14 +131,14 @@ pub struct TreasuryFinancialAccountsResourcePlatformRestrictions {
     pub outbound_flows: Option<TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TreasuryFinancialAccountsResourceStatusDetails {
 
     /// Details related to the closure of this FinancialAccount.
     pub closed: Option<TreasuryFinancialAccountsResourceClosedStatusDetails>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TreasuryFinancialAccountsResourceClosedStatusDetails {
 
     /// The array that contains reasons for a FinancialAccount closure.

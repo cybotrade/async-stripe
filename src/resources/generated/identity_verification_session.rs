@@ -10,7 +10,7 @@ use serde::{Deserialize, Serialize};
 /// The resource representing a Stripe "GelatoVerificationSession".
 ///
 /// For more details see <https://stripe.com/docs/api/identity/verification_sessions/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct IdentityVerificationSession {
     /// Unique identifier for the object.
     pub id: IdentityVerificationSessionId,
@@ -82,7 +82,7 @@ impl Object for IdentityVerificationSession {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct GelatoSessionLastError {
 
     /// A short machine-readable string giving the reason for the verification or user-session failure.
@@ -92,7 +92,7 @@ pub struct GelatoSessionLastError {
     pub reason: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct GelatoVerificationSessionOptions {
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -102,7 +102,7 @@ pub struct GelatoVerificationSessionOptions {
     pub id_number: Option<GelatoSessionIdNumberOptions>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct GelatoSessionDocumentOptions {
 
     /// Array of strings of allowed identity document types.
@@ -126,11 +126,11 @@ pub struct GelatoSessionDocumentOptions {
     pub require_matching_selfie: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct GelatoSessionIdNumberOptions {
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct GelatoVerifiedOutputs {
 
     /// The user's verified address.
@@ -152,7 +152,7 @@ pub struct GelatoVerifiedOutputs {
     pub last_name: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct GelatoDataVerifiedOutputsDate {
 
     /// Numerical day between 1 and 31.
@@ -165,7 +165,7 @@ pub struct GelatoDataVerifiedOutputsDate {
     pub year: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct VerificationSessionRedaction {
 
     /// Indicates whether this object and its related objects have been redacted or not.

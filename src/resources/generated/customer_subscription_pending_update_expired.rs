@@ -5,6 +5,6 @@
 use serde::{Deserialize, Serialize};
 
 /// The resource representing a Stripe "customer.subscription.pending_update_expired".
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CustomerSubscriptionPendingUpdateExpired {
 }

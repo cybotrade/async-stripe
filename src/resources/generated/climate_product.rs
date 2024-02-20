@@ -10,7 +10,7 @@ use serde::{Deserialize, Serialize};
 /// The resource representing a Stripe "ClimateRemovalsProducts".
 ///
 /// For more details see <https://stripe.com/docs/api/climate/product/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct ClimateProduct {
     /// Unique identifier for the object.
     ///
@@ -52,7 +52,7 @@ impl Object for ClimateProduct {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct ClimateRemovalsProductsPrice {
 
     /// Fees for one metric ton of carbon removal in the currency's smallest unit.

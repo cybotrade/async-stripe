@@ -23,7 +23,7 @@ use crate::resources::{
 /// The resource representing a Stripe "Session".
 ///
 /// For more details see <https://stripe.com/docs/api/checkout/sessions/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CheckoutSession {
     /// Unique identifier for the object.
     pub id: CheckoutSessionId,
@@ -254,7 +254,7 @@ impl Object for CheckoutSession {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CheckoutSessionPaymentMethodOptions {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub acss_debit: Option<CheckoutAcssDebitPaymentMethodOptions>,
@@ -344,7 +344,7 @@ pub struct CheckoutSessionPaymentMethodOptions {
     pub us_bank_account: Option<CheckoutUsBankAccountPaymentMethodOptions>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CheckoutAcssDebitPaymentMethodOptions {
     /// Currency supported by the bank account.
     ///
@@ -368,7 +368,7 @@ pub struct CheckoutAcssDebitPaymentMethodOptions {
     pub verification_method: Option<CheckoutAcssDebitPaymentMethodOptionsVerificationMethod>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CheckoutAcssDebitMandateOptions {
     /// A URL for custom mandate text.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -392,7 +392,7 @@ pub struct CheckoutAcssDebitMandateOptions {
     pub transaction_type: Option<CheckoutAcssDebitMandateOptionsTransactionType>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CheckoutAffirmPaymentMethodOptions {
     /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
     ///
@@ -403,7 +403,7 @@ pub struct CheckoutAffirmPaymentMethodOptions {
     pub setup_future_usage: Option<CheckoutAffirmPaymentMethodOptionsSetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CheckoutAfterpayClearpayPaymentMethodOptions {
     /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
     ///
@@ -414,7 +414,7 @@ pub struct CheckoutAfterpayClearpayPaymentMethodOptions {
     pub setup_future_usage: Option<CheckoutAfterpayClearpayPaymentMethodOptionsSetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CheckoutAlipayPaymentMethodOptions {
     /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
     ///
@@ -425,7 +425,7 @@ pub struct CheckoutAlipayPaymentMethodOptions {
     pub setup_future_usage: Option<CheckoutAlipayPaymentMethodOptionsSetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CheckoutAuBecsDebitPaymentMethodOptions {
     /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
     ///
@@ -436,7 +436,7 @@ pub struct CheckoutAuBecsDebitPaymentMethodOptions {
     pub setup_future_usage: Option<CheckoutAuBecsDebitPaymentMethodOptionsSetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CheckoutBacsDebitPaymentMethodOptions {
     /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
     ///
@@ -447,7 +447,7 @@ pub struct CheckoutBacsDebitPaymentMethodOptions {
     pub setup_future_usage: Option<CheckoutBacsDebitPaymentMethodOptionsSetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CheckoutBancontactPaymentMethodOptions {
     /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
     ///
@@ -458,7 +458,7 @@ pub struct CheckoutBancontactPaymentMethodOptions {
     pub setup_future_usage: Option<CheckoutBancontactPaymentMethodOptionsSetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CheckoutBoletoPaymentMethodOptions {
     /// The number of calendar days before a Boleto voucher expires.
     ///
@@ -474,7 +474,7 @@ pub struct CheckoutBoletoPaymentMethodOptions {
     pub setup_future_usage: Option<CheckoutBoletoPaymentMethodOptionsSetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CheckoutCardPaymentMethodOptions {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub installments: Option<CheckoutCardInstallmentsOptions>,
@@ -504,14 +504,14 @@ pub struct CheckoutCardPaymentMethodOptions {
     pub statement_descriptor_suffix_kanji: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CheckoutCardInstallmentsOptions {
     /// Indicates if installments are enabled.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub enabled: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CheckoutCashappPaymentMethodOptions {
     /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
     ///
@@ -522,7 +522,7 @@ pub struct CheckoutCashappPaymentMethodOptions {
     pub setup_future_usage: Option<CheckoutCashappPaymentMethodOptionsSetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CheckoutCustomerBalancePaymentMethodOptions {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub bank_transfer: Option<CheckoutCustomerBalanceBankTransferPaymentMethodOptions>,
@@ -541,7 +541,7 @@ pub struct CheckoutCustomerBalancePaymentMethodOptions {
     pub setup_future_usage: Option<CheckoutCustomerBalancePaymentMethodOptionsSetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CheckoutCustomerBalanceBankTransferPaymentMethodOptions {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub eu_bank_transfer: Option<PaymentMethodOptionsCustomerBalanceEuBankAccount>,
@@ -558,7 +558,7 @@ pub struct CheckoutCustomerBalanceBankTransferPaymentMethodOptions {
     pub type_: Option<CheckoutCustomerBalanceBankTransferPaymentMethodOptionsType>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CheckoutEpsPaymentMethodOptions {
     /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
     ///
@@ -569,7 +569,7 @@ pub struct CheckoutEpsPaymentMethodOptions {
     pub setup_future_usage: Option<CheckoutEpsPaymentMethodOptionsSetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CheckoutFpxPaymentMethodOptions {
     /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
     ///
@@ -580,7 +580,7 @@ pub struct CheckoutFpxPaymentMethodOptions {
     pub setup_future_usage: Option<CheckoutFpxPaymentMethodOptionsSetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CheckoutGiropayPaymentMethodOptions {
     /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
     ///
@@ -591,7 +591,7 @@ pub struct CheckoutGiropayPaymentMethodOptions {
     pub setup_future_usage: Option<CheckoutGiropayPaymentMethodOptionsSetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CheckoutGrabPayPaymentMethodOptions {
     /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
     ///
@@ -602,7 +602,7 @@ pub struct CheckoutGrabPayPaymentMethodOptions {
     pub setup_future_usage: Option<CheckoutGrabPayPaymentMethodOptionsSetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CheckoutIdealPaymentMethodOptions {
     /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
     ///
@@ -613,7 +613,7 @@ pub struct CheckoutIdealPaymentMethodOptions {
     pub setup_future_usage: Option<CheckoutIdealPaymentMethodOptionsSetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CheckoutKlarnaPaymentMethodOptions {
     /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
     ///
@@ -624,7 +624,7 @@ pub struct CheckoutKlarnaPaymentMethodOptions {
     pub setup_future_usage: Option<CheckoutKlarnaPaymentMethodOptionsSetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CheckoutKonbiniPaymentMethodOptions {
     /// The number of calendar days (between 1 and 60) after which Konbini payment instructions will expire.
     ///
@@ -640,7 +640,7 @@ pub struct CheckoutKonbiniPaymentMethodOptions {
     pub setup_future_usage: Option<CheckoutKonbiniPaymentMethodOptionsSetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CheckoutLinkPaymentMethodOptions {
     /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
     ///
@@ -651,7 +651,7 @@ pub struct CheckoutLinkPaymentMethodOptions {
     pub setup_future_usage: Option<CheckoutLinkPaymentMethodOptionsSetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CheckoutOxxoPaymentMethodOptions {
     /// The number of calendar days before an OXXO invoice expires.
     ///
@@ -667,7 +667,7 @@ pub struct CheckoutOxxoPaymentMethodOptions {
     pub setup_future_usage: Option<CheckoutOxxoPaymentMethodOptionsSetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CheckoutP24PaymentMethodOptions {
     /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
     ///
@@ -678,7 +678,7 @@ pub struct CheckoutP24PaymentMethodOptions {
     pub setup_future_usage: Option<CheckoutP24PaymentMethodOptionsSetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CheckoutPaynowPaymentMethodOptions {
     /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
     ///
@@ -689,7 +689,7 @@ pub struct CheckoutPaynowPaymentMethodOptions {
     pub setup_future_usage: Option<CheckoutPaynowPaymentMethodOptionsSetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CheckoutPaypalPaymentMethodOptions {
     /// Controls when the funds will be captured from the customer's account.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -712,16 +712,16 @@ pub struct CheckoutPaypalPaymentMethodOptions {
     pub setup_future_usage: Option<CheckoutPaypalPaymentMethodOptionsSetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CheckoutPixPaymentMethodOptions {
     /// The number of seconds after which Pix payment will expire.
     pub expires_after_seconds: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CheckoutRevolutPayPaymentMethodOptions {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CheckoutSepaDebitPaymentMethodOptions {
     /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
     ///
@@ -732,7 +732,7 @@ pub struct CheckoutSepaDebitPaymentMethodOptions {
     pub setup_future_usage: Option<CheckoutSepaDebitPaymentMethodOptionsSetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CheckoutSofortPaymentMethodOptions {
     /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
     ///
@@ -743,7 +743,7 @@ pub struct CheckoutSofortPaymentMethodOptions {
     pub setup_future_usage: Option<CheckoutSofortPaymentMethodOptionsSetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CheckoutSwishPaymentMethodOptions {
     /// The order reference that will be displayed to customers in the Swish application.
     ///
@@ -751,7 +751,7 @@ pub struct CheckoutSwishPaymentMethodOptions {
     pub reference: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CheckoutUsBankAccountPaymentMethodOptions {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub financial_connections: Option<LinkedAccountOptionsUsBankAccount>,
@@ -769,13 +769,13 @@ pub struct CheckoutUsBankAccountPaymentMethodOptions {
     pub verification_method: Option<CheckoutUsBankAccountPaymentMethodOptionsVerificationMethod>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentPagesCheckoutSessionAfterExpiration {
     /// When set, configuration used to recover the Checkout Session on expiry.
     pub recovery: Option<PaymentPagesCheckoutSessionAfterExpirationRecovery>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentPagesCheckoutSessionAfterExpirationRecovery {
     /// Enables user redeemable promotion codes on the recovered Checkout Sessions.
     ///
@@ -795,7 +795,7 @@ pub struct PaymentPagesCheckoutSessionAfterExpirationRecovery {
     pub url: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentPagesCheckoutSessionAutomaticTax {
     /// Indicates whether automatic tax is enabled for the session.
     pub enabled: bool,
@@ -810,7 +810,7 @@ pub struct PaymentPagesCheckoutSessionAutomaticTax {
     pub status: Option<PaymentPagesCheckoutSessionAutomaticTaxStatus>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentPagesCheckoutSessionConsent {
     /// If `opt_in`, the customer consents to receiving promotional communications
     /// from the merchant about this Checkout Session.
@@ -820,7 +820,7 @@ pub struct PaymentPagesCheckoutSessionConsent {
     pub terms_of_service: Option<PaymentPagesCheckoutSessionConsentTermsOfService>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentPagesCheckoutSessionConsentCollection {
     /// If set to `hidden`, it will hide legal text related to the reuse of a payment method.
     pub payment_method_reuse_agreement:
@@ -836,7 +836,7 @@ pub struct PaymentPagesCheckoutSessionConsentCollection {
     pub terms_of_service: Option<PaymentPagesCheckoutSessionConsentCollectionTermsOfService>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentPagesCheckoutSessionCurrencyConversion {
     /// Total of all items in source currency before discounts or taxes are applied.
     pub amount_subtotal: i64,
@@ -851,7 +851,7 @@ pub struct PaymentPagesCheckoutSessionCurrencyConversion {
     pub source_currency: Currency,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentPagesCheckoutSessionCustomFields {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub dropdown: Option<PaymentPagesCheckoutSessionCustomFieldsDropdown>,
@@ -879,7 +879,7 @@ pub struct PaymentPagesCheckoutSessionCustomFields {
     pub type_: PaymentPagesCheckoutSessionCustomFieldsType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentPagesCheckoutSessionCustomFieldsDropdown {
     /// The options available for the customer to select.
     ///
@@ -892,7 +892,7 @@ pub struct PaymentPagesCheckoutSessionCustomFieldsDropdown {
     pub value: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentPagesCheckoutSessionCustomFieldsLabel {
     /// Custom text for the label, displayed to the customer.
     ///
@@ -904,7 +904,7 @@ pub struct PaymentPagesCheckoutSessionCustomFieldsLabel {
     pub type_: PaymentPagesCheckoutSessionCustomFieldsLabelType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentPagesCheckoutSessionCustomFieldsNumeric {
     /// The maximum character length constraint for the customer's input.
     pub maximum_length: Option<i64>,
@@ -916,7 +916,7 @@ pub struct PaymentPagesCheckoutSessionCustomFieldsNumeric {
     pub value: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentPagesCheckoutSessionCustomFieldsOption {
     /// The label for the option, displayed to the customer.
     ///
@@ -929,7 +929,7 @@ pub struct PaymentPagesCheckoutSessionCustomFieldsOption {
     pub value: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentPagesCheckoutSessionCustomFieldsText {
     /// The maximum character length constraint for the customer's input.
     pub maximum_length: Option<i64>,
@@ -941,7 +941,7 @@ pub struct PaymentPagesCheckoutSessionCustomFieldsText {
     pub value: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentPagesCheckoutSessionCustomText {
     /// Custom text that should be displayed after the payment confirmation button.
     pub after_submit: Option<PaymentPagesCheckoutSessionCustomTextPosition>,
@@ -956,13 +956,13 @@ pub struct PaymentPagesCheckoutSessionCustomText {
     pub terms_of_service_acceptance: Option<PaymentPagesCheckoutSessionCustomTextPosition>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentPagesCheckoutSessionCustomTextPosition {
     /// Text may be up to 1200 characters in length.
     pub message: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentPagesCheckoutSessionCustomerDetails {
     /// The customer's address after a completed Checkout Session.
     ///
@@ -988,7 +988,7 @@ pub struct PaymentPagesCheckoutSessionCustomerDetails {
     pub tax_ids: Option<Vec<PaymentPagesCheckoutSessionTaxId>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentPagesCheckoutSessionInvoiceCreation {
     /// Indicates whether invoice creation is enabled for the Checkout Session.
     pub enabled: bool,
@@ -996,7 +996,7 @@ pub struct PaymentPagesCheckoutSessionInvoiceCreation {
     pub invoice_data: PaymentPagesCheckoutSessionInvoiceSettings,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentPagesCheckoutSessionInvoiceSettings {
     /// The account tax IDs associated with the invoice.
     pub account_tax_ids: Option<Vec<Expandable<TaxId>>>,
@@ -1026,7 +1026,7 @@ pub struct PaymentPagesCheckoutSessionInvoiceSettings {
     pub rendering_options: Option<InvoiceSettingRenderingOptions>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct InvoiceSettingCustomField {
     /// The name of the custom field.
     pub name: String,
@@ -1035,7 +1035,7 @@ pub struct InvoiceSettingCustomField {
     pub value: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentPagesCheckoutSessionPaymentMethodReuseAgreement {
     /// Determines the position and visibility of the payment method reuse agreement in the UI.
     ///
@@ -1043,13 +1043,13 @@ pub struct PaymentPagesCheckoutSessionPaymentMethodReuseAgreement {
     pub position: PaymentPagesCheckoutSessionPaymentMethodReuseAgreementPosition,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentPagesCheckoutSessionPhoneNumberCollection {
     /// Indicates whether phone number collection is enabled for the session.
     pub enabled: bool,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentPagesCheckoutSessionShippingAddressCollection {
     /// An array of two-letter ISO country codes representing which countries Checkout should provide as options for
     /// shipping locations.
@@ -1059,7 +1059,7 @@ pub struct PaymentPagesCheckoutSessionShippingAddressCollection {
         Vec<PaymentPagesCheckoutSessionShippingAddressCollectionAllowedCountries>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentPagesCheckoutSessionShippingCost {
     /// Total shipping cost before any discounts or taxes are applied.
     pub amount_subtotal: i64,
@@ -1080,7 +1080,7 @@ pub struct PaymentPagesCheckoutSessionShippingCost {
     pub taxes: Option<Vec<LineItemsTaxAmount>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct LineItemsTaxAmount {
     /// Amount of tax applied for this rate.
     pub amount: i64,
@@ -1096,7 +1096,7 @@ pub struct LineItemsTaxAmount {
     pub taxable_amount: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentPagesCheckoutSessionShippingOption {
     /// A non-negative integer in cents representing how much to charge.
     pub shipping_amount: i64,
@@ -1105,7 +1105,7 @@ pub struct PaymentPagesCheckoutSessionShippingOption {
     pub shipping_rate: Expandable<ShippingRate>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentPagesCheckoutSessionTaxId {
     /// The type of the tax ID, one of `ad_nrt`, `ar_cuit`, `eu_vat`, `bo_tin`, `br_cnpj`, `br_cpf`, `cn_tin`, `co_nit`, `cr_tin`, `do_rcn`, `ec_ruc`, `eu_oss_vat`, `pe_ruc`, `ro_tin`, `rs_pib`, `sv_nit`, `uy_ruc`, `ve_rif`, `vn_tin`, `gb_vat`, `nz_gst`, `au_abn`, `au_arn`, `in_gst`, `no_vat`, `za_vat`, `ch_vat`, `mx_rfc`, `sg_uen`, `ru_inn`, `ru_kpp`, `ca_bn`, `hk_br`, `es_cif`, `tw_vat`, `th_vat`, `jp_cn`, `jp_rn`, `jp_trn`, `li_uid`, `my_itn`, `us_ein`, `kr_brn`, `ca_qst`, `ca_gst_hst`, `ca_pst_bc`, `ca_pst_mb`, `ca_pst_sk`, `my_sst`, `sg_gst`, `ae_trn`, `cl_tin`, `sa_vat`, `id_npwp`, `my_frp`, `il_vat`, `ge_vat`, `ua_vat`, `is_vat`, `bg_uic`, `hu_tin`, `si_tin`, `ke_pin`, `tr_tin`, `eg_tin`, `ph_tin`, or `unknown`.
     #[serde(rename = "type")]
@@ -1115,13 +1115,13 @@ pub struct PaymentPagesCheckoutSessionTaxId {
     pub value: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentPagesCheckoutSessionTaxIdCollection {
     /// Indicates whether tax ID collection is enabled for the session.
     pub enabled: bool,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentPagesCheckoutSessionTotalDetails {
     /// This is the sum of all the discounts.
     pub amount_discount: i64,
@@ -1136,7 +1136,7 @@ pub struct PaymentPagesCheckoutSessionTotalDetails {
     pub breakdown: Option<PaymentPagesCheckoutSessionTotalDetailsResourceBreakdown>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentPagesCheckoutSessionTotalDetailsResourceBreakdown {
     /// The aggregated discounts.
     pub discounts: Vec<LineItemsDiscountAmount>,
@@ -1145,7 +1145,7 @@ pub struct PaymentPagesCheckoutSessionTotalDetailsResourceBreakdown {
     pub taxes: Vec<LineItemsTaxAmount>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct LineItemsDiscountAmount {
     /// The amount discounted.
     pub amount: i64,
@@ -1510,14 +1510,14 @@ impl Paginable for ListCheckoutSessions<'_> {
         self.starting_after = Some(item.id());
     }
 }
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionAfterExpiration {
     /// Configure a Checkout Session that can be used to recover an expired session.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub recovery: Option<CreateCheckoutSessionAfterExpirationRecovery>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionAutomaticTax {
     /// Set to true to enable automatic taxes.
     pub enabled: bool,
@@ -1530,7 +1530,7 @@ pub struct CreateCheckoutSessionAutomaticTax {
     pub liability: Option<CreateCheckoutSessionAutomaticTaxLiability>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionConsentCollection {
     /// Determines the display of payment method reuse agreement text in the UI.
     ///
@@ -1552,7 +1552,7 @@ pub struct CreateCheckoutSessionConsentCollection {
     pub terms_of_service: Option<CreateCheckoutSessionConsentCollectionTermsOfService>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionCustomFields {
     /// Configuration for `type=dropdown` fields.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1585,7 +1585,7 @@ pub struct CreateCheckoutSessionCustomFields {
     pub type_: CreateCheckoutSessionCustomFieldsType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionCustomText {
     /// Custom text that should be displayed after the payment confirmation button.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1605,7 +1605,7 @@ pub struct CreateCheckoutSessionCustomText {
         Option<CreateCheckoutSessionCustomTextTermsOfServiceAcceptance>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionCustomerUpdate {
     /// Describes whether Checkout saves the billing address onto `customer.address`.
     /// To always collect a full billing address, use `billing_address_collection`.
@@ -1628,7 +1628,7 @@ pub struct CreateCheckoutSessionCustomerUpdate {
     pub shipping: Option<CreateCheckoutSessionCustomerUpdateShipping>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionDiscounts {
     /// The ID of the coupon to apply to this Session.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1639,7 +1639,7 @@ pub struct CreateCheckoutSessionDiscounts {
     pub promotion_code: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionInvoiceCreation {
     /// Set to `true` to enable invoice creation.
     pub enabled: bool,
@@ -1649,7 +1649,7 @@ pub struct CreateCheckoutSessionInvoiceCreation {
     pub invoice_data: Option<CreateCheckoutSessionInvoiceCreationInvoiceData>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionLineItems {
     /// When set, provides configuration for this item’s quantity to be adjusted by the customer during Checkout.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1684,7 +1684,7 @@ pub struct CreateCheckoutSessionLineItems {
     pub tax_rates: Option<Vec<String>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionPaymentIntentData {
     /// The amount of the application fee (if any) that will be requested to be applied to the payment and transferred to the application owner's Stripe account.
     ///
@@ -1772,7 +1772,7 @@ pub struct CreateCheckoutSessionPaymentIntentData {
     pub transfer_group: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionPaymentMethodOptions {
     /// contains details about the ACSS Debit payment method options.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1895,13 +1895,13 @@ pub struct CreateCheckoutSessionPaymentMethodOptions {
     pub wechat_pay: Option<CreateCheckoutSessionPaymentMethodOptionsWechatPay>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionPhoneNumberCollection {
     /// Set to `true` to enable phone number collection.
     pub enabled: bool,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionSetupIntentData {
     /// An arbitrary string attached to the object.
     ///
@@ -1922,7 +1922,7 @@ pub struct CreateCheckoutSessionSetupIntentData {
     pub on_behalf_of: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionShippingAddressCollection {
     /// An array of two-letter ISO country codes representing which countries Checkout should provide as options for
     /// shipping locations.
@@ -1931,7 +1931,7 @@ pub struct CreateCheckoutSessionShippingAddressCollection {
     pub allowed_countries: Vec<CreateCheckoutSessionShippingAddressCollectionAllowedCountries>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionShippingOptions {
     /// The ID of the Shipping Rate to use for this shipping option.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1942,7 +1942,7 @@ pub struct CreateCheckoutSessionShippingOptions {
     pub shipping_rate_data: Option<CreateCheckoutSessionShippingOptionsShippingRateData>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionSubscriptionData {
     /// A non-negative decimal between 0 and 100, with at most two decimal places.
     ///
@@ -2014,19 +2014,19 @@ pub struct CreateCheckoutSessionSubscriptionData {
     pub trial_settings: Option<CreateCheckoutSessionSubscriptionDataTrialSettings>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionTaxIdCollection {
     /// Set to true to enable Tax ID collection.
     pub enabled: bool,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct ListCheckoutSessionsCustomerDetails {
     /// Customer's email address.
     pub email: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionAfterExpirationRecovery {
     /// Enables user redeemable promotion codes on the recovered Checkout Sessions.
     ///
@@ -2041,7 +2041,7 @@ pub struct CreateCheckoutSessionAfterExpirationRecovery {
     pub enabled: bool,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionAutomaticTaxLiability {
     /// The connected account being referenced when `type` is `account`.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -2052,7 +2052,7 @@ pub struct CreateCheckoutSessionAutomaticTaxLiability {
     pub type_: CreateCheckoutSessionAutomaticTaxLiabilityType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionConsentCollectionPaymentMethodReuseAgreement {
     /// Determines the position and visibility of the payment method reuse agreement in the UI.
     ///
@@ -2061,7 +2061,7 @@ pub struct CreateCheckoutSessionConsentCollectionPaymentMethodReuseAgreement {
     pub position: CreateCheckoutSessionConsentCollectionPaymentMethodReuseAgreementPosition,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionCustomFieldsDropdown {
     /// The options available for the customer to select.
     ///
@@ -2069,7 +2069,7 @@ pub struct CreateCheckoutSessionCustomFieldsDropdown {
     pub options: Vec<CreateCheckoutSessionCustomFieldsDropdownOptions>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionCustomFieldsLabel {
     /// Custom text for the label, displayed to the customer.
     ///
@@ -2081,7 +2081,7 @@ pub struct CreateCheckoutSessionCustomFieldsLabel {
     pub type_: CreateCheckoutSessionCustomFieldsLabelType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionCustomFieldsNumeric {
     /// The maximum character length constraint for the customer's input.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -2092,7 +2092,7 @@ pub struct CreateCheckoutSessionCustomFieldsNumeric {
     pub minimum_length: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionCustomFieldsText {
     /// The maximum character length constraint for the customer's input.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -2103,31 +2103,31 @@ pub struct CreateCheckoutSessionCustomFieldsText {
     pub minimum_length: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionCustomTextAfterSubmit {
     /// Text may be up to 1200 characters in length.
     pub message: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionCustomTextShippingAddress {
     /// Text may be up to 1200 characters in length.
     pub message: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionCustomTextSubmit {
     /// Text may be up to 1200 characters in length.
     pub message: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionCustomTextTermsOfServiceAcceptance {
     /// Text may be up to 1200 characters in length.
     pub message: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionInvoiceCreationInvoiceData {
     /// The account tax IDs associated with the invoice.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -2166,7 +2166,7 @@ pub struct CreateCheckoutSessionInvoiceCreationInvoiceData {
     pub rendering_options: Option<CreateCheckoutSessionInvoiceCreationInvoiceDataRenderingOptions>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionLineItemsAdjustableQuantity {
     /// Set to true if the quantity can be adjusted to any non-negative integer.
     ///
@@ -2187,7 +2187,7 @@ pub struct CreateCheckoutSessionLineItemsAdjustableQuantity {
     pub minimum: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionLineItemsPriceData {
     /// Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase.
     ///
@@ -2231,7 +2231,7 @@ pub struct CreateCheckoutSessionLineItemsPriceData {
     pub unit_amount_decimal: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionPaymentIntentDataShipping {
     /// Shipping address.
     pub address: CreateCheckoutSessionPaymentIntentDataShippingAddress,
@@ -2254,7 +2254,7 @@ pub struct CreateCheckoutSessionPaymentIntentDataShipping {
     pub tracking_number: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionPaymentIntentDataTransferData {
     /// The amount that will be transferred automatically when a charge succeeds.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -2268,7 +2268,7 @@ pub struct CreateCheckoutSessionPaymentIntentDataTransferData {
     pub destination: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionPaymentMethodOptionsAcssDebit {
     /// Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase.
     ///
@@ -2296,7 +2296,7 @@ pub struct CreateCheckoutSessionPaymentMethodOptionsAcssDebit {
         Option<CreateCheckoutSessionPaymentMethodOptionsAcssDebitVerificationMethod>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionPaymentMethodOptionsAffirm {
     /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
     ///
@@ -2307,7 +2307,7 @@ pub struct CreateCheckoutSessionPaymentMethodOptionsAffirm {
     pub setup_future_usage: Option<CreateCheckoutSessionPaymentMethodOptionsAffirmSetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionPaymentMethodOptionsAfterpayClearpay {
     /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
     ///
@@ -2319,7 +2319,7 @@ pub struct CreateCheckoutSessionPaymentMethodOptionsAfterpayClearpay {
         Option<CreateCheckoutSessionPaymentMethodOptionsAfterpayClearpaySetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionPaymentMethodOptionsAlipay {
     /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
     ///
@@ -2330,7 +2330,7 @@ pub struct CreateCheckoutSessionPaymentMethodOptionsAlipay {
     pub setup_future_usage: Option<CreateCheckoutSessionPaymentMethodOptionsAlipaySetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionPaymentMethodOptionsAuBecsDebit {
     /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
     ///
@@ -2342,7 +2342,7 @@ pub struct CreateCheckoutSessionPaymentMethodOptionsAuBecsDebit {
         Option<CreateCheckoutSessionPaymentMethodOptionsAuBecsDebitSetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionPaymentMethodOptionsBacsDebit {
     /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
     ///
@@ -2354,7 +2354,7 @@ pub struct CreateCheckoutSessionPaymentMethodOptionsBacsDebit {
         Option<CreateCheckoutSessionPaymentMethodOptionsBacsDebitSetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionPaymentMethodOptionsBancontact {
     /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
     ///
@@ -2366,7 +2366,7 @@ pub struct CreateCheckoutSessionPaymentMethodOptionsBancontact {
         Option<CreateCheckoutSessionPaymentMethodOptionsBancontactSetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionPaymentMethodOptionsBoleto {
     /// The number of calendar days before a Boleto voucher expires.
     ///
@@ -2383,7 +2383,7 @@ pub struct CreateCheckoutSessionPaymentMethodOptionsBoleto {
     pub setup_future_usage: Option<CreateCheckoutSessionPaymentMethodOptionsBoletoSetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionPaymentMethodOptionsCard {
     /// Installment options for card payments.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -2414,7 +2414,7 @@ pub struct CreateCheckoutSessionPaymentMethodOptionsCard {
     pub statement_descriptor_suffix_kanji: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionPaymentMethodOptionsCashapp {
     /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
     ///
@@ -2426,7 +2426,7 @@ pub struct CreateCheckoutSessionPaymentMethodOptionsCashapp {
         Option<CreateCheckoutSessionPaymentMethodOptionsCashappSetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionPaymentMethodOptionsCustomerBalance {
     /// Configuration for the bank transfer funding type, if the `funding_type` is set to `bank_transfer`.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -2448,7 +2448,7 @@ pub struct CreateCheckoutSessionPaymentMethodOptionsCustomerBalance {
         Option<CreateCheckoutSessionPaymentMethodOptionsCustomerBalanceSetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionPaymentMethodOptionsEps {
     /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
     ///
@@ -2459,7 +2459,7 @@ pub struct CreateCheckoutSessionPaymentMethodOptionsEps {
     pub setup_future_usage: Option<CreateCheckoutSessionPaymentMethodOptionsEpsSetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionPaymentMethodOptionsFpx {
     /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
     ///
@@ -2470,7 +2470,7 @@ pub struct CreateCheckoutSessionPaymentMethodOptionsFpx {
     pub setup_future_usage: Option<CreateCheckoutSessionPaymentMethodOptionsFpxSetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionPaymentMethodOptionsGiropay {
     /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
     ///
@@ -2482,7 +2482,7 @@ pub struct CreateCheckoutSessionPaymentMethodOptionsGiropay {
         Option<CreateCheckoutSessionPaymentMethodOptionsGiropaySetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionPaymentMethodOptionsGrabpay {
     /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
     ///
@@ -2494,7 +2494,7 @@ pub struct CreateCheckoutSessionPaymentMethodOptionsGrabpay {
         Option<CreateCheckoutSessionPaymentMethodOptionsGrabpaySetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionPaymentMethodOptionsIdeal {
     /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
     ///
@@ -2505,7 +2505,7 @@ pub struct CreateCheckoutSessionPaymentMethodOptionsIdeal {
     pub setup_future_usage: Option<CreateCheckoutSessionPaymentMethodOptionsIdealSetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionPaymentMethodOptionsKlarna {
     /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
     ///
@@ -2516,7 +2516,7 @@ pub struct CreateCheckoutSessionPaymentMethodOptionsKlarna {
     pub setup_future_usage: Option<CreateCheckoutSessionPaymentMethodOptionsKlarnaSetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionPaymentMethodOptionsKonbini {
     /// The number of calendar days (between 1 and 60) after which Konbini payment instructions will expire.
     ///
@@ -2535,7 +2535,7 @@ pub struct CreateCheckoutSessionPaymentMethodOptionsKonbini {
         Option<CreateCheckoutSessionPaymentMethodOptionsKonbiniSetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionPaymentMethodOptionsLink {
     /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
     ///
@@ -2546,7 +2546,7 @@ pub struct CreateCheckoutSessionPaymentMethodOptionsLink {
     pub setup_future_usage: Option<CreateCheckoutSessionPaymentMethodOptionsLinkSetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionPaymentMethodOptionsOxxo {
     /// The number of calendar days before an OXXO voucher expires.
     ///
@@ -2563,7 +2563,7 @@ pub struct CreateCheckoutSessionPaymentMethodOptionsOxxo {
     pub setup_future_usage: Option<CreateCheckoutSessionPaymentMethodOptionsOxxoSetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionPaymentMethodOptionsP24 {
     /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
     ///
@@ -2578,7 +2578,7 @@ pub struct CreateCheckoutSessionPaymentMethodOptionsP24 {
     pub tos_shown_and_accepted: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionPaymentMethodOptionsPaynow {
     /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
     ///
@@ -2589,7 +2589,7 @@ pub struct CreateCheckoutSessionPaymentMethodOptionsPaynow {
     pub setup_future_usage: Option<CreateCheckoutSessionPaymentMethodOptionsPaynowSetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionPaymentMethodOptionsPaypal {
     /// Controls when the funds will be captured from the customer's account.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -2618,7 +2618,7 @@ pub struct CreateCheckoutSessionPaymentMethodOptionsPaypal {
     pub setup_future_usage: Option<CreateCheckoutSessionPaymentMethodOptionsPaypalSetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionPaymentMethodOptionsPix {
     /// The number of seconds (between 10 and 1209600) after which Pix payment will expire.
     ///
@@ -2627,7 +2627,7 @@ pub struct CreateCheckoutSessionPaymentMethodOptionsPix {
     pub expires_after_seconds: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionPaymentMethodOptionsRevolutPay {
     /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
     ///
@@ -2639,7 +2639,7 @@ pub struct CreateCheckoutSessionPaymentMethodOptionsRevolutPay {
         Option<CreateCheckoutSessionPaymentMethodOptionsRevolutPaySetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionPaymentMethodOptionsSepaDebit {
     /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
     ///
@@ -2651,7 +2651,7 @@ pub struct CreateCheckoutSessionPaymentMethodOptionsSepaDebit {
         Option<CreateCheckoutSessionPaymentMethodOptionsSepaDebitSetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionPaymentMethodOptionsSofort {
     /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
     ///
@@ -2662,7 +2662,7 @@ pub struct CreateCheckoutSessionPaymentMethodOptionsSofort {
     pub setup_future_usage: Option<CreateCheckoutSessionPaymentMethodOptionsSofortSetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionPaymentMethodOptionsSwish {
     /// The order reference that will be displayed to customers in the Swish application.
     ///
@@ -2671,7 +2671,7 @@ pub struct CreateCheckoutSessionPaymentMethodOptionsSwish {
     pub reference: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionPaymentMethodOptionsUsBankAccount {
     /// Additional fields for Financial Connections Session creation.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -2693,7 +2693,7 @@ pub struct CreateCheckoutSessionPaymentMethodOptionsUsBankAccount {
         Option<CreateCheckoutSessionPaymentMethodOptionsUsBankAccountVerificationMethod>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionPaymentMethodOptionsWechatPay {
     /// The app ID registered with WeChat Pay.
     ///
@@ -2714,7 +2714,7 @@ pub struct CreateCheckoutSessionPaymentMethodOptionsWechatPay {
         Option<CreateCheckoutSessionPaymentMethodOptionsWechatPaySetupFutureUsage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionShippingOptionsShippingRateData {
     /// The estimated range for how long shipping will take, meant to be displayable to the customer.
     ///
@@ -2762,7 +2762,7 @@ pub struct CreateCheckoutSessionShippingOptionsShippingRateData {
     pub type_: Option<CreateCheckoutSessionShippingOptionsShippingRateDataType>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionSubscriptionDataInvoiceSettings {
     /// The connected account that issues the invoice.
     ///
@@ -2771,7 +2771,7 @@ pub struct CreateCheckoutSessionSubscriptionDataInvoiceSettings {
     pub issuer: Option<CreateCheckoutSessionSubscriptionDataInvoiceSettingsIssuer>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionSubscriptionDataTransferData {
     /// A non-negative decimal between 0 and 100, with at most two decimal places.
     ///
@@ -2784,13 +2784,13 @@ pub struct CreateCheckoutSessionSubscriptionDataTransferData {
     pub destination: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionSubscriptionDataTrialSettings {
     /// Defines how the subscription should behave when the user's free trial ends.
     pub end_behavior: CreateCheckoutSessionSubscriptionDataTrialSettingsEndBehavior,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionCustomFieldsDropdownOptions {
     /// The label for the option, displayed to the customer.
     ///
@@ -2803,7 +2803,7 @@ pub struct CreateCheckoutSessionCustomFieldsDropdownOptions {
     pub value: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionInvoiceCreationInvoiceDataCustomFields {
     /// The name of the custom field.
     ///
@@ -2816,7 +2816,7 @@ pub struct CreateCheckoutSessionInvoiceCreationInvoiceDataCustomFields {
     pub value: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionInvoiceCreationInvoiceDataIssuer {
     /// The connected account being referenced when `type` is `account`.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -2827,7 +2827,7 @@ pub struct CreateCheckoutSessionInvoiceCreationInvoiceDataIssuer {
     pub type_: CreateCheckoutSessionInvoiceCreationInvoiceDataIssuerType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionInvoiceCreationInvoiceDataRenderingOptions {
     /// How line-item prices and amounts will be displayed with respect to tax on invoice PDFs.
     ///
@@ -2839,7 +2839,7 @@ pub struct CreateCheckoutSessionInvoiceCreationInvoiceDataRenderingOptions {
         Option<CreateCheckoutSessionInvoiceCreationInvoiceDataRenderingOptionsAmountTaxDisplay>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionLineItemsPriceDataProductData {
     /// The product's description, meant to be displayable to the customer.
     ///
@@ -2867,7 +2867,7 @@ pub struct CreateCheckoutSessionLineItemsPriceDataProductData {
     pub tax_code: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionLineItemsPriceDataRecurring {
     /// Specifies billing frequency.
     ///
@@ -2882,7 +2882,7 @@ pub struct CreateCheckoutSessionLineItemsPriceDataRecurring {
     pub interval_count: Option<u64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionPaymentIntentDataShippingAddress {
     /// City, district, suburb, town, or village.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -2908,7 +2908,7 @@ pub struct CreateCheckoutSessionPaymentIntentDataShippingAddress {
     pub state: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionPaymentMethodOptionsAcssDebitMandateOptions {
     /// A URL for custom mandate text to render during confirmation step.
     /// The URL will be rendered with additional GET parameters `payment_intent` and `payment_intent_client_secret` when confirming a Payment Intent,
@@ -2940,7 +2940,7 @@ pub struct CreateCheckoutSessionPaymentMethodOptionsAcssDebitMandateOptions {
         Option<CreateCheckoutSessionPaymentMethodOptionsAcssDebitMandateOptionsTransactionType>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionPaymentMethodOptionsCardInstallments {
     /// Setting to true enables installments for this Checkout Session.
     /// Setting to false will prevent any installment plan from applying to a payment.
@@ -2948,7 +2948,7 @@ pub struct CreateCheckoutSessionPaymentMethodOptionsCardInstallments {
     pub enabled: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionPaymentMethodOptionsCustomerBalanceBankTransfer {
 
     /// Configuration for eu_bank_transfer funding type.
@@ -2966,7 +2966,7 @@ pub struct CreateCheckoutSessionPaymentMethodOptionsCustomerBalanceBankTransfer 
     pub type_: CreateCheckoutSessionPaymentMethodOptionsCustomerBalanceBankTransferType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionPaymentMethodOptionsUsBankAccountFinancialConnections {
     /// The list of permissions to request.
     ///
@@ -2984,7 +2984,7 @@ pub struct CreateCheckoutSessionPaymentMethodOptionsUsBankAccountFinancialConnec
     >,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionShippingOptionsShippingRateDataDeliveryEstimate {
     /// The upper bound of the estimated range.
     ///
@@ -3001,7 +3001,7 @@ pub struct CreateCheckoutSessionShippingOptionsShippingRateDataDeliveryEstimate 
         Option<CreateCheckoutSessionShippingOptionsShippingRateDataDeliveryEstimateMinimum>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionShippingOptionsShippingRateDataFixedAmount {
     /// A non-negative integer in cents representing how much to charge.
     pub amount: i64,
@@ -3020,7 +3020,7 @@ pub struct CreateCheckoutSessionShippingOptionsShippingRateDataFixedAmount {
     >,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionSubscriptionDataInvoiceSettingsIssuer {
     /// The connected account being referenced when `type` is `account`.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -3031,14 +3031,14 @@ pub struct CreateCheckoutSessionSubscriptionDataInvoiceSettingsIssuer {
     pub type_: CreateCheckoutSessionSubscriptionDataInvoiceSettingsIssuerType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionSubscriptionDataTrialSettingsEndBehavior {
     /// Indicates how the subscription should change when the trial ends if the user did not provide a payment method.
     pub missing_payment_method:
         CreateCheckoutSessionSubscriptionDataTrialSettingsEndBehaviorMissingPaymentMethod,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionPaymentMethodOptionsCustomerBalanceBankTransferEuBankTransfer {
     /// The desired country code of the bank account information.
     ///
@@ -3046,7 +3046,7 @@ pub struct CreateCheckoutSessionPaymentMethodOptionsCustomerBalanceBankTransferE
     pub country: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionShippingOptionsShippingRateDataDeliveryEstimateMaximum {
     /// A unit of time.
     pub unit: CreateCheckoutSessionShippingOptionsShippingRateDataDeliveryEstimateMaximumUnit,
@@ -3055,7 +3055,7 @@ pub struct CreateCheckoutSessionShippingOptionsShippingRateDataDeliveryEstimateM
     pub value: i64,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionShippingOptionsShippingRateDataDeliveryEstimateMinimum {
     /// A unit of time.
     pub unit: CreateCheckoutSessionShippingOptionsShippingRateDataDeliveryEstimateMinimumUnit,
@@ -3064,7 +3064,7 @@ pub struct CreateCheckoutSessionShippingOptionsShippingRateDataDeliveryEstimateM
     pub value: i64,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCheckoutSessionShippingOptionsShippingRateDataFixedAmountCurrencyOptions {
     /// A non-negative integer in cents representing how much to charge.
     pub amount: i64,

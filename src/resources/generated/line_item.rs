@@ -11,7 +11,7 @@ use crate::resources::{
 };
 
 /// The resource representing a Stripe "InvoiceLineItem".
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct InvoiceLineItem {
     /// Unique identifier for the object.
     pub id: InvoiceLineItemId,
@@ -111,7 +111,7 @@ impl Object for InvoiceLineItem {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct DiscountsResourceDiscountAmount {
     /// The amount, in cents (or local equivalent), of the discount.
     pub amount: i64,
@@ -120,7 +120,7 @@ pub struct DiscountsResourceDiscountAmount {
     pub discount: Expandable<Discount>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TaxAmount {
     /// The amount, in cents (or local equivalent), of the tax.
     pub amount: i64,
@@ -140,13 +140,13 @@ pub struct TaxAmount {
     pub taxable_amount: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct InvoicesResourceLineItemsProrationDetails {
     /// For a credit proration `line_item`, the original debit line_items to which the credit proration applies.
     pub credited_items: Option<InvoicesResourceLineItemsCreditedItems>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct InvoicesResourceLineItemsCreditedItems {
     /// Invoice containing the credited invoice line items.
     pub invoice: String,

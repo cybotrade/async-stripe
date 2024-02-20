@@ -14,7 +14,7 @@ use crate::resources::{Coupon, Currency, Customer};
 /// The resource representing a Stripe "PromotionCode".
 ///
 /// For more details see <https://stripe.com/docs/api/promotion_codes/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PromotionCode {
     /// Unique identifier for the object.
     pub id: PromotionCodeId,
@@ -98,7 +98,7 @@ impl Object for PromotionCode {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PromotionCodesResourceRestrictions {
     /// Promotion code restrictions defined in each available currency option.
     ///
@@ -116,7 +116,7 @@ pub struct PromotionCodesResourceRestrictions {
     pub minimum_amount_currency: Option<Currency>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PromotionCodeCurrencyOption {
     /// Minimum amount required to redeem this Promotion Code into a Coupon (e.g., a purchase must be $100 or more to work).
     pub minimum_amount: i64,
@@ -230,7 +230,7 @@ impl<'a> UpdatePromotionCode<'a> {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePromotionCodeRestrictions {
     /// Promotion codes defined in each available currency option.
     ///
@@ -239,7 +239,7 @@ pub struct UpdatePromotionCodeRestrictions {
     pub currency_options: Option<CurrencyMap<UpdatePromotionCodeRestrictionsCurrencyOptions>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct UpdatePromotionCodeRestrictionsCurrencyOptions {
     /// Minimum amount required to redeem this Promotion Code into a Coupon (e.g., a purchase must be $100 or more to work).
     #[serde(skip_serializing_if = "Option::is_none")]

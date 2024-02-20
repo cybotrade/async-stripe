@@ -10,7 +10,7 @@ use serde::{Deserialize, Serialize};
 /// The resource representing a Stripe "BankConnectionsResourceTransaction".
 ///
 /// For more details see <https://stripe.com/docs/api/financial_connections/transactions/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct FinancialConnectionsTransaction {
     /// Unique identifier for the object.
     pub id: FinancialConnectionsTransactionId,
@@ -61,7 +61,7 @@ impl Object for FinancialConnectionsTransaction {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct BankConnectionsResourceTransactionResourceStatusTransitions {
 
     /// Time at which this transaction posted.

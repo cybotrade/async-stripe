@@ -11,7 +11,7 @@ use crate::resources::File;
 /// The resource representing a Stripe "ScheduledQueryRun".
 ///
 /// For more details see <https://stripe.com/docs/api/sigma/scheduled_queries/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct ScheduledQueryRun {
     /// Unique identifier for the object.
     pub id: ScheduledQueryRunId,
@@ -56,7 +56,7 @@ impl Object for ScheduledQueryRun {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SigmaScheduledQueryRunError {
     /// Information about the run failure.
     pub message: String,

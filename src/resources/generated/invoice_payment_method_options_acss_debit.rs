@@ -5,7 +5,7 @@
 use serde::{Deserialize, Serialize};
 
 /// The resource representing a Stripe "invoice_payment_method_options_acss_debit".
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct InvoicePaymentMethodOptionsAcssDebit {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub mandate_options: Option<InvoicePaymentMethodOptionsAcssDebitMandateOptions>,
@@ -15,7 +15,7 @@ pub struct InvoicePaymentMethodOptionsAcssDebit {
     pub verification_method: Option<InvoicePaymentMethodOptionsAcssDebitVerificationMethod>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct InvoicePaymentMethodOptionsAcssDebitMandateOptions {
     /// Transaction type of the mandate.
     pub transaction_type: Option<InvoicePaymentMethodOptionsAcssDebitMandateOptionsTransactionType>,

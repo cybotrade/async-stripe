@@ -8,7 +8,7 @@ use crate::resources::{Currency};
 use serde::{Deserialize, Serialize};
 
 /// The resource representing a Stripe "SourceTransaction".
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SourceTransaction {
     /// Unique identifier for the object.
     pub id: ChargeId,
@@ -65,7 +65,7 @@ impl Object for SourceTransaction {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SourceTransactionAchCreditTransferData {
 
     /// Customer data associated with the transfer.
@@ -85,7 +85,7 @@ pub struct SourceTransactionAchCreditTransferData {
     pub routing_number: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SourceTransactionChfCreditTransferData {
 
     /// Reference associated with the transfer.
@@ -109,7 +109,7 @@ pub struct SourceTransactionChfCreditTransferData {
     pub sender_name: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SourceTransactionGbpCreditTransferData {
 
     /// Bank account fingerprint associated with the Stripe owned bank account receiving the transfer.
@@ -144,7 +144,7 @@ pub struct SourceTransactionGbpCreditTransferData {
     pub sender_sort_code: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SourceTransactionPaperCheckData {
 
     /// Time at which the deposited funds will be available for use.
@@ -158,7 +158,7 @@ pub struct SourceTransactionPaperCheckData {
     pub invoices: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SourceTransactionSepaCreditTransferData {
 
     /// Reference associated with the transfer.

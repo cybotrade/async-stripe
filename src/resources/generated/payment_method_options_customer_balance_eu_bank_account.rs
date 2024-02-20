@@ -5,7 +5,7 @@
 use serde::{Deserialize, Serialize};
 
 /// The resource representing a Stripe "payment_method_options_customer_balance_eu_bank_account".
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethodOptionsCustomerBalanceEuBankAccount {
     /// The desired country code of the bank account information.
     ///

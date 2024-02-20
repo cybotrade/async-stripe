@@ -11,7 +11,7 @@ use serde::{Deserialize, Serialize};
 /// The resource representing a Stripe "CustomerSessionResourceCustomerSession".
 ///
 /// For more details see <https://stripe.com/docs/api/customer_sessions/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CustomerSession {
 
     /// The client secret of this customer session.
@@ -55,7 +55,7 @@ impl Object for CustomerSession {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CustomerSessionResourceComponents {
 
     pub buy_button: CustomerSessionResourceComponentsResourceBuyButton,
@@ -63,14 +63,14 @@ pub struct CustomerSessionResourceComponents {
     pub pricing_table: CustomerSessionResourceComponentsResourcePricingTable,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CustomerSessionResourceComponentsResourceBuyButton {
 
     /// Whether the buy button is enabled.
     pub enabled: bool,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CustomerSessionResourceComponentsResourcePricingTable {
 
     /// Whether the pricing table is enabled.
@@ -104,7 +104,7 @@ impl<'a> CreateCustomerSession<'a> {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCustomerSessionComponents {
 
     /// Configuration for buy button.
@@ -116,14 +116,14 @@ pub struct CreateCustomerSessionComponents {
     pub pricing_table: Option<CreateCustomerSessionComponentsPricingTable>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCustomerSessionComponentsBuyButton {
 
     /// Whether the buy button is enabled.
     pub enabled: bool,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateCustomerSessionComponentsPricingTable {
 
     /// Whether the pricing table is enabled.

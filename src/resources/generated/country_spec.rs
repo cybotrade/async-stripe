@@ -11,7 +11,7 @@ use serde::{Deserialize, Serialize};
 /// The resource representing a Stripe "CountrySpec".
 ///
 /// For more details see <https://stripe.com/docs/api/country_specs/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CountrySpec {
     /// Unique identifier for the object.
     ///
@@ -65,7 +65,7 @@ impl Object for CountrySpec {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CountrySpecVerificationFields {
 
     pub company: CountrySpecVerificationFieldDetails,
@@ -73,7 +73,7 @@ pub struct CountrySpecVerificationFields {
     pub individual: CountrySpecVerificationFieldDetails,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CountrySpecVerificationFieldDetails {
 
     /// Additional fields which are only required for some users.

@@ -8,7 +8,7 @@ use crate::ids::TaxDeductedAtSourceId;
 use crate::params::{Object, Timestamp};
 
 /// The resource representing a Stripe "TaxDeductedAtSource".
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TaxDeductedAtSource {
     /// Unique identifier for the object.
     pub id: TaxDeductedAtSourceId,

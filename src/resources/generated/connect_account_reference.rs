@@ -8,7 +8,7 @@ use crate::params::Expandable;
 use crate::resources::Account;
 
 /// The resource representing a Stripe "ConnectAccountReference".
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct ConnectAccountReference {
     /// The connected account being referenced when `type` is `account`.
     #[serde(skip_serializing_if = "Option::is_none")]

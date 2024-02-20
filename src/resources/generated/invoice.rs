@@ -22,7 +22,7 @@ use crate::resources::{
 /// The resource representing a Stripe "Invoice".
 ///
 /// For more details see <https://stripe.com/docs/api/invoices/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct Invoice {
     /// Unique identifier for the object.
     ///
@@ -507,7 +507,7 @@ impl Object for Invoice {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct AutomaticTax {
     /// Whether Stripe automatically computes tax on this invoice.
     ///
@@ -524,7 +524,7 @@ pub struct AutomaticTax {
     pub status: Option<AutomaticTaxStatus>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct DiscountsResourceDiscountAmount {
     /// The amount, in cents (or local equivalent), of the discount.
     pub amount: i64,
@@ -533,7 +533,7 @@ pub struct DiscountsResourceDiscountAmount {
     pub discount: Expandable<Discount>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct InvoiceSettingCustomField {
     /// The name of the custom field.
     pub name: String,
@@ -542,7 +542,7 @@ pub struct InvoiceSettingCustomField {
     pub value: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TaxAmount {
     /// The amount, in cents (or local equivalent), of the tax.
     pub amount: i64,
@@ -562,7 +562,7 @@ pub struct TaxAmount {
     pub taxable_amount: Option<i64>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct InvoiceThresholdReason {
     /// The total invoice amount threshold boundary if it triggered the threshold invoice.
     pub amount_gte: Option<i64>,
@@ -571,7 +571,7 @@ pub struct InvoiceThresholdReason {
     pub item_reasons: Vec<InvoiceItemThresholdReason>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct InvoiceItemThresholdReason {
     /// The IDs of the line items that triggered the threshold invoice.
     pub line_item_ids: Vec<String>,
@@ -580,7 +580,7 @@ pub struct InvoiceItemThresholdReason {
     pub usage_gte: i64,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct InvoiceTransferData {
     /// The amount in cents (or local equivalent) that will be transferred to the destination account when the invoice is paid.
     ///
@@ -591,7 +591,7 @@ pub struct InvoiceTransferData {
     pub destination: Expandable<Account>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct InvoicesFromInvoice {
     /// The relation between this invoice and the cloned invoice.
     pub action: String,
@@ -600,7 +600,7 @@ pub struct InvoicesFromInvoice {
     pub invoice: Expandable<Invoice>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct InvoicesInvoiceRendering {
     /// How line-item prices and amounts will be displayed with respect to tax on invoice PDFs.
     pub amount_tax_display: Option<String>,
@@ -609,7 +609,7 @@ pub struct InvoicesInvoiceRendering {
     pub pdf: Option<InvoiceRenderingPdf>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct InvoiceRenderingPdf {
     /// Page size of invoice pdf.
     ///
@@ -618,7 +618,7 @@ pub struct InvoiceRenderingPdf {
     pub page_size: Option<InvoiceRenderingPdfPageSize>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct InvoicesPaymentSettings {
     /// ID of the mandate to be used for this invoice.
     ///
@@ -635,7 +635,7 @@ pub struct InvoicesPaymentSettings {
     pub payment_method_types: Option<Vec<InvoicesPaymentSettingsPaymentMethodTypes>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct InvoicesPaymentMethodOptions {
     /// If paying by `acss_debit`, this sub-hash contains details about the Canadian pre-authorized debit payment method options to pass to the invoice’s PaymentIntent.
     pub acss_debit: Option<InvoicePaymentMethodOptionsAcssDebit>,
@@ -656,7 +656,7 @@ pub struct InvoicesPaymentMethodOptions {
     pub us_bank_account: Option<InvoicePaymentMethodOptionsUsBankAccount>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct InvoicePaymentMethodOptionsCard {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub installments: Option<InvoiceInstallmentsCard>,
@@ -668,13 +668,13 @@ pub struct InvoicePaymentMethodOptionsCard {
     pub request_three_d_secure: Option<InvoicePaymentMethodOptionsCardRequestThreeDSecure>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct InvoiceInstallmentsCard {
     /// Whether Installments are enabled for this Invoice.
     pub enabled: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct InvoicesResourceInvoiceTaxId {
     /// The type of the tax ID, one of `ad_nrt`, `ar_cuit`, `eu_vat`, `bo_tin`, `br_cnpj`, `br_cpf`, `cn_tin`, `co_nit`, `cr_tin`, `do_rcn`, `ec_ruc`, `eu_oss_vat`, `pe_ruc`, `ro_tin`, `rs_pib`, `sv_nit`, `uy_ruc`, `ve_rif`, `vn_tin`, `gb_vat`, `nz_gst`, `au_abn`, `au_arn`, `in_gst`, `no_vat`, `za_vat`, `ch_vat`, `mx_rfc`, `sg_uen`, `ru_inn`, `ru_kpp`, `ca_bn`, `hk_br`, `es_cif`, `tw_vat`, `th_vat`, `jp_cn`, `jp_rn`, `jp_trn`, `li_uid`, `my_itn`, `us_ein`, `kr_brn`, `ca_qst`, `ca_gst_hst`, `ca_pst_bc`, `ca_pst_mb`, `ca_pst_sk`, `my_sst`, `sg_gst`, `ae_trn`, `cl_tin`, `sa_vat`, `id_npwp`, `my_frp`, `il_vat`, `ge_vat`, `ua_vat`, `is_vat`, `bg_uic`, `hu_tin`, `si_tin`, `ke_pin`, `tr_tin`, `eg_tin`, `ph_tin`, or `unknown`.
     #[serde(rename = "type")]
@@ -684,7 +684,7 @@ pub struct InvoicesResourceInvoiceTaxId {
     pub value: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct InvoicesStatusTransitions {
     /// The time that the invoice draft was finalized.
     pub finalized_at: Option<Timestamp>,
@@ -699,7 +699,7 @@ pub struct InvoicesStatusTransitions {
     pub voided_at: Option<Timestamp>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SubscriptionDetailsData {
     /// Set of [key-value pairs](https://stripe.com/docs/api/metadata) that will reflect the metadata of the subscription at the time of invoice creation.
     ///
@@ -1009,7 +1009,7 @@ impl Paginable for ListInvoices<'_> {
         self.starting_after = Some(item.id());
     }
 }
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateInvoiceAutomaticTax {
     /// Whether Stripe automatically computes tax on this invoice.
     ///
@@ -1024,7 +1024,7 @@ pub struct CreateInvoiceAutomaticTax {
     pub liability: Option<CreateInvoiceAutomaticTaxLiability>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateInvoiceCustomFields {
     /// The name of the custom field.
     ///
@@ -1037,7 +1037,7 @@ pub struct CreateInvoiceCustomFields {
     pub value: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateInvoiceDiscounts {
     /// ID of the coupon to create a new discount for.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1048,7 +1048,7 @@ pub struct CreateInvoiceDiscounts {
     pub discount: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateInvoiceFromInvoice {
     /// The relation between the new invoice and the original invoice.
     ///
@@ -1059,7 +1059,7 @@ pub struct CreateInvoiceFromInvoice {
     pub invoice: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateInvoiceIssuer {
     /// The connected account being referenced when `type` is `account`.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1070,7 +1070,7 @@ pub struct CreateInvoiceIssuer {
     pub type_: CreateInvoiceIssuerType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateInvoicePaymentSettings {
     /// ID of the mandate to be used for this invoice.
     ///
@@ -1090,7 +1090,7 @@ pub struct CreateInvoicePaymentSettings {
     pub payment_method_types: Option<Vec<CreateInvoicePaymentSettingsPaymentMethodTypes>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateInvoiceRendering {
     /// How line-item prices and amounts will be displayed with respect to tax on invoice PDFs.
     ///
@@ -1105,7 +1105,7 @@ pub struct CreateInvoiceRendering {
     pub pdf: Option<CreateInvoiceRenderingPdf>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateInvoiceRenderingOptions {
     /// How line-item prices and amounts will be displayed with respect to tax on invoice PDFs.
     ///
@@ -1116,7 +1116,7 @@ pub struct CreateInvoiceRenderingOptions {
     pub amount_tax_display: Option<CreateInvoiceRenderingOptionsAmountTaxDisplay>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateInvoiceShippingCost {
     /// The ID of the shipping rate to use for this order.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1127,7 +1127,7 @@ pub struct CreateInvoiceShippingCost {
     pub shipping_rate_data: Option<CreateInvoiceShippingCostShippingRateData>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateInvoiceShippingDetails {
     /// Shipping address.
     pub address: CreateInvoiceShippingDetailsAddress,
@@ -1140,7 +1140,7 @@ pub struct CreateInvoiceShippingDetails {
     pub phone: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateInvoiceTransferData {
     /// The amount that will be transferred automatically when the invoice is paid.
     ///
@@ -1152,7 +1152,7 @@ pub struct CreateInvoiceTransferData {
     pub destination: String,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateInvoiceAutomaticTaxLiability {
     /// The connected account being referenced when `type` is `account`.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1163,7 +1163,7 @@ pub struct CreateInvoiceAutomaticTaxLiability {
     pub type_: CreateInvoiceAutomaticTaxLiabilityType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateInvoicePaymentSettingsPaymentMethodOptions {
     /// If paying by `acss_debit`, this sub-hash contains details about the Canadian pre-authorized debit payment method options to pass to the invoice’s PaymentIntent.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1190,7 +1190,7 @@ pub struct CreateInvoicePaymentSettingsPaymentMethodOptions {
     pub us_bank_account: Option<CreateInvoicePaymentSettingsPaymentMethodOptionsUsBankAccount>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateInvoiceRenderingPdf {
     /// Page size for invoice PDF.
     ///
@@ -1199,7 +1199,7 @@ pub struct CreateInvoiceRenderingPdf {
     pub page_size: Option<CreateInvoiceRenderingPdfPageSize>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateInvoiceShippingCostShippingRateData {
     /// The estimated range for how long shipping will take, meant to be displayable to the customer.
     ///
@@ -1246,7 +1246,7 @@ pub struct CreateInvoiceShippingCostShippingRateData {
     pub type_: Option<CreateInvoiceShippingCostShippingRateDataType>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateInvoiceShippingDetailsAddress {
     /// City, district, suburb, town, or village.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1273,7 +1273,7 @@ pub struct CreateInvoiceShippingDetailsAddress {
     pub state: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateInvoicePaymentSettingsPaymentMethodOptionsAcssDebit {
     /// Additional fields for Mandate creation.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1286,7 +1286,7 @@ pub struct CreateInvoicePaymentSettingsPaymentMethodOptionsAcssDebit {
         Option<CreateInvoicePaymentSettingsPaymentMethodOptionsAcssDebitVerificationMethod>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateInvoicePaymentSettingsPaymentMethodOptionsBancontact {
     /// Preferred language of the Bancontact authorization page that the customer is redirected to.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1294,7 +1294,7 @@ pub struct CreateInvoicePaymentSettingsPaymentMethodOptionsBancontact {
         Option<CreateInvoicePaymentSettingsPaymentMethodOptionsBancontactPreferredLanguage>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateInvoicePaymentSettingsPaymentMethodOptionsCard {
     /// Installment configuration for payments attempted on this invoice (Mexico Only).
     ///
@@ -1311,7 +1311,7 @@ pub struct CreateInvoicePaymentSettingsPaymentMethodOptionsCard {
         Option<CreateInvoicePaymentSettingsPaymentMethodOptionsCardRequestThreeDSecure>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateInvoicePaymentSettingsPaymentMethodOptionsCustomerBalance {
     /// Configuration for the bank transfer funding type, if the `funding_type` is set to `bank_transfer`.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1325,10 +1325,10 @@ pub struct CreateInvoicePaymentSettingsPaymentMethodOptionsCustomerBalance {
     pub funding_type: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateInvoicePaymentSettingsPaymentMethodOptionsKonbini {}
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateInvoicePaymentSettingsPaymentMethodOptionsUsBankAccount {
     /// Additional fields for Financial Connections Session creation.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1341,7 +1341,7 @@ pub struct CreateInvoicePaymentSettingsPaymentMethodOptionsUsBankAccount {
         Option<CreateInvoicePaymentSettingsPaymentMethodOptionsUsBankAccountVerificationMethod>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateInvoiceShippingCostShippingRateDataDeliveryEstimate {
     /// The upper bound of the estimated range.
     ///
@@ -1356,7 +1356,7 @@ pub struct CreateInvoiceShippingCostShippingRateDataDeliveryEstimate {
     pub minimum: Option<CreateInvoiceShippingCostShippingRateDataDeliveryEstimateMinimum>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateInvoiceShippingCostShippingRateDataFixedAmount {
     /// A non-negative integer in cents representing how much to charge.
     pub amount: i64,
@@ -1374,7 +1374,7 @@ pub struct CreateInvoiceShippingCostShippingRateDataFixedAmount {
         Option<CurrencyMap<CreateInvoiceShippingCostShippingRateDataFixedAmountCurrencyOptions>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateInvoicePaymentSettingsPaymentMethodOptionsAcssDebitMandateOptions {
     /// Transaction type of the mandate.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1383,7 +1383,7 @@ pub struct CreateInvoicePaymentSettingsPaymentMethodOptionsAcssDebitMandateOptio
     >,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateInvoicePaymentSettingsPaymentMethodOptionsCardInstallments {
     /// Setting to true enables installments for this invoice.
     /// Setting to false will prevent any selected plan from applying to a payment.
@@ -1395,7 +1395,7 @@ pub struct CreateInvoicePaymentSettingsPaymentMethodOptionsCardInstallments {
     pub plan: Option<CreateInvoicePaymentSettingsPaymentMethodOptionsCardInstallmentsPlan>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateInvoicePaymentSettingsPaymentMethodOptionsCustomerBalanceBankTransfer {
     /// Configuration for eu_bank_transfer funding type.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1411,7 +1411,7 @@ pub struct CreateInvoicePaymentSettingsPaymentMethodOptionsCustomerBalanceBankTr
     pub type_: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateInvoicePaymentSettingsPaymentMethodOptionsUsBankAccountFinancialConnections {
 
     /// The list of permissions to request.
@@ -1426,7 +1426,7 @@ pub struct CreateInvoicePaymentSettingsPaymentMethodOptionsUsBankAccountFinancia
     pub prefetch: Option<Vec<CreateInvoicePaymentSettingsPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch>>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateInvoiceShippingCostShippingRateDataDeliveryEstimateMaximum {
     /// A unit of time.
     pub unit: CreateInvoiceShippingCostShippingRateDataDeliveryEstimateMaximumUnit,
@@ -1435,7 +1435,7 @@ pub struct CreateInvoiceShippingCostShippingRateDataDeliveryEstimateMaximum {
     pub value: i64,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateInvoiceShippingCostShippingRateDataDeliveryEstimateMinimum {
     /// A unit of time.
     pub unit: CreateInvoiceShippingCostShippingRateDataDeliveryEstimateMinimumUnit,
@@ -1444,7 +1444,7 @@ pub struct CreateInvoiceShippingCostShippingRateDataDeliveryEstimateMinimum {
     pub value: i64,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateInvoiceShippingCostShippingRateDataFixedAmountCurrencyOptions {
     /// A non-negative integer in cents representing how much to charge.
     pub amount: i64,
@@ -1457,7 +1457,7 @@ pub struct CreateInvoiceShippingCostShippingRateDataFixedAmountCurrencyOptions {
         Option<CreateInvoiceShippingCostShippingRateDataFixedAmountCurrencyOptionsTaxBehavior>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateInvoicePaymentSettingsPaymentMethodOptionsCardInstallmentsPlan {
     /// For `fixed_count` installment plans, this is the number of installment payments your customer will make to their credit card.
     pub count: u64,
@@ -1471,7 +1471,7 @@ pub struct CreateInvoicePaymentSettingsPaymentMethodOptionsCardInstallmentsPlan 
     pub type_: CreateInvoicePaymentSettingsPaymentMethodOptionsCardInstallmentsPlanType,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateInvoicePaymentSettingsPaymentMethodOptionsCustomerBalanceBankTransferEuBankTransfer
 {
     /// The desired country code of the bank account information.

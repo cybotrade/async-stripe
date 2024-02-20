@@ -7,7 +7,7 @@ use crate::params::{Metadata, Object};
 use serde::{Deserialize, Serialize};
 
 /// The resource representing a Stripe "TaxProductResourceTaxTransactionLineItem".
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TaxTransactionLineItem {
     /// Unique identifier for the object.
     pub id: TaxTransactionLineItemId,
@@ -66,7 +66,7 @@ impl Object for TaxTransactionLineItem {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TaxProductResourceTaxTransactionLineItemResourceReversal {
 
     /// The `id` of the line item to reverse in the original transaction.

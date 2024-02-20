@@ -10,7 +10,7 @@ use serde::{Deserialize, Serialize};
 /// The resource representing a Stripe "CustomerCashBalanceTransaction".
 ///
 /// For more details see <https://stripe.com/docs/api/cash_balance_transactions/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CustomerCashBalanceTransaction {
     /// Unique identifier for the object.
     pub id: CustomerCashBalanceTransactionId,
@@ -77,7 +77,7 @@ impl Object for CustomerCashBalanceTransaction {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft {
 
     /// The [Balance Transaction](https://stripe.com/docs/api/balance_transactions/object) that corresponds to funds taken out of your Stripe balance.
@@ -87,20 +87,20 @@ pub struct CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverd
     pub linked_transaction: Expandable<CustomerCashBalanceTransaction>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CustomerBalanceResourceCashBalanceTransactionResourceAppliedToPaymentTransaction {
 
     /// The [Payment Intent](https://stripe.com/docs/api/payment_intents/object) that funds were applied to.
     pub payment_intent: Expandable<PaymentIntent>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CustomerBalanceResourceCashBalanceTransactionResourceFundedTransaction {
 
     pub bank_transfer: CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransfer,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransfer {
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -125,7 +125,7 @@ pub struct CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactio
     pub us_bank_transfer: Option<CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceUsBankTransfer>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceEuBankTransfer {
 
     /// The BIC of the bank of the sender of the funding.
@@ -138,7 +138,7 @@ pub struct CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactio
     pub sender_name: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceGbBankTransfer {
 
     /// The last 4 digits of the account number of the sender of the funding.
@@ -151,7 +151,7 @@ pub struct CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactio
     pub sort_code: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceJpBankTransfer {
 
     /// The name of the bank of the sender of the funding.
@@ -164,7 +164,7 @@ pub struct CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactio
     pub sender_name: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceUsBankTransfer {
 
     /// The banking network used for this funding.
@@ -175,21 +175,21 @@ pub struct CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactio
     pub sender_name: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction {
 
     /// The [Refund](https://stripe.com/docs/api/refunds/object) that moved these funds into the customer's cash balance.
     pub refund: Expandable<Refund>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CustomerBalanceResourceCashBalanceTransactionResourceTransferredToBalance {
 
     /// The [Balance Transaction](https://stripe.com/docs/api/balance_transactions/object) that corresponds to funds transferred to your Stripe balance.
     pub balance_transaction: Expandable<BalanceTransaction>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CustomerBalanceResourceCashBalanceTransactionResourceUnappliedFromPaymentTransaction {
 
     /// The [Payment Intent](https://stripe.com/docs/api/payment_intents/object) that funds were unapplied from.

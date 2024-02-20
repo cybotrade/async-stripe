@@ -7,7 +7,7 @@ use crate::resources::{TreasuryFinancialAccountsResourceAchToggleSettings, Treas
 use serde::{Deserialize, Serialize};
 
 /// The resource representing a Stripe "TreasuryFinancialAccountsResourceFinancialAccountFeatures".
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TreasuryFinancialAccountFeatures {
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -40,14 +40,14 @@ impl Object for TreasuryFinancialAccountFeatures {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TreasuryFinancialAccountsResourceFinancialAddressesFeatures {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     pub aba: Option<TreasuryFinancialAccountsResourceAbaToggleSettings>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TreasuryFinancialAccountsResourceAbaToggleSettings {
 
     /// Whether the FinancialAccount should have the Feature.
@@ -60,14 +60,14 @@ pub struct TreasuryFinancialAccountsResourceAbaToggleSettings {
     pub status_details: Vec<TreasuryFinancialAccountsResourceTogglesSettingStatusDetails>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TreasuryFinancialAccountsResourceInboundTransfers {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     pub ach: Option<TreasuryFinancialAccountsResourceAchToggleSettings>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TreasuryFinancialAccountsResourceOutboundPayments {
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -77,7 +77,7 @@ pub struct TreasuryFinancialAccountsResourceOutboundPayments {
     pub us_domestic_wire: Option<TreasuryFinancialAccountsResourceToggleSettings>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TreasuryFinancialAccountsResourceOutboundTransfers {
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -87,7 +87,7 @@ pub struct TreasuryFinancialAccountsResourceOutboundTransfers {
     pub us_domestic_wire: Option<TreasuryFinancialAccountsResourceToggleSettings>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TreasuryFinancialAccountsResourceTogglesSettingStatusDetails {
 
     /// Represents the reason why the status is `pending` or `restricted`.

@@ -12,7 +12,7 @@ use crate::resources::{Currency, Plan, Price, SubscriptionItemBillingThresholds,
 /// The resource representing a Stripe "SubscriptionItem".
 ///
 /// For more details see <https://stripe.com/docs/api/subscription_items/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SubscriptionItem {
     /// Unique identifier for the object.
     pub id: SubscriptionItemId,
@@ -355,7 +355,7 @@ impl<'a> UpdateSubscriptionItem<'a> {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SubscriptionItemPriceData {
     /// Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase.
     ///
@@ -387,7 +387,7 @@ pub struct SubscriptionItemPriceData {
     pub unit_amount_decimal: Option<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SubscriptionItemPriceDataRecurring {
     /// Specifies billing frequency.
     ///

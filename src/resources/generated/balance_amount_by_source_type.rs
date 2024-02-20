@@ -5,7 +5,7 @@
 use serde::{Deserialize, Serialize};
 
 /// The resource representing a Stripe "BalanceAmountBySourceType".
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct BalanceAmountBySourceType {
     /// Amount for bank account.
     #[serde(skip_serializing_if = "Option::is_none")]

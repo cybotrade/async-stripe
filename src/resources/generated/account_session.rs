@@ -10,7 +10,7 @@ use serde::{Deserialize, Serialize};
 /// The resource representing a Stripe "ConnectEmbeddedMethodAccountSessionCreateMethodAccountSession".
 ///
 /// For more details see <https://stripe.com/docs/api/account_sessions/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct AccountSession {
 
     /// The ID of the account the AccountSession was created for.
@@ -48,7 +48,7 @@ impl Object for AccountSession {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct ConnectEmbeddedAccountSessionCreateComponents {
 
     pub account_onboarding: ConnectEmbeddedBaseConfigClaim,
@@ -60,7 +60,7 @@ pub struct ConnectEmbeddedAccountSessionCreateComponents {
     pub payouts: ConnectEmbeddedPayoutsConfig,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct ConnectEmbeddedBaseConfigClaim {
 
     /// Whether the embedded component is enabled.
@@ -69,11 +69,11 @@ pub struct ConnectEmbeddedBaseConfigClaim {
     pub features: ConnectEmbeddedBaseFeatures,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct ConnectEmbeddedBaseFeatures {
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct ConnectEmbeddedPaymentsConfig {
 
     /// Whether the embedded component is enabled.
@@ -82,7 +82,7 @@ pub struct ConnectEmbeddedPaymentsConfig {
     pub features: ConnectEmbeddedPaymentsFeatures,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct ConnectEmbeddedPaymentsFeatures {
 
     /// Whether to allow capturing and cancelling payment intents.
@@ -101,7 +101,7 @@ pub struct ConnectEmbeddedPaymentsFeatures {
     pub refund_management: bool,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct ConnectEmbeddedPayoutsConfig {
 
     /// Whether the embedded component is enabled.
@@ -110,7 +110,7 @@ pub struct ConnectEmbeddedPayoutsConfig {
     pub features: ConnectEmbeddedPayoutsFeatures,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct ConnectEmbeddedPayoutsFeatures {
 
     /// Whether to allow payout schedule to be changed.
@@ -156,7 +156,7 @@ impl<'a> CreateAccountSession<'a> {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountSessionComponents {
 
     /// Configuration for the account onboarding embedded component.
@@ -176,7 +176,7 @@ pub struct CreateAccountSessionComponents {
     pub payouts: Option<CreateAccountSessionComponentsPayouts>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountSessionComponentsAccountOnboarding {
 
     /// Whether the embedded component is enabled.
@@ -187,7 +187,7 @@ pub struct CreateAccountSessionComponentsAccountOnboarding {
     pub features: Option<CreateAccountSessionComponentsAccountOnboardingFeatures>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountSessionComponentsPaymentDetails {
 
     /// Whether the embedded component is enabled.
@@ -198,7 +198,7 @@ pub struct CreateAccountSessionComponentsPaymentDetails {
     pub features: Option<CreateAccountSessionComponentsPaymentDetailsFeatures>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountSessionComponentsPayments {
 
     /// Whether the embedded component is enabled.
@@ -209,7 +209,7 @@ pub struct CreateAccountSessionComponentsPayments {
     pub features: Option<CreateAccountSessionComponentsPaymentsFeatures>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountSessionComponentsPayouts {
 
     /// Whether the embedded component is enabled.
@@ -220,11 +220,11 @@ pub struct CreateAccountSessionComponentsPayouts {
     pub features: Option<CreateAccountSessionComponentsPayoutsFeatures>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountSessionComponentsAccountOnboardingFeatures {
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountSessionComponentsPaymentDetailsFeatures {
 
     /// Whether to allow capturing and cancelling payment intents.
@@ -246,7 +246,7 @@ pub struct CreateAccountSessionComponentsPaymentDetailsFeatures {
     pub refund_management: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountSessionComponentsPaymentsFeatures {
 
     /// Whether to allow capturing and cancelling payment intents.
@@ -268,7 +268,7 @@ pub struct CreateAccountSessionComponentsPaymentsFeatures {
     pub refund_management: Option<bool>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct CreateAccountSessionComponentsPayoutsFeatures {
 
     /// Whether to allow payout schedule to be changed.

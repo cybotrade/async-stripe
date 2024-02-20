@@ -11,7 +11,7 @@ use crate::params::{Expand, List, Metadata, Object, Paginable, RangeQuery, Times
 /// The resource representing a Stripe "TaxRate".
 ///
 /// For more details see <https://stripe.com/docs/api/tax_rates/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct TaxRate {
     /// Unique identifier for the object.
     pub id: TaxRateId,

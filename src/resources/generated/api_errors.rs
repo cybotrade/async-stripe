@@ -7,7 +7,7 @@ use serde::{Deserialize, Serialize};
 use crate::resources::{PaymentIntent, PaymentMethod, PaymentSource, SetupIntent};
 
 /// The resource representing a Stripe "APIErrors".
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct ApiErrors {
     /// For card errors, the ID of the failed charge.
     #[serde(skip_serializing_if = "Option::is_none")]

@@ -7,7 +7,7 @@ use crate::params::{Object, Timestamp};
 use serde::{Deserialize, Serialize};
 
 /// The resource representing a Stripe "SecretServiceResourceSecret".
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct AppsSecret {
     /// Unique identifier for the object.
     pub id: AppsSecretId,
@@ -46,7 +46,7 @@ impl Object for AppsSecret {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct SecretServiceResourceScope {
 
     /// The secret scope type.

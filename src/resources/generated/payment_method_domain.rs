@@ -10,7 +10,7 @@ use serde::{Deserialize, Serialize};
 /// The resource representing a Stripe "PaymentMethodDomainResourcePaymentMethodDomain".
 ///
 /// For more details see <https://stripe.com/docs/api/payment_method_domains/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethodDomain {
     /// Unique identifier for the object.
     pub id: PaymentMethodDomainId,
@@ -74,7 +74,7 @@ impl Object for PaymentMethodDomain {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethodDomainResourcePaymentMethodStatus {
 
     /// The status of the payment method on the domain.
@@ -84,7 +84,7 @@ pub struct PaymentMethodDomainResourcePaymentMethodStatus {
     pub status_details: Option<PaymentMethodDomainResourcePaymentMethodStatusDetails>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct PaymentMethodDomainResourcePaymentMethodStatusDetails {
 
     /// The error message associated with the status of the payment method on the domain.

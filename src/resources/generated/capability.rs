@@ -10,7 +10,7 @@ use serde::{Deserialize, Serialize};
 /// The resource representing a Stripe "AccountCapability".
 ///
 /// For more details see <https://stripe.com/docs/api/capabilities/object>
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct Capability {
     /// The identifier for the capability.
     pub id: CapabilityId,
@@ -48,7 +48,7 @@ impl Object for Capability {
     }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct AccountCapabilityFutureRequirements {
 
     /// Fields that are due and can be satisfied by providing the corresponding alternative fields instead.
@@ -88,7 +88,7 @@ pub struct AccountCapabilityFutureRequirements {
     pub pending_verification: Vec<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct AccountCapabilityRequirements {
 
     /// Fields that are due and can be satisfied by providing the corresponding alternative fields instead.
@@ -130,7 +130,7 @@ pub struct AccountCapabilityRequirements {
     pub pending_verification: Vec<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct AccountRequirementsAlternative {
 
     /// Fields that can be provided to satisfy all fields in `original_fields_due`.
@@ -140,7 +140,7 @@ pub struct AccountRequirementsAlternative {
     pub original_fields_due: Vec<String>,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct AccountRequirementsError {
 
     /// The code for the type of error.

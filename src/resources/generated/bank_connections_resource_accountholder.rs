@@ -7,7 +7,7 @@ use crate::resources::{Account, Customer};
 use serde::{Deserialize, Serialize};
 
 /// The resource representing a Stripe "BankConnectionsResourceAccountholder".
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]
 pub struct BankConnectionsResourceAccountholder {
 
     /// The ID of the Stripe account this account belongs to.
