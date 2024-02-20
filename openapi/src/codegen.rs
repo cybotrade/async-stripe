@@ -65,7 +65,7 @@ pub fn gen_struct(
         out.push_str(&doc_url);
         out.push_str(">\n");
     }
-    out.push_str("#[derive(Clone, Debug, Default, Deserialize, Serialize)]\n");
+    out.push_str("#[derive(Clone, Debug, Default, Deserialize, Serialize, utoipa::ToSchema)]\n");
     out.push_str("pub struct ");
     out.push_str(&struct_name);
     out.push_str(" {\n");
@@ -645,7 +645,7 @@ pub fn gen_unions(out: &mut String, unions: &BTreeMap<String, InferredUnion>, me
         trace!("union {} {{ ... }}", union_name);
 
         out.push('\n');
-        out.push_str("#[derive(Clone, Debug, Deserialize, Serialize)]\n");
+        out.push_str("#[derive(Clone, Debug, Deserialize, Serialize, utoipa::ToSchema)]\n");
         out.push_str("#[serde(untagged, rename_all = \"snake_case\")]\n");
         out.push_str("pub enum ");
         out.push_str(&union_name.to_camel_case());
