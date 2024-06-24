@@ -46,7 +46,7 @@ pub fn gen_struct(
     let obj = as_object_type(schema).expect("Expected object type");
     let schema_title = schema.schema_data.title.as_ref().unwrap_or_else(|| {
         tracing::warn!("{} has no title", object);
-        &object
+        object
     });
 
     let deleted_schema = meta.spec.component_schemas().get(&format!("deleted_{}", object));
@@ -575,7 +575,7 @@ pub fn gen_inferred_params(
                 self.starting_after = Some(item.id());
             }",
             );
-            out.push_str("}");
+            out.push('}');
         }
     }
 }
@@ -716,8 +716,8 @@ pub fn gen_variant_name(wire_name: &str, meta: &Metadata) -> String {
         "*" => "All".to_string(),
         "self" => "Self_".to_string(),
         n => {
-            if n.chars().next().unwrap().is_digit(10) {
-                format!("V{}", n.to_string().replace('-', "_").replace('.', "_"))
+            if n.chars().next().unwrap().is_ascii_digit() {
+                format!("V{}", n.to_string().replace(['-', '.'], "_"))
             } else {
                 meta.schema_to_rust_type(wire_name)
             }
@@ -1299,10 +1299,6 @@ pub fn gen_field_rust_type<T: Borrow<Schema>>(
         // Not sure why this is here, but we want to preserve it for now
         return "bool".into();
     }
-    if ty.contains("List<") {
-        // N.B. return immediately; we use `Default` for list rather than `Option`
-        return ty;
-    }
 
     // currency_options field is represented by an optional HashMap<String, T>, where the String is the currency code in ISO 4217 format.
     if field_name == "currency_options" {
@@ -1345,7 +1341,7 @@ pub fn gen_impl_requests(
         // from the spec already
         let request = meta
             .spec
-            .get_request_unwrapped(*path)
+            .get_request_unwrapped(path)
             .as_item()
             .expect("Expected item, not path reference");
         let segments = path.trim_start_matches("/v1/").split('/').collect::<Vec<_>>();
@@ -1391,7 +1387,7 @@ pub fn gen_impl_requests(
                 let query_path = segments.join("/");
                 writedoc!(&mut out, r#"
                     pub fn list(client: &Client, params: &{params_name}<'_>) -> Response<List<{rust_struct}>> {{
-                       client.get_query("/{query_path}", &params)
+                       client.get_query("/{query_path}", params)
                     }}
                 "#).unwrap();
                 methods.insert(MethodTypes::List, out);
@@ -1418,7 +1414,7 @@ pub fn gen_impl_requests(
                         out.push_str("> {\n");
                         out.push_str("        client.get_query(");
                         out.push_str(&format!("&format!(\"/{}/{{}}\", id)", segments[0]));
-                        out.push_str(", &Expand { expand })\n");
+                        out.push_str(", Expand { expand })\n");
                     } else {
                         out.push_str(") -> Response<");
                         out.push_str(&rust_struct);
@@ -1477,6 +1473,7 @@ pub fn gen_impl_requests(
                 out.push_str("<'_>) -> Response<");
                 out.push_str(&return_type);
                 out.push_str("> {\n");
+                out.push_str("        #[allow(clippy::needless_borrows_for_generic_args)]\n");
                 out.push_str("        client.post_form(\"/");
                 out.push_str(&segments.join("/"));
                 out.push_str("\", &params)\n");
@@ -1517,6 +1514,7 @@ pub fn gen_impl_requests(
                     out.push_str("<'_>) -> Response<");
                     out.push_str(&return_type);
                     out.push_str("> {\n");
+                    out.push_str("        #[allow(clippy::needless_borrows_for_generic_args)]\n");
                     out.push_str("        client.post_form(");
                     out.push_str(&format!("&format!(\"/{}/{{}}\", id)", segments[0]));
                     out.push_str(", &params)\n");
